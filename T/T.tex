@@ -1,0 +1,112 @@
+\documentclass[french, a4paper, 11pt, twocolumn]{article}
+\usepackage[left=1cm, right=1cm]{geometry}
+\usepackage{marsu}
+\usepackage{euler}
+\usepackage[nointegrals]{wasysym}
+
+\newtcolorbox{cadre}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+\newcommand{\drz}[1]{\Delta_r#1\degres}
+
+\title{Thermochimie}
+\author{Martin \textsc{Andrieux}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{cadre}{Corps purs et corps simple}
+  Une phase contenant plusieurs constituants est un \emph{melange}. Si elle n'en contient qu'un, c'est un \emph{corps pur}.
+  Le corps pur est \emph{simple} s'il n'est formé que d'une seule sorte d'atomes. Dans le cas inverse, il est dit \emph{composé}.
+\end{cadre}
+
+\begin{cadre}{Enthalpie de réaction}
+  \[\Delta_{r}H(T, P, \xi) = \pof{\dfrac{\partial H}{\partial \xi}}_{T,P}\]
+  \[\drz{H}(T) = \pof{\dfrac{\partial H\degres}{\partial \xi}}_{T}\]
+  \[\drz{H}(T) \approx \Delta_{r}H(T,P,\xi)\]
+  \[\Delta H = \int_{\xi_{1}}^{\xi_{2}}\Delta_{r}H(T,P,\xi)=\drz{H}\cdot\pof{\xi_{2}-\xi_{1}} \]
+\end{cadre}
+
+\begin{cadre}{Loi de Hess}
+  Si une équation est combinaison linéaire de plusieures autres, les $\drz{X}$ peuvent être calculés par combinaisons linéaires des $\drz{X}$ associés aux autres réactions.
+\end{cadre}
+
+\begin{cadre}{Chaleur reçue}
+  À température constante:
+  \[Q = \Delta H = \drz{H}(T)\cdot\pof{\xi_{2}-\xi_{1}}\]
+  Cas général:
+  \[\drz{H}(T_{0})\cdot\pof{\xi_{2}-\xi_{1}}+\int_{T_{0}}^{T_{f}}C_{p}(T)dT = 0 \]
+  La réaction est dite \emph{endothermique} si $\drz{H} > 0$ et \emph{exothermique} si $\drz{H} < 0$
+\end{cadre}
+
+\begin{cadre}{Enthalpie libre}
+  \[G = U + PV - TS\]
+\end{cadre}
+
+\begin{cadre}{Identités thermodynamiques}
+  Pour un système de \emph{composition constante}:
+  \[dU = TdS - PdV\]
+  D'où:
+  \[dH = TdS + VdP\text{ et }dG = VdP - SdT\]
+\end{cadre}
+
+\begin{cadre}{Potentiel chimique}
+  \[\mu_{i} = \pof{\dfrac{\partial G}{\partial n_{i}}}_{T,P,n_{j\neq i}}\]
+\end{cadre}
+
+\begin{cadre}{Identité d'Euler}
+  \[G = \sum n_{i}\mu_{i}\]
+\end{cadre}
+
+\begin{cadre}{Système fermé à $T$ et $P$ constants}
+  \[dG_{T,P} = \sum \mu_{i}dn_{i} \leq 0\]
+  À l'équilibre:
+  \[dG_{T,P} = 0\]
+\end{cadre}
+
+\begin{cadre}{Activité d'un constituant}
+  \[\mu(T,P) = \mu\degres(T) + RT\ln\pof{a}\]
+  Où $a$ est l'activité du constituant.
+\end{cadre}
+
+\begin{cadre}{Entropie de réaction}
+  \[\Delta_{r}S(T, P, \xi) = \pof{\dfrac{\partial S}{\partial \xi}}_{T,P}\]
+  \[\drz{S}(T) = \pof{\dfrac{\partial S\degres}{\partial \xi}}_{T}\]
+  \[\drz{S}(T) \neq \Delta_{r}S(T,P,\xi)\]
+\end{cadre}
+
+\begin{cadre}{Calcul de $\drz{S}$}
+  \[\drz{S}(T) = \sum \nu_{i}S_{m,i}^{\circ}(T)\]
+  \[\drz{S}(T) \sim \Delta_{r}\nu_{g}\cdot \unit{200}{\joule\reciprocal\kelvin\reciprocal\mole}\]
+  Où $\Delta_{r}\nu_{g}=\sum_{(gaz)}\nu_{i}$ est la variation du nombre de moles gazeuses dans l'équation de la réaction.
+\end{cadre}
+
+\begin{cadre}{Enthalpie libre de réaction}
+  \[\Delta_{r}G(T, P, \xi) = \pof{\dfrac{\partial G}{\partial \xi}}_{T,P} = \sum \nu_{i}\mu_{i}(T,P,\xi)\]
+  \[\drz{G}(T) = \pof{\dfrac{\partial G\degres}{\partial \xi}}_{T} = \sum \nu_{i}\mu_{i}^{\circ}(T)\]
+  \[\drz{G}(T) \neq \Delta_{r}G(T,P,\xi)\]
+  \[\drz{G}(T) = \drz{H} - T\drz{S}\]
+  \[\Delta_{r}G(T, P, \xi) = \drz{G}(T) + RT\ln\pof{Q_{r}}\]
+  À l'équilibre:
+  \[\drz{G}(T) + RT\ln\pof{K\degres(T)} = 0\]
+\end{cadre}
+
+\begin{cadre}{Relation isobare de Van't Hoff}
+  Nous savons que:
+  \[\drz{G}(T) + RT\ln\pof{K\degres(T)} = 0\]
+  D'où, après division par $RT$ et dérivation:
+  \[\dfrac{d\pof{\ln K\degres(T)}}{dT} = \dfrac{\drz{H}}{RT^{2}}\]
+  On en déduit qu'une augmentation de la température déplace l'équilibre dans le sens endothermique.
+\end{cadre}
+
+\end{document}
