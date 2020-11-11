@@ -1,8 +1,8 @@
-\documentclass[a4paper, 11pt, french]{article}
+\documentclass[a4paper, 11pt, french, twocolumn]{article}
 
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}
-\usepackage{geometry}
+\usepackage[left=1cm, right=1cm]{geometry}
 \usepackage{enumitem}
 \usepackage{amssymb}
 \usepackage{mathtools}
@@ -96,8 +96,11 @@
 	
 \section{Analyse de Fourier d'un signal périodique}
 	\begin{cadre}{Théorème de Fourier}
-		Toute fonction $f$ périodique de pulsation $\om=2\pi/T$ peut s'écrire :
-			$$f(t)=a_0+\som{n\geq 1}{}(a_n \cos(n\om t) + b_n \sin(n\om t)=c_0+\som{n\geq 1}{} c_n \cos(n\om t+\ph_n)$$
+		Toute fonction $f$ périodique de pulsation {$\om=2\pi/T$} peut s'écrire :
+		\begin{align*}
+			f(t)&=a_0+\som{n\geq 1}{}(a_n \cos(n\om t) + b_n \sin(n\om t) \\
+			    &=c_0+\som{n\geq 1}{} c_n \cos(n\om t+\ph_n)
+		\end{align*}
 	\end{cadre}
 	\begin{itemize}
 		\item Suivant la parité de f, les $a_n$ ou $b_n$ peuvent être nuls
