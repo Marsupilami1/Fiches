@@ -106,27 +106,6 @@
 
 \section{Groupes}
 \begin{definition}
-  Un \emph{groupe} est un couple $(G,\cdot)$ où:
-  \begin{itemize}[label=$\bullet$]
-    \item $G$ est un ensemble
-    \item $\cdot$ est une loi de composition interne sur $G$
-    \item $\forall a,b,c \in G,\, a\cdot(b\cdot c) = (a\cdot b)\cdot c$
-    \item Il extiste un neutre (noté $1$) pour $\cdot$
-    \item Tout élément possède un symétrique
-  \end{itemize}
-  Un groupe est dit \emph{abélien} s'il est commutatif.
-\end{definition}
-
-\begin{definition}
-  Un \emph{morphisme} de groupe est une application\\ $f:(G,\cdot)\rightarrow(H,\cdot)$ telle que:
-  \begin{itemize}[label=$\bullet$]
-    \item $(G,\cdot)$ et $(H,\cdot)$ sont deux groupes
-    \item $\forall a,b\in G,\, f(a\cdot b) = f(a)\cdot f(b)$
-  \end{itemize}
-  $f$ est un \emph{isomorphisme} de groupe si $f$ et $f^{-1}$ sont des morphismes bijectifs.
-\end{definition}
-
-\begin{definition}
   Soit $H\subset G$, $H$ est un \emph{sous-groupe} de $G$ si:
   \begin{itemize}[label=$\bullet$]
     \item $H\neq\emptyset$
@@ -155,27 +134,6 @@
 \end{theoreme}
 
 \section{Anneaux}
-\begin{definition}
-  Un \emph{anneaux} est un triplet $(A, +, \cdot)$ où:
-  \begin{itemize}[label=$\bullet$]
-    \item $(A,+)$ est un groupe abélien
-    \item $\cdot$ est une loi de composition interne associative pour $A$
-    \item $\cdot$ est distributif par rapport à la somme
-    \item $\cdot$ possède un neutre noté $1$ et $1\neq 0$
-  \end{itemize}
-\end{definition}
-
-\begin{definition}
-  Un \emph{morphisme} d'anneaux est une application\\
-  $f:A\rightarrow B$ telle que pour $x,y,z$ dans $A$:
-  \begin{itemize}[label=$\bullet$]
-    \item $f(x+z)=f(x)+f(z)$
-    \item $f(xy)=f(x)f(y)$
-    \item $f(1)=1$
-  \end{itemize}
-  $f$ est un \emph{isomorphisme} d'anneaux di $f$ et $f^{-1}$ sont des morphismes bijectifs.
-\end{definition}
-
 \begin{definition}
   Soit $B\subset A$, $B$ est un \emph{sous-anneau} de $A$ si:
   \begin{itemize}[label=$\bullet$]
