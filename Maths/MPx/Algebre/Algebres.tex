@@ -193,4 +193,28 @@
   \[x = \sum_{i=1}^n e_{i}^{*}(x)e_{i}\]
 \end{theoreme}
 
+\section{Déterminants}
+\begin{theoreme}{Matrice de Vandermonde}
+  Le déterminant d'une matrice de Vandermonde est de la forme suivante:
+  \[\begin{vmatrix}
+      1                & 1                & 1                & \cdots & 1              \\
+      \alpha_{1}       & \alpha_{2}       & \alpha_{3}       & \cdots & \alpha_{n}     \\
+      \alpha_{1}^{2}   & \alpha_{2}^{2}   & \alpha_{3}^{2}   & \cdots & \alpha_{n}^{2} \\
+      \vdots           & \vdots           & \vdots           & \ddots & \vdots         \\
+      \alpha_{1}^{n-1} & \alpha_{2}^{n-1} & \alpha_{3}^{n-1} & \cdots & \alpha_{n}^{n-1}
+    \end{vmatrix}\]
+  Il est égal à $\prod\limits_{1\leqslant i < j \leqslant n}(\alpha_{j}-\alpha_{i})$.
+\end{theoreme}
+
+\begin{theoreme}{Formule de Cramer}
+  On s'interesse aux solution de l'équation $AX=B$ avec $A$ dans $GL_{n}(\R)$.
+  Les solutions sont de la forme $X = \begin{pmatrix}x_{1}                   \\ \vdots\\ x_{n}\end{pmatrix}$ avec:
+  \[x_{i} = \dfrac{
+      \begin{vmatrix}
+        a_{1,1} & \cdots & a_{1,i-1} & b_{1}  & a_{1,i+1} & \cdots & a_{1,n} \\
+        \vdots  &        & \vdots    & \vdots & \vdots    &        & \vodts  \\
+        a_{n,1} & \cdots & a_{n,i-1} & b_{n}  & a_{n,i+1} & \cdots & a_{n,n}
+      \end{vmatrix}}{\det A}\]
+\end{theoreme}
+
 \end{document}
