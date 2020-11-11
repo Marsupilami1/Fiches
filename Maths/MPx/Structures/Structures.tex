@@ -1,0 +1,200 @@
+\documentclass[french, a4paper, 11pt, twocolumn]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{float}
+\usepackage{tikz}
+\usepackage[straightvoltages]{circuitikz}
+\usepackage[squaren, cdot, derived]{SIunits}
+\usepackage{graphicx}
+\usepackage[f]{esvect}
+\usepackage[many]{tcolorbox}
+\usepackage{euler}
+\usepackage[nointegrals]{wasysym}
+\usepackage[french]{babel}
+
+
+%______FONCTIONS______%
+\newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+\newcommand{\inv}[1]{\dfrac{1}{#1}}
+% --ENSEMBLES--%
+\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
+\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
+\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
+\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
+\newcommand{\R}{\mathbb{R}}   % ~ Réels
+\newcommand{\C}{\mathbb{C}}   % ~ Complexes
+% --TRIGO--%
+\let\cosh\relax
+\DeclareMathOperator{\cosh}{ch}       % ~ cosinus hyperbolique
+\DeclareMathOperator{\sh}{sh}         % ~ sinus hyperbolique
+\let\tanh\relax
+\DeclareMathOperator{\tanh}{th}       % ~ tangente hyperbolique
+\DeclareMathOperator{\argch}{Argch}   % ~ Argument cosinus hyperbolique
+\DeclareMathOperator{\argsh}{Argsh}   % ~ Argument sinus hyperbolique
+\DeclareMathOperator{\argth}{Argth}   % ~ Argument tangente hyperbolique
+\DeclareMathOperator{\cotan}{cotan}   % ~ cotangente
+% --PARENTHESES--%
+\newcommand{\po}{\left(}         % ~ (
+\newcommand{\pf}{\right)}        % ~ )
+\newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
+\newcommand{\co}{\left[}         % ~ [
+\newcommand{\cf}{\right]}        % ~ ]
+\newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
+\newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+% --VECTEURS--%
+\newcommand{\ux}{\vect{u_x}}          % ~ Vecteur ux
+\newcommand{\uy}{\vect{u_y}}          % ~ Vecteur uy
+\newcommand{\uz}{\vect{u_z}}          % ~ Vecteur uz
+\newcommand{\ur}{\vect{u_r}}          % ~ Vecteur ur
+\newcommand{\uth}{\vect{u_\theta}}    % ~ Vecteur utheta
+\newcommand{\uph}{\vect{u_\varphi}}   % ~ Vecteur uphi
+\newcommand{\om}{\vect{OM}}           % ~ Vecteur position
+\newcommand{\vvi}{\vect{v}}           % ~ Vecteur vitesse
+\newcommand{\vvio}{\vect{v_0}}        % ~ Vecteur v0
+\newcommand{\va}{\vect{a}}            % ~ Vecteur	accélération
+\newcommand{\vp}{\vect{p}}            % ~ Vecteur quantité de mouvement
+\newcommand{\fr}{\vect{F_r}}          % ~ Vecteur force de rappel
+\newcommand{\vabla}{\vect{\nabla}}    % ~ nabla
+\newcommand{\grad}{\vect{\mathrm{grad}}}  % ~ grad
+\DeclareMathOperator{\diverg}{div}        % ~ grad
+\newcommand{\rot}{\vect{\mathrm{rot}}}    % ~ grad
+
+\newtcolorbox{theoreme}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+\newtcolorbox{definition}[1][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=Définition,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+
+\newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
+
+\title{Structures}
+\author{Martin \textsc{Andrieux}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Groupes}
+\begin{definition}
+  Un \emph{groupe} est un couple $(G,\cdot)$ où:
+  \begin{itemize}[label=$\bullet$]
+    \item $G$ est un ensemble
+    \item $\cdot$ est une loi de composition interne sur $G$
+    \item $\forall a,b,c \in G,\, a\cdot(b\cdot c) = (a\cdot b)\cdot c$
+    \item Il extiste un neutre (noté $1$) pour $\cdot$
+    \item Tout élément possède un symétrique
+  \end{itemize}
+  Un groupe est dit \emph{abélien} s'il est commutatif.
+\end{definition}
+
+\begin{definition}
+  Un \emph{morphisme} de groupe est une application\\ $f:(G,\cdot)\rightarrow(H,\cdot)$ telle que:
+  \begin{itemize}[label=$\bullet$]
+    \item $(G,\cdot)$ et $(H,\cdot)$ sont deux groupes
+    \item $\forall a,b\in G,\, f(a\cdot b) = f(a)\cdot f(b)$
+  \end{itemize}
+  $f$ est un \emph{isomorphisme} de groupe si $f$ et $f^{-1}$ sont des morphismes bijectifs.
+\end{definition}
+
+\begin{definition}
+  Soit $H\subset G$, $H$ est un \emph{sous-groupe} de $G$ si:
+  \begin{itemize}[label=$\bullet$]
+    \item $H\neq\emptyset$
+    \item $H$ est stable par $\cdot$
+    \item $1\in H$
+    \item $\forall a \in H,\, a^{-1}\in H$
+  \end{itemize}
+\end{definition}
+
+\begin{theoreme}{Théorèmes}
+  \begin{itemize}[label=$\bullet$]
+    \item Les sous-groupes de $\Z$ sont de la forme $n\Z$
+    \item Tout groupe fini de cardinal $n$ est isomorphe à un sous-groupe de $\mathfrak S_{n}$
+    \item L'intersection de deux sous-groupes est un sous-groupe.
+  \end{itemize}
+\end{theoreme}
+
+\begin{definition}
+  Pour $A\subset G$, il existe un plus petit sous-groupe de $G$ contenant $A$, c'est le sous-groupe \emph{engendré} par $A$, noté $\langle A\rangle$.
+\end{definition}
+
+\begin{theoreme}{Théorème de Lagrange}
+  Le cardinal de tout sous-groupe divise le cardinal du groupe.
+  \tcblower
+  En particulier, pour $x$ dans $G$, le cardinal de $\langle x \rangle$, aussi appelé \emph{ordre} de $x$, divise le cardinal de $G$.
+\end{theoreme}
+
+\section{Anneaux}
+\begin{definition}
+  Un \emph{anneaux} est un triplet $(A, +, \cdot)$ où:
+  \begin{itemize}[label=$\bullet$]
+    \item $(A,+)$ est un groupe abélien
+    \item $\cdot$ est une loi de composition interne associative pour $A$
+    \item $\cdot$ est distributif par rapport à la somme
+    \item $\cdot$ possède un neutre noté $1$ et $1\neq 0$
+  \end{itemize}
+\end{definition}
+
+\begin{definition}
+  Un \emph{morphisme} d'anneaux est une application\\
+  $f:A\rightarrow B$ telle que pour $x,y,z$ dans $A$:
+  \begin{itemize}[label=$\bullet$]
+    \item $f(x+z)=f(x)+f(z)$
+    \item $f(xy)=f(x)f(y)$
+    \item $f(1)=1$
+  \end{itemize}
+  $f$ est un \emph{isomorphisme} d'anneaux di $f$ et $f^{-1}$ sont des morphismes bijectifs.
+\end{definition}
+
+\begin{definition}
+  Soit $B\subset A$, $B$ est un \emph{sous-anneau} de $A$ si:
+  \begin{itemize}[label=$\bullet$]
+    \item $B\neq\emptyset$
+    \item $B$ est stable par $\cdot$ et $+$
+    \item $1\in B$
+  \end{itemize}
+\end{definition}
+
+\begin{definition}
+  Un \emph{corps} est un anneau dans lequel tous les éléments non nuls sont inversibles.
+
+  Soit $A$ un anneau, on note $A^{*}$ l'ensemble des éléments inversibles de $A$. $A^{*}$ est un groupe pour la loi $\cdot$.
+\end{definition}
+
+\begin{definition}
+  Soit $A$ un anneau, on dit que $x$ et $y$ sont des \emph{diviseurs de $0$} si $x\neq 0$, $y\neq 0$ et $xy=0$.
+
+  Si $A$ ne possède pas de diviseur de $0$, il est dit \emph{intègre}.
+\end{definition}
+
+\end{document}
