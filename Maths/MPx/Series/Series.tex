@@ -62,13 +62,13 @@
 \newcommand{\om}{\vect{OM}}           % ~ Vecteur position
 \newcommand{\vvi}{\vect{v}}           % ~ Vecteur vitesse
 \newcommand{\vvio}{\vect{v_0}}        % ~ Vecteur v0
-\newcommand{\va}{\vect{a}}            % ~ Vecteur	accélération
+\newcommand{\va}{\vect{a}}            % ~ Vecteur accélération
 \newcommand{\vp}{\vect{p}}            % ~ Vecteur quantité de mouvement
 \newcommand{\fr}{\vect{F_r}}          % ~ Vecteur force de rappel
 \newcommand{\vabla}{\vect{\nabla}}    % ~ nabla
 \newcommand{\grad}{\vect{\mathrm{grad}}}  % ~ grad
-\DeclareMathOperator{\diverg}{div}        % ~ grad
-\newcommand{\rot}{\vect{\mathrm{rot}}}    % ~ grad
+\DeclareMathOperator{\diverg}{div}        % ~ div
+\newcommand{\rot}{\vect{\mathrm{rot}}}    % ~ rot
 
 \newtcolorbox{theoreme}[2][]
 {
@@ -155,7 +155,7 @@
 \begin{theoreme}{Transformation d'Abel}
   Réécrire le terme général de la série comme différence de sommes partielles bornées permet d'établir la nature de la série.
   \tcblower
-  Le théorème d'Abel dit que si $b_{n}$ décroit vers $0$ et si $\pof{A_{n}}_{n\geqslant 0}$ est bornée, alors $\sum a_{n}b_{n}$ converge.
+  Le théorème d'Abel dit que si $b_{n}$ décroit vers $0$ et si \[\ \pof{A_{n}}_{n\geqslant 0}=\sum_{k=0}^n a_k\] est bornée, alors $\sum a_{n}b_{n}$ converge.
 \end{theoreme}
 
 \begin{theoreme}{Produit de Cauchy}
