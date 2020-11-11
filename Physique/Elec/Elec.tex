@@ -1,0 +1,120 @@
+\documentclass[a4paper, 11pt, french]{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{varioref}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{xcolor}
+\usepackage{systeme}
+\usepackage{tikz}
+\usepackage[straightvoltages]{circuitikz}
+\usepackage{mathrsfs}
+\usepackage{esvect}
+\usepackage[many]{tcolorbox}
+
+%Ensembles
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\p}{\wedge}
+\newcommand{\D}{\mathcal{D}}
+
+%Letttres grecs
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\De}{\Delta}
+\newcommand{\de}{\delta}
+\newcommand{\la}{\lambda}
+\newcommand{\te}{\theta}
+\newcommand{\si}{\sigma}
+\newcommand{\Om}{\Omega}
+\newcommand{\om}{\omega}
+\newcommand{\ph}{\varphi}
+\newcommand{\ep}{\varepsilon}
+
+
+\newcommand{\dx}{\mathrm{d}x}
+\newcommand{\dt}{\mathrm{d}t}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\ev}{espace vectoriel}
+\newcommand{\eve}{espace vectoriel euclidien}
+\newcommand{\sce}{système complet d'évènements}
+\newcommand{\som}[2]{\overset{#2}{\underset{#1}{\sum}}}
+\newcommand{\produit}[2]{\overset{#2}{\underset{#1}{\prod}}}
+\newcommand{\thm}{\textcolor{red}{\underline{Théorème} }}
+\newcommand{\ppt}{\textcolor{red}{\underline{Propriété :} }}
+\newcommand{\limit}[1]{\underset{#1}{\rightarrow}}
+\newcommand{\eq}[1]{\underset{#1}{\sim}}
+\newcommand{\inv}[1]{\frac{1}{#1}}
+\newcommand{\acc}[1]{\left\{ #1 \right\}}
+
+
+\newtcolorbox{cadre}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+\title{Électrocinétique et traitement du signal}
+\author{Maillet Nathan\\MP*}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+
+\section{Amplificateur opérationnel}
+	\begin{cadre}{Caractéristique d'un amplificateur opérationnel idéal}
+		\begin{center}
+		  \begin{tikzpicture}[scale=0.6][h]
+		    \draw[->] (0,-4) -- ++(0,8) node[left]{$V_s$};
+		    \draw[->] (-4,0) -- ++(8,0) node[right]{$\ep$};
+		    \draw[ultra thick]  (-3,-1.5) -- ++(3,0) node[right]{$-V_{sat}$};
+		    \draw[ultra thick]  (0,1.5) -- ++(3,0);
+		    \draw[ultra thick] (0,-1.5) -- ++(0,3)node[left]{$+V_{sat}$};
+		  \end{tikzpicture}
+		\end{center}
+	\end{cadre}
+	
+	
+\section{Analyse de Fourier d'un signal périodique}
+	\begin{cadre}{Théorème de Fourier}
+		Toute fonction $f$ périodique de pulsation $\om=2\pi/T$ peut s'écrire :
+			$$f(t)=a_0+\som{n\geq 1}{}(a_n \cos(n\om t) + b_n \sin(n\om t)=c_0+\som{n\geq 1}{} c_n \cos(n\om t+\ph_n)$$
+	\end{cadre}
+	\begin{itemize}
+		\item Suivant la parité de f, les $a_n$ ou $b_n$ peuvent être nuls
+		\item Les fonctions rectangulaires (resp. triangulaires) ont un spectre en $\inv{n}$ (resp. $\inv{n^2}$)
+	\end{itemize}
+
+\section{Électronique numérique}
+	\begin{cadre}{Théorème de Nyquist-Shannon}
+		Pour échantilloner un signal sans repliement du spectre, la fréquence d'échantillonage $f_e$ doit vérifier : $f_e>2f_{max}$
+	\end{cadre}
+	
+	\begin{cadre}{Pas de quantification }
+		Le pas de quantification $q$ est : $q=\frac{U_{max}-U_{min}}{2^n-1}$
+	\end{cadre}
+	
+	\begin{itemize}
+		\item Lors de l'échantillonage, le spectre de la sinusoïde présentera un pic en $f$, $f_e-f$, $f_e+f$, $2f_e-f$, $2f_e+f$...
+		\item Pour un filtre numérique, on a : $\frac{dy(t)}{\dt}=\frac{y_n-y_{n-1}}{T_e}$
+	\end{itemize}
+\end{document}
