@@ -1,0 +1,193 @@
+
+
+% Toute citation sans thème ni commentaire est une citation dont on a parler en cours mais dont je n'ai pas noter le commentaire...
+% Tout commentaire est donc le bienvenue
+
+
+\documentclass[french,a4paper,11pt,answers]{exam}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage[left=1cm, right=1cm]{geometry}
+\usepackage[many]{tcolorbox}
+\usepackage[french]{babel}
+
+\newcommand{\cit}[2]{\og #1 \fg{} \begin{solution}{ #2 }\end{solution}} % Ajoute les guillemets puis les commentaires
+
+\usepackage{color} % définit une nouvelle couleur
+\shadedsolutions % définit le style de la case thèmes et commentaires
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1} % bleu ciel
+\renewcommand{\solutiontitle}{\noindent\textbf{Thèmes et commentaires :}\par\noindent} % Définit le titre des encadrés bleu
+
+\newtcolorbox{cadre}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+\title{Citations \emph{Le Gai Savoir} de Nietzsche}
+\author{Maillet Nathan\\MP*}
+\date{}
+
+\begin{document}
+	\maketitle
+	\section{Préface}
+	\begin{cadre}{Avant-propos 1}
+		\begin{itemize}
+			\item \cit{“Gai Savoir'': cela veut dire les saturnales d'un esprit qui a résisté patiemment à une terrible et longue pression -- patiemment, fermement, froidement, sans s'incliner, mais sans espoir --, et qu'envahit soudain l'espoir, l'espoir de la santé, l'\emph{ivresse} de la guérison.}
+				{Gaieté, Lutte, Énergie}
+		\end{itemize}
+	\end{cadre}
+	
+	\begin{cadre}{Avant-propos 3}
+		\begin{itemize}
+			\item \cit{Vivre -- cela veut dire pour nous : métamorphoser constamment tout ce que nous sommes en lumière et en flamme, et également tout ce qui nous concerne, nous ne \emph{pouvons} absoluement pas faire autrement}
+				{Énergie, Devenir, Création}
+		\end{itemize}
+	\end{cadre}
+
+	\begin{cadre}{Avant-propos 4}
+		\begin{itemize}
+			\item \cit{Il y a une chose que nous ne savons aujourd'hui que trop bien, nous hommes de savoir : oh comme nous apprenons désormais à bien oublier, à bien ne \emph{pas} savoir, comme artistes !}
+				{Connaissance, Oubli, Quête philosophique}
+			\item \cit{Ces Grecs étaient superficiels... par \emph{profondeur} !}
+				{Oubli, Quête philosophique, Mensonge}
+		\end{itemize}
+	\end{cadre}
+
+	\section{Quatrième livre}
+	\begin{cadre}{Paragraphe 276}
+		\begin{itemize}
+			\item \cit{Je veux apprendre toujours plus à voir dans la nécessité des choses le beau : je serai ainsi l'un de ceux qui embellissent les choses. \emph{Amor fati} : que ce soit dorénavant mon amour}
+				{Début de l'amor fati (Homme qui dit oui), consentement à la vie}
+		\end{itemize}
+	\end{cadre}
+	
+	\begin{cadre}{Paragraphe 278}
+		\begin{itemize}
+			\item \cit{Chacun veut être le premier dans cet avenir, -- et pourtant c'est la mort et le silence de mort qui est l'unique certitude et le ot commun à tous dans cet avenir !}
+				{Devenir, Mort}
+		\end{itemize}
+	\end{cadre}
+	
+	\begin{cadre}{Paragraphe 283}
+		\begin{itemize}
+			\item \cit{Car, croyez-moi ! -- le secret pour retirer de l'existence la plus grande fécondité et la plus grande jouissance, c'est : \emph{vivre dangereusement} ! Bâtissez vos villes sur le Vésuve ! Lancez vos navires sur des mers inexplorées ! Vivez en guerre avec vos pareils et avec vous-mêmes ! Soyez brigands et conquérants, tant que vous ne pouvez pas être maîtres et possesseurs, hommes de connaissance ! Le temps ne sera bientôt plus où vous pouviez vous contenter de vivre, tels des cerfs farouches, cachés au fond des bois !}
+				{Pour vivre, il faut vivre dangereusement}
+		\end{itemize}
+	\end{cadre}
+	
+	\begin{cadre}{Paragraphe 285}
+		\begin{itemize}
+			\item \cit{Jamais plus tu ne prieras, jamais plus tu n'adoreras, jamais plus tu ne te reposeras dans une confiance illimitée}
+				{Dieu, Quête philosophique}
+			\item \cit{Il est un lac qui un jour s'interdit de s'écouler et jeta ne digue là où il s'écoulait jusqu'alors : depuis, le niveau de ce lac ne cesse de monter.}
+				{La contrainte peut avoir des effets positifs}
+		\end{itemize}
+	\end{cadre}
+	
+	\begin{cadre}{Paragraphe 294}
+		\begin{itemize}
+			\item \cit{Ils me sont désagréables, les hommes chez qui tout penchant naturel se transforme aussitôt en maladie, en quelque chose qui dénature et déshonore.}
+				{Nature, Homme, Morale, Métaphysique}
+		\end{itemize}
+	\end{cadre}
+
+	\begin{cadre}{Paragraphe 299}
+		\begin{itemize}
+			\item \cit{mais \emph{nous}, nous voulons être les poètes de notre vie, et d'abord dans les choses les plus modestes et les plus quotidiennes}
+				{Quête philosophique, Art et vive}
+		\end{itemize}
+	\end{cadre}
+	\begin{cadre}{Paragraphe 301}
+		\begin{itemize}
+			\item \cit{Tout ce qui possède de la \emph{valeur} dans le monde aujourd'hui ne la possède pas en soi, en vertu de sa nature, --la nature est toujours dénuée de valeur : -- au contraire, une valeur lui a un jour été donnée et offerte et c'est \emph{nous} qui avons donné et offet ! C'est nous seuls qui avons d'abord créé le monde \emph{qui intéresse l'homme en quelque manière} !}
+				{Quête philosophique, Création}
+		\end{itemize}
+	\end{cadre}
+	
+	\begin{cadre}{Paragraphe 304}
+		\begin{itemize}
+			\item \cit{je ne veux pas tendre les yeux ouverts à mon appauvrissement, je n'ai nul goût pour toutes ces vertus négatives}
+				{Pour Nietzsche, la morale chrétienne est hostile à la vie}
+		\end{itemize}
+	\end{cadre}
+	
+	\begin{cadre}{Paragraphe }
+		\begin{itemize}
+			\item \cit{Les professeurs de morale qui prescrivent avant tout et par-dessus tout à l’homme de parvenir à se maîtriser l’exposent à une maladie étrange : à savoir une excitabilité permanente à toutes les émotions et inclinations naturelles et pour ainsi dire une démangeaison. Quelle que soit la chose qui puisse désormais l’ébranler, le tirer, l’attirer, le stimuler, de l’intérieur ou de l’extérieur – il semble toujours à cet excitable que sa maîtrise de soi soit à l’instant mise en péril : il n’a plus le droit de se confier à aucun instinct, à aucun libre coup d’aile, mais se fige en permanence en une attitude défensive, armé contre lui-même, l’œil acéré et méfiant, éternel gardien de son château, en lequel il s’est lui-même transformé. Oui, il peut être \emph{grand} en cela ! Mais qu’il est devenu insupportable désormais aux autres, qu’il est devenu lourd pour lui-même, appauvri et coupé de toutes les plus belles contingences de l’âme ! Voire même de toute \emph{instruction} ultérieure ! Car on doit pouvoir se perdre soi-même pour quelque temps si l’on veut apprendre quelque chose de ce que l’on n’est pas soi-même.}
+				{La force de vivre est au service de la vie forte et contre la vie morte} %Quelqu'un a une idée pour raccourcir la citation ? Ou la laisser tel quel permet de se remémorer le passage pour le résumer en DS ? 
+		\end{itemize}
+	\end{cadre}
+	
+	\begin{cadre}{Paragraphe 306}
+		\begin{itemize}
+			\item \cit{Ce serait en effet pur eux la perte des pertes que d'être dépossédés de leur fine excitabilité et de se voir offrir en échange la dure peau stoïcienne aux piquants de hérisson.}
+				{Pour Nietzsche, il est préférable d'être épicurien}
+		\end{itemize}
+	\end{cadre}
+	
+	\begin{cadre}{Paragraphe 318}
+		\begin{itemize}
+			\item \cit{Nous devons aussi savoir vivre avec une énergie restreinte : dès que la douleur lance son signal d'alarme, il est temps de la restreindre, -- quelque grand danger, une tempête s'annonce, et nous faisons bien de nous \og gonfler \fg{} le moins possible. -- Il est vrai qu'il y a des hommes qui à l'approche d'une grande douleur entendent le commandement exactement inverse, et n'ont jamais le regard plus fier, guerrier et heureux que lorsque la tempête se lève}
+				{Énergie, Lutte et risque, Gaieté}
+		\end{itemize}
+	\end{cadre}
+
+	\begin{cadre}{Paragraphe 319}
+		\begin{itemize}
+			\item \cit{Nous voulons être nous-même nos expériences et nos cobayes}
+				{Nature et Homme, Connaissance}
+		\end{itemize}
+	\end{cadre}
+	
+	\begin{cadre}{Paragraphe 324}
+		\begin{itemize}
+			\item \cit{elle est un monde de dangers et de victoires dans lequel les sentiments héroïques aussi ont leur lieux où danser et s'ébattre}
+				{Connaissance, Risque et souffrance, Lutte, Énergie}
+		\end{itemize}
+	\end{cadre}
+	
+	\begin{cadre}{Paragraphe 326}
+		\begin{itemize}
+			\item \cit{Une perte est une perte pendant ne heure à peine : avec elle, d'une manière ou d'une autre, un cadeau nous est aussi tombé du ciel -- une nouvelle force par exemple : et ne serait-ce qu'une nouvelle occasion d'accéder à la force !}
+				{Thèmes : Mort, Oubli, Deuil, Devenir, Énergie. La morale chrétienne est hostile à la vie}
+			\item \cit{Que d'inventions n'ont pas été imaginées par les prédicateurs de morale au sujet de la \og misère \fg{} intérieure du méchant ! Que de \emph{mensonges} n'ont-ils pas \emph{racontés} au sujet du malheur de l'homme passioné ! -- oui, mentire est bien le mot juste ici : ils étaient arfaitement conscients du bonheur surabondant de cette espèce d'hommes, mais ils sont restés muets comme la tombe à son sujet parce qu'il constituait une réfutation de leur théorie, suivant laquelle tout bonheur n'apparaît qu'avec l'anéantissement des passions et le silence de la volonté !}
+				{}
+		\end{itemize}
+	\end{cadre}
+	
+	\begin{cadre}{Paragraphe 333}
+		\begin{itemize}
+			\item \cit{Durant des périodes extrêmement longues, on a considéré la pensée consciente comme la pensée en général : ce n'est qu'aujourd'hui que nous voyons poindre la vérité, à savoir que la plus grande partie de notre activiét intellectuelle se déroule sans que nous en soyons conscients, sans que nous la percevions}
+				{Connaissance, Lutte, Énergié} %Commentaire du cours manquant
+		\end{itemize}
+	\end{cadre}
+
+	\begin{cadre}{Paragraphe 335}
+		\begin{itemize}
+			\item \cit{Mais nous, \emph{nous voulons devenir ceuq que nous sommes}, -- les nouveaux, ceux qui n'adviennent qu'une seule fois, les incomparables, ceux qui se donnent à eux-mêmes leur loi, ceux qui se créent eux-mêmes !}
+				{Devenir, Création, Énergie, Quêtre philosophique}
+		\end{itemize}
+	\end{cadre}
+
+	\begin{cadre}{Paragraphe 338}
+		\begin{itemize}
+			\item \cit{}
+				{La vie humaine est appauvrie si elle est réduite à sa dimension biologique}
+		\end{itemize}
+	\end{cadre}
+	
+	\begin{cadre}{Paragraphe 341}
+		\begin{itemize}
+			\item \cit{la question, posée à propos de tout et de chaque chose, \og veux-tu ceci encore une fois et encore d'innombrables fois ? \fg{} ferait peser sur ton agir le poids le plus lourd !}
+				{Devenir, Création, Énergie, Quête philosophique}
+		\end{itemize}
+	\end{cadre}
+\end{document}
