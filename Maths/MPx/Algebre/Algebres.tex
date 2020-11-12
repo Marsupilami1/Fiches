@@ -68,8 +68,8 @@
 \newcommand{\fr}{\vect{F_r}}          % ~ Vecteur force de rappel
 \newcommand{\vabla}{\vect{\nabla}}    % ~ nabla
 \newcommand{\grad}{\vect{\mathrm{grad}}}  % ~ grad
-\DeclareMathOperator{\diverg}{div}        % ~ grad
-\newcommand{\rot}{\vect{\mathrm{rot}}}    % ~ grad
+\DeclareMathOperator{\diverg}{div}        % ~ div
+\newcommand{\rot}{\vect{\mathrm{rot}}}    % ~ rot
 
 \newtcolorbox{theoreme}[2][]
 {
@@ -162,7 +162,7 @@
 \end{definition}
 
 \begin{definition}
-  Soit $A$ un anneau, $A$ est dit \emph{principal} si les idéaux de $A$ sont de la forme $aA$ avec $a\in A$. Ces idéaux sont appelés \emph{idéeaux principaux}
+  Soit $A$ un anneau. Il est dit \emph{principal} si ses idéaux sont de la forme $aA$ avec $a\in A$. Ces idéaux sont appelés \emph{idéaux principaux}
 \end{definition}
 
 \begin{theoreme}{Lemme chinois}
@@ -212,7 +212,7 @@
   \[x_{i} = \dfrac{
       \begin{vmatrix}
         a_{1,1} & \cdots & a_{1,i-1} & b_{1}  & a_{1,i+1} & \cdots & a_{1,n} \\
-        \vdots  &        & \vdots    & \vdots & \vdots    &        & \vodts  \\
+        \vdots  &        & \vdots    & \vdots & \vdots    &        & \vdots  \\
         a_{n,1} & \cdots & a_{n,i-1} & b_{n}  & a_{n,i+1} & \cdots & a_{n,n}
       \end{vmatrix}}{\det A}\]
 \end{theoreme}
