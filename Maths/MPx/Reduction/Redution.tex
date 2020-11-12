@@ -121,7 +121,7 @@
 
 \begin{theoreme}{Sous-espaces propres}
   On pose $E_{\lambda_{i}} = \ker(f-\lambda_{i}\mathrm{Id})$ le sous-espace propre associé à $\lambda_{i}$.
-  \[E = \bigoplus_{i=0}^{k}E_{\lmabda_{i}}\]
+  \[E = \bigoplus_{i=0}^{k}E_{\lambda_{i}}\]
   Les dimensions des sous-espaces propres sont inférieures aux ordre de multiplicité des $\lambda_{i}$ en tant que racines de $\chi_{f}$.
 \end{theoreme}
 
@@ -134,5 +134,33 @@
   \tcblower
   Sur $\C$, toute matrice est trigonalisable.
 \end{theoreme}
+
+\section{Polynômes d'endomorphismes}
+\begin{theoreme}{Commutativité}
+  Soient $P$ et $Q$ deux polynômes, comme $PQ=QP$, on a $P(f)\circ Q(f)=Q(f)\circ P(f)$.
+\end{theoreme}
+
+\begin{definition}
+  L'ensemble $I_{f}=\lbrace P\in K\cof{X} \slash P(f)=0\rbrace$ est un idéal de $K\cof{X}$ non réduit à $\lbrace 0 \rbrace$. Son générateur normalisé est le \emph{polynôme minimal} de $f$, noté $\pi_{f}$.
+\end{definition}
+
+\begin{theoreme}{Lemme de décompasition des noyaux}
+  Si $P\wedge Q = 1$, alors:
+  \[\ker\, (QF)(f) = \ker P(f)\oplus \ker Q(f)\]
+\end{theoreme}
+
+\begin{theoreme}{Théorème de Cayley-Hamilton}
+  Le polynôme minimal $\pi_{f}$ divise $\chi_{f}$:
+  \begin{itemize}[label=$\bullet$]
+    \item $\pi_{f}\,|\,\chi_{f}$
+    \item $\chi_{f}(f) = 0$
+    \item $\chi_{f} \in I_{f}$
+  \end{itemize}
+\end{theoreme}
+
+\begin{theoreme}{Seconde CNS de diagonalisabilité}
+  $f$ est diagonalisable \ssi $\pi_{f}$ est scindé à racines simples.
+\end{theoreme}
+
 
 \end{document}
