@@ -2,7 +2,7 @@
 
 \usepackage[utf8]{inputenc} % ~ Encodage
 \usepackage[T1]{fontenc}    % ~ Encodage
-\usepackage[left=1cm, right=1cm]{geometry} % ~ Mise en page et marges
+\usepackage[left=1cm, right=1cm, bottom=3cm]{geometry} % ~ Mise en page et marges
 \usepackage{amssymb} % ~ Pour écrire les maths
 \usepackage{xspace}  % ~ Commandes à texte
 \usepackage{varioref} % ~ Références croisées
@@ -89,13 +89,14 @@
 \newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
 
 \title{Exercices d'électromagnétisme}
-\author{Martin \textsc{Andrieux}\\MP*}
+\author{Martin \textsc{Andrieux}}
 \date{}
 
 \begin{document}
 \maketitle
 
 \begin{cadre}{Physique sur un lac}
+  \paragraph*{}
   Les eaux d'un lac (de masse volumique $\mu$) s'abaissent d'une hauteur $h=\SI{1}{\meter}$. Calculer la variation $\Delta g$ qu'enregistre un gravimètre placé:
   \begin{itemize}[label=$\bullet$]
     \item Sur des pilotis, au milieu du lac, juste au dessus de la surface (avant qu'il ne baisse),
@@ -103,9 +104,36 @@
   \end{itemize}
   La rayon terrestre est $R=\SI{6400}{\kilo\meter}$, et le champ de pesanteur à l'altitude du lac est $g=\SI{9,8}{\meter\per\square\second}$
   \tcblower
-  \begin{tabularx}{\linewidth}{Xl}
+  \begin{tabularx}{\linewidth}{Xr}
     $\Delta g = -2\pi G\mu h = \SI{-0.42e-6}{\meter\per\square\second}$&
     $\Delta g' = \Delta g + \dfrac{2gh}{R} = \SI{2.64e-6}{\meter\per\square\second}$
+  \end{tabularx}
+\end{cadre}
+
+\begin{cadre}{Répartition surfacique de dipôles sur un disque}
+  \paragraph*{}
+  Un disque de centre $O$ et de rayon $R$ porte, répartis uniformément sur sa surface, des dipôles électriques dont les moments dipolaires lui sont orthogonaux. Soit $\mu = \frac{dp}{dS}$ la densité surfacique de moment dipolaire.
+
+  Calculer le champ et le potentiel en tout point de l'axe de révolution $Oz$ du disque (plusieures méthodes sont possibles). Que deviennent ces résultats pour $z\gg R$ ?
+  \tcblower
+  \begin{tabularx}{\linewidth}{Xr}
+    $V(z) = \dfrac{\mu}{2\varepsilon_{0}}\pof{\dfrac{z}{\lvert z\rvert}-\dfrac{z}{\sqrt{z^{2}+R^{2}}}}$ &
+    $E(z) = \dfrac{\mu R^{2}}{2\varepsilon_{0}}\pof{r^{2}+R^{2}}^{-\frac{3}{2}}$
+  \end{tabularx}
+\end{cadre}
+
+\begin{cadre}{Ecpérience de Nichols}
+  \paragraph*{}
+  Un métal contient par unité de volume lorsqu'il est immobile $n_{0}$ ions positifs de charge $e$ et $n_{0}$ électrons libres de charge $-e$ et de masse $m$. Un long cylindre de ce métal, de rayon $a$, est mis en rotation autour de son axe de révolution $Oz$ avec la vitesse angulaire constante $\omega$. À l'équilibre, les ions et les électrons sont entraînés à la vitesse de rotation $\omega$, et n'ont donc pas de mouvement par rapport au métal. À l'équilibre, il apparaît une densité volumique de charge $\rho(r)$ dans le cylindre, ainsi qu'une densité surfacique $\sigma$ à la surface de celui-ci. En coordonnées cylindriques, on a pour un champ radial : $\diverg \vv E = \frac{1}{r}\frac{d(rE_{r})}{dr}$.
+  \begin{itemize}[label=$\bullet$]
+    \item Calculer le champ électrique dans le métal, et en déduire la différe,ce de potentiel $U$ entre l'axe du cylindre et sa périphérie.
+    \item En déduire la densité $n(r)$ des électrons libres dans le volume du métal, et le charge surfacique $\sigma$.
+  \end{itemize}
+  \tcblower
+  \begin{tabularx}{\linewidth}{XXr}
+    $U = \dfrac{m\omega^{2}a^{2}}{2e}$ &
+    $n(r) = n_{0} - \dfrac{2m\varepsilon_{0}\omega^{2}}{e^{2}}$ &
+    $\sigma = -\dfrac{m\varepsilon_{0}\omega^{2}a}{e}$
   \end{tabularx}
 \end{cadre}
 
