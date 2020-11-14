@@ -3,7 +3,6 @@
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}
 \usepackage[left=1cm, right=1cm]{geometry}
-\usepackage{xspace}
 \usepackage{enumitem}
 \usepackage{amssymb}
 \usepackage{mathtools}
@@ -50,14 +49,14 @@
 \newcommand{\ev}{espace vectoriel}
 \newcommand{\eve}{espace vectoriel euclidien}
 \newcommand{\sce}{système complet d'évènements}
-\newcommand{\som}[2]{\sum_{#1}^{#2}}
-\newcommand{\produit}[2]{\prod_{#1}^{#2}}
-\newcommand{\thm}{\textcolor{red}{\underline{Théorème}\xspace}}
-\newcommand{\ppt}{\textcolor{red}{\underline{Propriété :}\xspace}}
+\newcommand{\som}[2]{\overset{#2}{\underset{#1}{\sum}}}
+\newcommand{\produit}[2]{\overset{#2}{\underset{#1}{\prod}}}
+\newcommand{\thm}{\textcolor{red}{\underline{Théorème} }}
+\newcommand{\ppt}{\textcolor{red}{\underline{Propriété :} }}
 \newcommand{\limit}[1]{\underset{#1}{\rightarrow}}
 \newcommand{\eq}[1]{\underset{#1}{\sim}}
 \newcommand{\inv}[1]{\frac{1}{#1}}
-\newcommand{\acc}[1]{\left\lbrace #1 \right\rbrace}}
+\newcommand{\acc}[1]{\left\{ #1 \right\}}
 
 
 \newtcolorbox{cadre}[2][]
@@ -119,6 +118,6 @@
 	
 	\begin{itemize}
 		\item Lors de l'échantillonage, le spectre de la sinusoïde présentera un pic en $f$, $f_e-f$, $f_e+f$, $2f_e-f$, $2f_e+f$...
-		\item Pour un filtre numérique, on a : $\frac{dy(t)}{\dt}=\frac{y_n-y_{n-1}}{T_e}$
+		\item Pour un filtre numérique, on a : $\frac{\mathrm{d}y(t)}{\dt}=\frac{y_n-y_{n-1}}{T_e}$
 	\end{itemize}
 \end{document}
