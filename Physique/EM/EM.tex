@@ -22,6 +22,7 @@
 
 %______FONCTIONS______%
 \newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+\newcommand{\inv}[1]{\dfrac{1}{#1}}
 % --ENSEMBLES--%
 \newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
 \newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
@@ -52,6 +53,7 @@
 \newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
 \newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
 % --VECTEURS--%
+\newcommand{\vect}[1]{\vv{#1}}
 \newcommand{\ux}{\vect{u_x}}          % ~ Vecteur ux
 \newcommand{\uy}{\vect{u_y}}          % ~ Vecteur uy
 \newcommand{\uz}{\vect{u_z}}          % ~ Vecteur uz
@@ -66,8 +68,8 @@
 \newcommand{\fr}{\vect{F_r}}          % ~ Vecteur force de rappel
 \newcommand{\vabla}{\vect{\nabla}}    % ~ nabla
 \newcommand{\grad}{\vect{\mathrm{grad}}}  % ~ grad
-\DeclareMathOperator{\diverg}{div}        % ~ grad
-\newcommand{\rot}{\vect{\mathrm{rot}}}    % ~ grad
+\DeclareMathOperator{\diverg}{div}        % ~ div
+\newcommand{\rota}{\vv{\mathrm{rot}}}    % ~ rot
 
 \newtcolorbox{cadre}[2][]
 {
@@ -123,11 +125,11 @@
 \end{cadre}
 
 \begin{cadre}{Théorème de Stokes}
-  \[\oint \vv E\cdot\vv{d l} = \iint_{(S)}\rot \vv E \cdot \vv{d S}\]
+  \[\oint \vv E\cdot\vv{d l} = \iint_{(S)}\rota \vv E \cdot \vv{d S}\]
 \end{cadre}
 
 \begin{cadre}{Équivalence}
-  \[\vv E = -\grad V \iff \oint_{(C)}\vv E\cdot \vv{d l} = 0 \iff \rot\vv E = \vv0\]
+  \[\vv E = -\grad V \iff \oint_{(C)}\vv E\cdot \vv{d l} = 0 \iff \rota\vv E = \vv0\]
 \end{cadre}
 
 \section{Dipôle électrostatique}
