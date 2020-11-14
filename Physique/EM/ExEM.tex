@@ -1,0 +1,112 @@
+\documentclass[french, a4paper, 11pt]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage[straightvoltages]{circuitikz}
+\usepackage[load-configurations = abbreviations]{siunitx}
+\usepackage{graphicx}
+\usepackage[f]{esvect}
+\usepackage[many]{tcolorbox}
+\usepackage{euler}
+\usepackage[nointegrals]{wasysym}
+\usepackage[french]{babel}
+
+
+\sisetup{
+  locale=FR,
+  detect-all,
+}
+
+%______FONCTIONS______%
+\newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+% --ENSEMBLES--%
+\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
+\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
+\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
+\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
+\newcommand{\R}{\mathbb{R}}   % ~ Réels
+\newcommand{\C}{\mathbb{C}}   % ~ Complexes
+% --TRIGO--%
+\let\cosh\relax
+\DeclareMathOperator{\cosh}{ch}       % ~ cosinus hyperbolique
+\DeclareMathOperator{\sh}{sh}         % ~ sinus hyperbolique
+\let\tanh\relax
+\DeclareMathOperator{\tanh}{th}       % ~ tangente hyperbolique
+\DeclareMathOperator{\argch}{Argch}   % ~ Argument cosinus hyperbolique
+\DeclareMathOperator{\argsh}{Argsh}   % ~ Argument sinus hyperbolique
+\DeclareMathOperator{\argth}{Argth}   % ~ Argument tangente hyperbolique
+\DeclareMathOperator{\cotan}{cotan}   % ~ cotangente
+% --PARENTHESES--%
+\newcommand{\po}{\left(}         % ~ (
+\newcommand{\pf}{\right)}        % ~ )
+\newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
+\newcommand{\co}{\left[}         % ~ [
+\newcommand{\cf}{\right]}        % ~ ]
+\newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
+\newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+% --VECTEURS--%
+\newcommand{\ux}{\vect{u_x}}          % ~ Vecteur ux
+\newcommand{\uy}{\vect{u_y}}          % ~ Vecteur uy
+\newcommand{\uz}{\vect{u_z}}          % ~ Vecteur uz
+\newcommand{\ur}{\vect{u_r}}          % ~ Vecteur ur
+\newcommand{\uth}{\vect{u_\theta}}    % ~ Vecteur utheta
+\newcommand{\uph}{\vect{u_\varphi}}   % ~ Vecteur uphi
+\newcommand{\om}{\vect{OM}}           % ~ Vecteur position
+\newcommand{\vvi}{\vect{v}}           % ~ Vecteur vitesse
+\newcommand{\vvio}{\vect{v_0}}        % ~ Vecteur v0
+\newcommand{\va}{\vect{a}}            % ~ Vecteur	accélération
+\newcommand{\vp}{\vect{p}}            % ~ Vecteur quantité de mouvement
+\newcommand{\fr}{\vect{F_r}}          % ~ Vecteur force de rappel
+\newcommand{\vabla}{\vect{\nabla}}    % ~ nabla
+\newcommand{\grad}{\vect{\mathrm{grad}}}  % ~ grad
+\DeclareMathOperator{\diverg}{div}        % ~ grad
+\newcommand{\rot}{\vect{\mathrm{rot}}}    % ~ grad
+
+\newtcolorbox{cadre}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+\newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
+
+\title{Exercices d'électromagnétisme}
+\author{Martin \textsc{Andrieux}\\MP*}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{cadre}{Physique sur un lac}
+  Les eaux d'un lac (de masse volumique $\mu$) s'abaissent d'une hauteur $h=\SI{1}{\meter}$. Calculer la variation $\Delta g$ qu'enregistre un gravimètre placé:
+  \begin{itemize}[label=$\bullet$]
+    \item Sur des pilotis, au milieu du lac, juste au dessus de la surface (avant qu'il ne baisse),
+    \item à bord d'une barque ancrée au milieu du lac.
+  \end{itemize}
+  La rayon terrestre est $R=\SI{6400}{\kilo\meter}$, et le champ de pesanteur à l'altitude du lac est $g=\SI{9,8}{\meter\per\square\second}$
+  \tcblower
+  \begin{tabularx}{\linewidth}{Xl}
+    $\Delta g = -2\pi G\mu h = \SI{-0.42e-6}{\meter\per\square\second}$&
+    $\Delta g' = \Delta g + \dfrac{2gh}{R} = \SI{2.64e-6}{\meter\per\square\second}$
+  \end{tabularx}
+\end{cadre}
+
+\end{document}
