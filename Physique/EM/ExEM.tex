@@ -122,11 +122,11 @@
   \end{tabularx}
 \end{cadre}
 
-\begin{cadre}{Ecpérience de Nichols}
+\begin{cadre}{Expérience de Nichols}
   \paragraph*{}
   Un métal contient par unité de volume lorsqu'il est immobile $n_{0}$ ions positifs de charge $e$ et $n_{0}$ électrons libres de charge $-e$ et de masse $m$. Un long cylindre de ce métal, de rayon $a$, est mis en rotation autour de son axe de révolution $Oz$ avec la vitesse angulaire constante $\omega$. À l'équilibre, les ions et les électrons sont entraînés à la vitesse de rotation $\omega$, et n'ont donc pas de mouvement par rapport au métal. À l'équilibre, il apparaît une densité volumique de charge $\rho(r)$ dans le cylindre, ainsi qu'une densité surfacique $\sigma$ à la surface de celui-ci. En coordonnées cylindriques, on a pour un champ radial : $\diverg \vv E = \frac{1}{r}\frac{d(rE_{r})}{dr}$.
   \begin{itemize}[label=$\bullet$]
-    \item Calculer le champ électrique dans le métal, et en déduire la différe,ce de potentiel $U$ entre l'axe du cylindre et sa périphérie.
+    \item Calculer le champ électrique dans le métal, et en déduire la différence de potentiel $U$ entre l'axe du cylindre et sa périphérie.
     \item En déduire la densité $n(r)$ des électrons libres dans le volume du métal, et le charge surfacique $\sigma$.
   \end{itemize}
   \tcblower
@@ -134,6 +134,34 @@
     $U = \dfrac{m\omega^{2}a^{2}}{2e}$ &
     $n(r) = n_{0} - \dfrac{2m\varepsilon_{0}\omega^{2}}{e^{2}}$ &
     $\sigma = -\dfrac{m\varepsilon_{0}\omega^{2}a}{e}$
+  \end{tabularx}
+\end{cadre}
+
+\begin{cadre}{Association de condensateurs et bilan d'énergie}
+  \begin{minipage}{0.65\linewidth}
+    \paragraph*{}
+    On étudie le système représenté ci-contre, où tous les condensateurs ont même capacité $C$. Quelle est la charge de chacun d'entre eux?
+
+    \paragraph*{}
+    On introduit un quatrième condensateur de capacité $C$ entre $A$ et $B$. Il a été au préalable chargé sous la tension $U$ positive et son armature chargée positivement est placé du côté de $A$. Quelles sont les nouvelles charges de chaque condensateur à l'équilibre?
+
+    \paragraph*{}
+    Faire un bilan d'énergie entre l'état initial de la question précedente et l'état final.
+  \end{minipage}
+  \begin{minipage}{0.27\linewidth}
+    \shorthandoff{:!}
+    \begin{circuitikz}
+      \draw (4,0) node{$\bullet$} node[below]{$N$} to[short] (2,0) node[above right]{$B$} node{$\bullet$} to[short] (0,0) node{$\bullet$} to[C, label=3] (0,2) to[short] (2,2) node[below right]{$A$} to[C, label=2, *-] (2,4) to[short] (4,4) node{$\bullet$} node[above]{$M$};
+      \draw (0,2) to[C, label=1] (0,4) to[short] (2,4);
+      \draw[->, >=stealth] (4,0.2) -- node[midway, left]{$U$} (4,3.8);
+    \end{circuitikz}
+    \shorthandon{:!}
+  \end{minipage}
+  \tcblower
+  \begin{tabularx}{\linewidth}{Xr}
+    $2q_1=2q_2=q_3=2\dfrac{CU}{3}$
+    & $q_1'=q_2'=\frac{CU}{4}$ et $q_3'=q_4'=3\frac{CU}{4}$ \\
+    L'énergie électrostatique diminue de $\frac{5CU^2}{24}$, et les pertes par effet Joule valent $\frac{CU^{2}}{24}$
   \end{tabularx}
 \end{cadre}
 
