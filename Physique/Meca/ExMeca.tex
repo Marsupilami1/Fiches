@@ -9,6 +9,7 @@
 \usepackage{enumitem} % ~ Listes
 \usepackage{xcolor}   % ~ Couleurs fs
 \usepackage{tabularx}
+\usepackage{multicol}
 \usepackage{float}
 \usepackage{tikz}
 \usepackage[straightvoltages]{circuitikz}
@@ -122,6 +123,18 @@
       \draw[->] (-1,0) arc(180:120:1);
     \end{tikzpicture}
   \end{minipage}
+  \tcblower
+  \begin{multicols}{2}
+    \begin{enumerate}[label=\upshape\alph*)]
+      \item $L = \rho + \theta R$
+      \item $\vv v = \rho\dot\theta\uth$
+
+        $\vv a = \frac{d}{dt}\pof{\rho\dot\theta}\uth - \rho\theta^2\urho$
+      \item $\frac{dE_{c}}{dt}=\mathcal P_{\text{force}} = 0$ d'où $E_{c}$ constante.
+      \item $\tau = \dfrac{L^2}{2v_{0}R}$
+      \item $T(t) = \dfrac{mv_{0}^{2}}{L\sqrt{1-\frac{t}{\tau}}}$, la tension diverge quand $M$ devient proche de la bobine.
+    \end{enumerate}
+  \end{multicols}
 \end{cadre}
 
 \end{document}
