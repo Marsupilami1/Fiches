@@ -1,8 +1,76 @@
 \documentclass[french, a4paper, 11pt, twocolumn]{article}
-\usepackage[left=1cm, right=1cm]{geometry}
-\usepackage{marsu}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{float}
+\usepackage{tikz}
+\usepackage[straightvoltages]{circuitikz}
+\usepackage[squaren, cdot, derived]{SIunits}
+\usepackage{graphicx}
+\usepackage[f]{esvect}
+\usepackage[many]{tcolorbox}
 \usepackage{euler}
 \usepackage[nointegrals]{wasysym}
+\usepackage[french]{babel}
+
+
+%______FONCTIONS______%
+\newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+\newcommand{\inv}[1]{\dfrac{1}{#1}}
+% --ENSEMBLES--%
+\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
+\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
+\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
+\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
+\newcommand{\R}{\mathbb{R}}   % ~ Réels
+\newcommand{\C}{\mathbb{C}}   % ~ Complexes
+% --TRIGO--%
+\let\cosh\relax
+\DeclareMathOperator{\cosh}{ch}       % ~ cosinus hyperbolique
+\DeclareMathOperator{\sh}{sh}         % ~ sinus hyperbolique
+\let\tanh\relax
+\DeclareMathOperator{\tanh}{th}       % ~ tangente hyperbolique
+\DeclareMathOperator{\argch}{Argch}   % ~ Argument cosinus hyperbolique
+\DeclareMathOperator{\argsh}{Argsh}   % ~ Argument sinus hyperbolique
+\DeclareMathOperator{\argth}{Argth}   % ~ Argument tangente hyperbolique
+\DeclareMathOperator{\cotan}{cotan}   % ~ cotangente
+% --PARENTHESES--%
+\newcommand{\po}{\left(}         % ~ (
+\newcommand{\pf}{\right)}        % ~ )
+\newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
+\newcommand{\co}{\left[}         % ~ [
+\newcommand{\cf}{\right]}        % ~ ]
+\newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
+\newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+% --VECTEURS--%
+\newcommand{\vect}[1]{\vv{#1}}
+\newcommand{\ux}{\vect{u_x}}          % ~ Vecteur ux
+\newcommand{\uy}{\vect{u_y}}          % ~ Vecteur uy
+\newcommand{\uz}{\vect{u_z}}          % ~ Vecteur uz
+\newcommand{\ur}{\vect{u_r}}          % ~ Vecteur ur
+\newcommand{\uth}{\vect{u_\theta}}    % ~ Vecteur utheta
+\newcommand{\uph}{\vect{u_\varphi}}   % ~ Vecteur uphi
+\newcommand{\om}{\vect{OM}}           % ~ Vecteur position
+\newcommand{\vvi}{\vect{v}}           % ~ Vecteur vitesse
+\newcommand{\vvio}{\vect{v_0}}        % ~ Vecteur v0
+\newcommand{\va}{\vect{a}}            % ~ Vecteur	accélération
+\newcommand{\vp}{\vect{p}}            % ~ Vecteur quantité de mouvement
+\newcommand{\fr}{\vect{F_r}}          % ~ Vecteur force de rappel
+\newcommand{\vabla}{\vect{\nabla}}    % ~ nabla
+\newcommand{\grad}{\vect{\mathrm{grad}}}  % ~ grad
+\DeclareMathOperator{\diverg}{div}        % ~ div
+\newcommand{\rota}{\vv{\mathrm{rot}}}    % ~ rot
+\newcommand{\drz}[1]{\Delta_r#1\degres}
 
 \newtcolorbox{cadre}[2][]
 {
@@ -16,7 +84,6 @@
   boxrule = 0.5mm, drop fuzzy shadow
 }
 
-\newcommand{\drz}[1]{\Delta_r#1\degres}
 
 \title{Thermochimie}
 \author{Martin \textsc{Andrieux}}
