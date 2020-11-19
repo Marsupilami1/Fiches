@@ -1,0 +1,70 @@
+\documentclass[french, a4paper, 11pt]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{float}
+\usepackage[squaren, cdot, derived]{SIunits}
+\usepackage{graphicx}
+\usepackage[many]{tcolorbox}
+\usepackage[french]{babel}
+
+
+%______FONCTIONS______%
+\newcommand{\inv}[1]{\dfrac{1}{#1}}
+%______CHIMIE______%
+\newcommand{\s}{{}_{(s)}}
+\newcommand{\g}{{}_{(g)}}
+
+\newtcolorbox{cadre}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+\newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
+
+\title{Exercices de Thermochimie}
+\author{Martin \textsc{Andrieux}, Nathan \textsc{Maillet}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{cadre}{Équilibres hétérogènes}
+  À 820\celsius, on considère les équilibres :
+  \begin{align*}
+    CaCO_3\s &= CaO\s + CO_2\g  &K^0_1=0,2 \\
+    MgCO_3\s &= MgO\s + CO_2\g  &K^0_2=0,4
+  \end{align*}
+  \begin{enumerate}
+    \item Dans un cylindre maintenu à 820\celsius, de volume V$_0=22,72$ \liter,
+    on introduit $0,1$ \mole{} de CaCO$_3$.
+      \begin{itemize}
+        \item Calculer la composition du système dans l'état final.
+        \item On augmente le volume V du cylindre. Représenter en fonction de V la pression P et le nombre de moles de CaO.
+      \end{itemize}
+    \item Dans un récipient vide de volume V$_0=22,72$ \liter, maintenu à 820\celsius,
+    on place 0,1 \mole de CaCo, et on introduit progressivement du CO$_2$. Représenter la pression P 
+    du système en fonction du nombre de moles de CO$_2$ introduites.
+    \item Dans un cylindre de volume très grand, initialement vide et maintenu à 820\celsius,
+    on introduit 1 mole de CaO, 1 mole de MgO et 3 moles de CO$_2$.
+      \begin{itemize}
+        \item Quelle est la variance du système ? Commenter.
+        \item À l'aide d'un piston, on comprime lentement le système.
+        Étudier et tracer la courbe donnant la pression P en fonction du volume V du cylindre.
+      \end{itemize}
+  \end{enumerate}
+
+\end{cadre}
+\end{document}
