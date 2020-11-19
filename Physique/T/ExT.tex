@@ -8,16 +8,18 @@
 \usepackage{varioref} % ~ Références croisées
 \usepackage{enumitem} % ~ Listes
 \usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{mhchem}
 \usepackage{float}
-\usepackage[squaren, cdot, derived]{SIunits}
+\usepackage[load-configurations = abbreviations, output-decimal-marker={,}]{siunitx}
 \usepackage{graphicx}
 \usepackage[many]{tcolorbox}
+\usepackage{euler}
 \usepackage[french]{babel}
 
 
-%______FONCTIONS______%
+% ______FONCTIONS______%
 \newcommand{\inv}[1]{\dfrac{1}{#1}}
-%______CHIMIE______%
+% ______CHIMIE______%
 \newcommand{\s}{{}_{(s)}}
 \newcommand{\g}{{}_{(g)}}
 
@@ -42,27 +44,26 @@
 \maketitle
 
 \begin{cadre}{Équilibres hétérogènes}
-  À 820\celsius, on considère les équilibres :
+
+  À $\SI{820}{\celsius}$, on considère les équilibres :
   \begin{align*}
-    CaCO_3\s &= CaO\s + CO_2\g  &K^0_1=0,2 \\
-    MgCO_3\s &= MgO\s + CO_2\g  &K^0_2=0,4
+    \ce{CaCO3(s) &= CaO(s) + CO2(g)}  &K^\circ_1=0,2 \\
+    \ce{MgCO3(s) &= MgO(s) + CO2(g)}  &K^\circ_2=0,4
   \end{align*}
   \begin{enumerate}
-    \item Dans un cylindre maintenu à 820\celsius, de volume V$_0=22,72$ \liter,
-    on introduit $0,1$ \mole{} de CaCO$_3$.
+    \item Dans un cylindre maintenu à $\SI{820}{\celsius}$, de volume $V_0=\SI{22.72}{\liter}$,
+      on introduit $\SI{0.1}{\mol}$ de \ce{CaCO3}.
       \begin{itemize}
         \item Calculer la composition du système dans l'état final.
-        \item On augmente le volume V du cylindre. Représenter en fonction de V la pression P et le nombre de moles de CaO.
+        \item On augmente le volume $V$ du cylindre. Représenter en fonction de $V$ la pression $P$ et le nombre de moles de \ce{CaO}.
       \end{itemize}
-    \item Dans un récipient vide de volume V$_0=22,72$ \liter, maintenu à 820\celsius,
-    on place 0,1 \mole de CaCo, et on introduit progressivement du CO$_2$. Représenter la pression P 
-    du système en fonction du nombre de moles de CO$_2$ introduites.
-    \item Dans un cylindre de volume très grand, initialement vide et maintenu à 820\celsius,
-    on introduit 1 mole de CaO, 1 mole de MgO et 3 moles de CO$_2$.
+    \item Dans un récipient vide de volume $V_0=\SI{22,72}{\liter}$, maintenu à $\SI{820}{\celsius}$, on place $\SI{0,1}{\mol}$ de CaCo, et on introduit progressivement du \ce{CO2}.
+    Représenter la pression $P$ du système en fonction du nombre de moles de \ce{CO2} introduites.
+    \item Dans un cylindre de volume très grand, initialement vide et maintenu à $\SI{820}{\celsius}$, on introduit une mole de \ce{CaO}, une autre de \ce{MgO} et 3 moles de \ce{CO2}.
       \begin{itemize}
         \item Quelle est la variance du système ? Commenter.
         \item À l'aide d'un piston, on comprime lentement le système.
-        Étudier et tracer la courbe donnant la pression P en fonction du volume V du cylindre.
+          Étudier et tracer la courbe donnant la pression $P$ en fonction du volume $V$ du cylindre.
       \end{itemize}
   \end{enumerate}
 
