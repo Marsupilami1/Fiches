@@ -1,0 +1,83 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[left=3cm, right=3cm]{geometry} % ~ Mise en page et marges
+\usepackage{circuitikz} % pour les ciruits électriques
+
+% --ENSEMBLES--%
+\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
+\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
+\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
+\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
+\newcommand{\R}{\mathbb{R}}   % ~ Réels
+\newcommand{\C}{\mathbb{C}}   % ~ Complexes
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+
+\begin{document}
+\title{\textbf{Exercices-types : Mathématiques}}
+\author{Deschasaux Guillaume}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\section{Réduction des endomorphismes}
+
+1) Quelles sont les matrices carrées qui ne sont semblables qu'à elles-mêmes ? \\
+
+
+\section{Nombres complexes}
+
+1) \textbf{(Oral X)} Montrer la surjectivité de l'application définie sur $\C$ par $f(z)=ze^z$. \\
+\textit{Indication : On pourra raisonner module/argument.} \\
+
+2) Calculer, en discutant selon les valeurs de $\theta$, la somme $\sum_{k=0}^n cos(k\theta)cos^k(\theta)$ \\
+
+\section{Corps des nombres réels}
+
+1) \textbf{(Mines 2016)} a) Montrer que pour tout $n \in \N$, il existe un unique $P_n \in \R[X]$ tel que :
+\begin{equation}
+\forall t \in ]0,\pi/2[, P_n(cotan^2(t))=\frac{sin(2n+1)t}{sin^{2n+1}(t)}
+\end{equation}
+b) Trouver toutes les racines de $P_n$ et calculer leur somme. \\\\
+c) Montrer que, pour tout $t \in ]0,\pi/2[, cotan^2(t) \leq \frac{1}{t^2} \leq 1+ cotan^2(t)$ \\\\
+d) En déduire la valeur de $\zeta(2)=\sum_{n=1}^{+\infty} \frac{1}{n^2}$ \\\\
+
+\textbf{Correction} : \\\\
+a) Pour t $\in \R$, on a :
+\begin{align*}
+sin(2n+1)t & =Im(cos(t)+isin(t))^{2n+1} \\
+& = \sum_{k=0}^{2n+1}\begin{pmatrix} 2n+1 \\ k \end{pmatrix} (isin(t))^k(cos(t))^{2n+1-k} \\
+& = sin^{2n+1}t \sum_{k=0}^{n}\begin{pmatrix} 2n+1 \\ 2k+1 \end{pmatrix} (-1)^{k+1}(cotan^2t))^{n-k}
+\end{align*}
+donc $P_n=\sum_{k=0}^{n}\begin{pmatrix} 2n+1 \\2k+1 \end{pmatrix} (-1)^{k+1}X^{n-k}$ convient. Son unicité est évidente puisqu'on le connaît  en une infinité de points. \\\\
+
+b) $sin(2n+1)t=0 \iff t=0 \left [\frac{\pi}{2n+1} \right] $. On en déduit que les $cotan^2(\frac{k\pi}{2n+1})$ pour $k \in \lbrace1,2,\dots,n \rbrace$ sont n racines de $P_n$. Ces racines sont distinctes par injectivité de $cotan^2$ sur l'intervalle $]0,\pi/2[$. En repartant de l'expression de $P_n$ trouvée en a), on a : 
+\begin{equation}
+\sum_{k=1}^{n}cotan^2(\frac{k\pi}{2n+1})=-\frac{\begin{pmatrix} 2n+1 \\2k+1 \end{pmatrix}}{(-1)(2n+1)}=\frac{(n+1)(2n+1)}{3}
+\end{equation}
+\\\\
+
+c) Soit $ t \in ]0,\pi/2[$, on a : $ tan(t) \geq t \implies tan^2(t) \geq t^2 \implies cotan^2(t) \leq \frac{1}{t^2} $. \\
+De même, on a : $ sin(t) \leq t \implies sin^2(t) \leq t^2 \implies \frac{1}{t^2} \leq 1 + cotan^2(t)$ \\\\
+
+d) On applique l'inégalité précédente pour $t=\frac{k\pi}{2n+1}$, et on somme :
+\begin{equation}
+\frac{(n+1)(2n+1)}{3} \leq \sum_{k=1}^{n}\frac{(2n+1)^2}{\pi^2k^2} \leq n+ \frac{(n+1)(2n+1)}{3} 
+\end{equation}
+\begin{equation}
+\frac{n+1}{3(2n+1)}\pi^2 \leq \sum_{k=1}^{n}\frac{1}{k^2} \leq \frac{n}{(2n+1)^2}\pi^2 + \frac{n+1}{3(2n+1)}\pi^2
+\end{equation}
+Puis, par passage à la limite, on obtient $\zeta(2)=\frac{\pi^2}{6}$
+
+
+\end{document}
