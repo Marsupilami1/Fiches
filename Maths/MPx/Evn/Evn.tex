@@ -1,0 +1,145 @@
+\documentclass[french, a4paper, 11pt, twocolumn]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{float}
+\usepackage{tikz}
+\usepackage[straightvoltages]{circuitikz}
+\usepackage[squaren, cdot, derived]{SIunits}
+\usepackage{graphicx}
+\usepackage[f]{esvect}
+\usepackage[many]{tcolorbox}
+\usepackage{euler}
+\usepackage[nointegrals]{wasysym}
+\usepackage[french]{babel}
+
+
+%______FONCTIONS______%
+\newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+\newcommand{\inv}[1]{\dfrac{1}{#1}}
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+\DeclareMathOperator{\Sp}{Sp}
+\newcommand{\norme}[1]{\left\| #1\right\|}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+% --ENSEMBLES--%
+\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
+\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
+\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
+\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
+\newcommand{\R}{\mathbb{R}}   % ~ Réels
+\newcommand{\C}{\mathbb{C}}   % ~ Complexes
+% --TRIGO--%
+\let\cosh\relax
+\DeclareMathOperator{\cosh}{ch}       % ~ cosinus hyperbolique
+\DeclareMathOperator{\sh}{sh}         % ~ sinus hyperbolique
+\let\tanh\relax
+\DeclareMathOperator{\tanh}{th}       % ~ tangente hyperbolique
+\DeclareMathOperator{\argch}{Argch}   % ~ Argument cosinus hyperbolique
+\DeclareMathOperator{\argsh}{Argsh}   % ~ Argument sinus hyperbolique
+\DeclareMathOperator{\argth}{Argth}   % ~ Argument tangente hyperbolique
+\DeclareMathOperator{\cotan}{cotan}   % ~ cotangente
+% --PARENTHESES--%
+\newcommand{\po}{\left(}         % ~ (
+\newcommand{\pf}{\right)}        % ~ )
+\newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
+\newcommand{\co}{\left[}         % ~ [
+\newcommand{\cf}{\right]}        % ~ ]
+\newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
+\newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+% --VECTEURS--%
+\newcommand{\ux}{\vect{u_x}}          % ~ Vecteur ux
+\newcommand{\uy}{\vect{u_y}}          % ~ Vecteur uy
+\newcommand{\uz}{\vect{u_z}}          % ~ Vecteur uz
+\newcommand{\ur}{\vect{u_r}}          % ~ Vecteur ur
+\newcommand{\uth}{\vect{u_\theta}}    % ~ Vecteur utheta
+\newcommand{\uph}{\vect{u_\varphi}}   % ~ Vecteur uphi
+\newcommand{\om}{\vect{OM}}           % ~ Vecteur position
+\newcommand{\vvi}{\vect{v}}           % ~ Vecteur vitesse
+\newcommand{\vvio}{\vect{v_0}}        % ~ Vecteur v0
+\newcommand{\va}{\vect{a}}            % ~ Vecteur	accélération
+\newcommand{\vp}{\vect{p}}            % ~ Vecteur quantité de mouvement
+\newcommand{\fr}{\vect{F_r}}          % ~ Vecteur force de rappel
+\newcommand{\vabla}{\vect{\nabla}}    % ~ nabla
+\newcommand{\grad}{\vect{\mathrm{grad}}}  % ~ grad
+\DeclareMathOperator{\diverg}{div}        % ~ grad
+\newcommand{\rot}{\vect{\mathrm{rot}}}    % ~ grad
+
+\newtcolorbox{theoreme}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+\newtcolorbox{definition}[1][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=Définition,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+
+\newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
+
+\title{Espaces vectoriels normés}
+\author{Martin \textsc{Andrieux}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{definition}
+  Une \emph{norme} est une application de $E$ dans $\R$ telle que:
+  \begin{itemize}[label=$\bullet$]
+    \item $\forall x\in E,\,\norme{x}\geqslant 0$
+    \item $\forall x\in E,\,\norme{x}=0\implies x=0$
+    \item $\forall\lambda\in K,\,\forall x\in E,\, \norme{\lambda x}=\abs{\lambda} \cdot \norme{x}$
+    \item $\forall x,y\in E,\, \norme{x+y}\leqslant\norme{x}+\norme{y}$
+  \end{itemize}
+\end{definition}
+
+\begin{theoreme}{Cauchy Schwarz}
+  \[\left\lvert \langle x,y\rangle\right\rvert\leqslant\norme{x}\cdot\norme{y}\]
+  \tcblower
+  \[\abs{\sum_{i=1}^n x_{i}\cdot y_{i}}\leqslant \sqrt{\sum_{i=1}^n x_{i}^{2}}\sqrt{\sum_{i=1}^n y_{i}^{2}}\]
+\end{theoreme}
+
+\begin{theoreme}{Équivalence des normes}
+  Deux normes $\norme{\;}_{1}$ et $\norme{\;}_{2}$ sont dites \emph{équivalentes} si (les propriétés suivantes sont équivalentes):
+  \begin{itemize}[label=$\bullet$]
+    \item $x_{n} \xrightarrow[n\rightarrow \infty]{\norme{\;}_{1}} x \iff x_{n} \xrightarrow[n\rightarrow \infty]{\norme{\;}_{2}}x$
+    \item On a $\alpha$ et $\beta$ tels que $\alpha\norme{x}_{1}\leqslant\norme{x}_{2}\leqslant\beta\norme{x}_{1}$
+  \end{itemize}
+\end{theoreme}
+
+\begin{theoreme}{En dimension finie}
+    \begin{itemize}[label=$\bullet$]
+        \item Équivalence des normes. On peut choisir une norme adaptée au problème, ou même ne pas prendre de norme et utiliser des résultats généraux.
+        \item Les compacts sont les fermés bornés.
+        \item Si une application $f$ est linéaire, alors elle est continue.
+        \item Les applications bi-linéraires sont continues.
+    \end{itemize}
+\end{theoreme}
+
+
+\end{document}
