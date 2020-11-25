@@ -1,0 +1,191 @@
+\documentclass[french, a4paper, 11pt, twocolumn]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[f]{esvect}
+\usepackage[many]{tcolorbox}
+\usepackage{euler}
+\usepackage[nointegrals]{wasysym}
+\usepackage[french]{babel}
+
+
+%______FONCTIONS______%
+\newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+\newcommand{\inv}[1]{\dfrac{1}{#1}}             % ~ inverse
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+\DeclareMathOperator{\Sp}{Sp}
+\newcommand{\norme}[1]{\left\| #1\right\|}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\limit}[1]{\underset{#1}{\rightarrow}}  % ~limite
+% --ENSEMBLES--%
+\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
+\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
+\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
+\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
+\newcommand{\R}{\mathbb{R}}   % ~ Réels
+\newcommand{\C}{\mathbb{C}}   % ~ Complexes
+% --TRIGO--%
+\let\cosh\relax
+\DeclareMathOperator{\cosh}{ch}       % ~ cosinus hyperbolique
+\DeclareMathOperator{\sh}{sh}         % ~ sinus hyperbolique
+\let\tanh\relax
+\DeclareMathOperator{\tanh}{th}       % ~ tangente hyperbolique
+\DeclareMathOperator{\argch}{Argch}   % ~ Argument cosinus hyperbolique
+\DeclareMathOperator{\argsh}{Argsh}   % ~ Argument sinus hyperbolique
+\DeclareMathOperator{\argth}{Argth}   % ~ Argument tangente hyperbolique
+\DeclareMathOperator{\cotan}{cotan}   % ~ cotangente
+% --PARENTHESES--%
+\newcommand{\po}{\left(}         % ~ (
+\newcommand{\pf}{\right)}        % ~ )
+\newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
+\newcommand{\co}{\left[}         % ~ [
+\newcommand{\cf}{\right]}        % ~ ]
+\newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
+\newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+
+\newtcolorbox{theoreme}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+\newtcolorbox{definition}[1][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=Définition,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+
+\newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
+
+\title{Espaces vectoriels normés}
+\author{Martin \textsc{Andrieux}, Nathan \textsc{Maillet}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{definition}
+  Une \emph{norme} $\norme{\cdot}$ est une application de $E$ dans $\R$ telle que:
+  \begin{itemize}[label=$\bullet$]
+    \item $\forall x\in E,\,\norme{x}\geqslant 0$
+    \item $\forall x\in E,\,\norme{x}=0\implies x=0$
+    \item $\forall\lambda\in K,\,\forall x\in E,\, \norme{\lambda x}=\abs{\lambda} \cdot \norme{x}$
+    \item $\forall x,y\in E,\, \norme{x+y}\leqslant\norme{x}+\norme{y}$
+  \end{itemize}
+\end{definition}
+
+\begin{theoreme}{Cauchy Schwarz}
+  \[\left\lvert \langle x,y\rangle\right\rvert\leqslant\norme{x}\cdot\norme{y}\]
+  \tcblower
+  \[\abs{\sum_{i=1}^n x_{i}\cdot y_{i}}\leqslant \sqrt{\sum_{i=1}^n x_{i}^{2}}\sqrt{\sum_{i=1}^n y_{i}^{2}}\]
+\end{theoreme}
+
+\begin{theoreme}{Caractérisations séquentielles}
+    $A \subset E$
+    \begin{itemize}[label=$\bullet$]
+        \item $A$ est ouvert \ssi : \\
+    $\forall a \in A, \forall (x_n)_{n\in \N} \in E^{\N}, x_n\limit{\infty}a \implies \exists n_0 / \forall n \geq n_0, x_n \in A$
+        \item $A$ est fermé \ssi $A$ est stable par limite : $\forall a \in E, \forall (x_n)_{n\in \N} \in A^{\N}, x_n\limit{\infty}a \implies a \in A$
+        \item $\forall x \in E,$
+        \begin{align*} 
+            x \in \bar{A} &\iff \forall r \geq 0, B(x,r) \cap A \neq 0 \\
+                        &\iff (x_n)_{n\in N} \in A^{\N} / x_n \limit{\infty} x
+        \end{align*}
+    \end{itemize}
+\end{theoreme}
+
+\begin{theoreme}{Continuité et topolgie}
+    \begin{itemize}[label=$\bullet$]
+        \item $f$ est continue \ssi $\forall A$ fermé de $E$,$\, f^{-1}(A)$ est un fermé de $E$ (idem avec les ouverts)
+    \end{itemize}
+\end{theoreme}
+
+\begin{theoreme}{Applications linéaires et topologie}
+    Soient $E,F$ deux $K$ espaces vectoriels, $f \in L(E,f)$. Il y a équivalence entre :
+    \begin{itemize}[label=$\bullet$]
+        \item $f \in L_c$
+        \item $f$ continue en un point
+        \item $f$ continue en $0$
+        \item $f$ bornée sur $B(0,1)$
+        \item $\exists K \in \R^+, x\in E, \norme{f(x)}\leq K\norme{x}$
+        \item $f$ est lipchitzienne
+    \end{itemize}
+\end{theoreme}
+
+\begin{theoreme}{Équivalence des normes}
+  Deux normes $\norme{\;}_{1}$ et $\norme{\;}_{2}$ sont dites \emph{équivalentes} si (les propriétés suivantes sont équivalentes):
+  \begin{itemize}[label=$\bullet$]
+    \item $x_{n} \xrightarrow[n\rightarrow \infty]{\norme{\;}_{1}} x \iff x_{n} \xrightarrow[n\rightarrow \infty]{\norme{\;}_{2}}x$
+    \item On a $\alpha$ et $\beta$ tels que $\alpha\norme{x}_{1}\leqslant\norme{x}_{2}\leqslant\beta\norme{x}_{1}$
+  \end{itemize}
+\end{theoreme}
+
+\begin{theoreme}{En dimension finie}
+    \begin{itemize}[label=$\bullet$]
+        \item Le théorème d'équivalence des normes permet de choisir une norme adaptée au problème s'il y a besoin de norme
+        \item Les compacts sont les fermés bornés
+        \item $f \in L(E) \implies f \in L_c$
+        \item Les applications bi-linéraires sont continues
+        \item Tout sous espace vectoriel est fermé
+    \end{itemize}
+\end{theoreme}
+
+\begin{definition}
+    Une partie $K$ d'un espace vectoriel normé $E$ est dite cmpacte si toute suite d'élement de $K$ possède une valeur d’adhérence dans $K$
+\end{definition}
+
+\begin{theoreme}{Compacité et topologie}
+    \begin{itemize}[label=$\bullet$]
+        \item Tout compact est fermé borné (réciproque fausse en dimension infinie !)
+        \item Les compacts de $K^n$ sont les fermés bornés
+        \item Soit $K$ un compact de $E$ et $A\subset K$, $A$ est compacte \ssi $A$ est fermée
+        \item Soient $E,F$ deux espaces vectoriels normés, $K,L$ deux compactes de $E$ et $F$, $K \times L$ est un compact de $E \times F$
+    \end{itemize}
+\end{theoreme}
+
+\begin{theoreme}{Compacité et continuité}
+    \begin{itemize}[label=$\bullet$]
+        \item Si $f : K \rightarrow F$ est continue avec $K$ compact de $E$, $E,F$ deux espaces vectoriels normés.
+    alors $f$ est uniformément continue et $f(K)$ est compact
+        \item Soient $K$ un compact non vide et $f : K \rightarrow \R$, alors $f$ est bornée et atteint ses bornes
+    \end{itemize}
+    
+\end{theoreme}
+
+\begin{theoreme}{Absolue convergence}
+    \[\sum_{n \geq 0} \norme{u_n} \text{converge} \implies \sum_{n \geq 0} u_n \text{ converge}\]
+\end{theoreme}
+
+\begin{definition}
+    La norme subordonnée est définie par : 
+    $|||f|||=\underset{x \in E{0}}{sup} \frac{\norme{f(x)}}{\norme{x}}$
+
+    On a alors : $|||g \circ f||| \leq |||g||| \times |||f|||$
+\end{definition}
+
+\end{document}
