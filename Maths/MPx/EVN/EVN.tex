@@ -106,33 +106,32 @@
 \end{theoreme}
 
 \begin{theoreme}{Caractérisations séquentielles}
-    $A \subset E$
+    Avec $A \subset E$:
     \begin{itemize}[label=$\bullet$]
-        \item $A$ est ouvert \ssi : \\
-    $\forall a \in A, \forall (x_n)_{n\in \N} \in E^{\N}, x_n\limit{\infty}a \implies \exists n_0 / \forall n \geq n_0, x_n \in A$
-        \item $A$ est fermé \ssi $A$ est stable par limite : $\forall a \in E, \forall (x_n)_{n\in \N} \in A^{\N}, x_n\limit{\infty}a \implies a \in A$
-        \item $\forall x \in E,$
+        \item $A$ est ouvert \ssi pour toute suite $x_{n}$ de $E$ tendant vers $a$ dans $A$, $x_{n}$ est dans $A$ pour $n$ assez grand.
+        \item $A$ est fermé \ssi $A$ est stable par limite.
+        \item Pour $x$ dans $E$:
         \begin{align*} 
-            x \in \bar{A} &\iff \forall r \geq 0, B(x,r) \cap A \neq 0 \\
-                        &\iff (x_n)_{n\in N} \in A^{\N} / x_n \limit{\infty} x
+            x \in \bar{A} & \iff \forall r \geq 0, B(x,r) \cap A \neq 0 \\
+                          & \iff \exists {(x_n)}_{n\in N} \in A^{\N} / x_n \limit{\infty} x
         \end{align*}
     \end{itemize}
 \end{theoreme}
 
 \begin{theoreme}{Continuité et topolgie}
     \begin{itemize}[label=$\bullet$]
-        \item $f$ est continue \ssi $\forall A$ fermé de $E$,$\, f^{-1}(A)$ est un fermé de $E$ (idem avec les ouverts)
+        \item $f$ est continue \ssi pour $A$ fermé de $E$,$\, f^{-1}(A)$ est un fermé de $E$ (de même avec les ouverts).
     \end{itemize}
 \end{theoreme}
 
 \begin{theoreme}{Applications linéaires et topologie}
-    Soient $E,F$ deux $K$ espaces vectoriels, $f \in L(E,f)$. Il y a équivalence entre :
-    \begin{itemize}[label=$\bullet$]
-        \item $f \in L_c$
+  Avec $f$ linéaire de $E$ dans $F$, les propriétés suivantes sont équivalentes.
+  \begin{itemize}[label=$\bullet$]
+    \item $f\in \mathcal{L}_{c}$
         \item $f$ continue en un point
         \item $f$ continue en $0$
         \item $f$ bornée sur $B(0,1)$
-        \item $\exists K \in \R^+, x\in E, \norme{f(x)}\leq K\norme{x}$
+        \item $\exists K \in \R^+/\forall x\in E, \norme{f(x)}\leq K\norme{x}$
         \item $f$ est lipchitzienne
     \end{itemize}
 \end{theoreme}
@@ -149,30 +148,28 @@
     \begin{itemize}[label=$\bullet$]
         \item Le théorème d'équivalence des normes permet de choisir une norme adaptée au problème s'il y a besoin de norme
         \item Les compacts sont les fermés bornés
-        \item $f \in L(E) \implies f \in L_c$
+      \item $f \in L(E) \implies f \in \mathcal{L}_c$
         \item Les applications bi-linéraires sont continues
         \item Tout sous espace vectoriel est fermé
     \end{itemize}
 \end{theoreme}
 
 \begin{definition}
-    Une partie $K$ d'un espace vectoriel normé $E$ est dite cmpacte si toute suite d'élement de $K$ possède une valeur d’adhérence dans $K$
+    Une partie $K$ de $E$ est dite \emph{compacte} si toute suite d'élement de $K$ possède une valeur d’adhérence dans $K$.
 \end{definition}
 
 \begin{theoreme}{Compacité et topologie}
     \begin{itemize}[label=$\bullet$]
-        \item Tout compact est fermé borné (réciproque fausse en dimension infinie !)
-        \item Les compacts de $K^n$ sont les fermés bornés
-        \item Soit $K$ un compact de $E$ et $A\subset K$, $A$ est compacte \ssi $A$ est fermée
-        \item Soient $E,F$ deux espaces vectoriels normés, $K,L$ deux compactes de $E$ et $F$, $K \times L$ est un compact de $E \times F$
+        \item Tout compact est fermé borné (la réciproque est fausse en dimension infinie)
+        \item Une partie $A$ d'un compacte est compacte \ssi elle est fermée.
+        \item Le produit de deux compactes est compacte
     \end{itemize}
 \end{theoreme}
 
 \begin{theoreme}{Compacité et continuité}
     \begin{itemize}[label=$\bullet$]
-        \item Si $f : K \rightarrow F$ est continue avec $K$ compact de $E$, $E,F$ deux espaces vectoriels normés.
-    alors $f$ est uniformément continue et $f(K)$ est compact
-        \item Soient $K$ un compact non vide et $f : K \rightarrow \R$, alors $f$ est bornée et atteint ses bornes
+        \item Si $f : K \rightarrow F$ est continue, alors $f$ est uniformément continue et $f(K)$ est compact.
+        \item Soient $K$ un compact non vide et $f : K \rightarrow \R$, alors $f$ est bornée et atteint ses bornes.
     \end{itemize}
     
 \end{theoreme}
@@ -182,10 +179,10 @@
 \end{theoreme}
 
 \begin{definition}
-    La norme subordonnée est définie par : 
-    $|||f|||=\underset{x \in E{0}}{sup} \frac{\norme{f(x)}}{\norme{x}}$
+    La norme subordonnée est définie par:
+    \[|||f|||=\underset{x \in E}{\sup}\pof{\dfrac{\norme{f(x)}}{\norme{x}}}\]
 
-    On a alors : $|||g \circ f||| \leq |||g||| \times |||f|||$
+    On a alors: $|||g \circ f||| \leq |||g||| \times |||f|||$
 \end{definition}
 
 \end{document}
