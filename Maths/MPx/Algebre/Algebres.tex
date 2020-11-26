@@ -9,9 +9,6 @@
 \usepackage{enumitem} % ~ Listes
 \usepackage{xcolor}   % ~ Couleurs fs
 \usepackage{float}
-\usepackage{tikz}
-\usepackage[straightvoltages]{circuitikz}
-\usepackage[squaren, cdot, derived]{SIunits}
 \usepackage{graphicx}
 \usepackage[f]{esvect}
 \usepackage[many]{tcolorbox}
@@ -31,16 +28,6 @@
 \newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
 \newcommand{\R}{\mathbb{R}}   % ~ Réels
 \newcommand{\C}{\mathbb{C}}   % ~ Complexes
-% --TRIGO--%
-\let\cosh\relax
-\DeclareMathOperator{\cosh}{ch}       % ~ cosinus hyperbolique
-\DeclareMathOperator{\sh}{sh}         % ~ sinus hyperbolique
-\let\tanh\relax
-\DeclareMathOperator{\tanh}{th}       % ~ tangente hyperbolique
-\DeclareMathOperator{\argch}{Argch}   % ~ Argument cosinus hyperbolique
-\DeclareMathOperator{\argsh}{Argsh}   % ~ Argument sinus hyperbolique
-\DeclareMathOperator{\argth}{Argth}   % ~ Argument tangente hyperbolique
-\DeclareMathOperator{\cotan}{cotan}   % ~ cotangente
 % --PARENTHESES--%
 \newcommand{\po}{\left(}         % ~ (
 \newcommand{\pf}{\right)}        % ~ )
@@ -53,23 +40,6 @@
 \newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
 \newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
 \newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
-% --VECTEURS--%
-\newcommand{\ux}{\vect{u_x}}          % ~ Vecteur ux
-\newcommand{\uy}{\vect{u_y}}          % ~ Vecteur uy
-\newcommand{\uz}{\vect{u_z}}          % ~ Vecteur uz
-\newcommand{\ur}{\vect{u_r}}          % ~ Vecteur ur
-\newcommand{\uth}{\vect{u_\theta}}    % ~ Vecteur utheta
-\newcommand{\uph}{\vect{u_\varphi}}   % ~ Vecteur uphi
-\newcommand{\om}{\vect{OM}}           % ~ Vecteur position
-\newcommand{\vvi}{\vect{v}}           % ~ Vecteur vitesse
-\newcommand{\vvio}{\vect{v_0}}        % ~ Vecteur v0
-\newcommand{\va}{\vect{a}}            % ~ Vecteur	accélération
-\newcommand{\vp}{\vect{p}}            % ~ Vecteur quantité de mouvement
-\newcommand{\fr}{\vect{F_r}}          % ~ Vecteur force de rappel
-\newcommand{\vabla}{\vect{\nabla}}    % ~ nabla
-\newcommand{\grad}{\vect{\mathrm{grad}}}  % ~ grad
-\DeclareMathOperator{\diverg}{div}        % ~ div
-\newcommand{\rot}{\vect{\mathrm{rot}}}    % ~ rot
 
 \newtcolorbox{theoreme}[2][]
 {
@@ -99,7 +69,7 @@
 \newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
 
 \title{Algèbre}
-\author{Martin \textsc{Andrieux}}
+\author{Martin \textsc{Andrieux}, Nathan \textsc{Maillet}}
 \date{}
 
 \begin{document}
@@ -120,7 +90,7 @@
   \begin{itemize}[label=$\bullet$]
     \item Les sous-groupes de $\Z$ sont de la forme $n\Z$
     \item Tout groupe fini de cardinal $n$ est isomorphe à un sous-groupe de $\mathfrak S_{n}$
-    \item L'intersection de deux sous-groupes est un sous-groupe.
+    \item L'intersection de deux sous-groupes est un sous-groupe
   \end{itemize}
 \end{theoreme}
 
