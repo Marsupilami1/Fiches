@@ -1,0 +1,94 @@
+\documentclass[french, a4paper, 11pt]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[f]{esvect}
+\usepackage[many]{tcolorbox}
+\usepackage{euler}
+\usepackage[nointegrals]{wasysym}
+\usepackage[french]{babel}
+
+
+%______FONCTIONS______%
+\newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+\newcommand{\inv}[1]{\dfrac{1}{#1}}
+% --ENSEMBLES--%
+\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
+\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
+\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
+\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
+\newcommand{\R}{\mathbb{R}}   % ~ Réels
+\newcommand{\C}{\mathbb{C}}   % ~ Complexes
+% --TRIGO--%
+\let\cosh\relax
+\DeclareMathOperator{\cosh}{ch}       % ~ cosinus hyperbolique
+\DeclareMathOperator{\sh}{sh}         % ~ sinus hyperbolique
+\let\tanh\relax
+\DeclareMathOperator{\tanh}{th}       % ~ tangente hyperbolique
+\DeclareMathOperator{\argch}{Argch}   % ~ Argument cosinus hyperbolique
+\DeclareMathOperator{\argsh}{Argsh}   % ~ Argument sinus hyperbolique
+\DeclareMathOperator{\argth}{Argth}   % ~ Argument tangente hyperbolique
+\DeclareMathOperator{\cotan}{cotan}   % ~ cotangente
+% --PARENTHESES--%
+\newcommand{\po}{\left(}         % ~ (
+\newcommand{\pf}{\right)}        % ~ )
+\newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
+\newcommand{\co}{\left[}         % ~ [
+\newcommand{\cf}{\right]}        % ~ ]
+\newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
+\newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+
+\newtcolorbox{cadre}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+
+\newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
+
+\title{Exercices de méthodologie}
+\author{Nathan \textsc{Maillet}}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{cadre}{Récurrence}
+    On considère l'application $\Delta$ de $\R^{\N}$ dans lui-même définié par:
+        \[\forall u \in \R^{\N}, \forall n \in \N, (\Delta(u))_n=u_{n+1}-u_n.\]
+    Soit \(f: \interfo{0}{+\infty} \rightarrow \R\) de classe \(C^{\infty}\) et $u$ la suite définie par \(\forall n \in \N, u_n=f(n)\). Montrer la propriété:
+        \[\forall p \in \N, \forall n \in \N, \exists x \in \interff{n}{n+p}, (\Delta^p(u))_n=f^{(p)}(x)\]
+\end{cadre}
+
+\begin{cadre}{Théorème de Cantor-Bernstein}
+    Soit \(f:E \rightarrow F \text{ et } g: F \rightarrow E\) deux injections. On note $g^{-1}$ la bijection de $g(F)$ sur $F$ qui, à \(x \in g(F)\), associe l'unique élément $y$ de $F$ tel que \(g(y)=x\). On pose :
+        \[A_0=E\backslash g(F) \text{ et } \forall n \geq 1, \begin{cases}
+            B_n=f(A_{n-1}) \\
+            A_n=g(B_n)
+        \end{cases} \]
+    On définit alors \(\phi : E \rightarrow F \text{par} \forall x \in E, \phi(x)=\begin{cases}
+        f(x) \text{ si } x \in \cup_{n\geq 0}A_n, \\
+        g^{-1}(x) \text{ sinon}.
+    \end{cases}\)
+    Montrer que $\phi$ est une bijection.
+\end{cadre}
+
+\end{document}
