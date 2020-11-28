@@ -1,0 +1,106 @@
+\documentclass[french, a4paper, 11pt]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm, bottom=3cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage[straightvoltages]{circuitikz}
+\usepackage[load-configurations = abbreviations]{siunitx}
+\usepackage{graphicx}
+\usepackage[f]{esvect}
+\usepackage[many]{tcolorbox}
+\usepackage{euler}
+\usepackage[nointegrals]{wasysym}
+\usepackage[french]{babel}
+
+
+\sisetup{
+  locale=FR,
+  detect-all,
+}
+
+% ______FONCTIONS______%
+\newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+% --ENSEMBLES--%
+\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
+\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
+\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
+\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
+\newcommand{\R}{\mathbb{R}}   % ~ Réels
+\newcommand{\C}{\mathbb{C}}   % ~ Complexes
+% --TRIGO--%
+\let\cosh\relax
+\DeclareMathOperator{\cosh}{ch}       % ~ cosinus hyperbolique
+\DeclareMathOperator{\sh}{sh}         % ~ sinus hyperbolique
+\let\tanh\relax
+\DeclareMathOperator{\tanh}{th}       % ~ tangente hyperbolique
+\DeclareMathOperator{\argch}{Argch}   % ~ Argument cosinus hyperbolique
+\DeclareMathOperator{\argsh}{Argsh}   % ~ Argument sinus hyperbolique
+\DeclareMathOperator{\argth}{Argth}   % ~ Argument tangente hyperbolique
+\DeclareMathOperator{\cotan}{cotan}   % ~ cotangente
+% --PARENTHESES--%
+\newcommand{\po}{\left(}         % ~ (
+\newcommand{\pf}{\right)}        % ~ )
+\newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
+\newcommand{\co}{\left[}         % ~ [
+\newcommand{\cf}{\right]}        % ~ ]
+\newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
+\newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+% --VECTEURS--%
+\newcommand{\vect}[1]{\vv{#1}}
+\newcommand{\ux}{\vect{u_x}}          % ~ Vecteur ux
+\newcommand{\uy}{\vect{u_y}}          % ~ Vecteur uy
+\newcommand{\uz}{\vect{u_z}}          % ~ Vecteur uz
+\newcommand{\ur}{\vect{u_r}}          % ~ Vecteur ur
+\newcommand{\uth}{\vect{u_\theta}}    % ~ Vecteur utheta
+\newcommand{\uph}{\vect{u_\varphi}}   % ~ Vecteur uphi
+\newcommand{\urho}{\vv{u_\rho}}       % ~ Vecteur urho
+\newcommand{\om}{\vect{OM}}           % ~ Vecteur position
+\newcommand{\vvi}{\vect{v}}           % ~ Vecteur vitesse
+\newcommand{\vvio}{\vect{v_0}}        % ~ Vecteur v0
+\newcommand{\va}{\vect{a}}            % ~ Vecteur	accélération
+\newcommand{\vp}{\vect{p}}            % ~ Vecteur quantité de mouvement
+\newcommand{\fr}{\vect{F_r}}          % ~ Vecteur force de rappel
+\newcommand{\vabla}{\vect{\nabla}}    % ~ nabla
+\newcommand{\grad}{\vect{\mathrm{grad}}}  % ~ grad
+\DeclareMathOperator{\diverg}{div}        % ~ grad
+\newcommand{\rot}{\vect{\mathrm{rot}}}    % ~ grad
+
+\newtcolorbox{cadre}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+\newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
+
+\title{Exercices d'algèbre}
+\author{Martin \textsc{Andrieux}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{cadre}{Groupes}
+  Soient \(G\) et \(H\) deux groupes finis; le produit \(G\times H\) est muni de sa structure de groupe produit.
+  Soient \(x\in G\) et \(y\in H\), d'ordres respectifs \(n\) et \(m\). Montrer que \((x,y)\) est d'ordre \(n\vee m\). En déduire une condition nécessaire et suffisante pour que \(G\times H\) soit cyclique.
+\end{cadre}
+
+\end{document}
