@@ -23,7 +23,7 @@
 %______FONCTIONS______%
 \newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
 \newcommand{\inv}[1]{\dfrac{1}{#1}}
-\newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{\(#1\)}\left/\raisebox{-.2em}{\(#2\)}\right.}}
 \DeclareMathOperator{\Sp}{Sp}
 % --ENSEMBLES--%
 \newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
@@ -108,58 +108,58 @@
 
 \section{Éléments propres}
 \begin{definition}
-  Soit $f$ dans $\mathcal L(E)$, $x$ est un \emph{vecteur propre} pour $f$ si $x\neq 0$ et si $f(x)\in \mathrm{Vect}(x)$.
-  Si $x$ est un vecteur propre pour $f$, il existe un unique $\lambda$ dans $K$ tel que $f(x) = \lambda x$.
+  Soit \(f\) dans \(\mathcal L(E)\), \(x\) est un \emph{vecteur propre} pour \(f\) si \(x\neq 0\) et si \(f(x)\in \mathrm{Vect}(x)\).
+  Si \(x\) est un vecteur propre pour \(f\), il existe un unique \(\lambda\) dans \(K\) tel que \(f(x) = \lambda x\).
 
-  On note $\Sp(f)$ l'ensemble des valeurs propres de $f$, appelé \emph{spectre} de $f$.
+  On note \(\Sp(f)\) l'ensemble des valeurs propres de \(f\), appelé \emph{spectre} de \(f\).
 \end{definition}
 
 \begin{definition}
-  On pose $\chi_{f}(\lambda) = \det\pof{\lambda\cdot\mathrm{Id} - f}$. $\chi_{f}$ est appelé \emph{polynôme caractéristique} de $f$. Avec $A$ la matrice de $f$, $\chi_{A}$ est de la forme suivante:
+  On pose \(\chi_{f}(\lambda) = \det\pof{\lambda\cdot\mathrm{Id} - f}\). \(\chi_{f}\) est appelé \emph{polynôme caractéristique} de \(f\). Avec \(A\) la matrice de \(f\), \(\chi_{A}\) est de la forme suivante:
   \[\chi_{f}(\lambda) = \lambda^{n}-\mathrm{tr}(A)\cdot\lambda^{n-1}+\cdots+\pof{-1}^{n}\det A\]
 \end{definition}
 
 \begin{theoreme}{Sous-espaces propres}
-  On pose $E_{\lambda_{i}} = \ker(f-\lambda_{i}\mathrm{Id})$ le sous-espace propre associé à $\lambda_{i}$.
+  On pose \(E_{\lambda_{i}} = \ker(f-\lambda_{i}\mathrm{Id})\) le sous-espace propre associé à \(\lambda_{i}\).
   \[E = \bigoplus_{i=0}^{k}E_{\lambda_{i}}\]
-  Les dimensions des sous-espaces propres sont inférieures aux ordre de multiplicité des $\lambda_{i}$ en tant que racines de $\chi_{f}$.
+  Les dimensions des sous-espaces propres sont inférieures aux ordre de multiplicité des \(\lambda_{i}\) en tant que racines de \(\chi_{f}\).
 \end{theoreme}
 
 \begin{theoreme}{Première CNS de diagonalisabilité}
-  $f$ est diagonalisable \ssi $\chi_{f}$ est scindé et si pour chaque $\lambda$ dans $\Sp(f)$, $E_{\lambda}$ est de dimension l'ordre de multiplicité de $\lambda$ dans $\chi_{f}$.
+  \(f\) est diagonalisable \ssi \(\chi_{f}\) est scindé et si pour chaque \(\lambda\) dans \(\Sp(f)\), \(E_{\lambda}\) est de dimension l'ordre de multiplicité de \(\lambda\) dans \(\chi_{f}\).
 \end{theoreme}
 
 \begin{theoreme}{Trigonalisabilité}
-  $f$ est trigonalisable \ssi $\chi_{f}$ est scindé.
+  \(f\) est trigonalisable \ssi \(\chi_{f}\) est scindé.
   \tcblower
-  Sur $\C$, toute matrice est trigonalisable.
+  Sur \(\C\), toute matrice est trigonalisable.
 \end{theoreme}
 
 \section{Polynômes d'endomorphismes}
 \begin{theoreme}{Commutativité}
-  Soient $P$ et $Q$ deux polynômes, comme $PQ=QP$, on a $P(f)\circ Q(f)=Q(f)\circ P(f)$.
+  Soient \(P\) et \(Q\) deux polynômes, comme \(PQ=QP\), on a \(P(f)\circ Q(f)=Q(f)\circ P(f)\).
 \end{theoreme}
 
 \begin{definition}
-  L'ensemble $I_{f}=\lbrace P\in K\cof{X} \slash P(f)=0\rbrace$ est un idéal de $K\cof{X}$ non réduit à $\lbrace 0 \rbrace$. Son générateur normalisé est le \emph{polynôme minimal} de $f$, noté $\pi_{f}$.
+  L'ensemble \(I_{f}=\lbrace P\in K\cof{X} \slash P(f)=0\rbrace\) est un idéal de \(K\cof{X}\) non réduit à \(\lbrace 0 \rbrace\). Son générateur normalisé est le \emph{polynôme minimal} de \(f\), noté \(\pi_{f}\).
 \end{definition}
 
 \begin{theoreme}{Lemme de décompasition des noyaux}
-  Si $P\wedge Q = 1$, alors:
+  Si \(P\wedge Q = 1\), alors:
   \[\ker\, (QF)(f) = \ker P(f)\oplus \ker Q(f)\]
 \end{theoreme}
 
 \begin{theoreme}{Théorème de Cayley-Hamilton}
-  Le polynôme minimal $\pi_{f}$ divise $\chi_{f}$:
-  \begin{itemize}[label=$\bullet$]
-    \item $\pi_{f}\,|\,\chi_{f}$
-    \item $\chi_{f}(f) = 0$
-    \item $\chi_{f} \in I_{f}$
+  Le polynôme minimal \(\pi_{f}\) divise \(\chi_{f}\):
+  \begin{itemize}[label=\(\bullet\)]
+    \item \(\pi_{f}\,|\,\chi_{f}\)
+    \item \(\chi_{f}(f) = 0\)
+    \item \(\chi_{f} \in I_{f}\)
   \end{itemize}
 \end{theoreme}
 
 \begin{theoreme}{Seconde CNS de diagonalisabilité}
-  $f$ est diagonalisable \ssi $\pi_{f}$ est scindé à racines simples.
+  \(f\) est diagonalisable \ssi \(\pi_{f}\) est scindé à racines simples.
 \end{theoreme}
 
 

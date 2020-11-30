@@ -20,7 +20,7 @@
 %______FONCTIONS______%
 \newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
 \newcommand{\inv}[1]{\dfrac{1}{#1}}             % ~ inverse
-\newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{\(#1\)}\left/\raisebox{-.2em}{\(#2\)}\right.}}
 \DeclareMathOperator{\Sp}{Sp}
 \newcommand{\norme}[1]{\left\| #1\right\|}
 \newcommand{\abs}[1]{\left\lvert #1\right\rvert}
@@ -74,18 +74,18 @@
 
 \title{Espaces vectoriels normés}
 \author{Martin \textsc{Andrieux}, Nathan \textsc{Maillet}}
-\date{Dans toute la suite, $E$ et $F$ désignent deux $\mathbb{K}$ espaces vectoriels normés.}
+\date{Dans toute la suite, \(E\) et \(F\) désignent deux \(\mathbb{K}\) espaces vectoriels normés.}
 
 \begin{document}
 \maketitle
 
 \begin{definition}
-  Une \emph{norme} $\norme{\cdot}$ est une application de $E$ dans $\R$ telle que:
-  \begin{itemize}[label=$\bullet$]
-    \item $\forall x\in E,\,\norme{x}\geqslant 0$
-    \item $\forall x\in E,\,\norme{x}=0\implies x=0$
-    \item $\forall\lambda\in K,\,\forall x\in E,\, \norme{\lambda x}=\abs{\lambda} \cdot \norme{x}$
-    \item $\forall x,y\in E,\, \norme{x+y}\leqslant\norme{x}+\norme{y}$
+  Une \emph{norme} \(\norme{\cdot}\) est une application de \(E\) dans \(\R\) telle que:
+  \begin{itemize}[label=\(\bullet\)]
+    \item \(\forall x\in E,\,\norme{x}\geqslant 0\)
+    \item \(\forall x\in E,\,\norme{x}=0\implies x=0\)
+    \item \(\forall\lambda\in K,\,\forall x\in E,\, \norme{\lambda x}=\abs{\lambda} \cdot \norme{x}\)
+    \item \(\forall x,y\in E,\, \norme{x+y}\leqslant\norme{x}+\norme{y}\)
   \end{itemize}
 \end{definition}
 
@@ -96,11 +96,11 @@
 \end{theoreme}
 
 \begin{theoreme}{Caractérisations séquentielles}
-    Avec $A \subset E$:
-    \begin{itemize}[label=$\bullet$]
-        \item $A$ est ouvert \ssi pour toute suite $x_{n}$ de $E$ tendant vers $a$ dans $A$, $x_{n}$ est dans $A$ pour $n$ assez grand.
-        \item $A$ est fermé \ssi $A$ est stable par limite.
-        \item Pour $x$ dans $E$:
+    Avec \(A \subset E\):
+    \begin{itemize}[label=\(\bullet\)]
+        \item \(A\) est ouvert \ssi pour toute suite \(x_{n}\) de \(E\) tendant vers \(a\) dans \(A\), \(x_{n}\) est dans \(A\) pour \(n\) assez grand.
+        \item \(A\) est fermé \ssi \(A\) est stable par limite.
+        \item Pour \(x\) dans \(E\):
         \begin{align*} 
             x \in \bar{A} & \iff \forall r \geq 0, B(x,r) \cap A \neq 0 \\
                           & \iff \exists {(x_n)}_{n\in N} \in A^{\N} / x_n \limit{\infty} x
@@ -109,63 +109,63 @@
 \end{theoreme}
 
 \begin{theoreme}{Continuité et topolgie}
-    \begin{itemize}[label=$\bullet$]
-        \item $f$ est continue \ssi pour $A$ fermé de $E$,$\, f^{-1}(A)$ est un fermé de $E$ (de même avec les ouverts).
+    \begin{itemize}[label=\(\bullet\)]
+        \item \(f\) est continue \ssi pour \(A\) fermé de \(E\),\(\, f^{-1}(A)\) est un fermé de \(E\) (de même avec les ouverts).
     \end{itemize}
 \end{theoreme}
 
 \begin{theoreme}{Applications linéaires et topologie}
-  Avec $f$ linéaire de $E$ dans $F$, les propriétés suivantes sont équivalentes.
-  \begin{itemize}[label=$\bullet$]
-    \item $f\in \mathcal{L}_{c}$
-        \item $f$ continue en un point
-        \item $f$ continue en $0$
-        \item $f$ bornée sur $B(0,1)$
-        \item $\exists K \in \R^+/\forall x\in E, \norme{f(x)}\leq K\norme{x}$
-        \item $f$ est lipchitzienne
+  Avec \(f\) linéaire de \(E\) dans \(F\), les propriétés suivantes sont équivalentes.
+  \begin{itemize}[label=\(\bullet\)]
+    \item \(f\in \mathcal{L}_{c}\)
+        \item \(f\) continue en un point
+        \item \(f\) continue en \(0\)
+        \item \(f\) bornée sur \(B(0,1)\)
+        \item \(\exists K \in \R^+/\forall x\in E, \norme{f(x)}\leq K\norme{x}\)
+        \item \(f\) est lipchitzienne
     \end{itemize}
 \end{theoreme}
 
 \begin{theoreme}{Équivalence des normes}
-  Deux normes $\norme{\;}_{1}$ et $\norme{\;}_{2}$ sont dites \emph{équivalentes} si (les propriétés suivantes sont équivalentes):
-  \begin{itemize}[label=$\bullet$]
-    \item $x_{n} \xrightarrow[n\rightarrow \infty]{\norme{\;}_{1}} x \iff x_{n} \xrightarrow[n\rightarrow \infty]{\norme{\;}_{2}}x$
-    \item On a $\alpha$ et $\beta$ tels que $\alpha\norme{x}_{1}\leqslant\norme{x}_{2}\leqslant\beta\norme{x}_{1}$
+  Deux normes \(\norme{\;}_{1}\) et \(\norme{\;}_{2}\) sont dites \emph{équivalentes} si (les propriétés suivantes sont équivalentes):
+  \begin{itemize}[label=\(\bullet\)]
+    \item \(x_{n} \xrightarrow[n\rightarrow \infty]{\norme{\;}_{1}} x \iff x_{n} \xrightarrow[n\rightarrow \infty]{\norme{\;}_{2}}x\)
+    \item On a \(\alpha\) et \(\beta\) tels que \(\alpha\norme{x}_{1}\leqslant\norme{x}_{2}\leqslant\beta\norme{x}_{1}\)
   \end{itemize}
 \end{theoreme}
 
 \begin{theoreme}{En dimension finie}
-    \begin{itemize}[label=$\bullet$]
+    \begin{itemize}[label=\(\bullet\)]
         \item Le théorème d'équivalence des normes permet de choisir une norme adaptée au problème s'il y a besoin de norme
         \item Les compacts sont les fermés bornés
-      \item $f \in L(E) \implies f \in \mathcal{L}_c$
+      \item \(f \in L(E) \implies f \in \mathcal{L}_c\)
         \item Les applications bi-linéraires sont continues
         \item Tout sous espace vectoriel est fermé
     \end{itemize}
 \end{theoreme}
 
 \begin{definition}
-    Une partie $K$ de $E$ est dite \emph{compacte} si toute suite d'élement de $K$ possède une valeur d’adhérence dans $K$.
+    Une partie \(K\) de \(E\) est dite \emph{compacte} si toute suite d'élement de \(K\) possède une valeur d’adhérence dans \(K\).
 \end{definition}
 
 \begin{theoreme}{Compacité et topologie}
-    \begin{itemize}[label=$\bullet$]
+    \begin{itemize}[label=\(\bullet\)]
         \item Tout compact est fermé borné (la réciproque est fausse en dimension infinie)
-        \item Une partie $A$ d'un compacte est compacte \ssi elle est fermée.
+        \item Une partie \(A\) d'un compacte est compacte \ssi elle est fermée.
         \item Le produit de deux compactes est compacte
     \end{itemize}
 \end{theoreme}
 
 \begin{theoreme}{Compacité et continuité}
-    \begin{itemize}[label=$\bullet$]
-        \item Si $f : K \rightarrow F$ est continue, alors $f$ est uniformément continue et $f(K)$ est compact.
-        \item Soient $K$ un compact non vide et $f : K \rightarrow \R$, alors $f$ est bornée et atteint ses bornes.
+    \begin{itemize}[label=\(\bullet\)]
+        \item Si \(f : K \rightarrow F\) est continue, alors \(f\) est uniformément continue et \(f(K)\) est compact.
+        \item Soient \(K\) un compact non vide et \(f : K \rightarrow \R\), alors \(f\) est bornée et atteint ses bornes.
     \end{itemize}
     
 \end{theoreme}
 
 \begin{theoreme}{Connexité par arcs}
-    $A$ est dite connexe par arcs \ssi $\forall a,b \in A, \exists \gamma : [0,1] \rightarrow A$ continue telle que $\gamma(0)=a$ et $\gamma(1)=b$
+    \(A\) est dite connexe par arcs \ssi \(\forall a,b \in A, \exists \gamma : [0,1] \rightarrow A\) continue telle que \(\gamma(0)=a\) et \(\gamma(1)=b\)
 \end{theoreme}
 
 \begin{theoreme}{Absolue convergence}
@@ -176,7 +176,7 @@
     La norme subordonnée est définie par:
     \[|||f|||=\underset{x \in E}{\sup}\pof{\dfrac{\norme{f(x)}}{\norme{x}}}\]
 
-    On a alors: $|||g \circ f||| \leq |||g||| \times |||f|||$
+    On a alors: \(|||g \circ f||| \leq |||g||| \times |||f|||\)
 \end{definition}
 
 \end{document}

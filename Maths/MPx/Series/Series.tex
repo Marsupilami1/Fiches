@@ -110,58 +110,58 @@
 
 \section{Séries à termes positifs}
 \begin{theoreme}{Théorèmes de comparaison}
-  \begin{itemize}[label=$\bullet$]
-    \item Si pour $n>n_{2}$ on a $x_{n}<y_{n}$, alors
+  \begin{itemize}[label=\(\bullet\)]
+    \item Si pour \(n>n_{2}\) on a \(x_{n}<y_{n}\), alors
       \[\begin{cases}
           \sum y_{n} \text{ cv} \implies \sum x_{n} \text{ cv}\\
           \sum x_{n} \text{ div} \implies \sum y_{n} \text{ div}\\
       \end{cases}\]
-    \item Même conclusion si $x_{n} \underset{+\infty}{=} \mathcal{O}(y_{n})$
-    \item Si $x_{n} \underset{+\infty}{\sim} y_{n}$, les séries sont de même nature. De plus, si les séries divergent, leur sommes partielles sont équivalentes, sinon, leur restes sont équivalents.
+    \item Même conclusion si \(x_{n} \underset{+\infty}{=} \mathcal{O}(y_{n})\)
+    \item Si \(x_{n} \underset{+\infty}{\sim} y_{n}\), les séries sont de même nature. De plus, si les séries divergent, leur sommes partielles sont équivalentes, sinon, leur restes sont équivalents.
   \end{itemize}
 \end{theoreme}
 
 \begin{theoreme}{Séries de référence}
-  \begin{itemize}[label=$\bullet$]
-    \item $\sum q^{n}$ converge \ssi $q<1$. On a alors
+  \begin{itemize}[label=\(\bullet\)]
+    \item \(\sum q^{n}\) converge \ssi \(q<1\). On a alors
       \[\sum_{n=0}^{+\infty}q^{n} = \inv{1-q}\]
-    \item $\sum \frac{1}{n^{\alpha}}$ converge \ssi$\alpha > 1$.
+    \item \(\sum \frac{1}{n^{\alpha}}\) converge \ssi\(\alpha > 1\).
   \end{itemize}
 \end{theoreme}
 
 \begin{theoreme}{Critère de d'Alembert}
-  Avec $\sum x_{n}$ une série à termes positifs,
-  Si $\frac{x_{n+1}}{x_{n}}$ a une limite $l$, alors
-  \begin{itemize}[label=$\bullet$]
-    \item Si $l<1$, la série converge
-    \item Si $l>1$, la série diverge
+  Avec \(\sum x_{n}\) une série à termes positifs,
+  Si \(\frac{x_{n+1}}{x_{n}}\) a une limite \(l\), alors
+  \begin{itemize}[label=\(\bullet\)]
+    \item Si \(l<1\), la série converge
+    \item Si \(l>1\), la série diverge
   \end{itemize}
 \end{theoreme}
 
 \section{Séries quelconques}
 \begin{definition}
-  Avec $\sum x_{n}$ une série à termes  réels, si $\sum\left| x_{n}\right|$ converge, alors la série converge. On la qualifie alors de série \emph{absolument convergente}. Si la série converge sans converger absolument, elle est \emph{semi-convergente}.
+  Avec \(\sum x_{n}\) une série à termes  réels, si \(\sum\left| x_{n}\right|\) converge, alors la série converge. On la qualifie alors de série \emph{absolument convergente}. Si la série converge sans converger absolument, elle est \emph{semi-convergente}.
 \end{definition}
 
 \begin{theoreme}{Théorème spécial des séries alternées}
-  Avec $\sum_{n\geqslant 0} \alpha_{n}$ et $\forall n\, \alpha_{n}\geqslant 0$,
-  si $\alpha_{n}$ décroit vers $0$, alors la série est convergente.
+  Avec \(\sum_{n\geqslant 0} \alpha_{n}\) et \(\forall n\, \alpha_{n}\geqslant 0\),
+  si \(\alpha_{n}\) décroit vers \(0\), alors la série est convergente.
 \end{theoreme}
 
 \begin{theoreme}{Utilisation de DL}
-  Avec $\sum u_{n}$, si tous les termes du développement limité de $u_{n}$ convergent, alors la série converge.
+  Avec \(\sum u_{n}\), si tous les termes du développement limité de \(u_{n}\) convergent, alors la série converge.
 \end{theoreme}
 
 \begin{theoreme}{Transformation d'Abel}
   Réécrire le terme général de la série comme différence de sommes partielles bornées permet d'établir la nature de la série.
   \tcblower
-  Le théorème d'Abel dit que si $b_{n}$ décroit vers $0$ et si \[\ \pof{A_{n}}_{n\geqslant 0}=\sum_{k=0}^n a_k\] est bornée, alors $\sum a_{n}b_{n}$ converge.
+  Le théorème d'Abel dit que si \(b_{n}\) décroit vers \(0\) et si \[\ \pof{A_{n}}_{n\geqslant 0}=\sum_{k=0}^n a_k\] est bornée, alors \(\sum a_{n}b_{n}\) converge.
 \end{theoreme}
 
 \begin{theoreme}{Produit de Cauchy}
-  Soient $\sum a_{n}$ et $\sum b_{n}$ deux séries à termes réels. Le produit de Cauchy de ces deux séries est:
+  Soient \(\sum a_{n}\) et \(\sum b_{n}\) deux séries à termes réels. Le produit de Cauchy de ces deux séries est:
   \[\sum_{n\geqslant 0}\sum_{i=0}^{n}a_{i}b_{n-i}\]
-  Si les séries des $a_{n}$ et des $b_{n}$ sont absolument convergentes, alors leur produit de Cauchy est absolument convergent et tend vers le produit des limites des deux séries
+  Si les séries des \(a_{n}\) et des \(b_{n}\) sont absolument convergentes, alors leur produit de Cauchy est absolument convergent et tend vers le produit des limites des deux séries
 \end{theoreme}
 
 \end{document}
