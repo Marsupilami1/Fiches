@@ -58,25 +58,7 @@
 \newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
 \newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
 \newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
-% --VECTEURS--%
-\newcommand{\vect}[1]{\vv{#1}}
-\newcommand{\ux}{\vect{u_x}}          % ~ Vecteur ux
-\newcommand{\uy}{\vect{u_y}}          % ~ Vecteur uy
-\newcommand{\uz}{\vect{u_z}}          % ~ Vecteur uz
-\newcommand{\ur}{\vect{u_r}}          % ~ Vecteur ur
-\newcommand{\uth}{\vect{u_\theta}}    % ~ Vecteur utheta
-\newcommand{\uph}{\vect{u_\varphi}}   % ~ Vecteur uphi
-\newcommand{\urho}{\vv{u_\rho}}       % ~ Vecteur urho
-\newcommand{\om}{\vect{OM}}           % ~ Vecteur position
-\newcommand{\vvi}{\vect{v}}           % ~ Vecteur vitesse
-\newcommand{\vvio}{\vect{v_0}}        % ~ Vecteur v0
-\newcommand{\va}{\vect{a}}            % ~ Vecteur	accélération
-\newcommand{\vp}{\vect{p}}            % ~ Vecteur quantité de mouvement
-\newcommand{\fr}{\vect{F_r}}          % ~ Vecteur force de rappel
-\newcommand{\vabla}{\vect{\nabla}}    % ~ nabla
-\newcommand{\grad}{\vect{\mathrm{grad}}}  % ~ grad
-\DeclareMathOperator{\diverg}{div}        % ~ grad
-\newcommand{\rot}{\vect{\mathrm{rot}}}    % ~ grad
+
 
 \newtcolorbox{cadre}[2][]
 {
@@ -92,19 +74,38 @@
 \newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
 
 \title{Exercices d'algèbre}
-\author{Martin \textsc{Andrieux}}
+\author{Martin \textsc{Andrieux}, Nathan \textsc{Maillet}}
 \date{}
 
 \begin{document}
 \maketitle
 
-\begin{cadre}{Groupes}
+\begin{cadre}{Groupes et ordres}
   Soient \(G\) et \(H\) deux groupes finis; le produit \(G\times H\) est muni de sa structure de groupe produit.
-  Soient \(x\in G\) et \(y\in H\), d'ordres respectifs \(n\) et \(m\). Montrer que \((x,y)\) est d'ordre \(n\vee m\). En déduire une condition nécessaire et suffisante pour que \(G\times H\) soit cyclique.
+  Soient \(x\in G\) et \(y\in H\), d'ordres respectifs \(n\) et \(m\). Montrer que \((x,y)\) est d'ordre \(n\vee m\).
+  En déduire une condition nécessaire et suffisante pour que \(G\times H\) soit cyclique.
 \end{cadre}
 
 \begin{cadre}{Groupe abélien}
   Soit \(G\) un groupe tel que pour tout \(g\) dans \(G\), \(g^{2} = 1\). Montrer que \(G\) est abélien.
+\end{cadre}
+
+\begin{cadre}{Utilisation du théorème de Lagrange}
+    On admettra le théorème de Lagrange : si $H$ est un sous-groupe d'un groupe fini $G$, le cardinal de $H$ est un diviseur
+    de celui de $G$.
+    
+    
+    Soit $G$ un groupe abélien fini. Pour tout $x$ de $G$, nous noterons $o(x)$ l'ordre de $x$ dans $G$, i.e le plus petit
+    entier $n \geq 1$ tel que $x^n=1$. On appelle exposant de $G$ le P.P.C.M. des ordres des éléments de $G$. C'est doc
+    l'entier $r$ défini par \(r=\underset{x \in G}{\vee} o(x)=\text{min}\left\{n \in \N^*, \forall x \in G, x^n=1\right\}\).
+    \begin{itemize}[label=$\bullet$]
+        \item Montrer que si $a$ et $b$ sont deux éléments de $G$ tels que \(o(a) \wedge o(b)=1, ab\) est d'ordre \(o(a)o(b)\).
+        \item Soit \(r=p_1^{\alpha_1}p_2^{\alpha_2} \ldots p_k^{\alpha_k}\) la décomposition de $r$ en produit de facteurs premiers.
+        Montrer que pour tout $i$ compris entre $1$ et $k$, il existe $a_i \in G$ tel que \(o(a_i)=p_i^{\alpha_i}\).
+        En déduire qu'il existe un élément de $G$ dont l'ordre est l'exposant de $G$.    
+        \item Soit $K$ un corps commutatif et $G$ un sous-groupe \((K^*,.)\). Montrer que $G$ est cyclique
+        (et en particulier, $K^*$ est cyclique si $K$ est fini). 
+    \end{itemize}   
 \end{cadre}
 
 \begin{cadre}{Système}
@@ -117,7 +118,8 @@
 \end{cadre}
 
 \begin{cadre}{Polynômes}
-  Soit \(P\in\R\cof{X}\) tel que \(P(x)\geqslant 0\) pour tout \(x\in\R\). On pose \(Q = \sum_{k\geqslant 0}P^{(k)}\). Montrer que \(\forall x \in\R,\,Q(x)\geqslant 0\).
+  Soit \(P\in\R\cof{X}\) tel que \(P(x)\geqslant 0\) pour tout \(x\in\R\). On pose \(Q = \sum_{k\geqslant 0}P^{(k)}\).
+  Montrer que \(\forall x \in\R,\,Q(x)\geqslant 0\).
 \end{cadre}
 
 \end{document}
