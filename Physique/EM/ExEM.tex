@@ -126,6 +126,7 @@
 \end{cadre}
 
 \begin{cadre}{Particules colloîdales dans un électrolyte}
+  \paragraph*{}
   Dans un colloïde, des particules chargées sont en suspension dans un électrolyte. Pourétudier l'effet de ions dur le champ et le potentiel électrique, on considère en coordonnées sphériques une particule colloîdale de centre \(O\), de rayon \(R\), portant une charge \(Q\) uniformément répartie sur sa surface.
   Les ions de charge \(\pm e\) (cations ou anions), auraint en l'abscence de paticule colloîdale la même densité particulaire \(n_{0}\). Soumis à un potentiel \(V(r)\), un ion de qharge \(a\) a (en raison de la loi de Boltzmann) la densité particulaire \(n_{0}\exp\pof{-\frac{qV(r)}{k_{B}T}}\).
   \begin{enumerate}[label=\upshape\alph*)]
@@ -146,6 +147,7 @@
 \end{cadre}
 
 \begin{cadre}{Distribution quadripolaire : molécule de dioxyde de carbone}
+  \paragraph*{}
   Compte tenu des différences d'électronégativité de l'oxygène et du carbone, on peut schématiser la molécule de dioxyde de carbone, d'un point de vue électrostatique, par trois charges alignées sur un axe $Oz$ : $+2q$ en $O$, $-q$ aux points d'abscisse $a$ et $-a$.
   \begin{enumerate}[label=\upshape\alph*)]
     \item Calculer le potentiel et le champ en un point $M$ éloigné de $O$ (on pose $OM=r$ et $(Oz, OM) = \theta$).
@@ -183,6 +185,29 @@
     \(n(r) = n_{0} - \dfrac{2m\varepsilon_{0}\omega^{2}}{e^{2}}\) &
     \(\sigma = -\dfrac{m\varepsilon_{0}\omega^{2}a}{e}\)
   \end{tabularx}
+\end{cadre}
+
+\begin{cadre}{Capacité d'un condensateur diédrique}
+  \begin{minipage}{0.65\linewidth}
+  \paragraph*{}
+  On considère un condensateur dont les deux armatures, rectangulaires, sont situées dans deux plans verticaux faisant entre eux un angle $\alpha$. Les côtés veticaux de ces rectangles, de hauteur $h$, sont respectivement situés aux distance $R_{1}$ et$R_{2}$ de l'axe $Oz$ (voir figure).
+  \end{minipage}
+  \begin{minipage}{0.3\linewidth}
+    \begin{tikzpicture}
+      \draw[->, >=stealth] (0,0) node[below left]{$O$} -- (5,0) node[above]{$x$};
+      \draw (0,0) circle (0.15) node{$\bullet$} node[above left]{$z$};
+      \draw[densely dashed] (0:0) -- (20:2);
+      \draw[ultra thick] (20:2) -- node[pos=0.4, above]{$V_{B}$} node[near end, below]{$B$} (20:4.5);
+      \draw[ultra thick] (0:2) node[below]{$R_{1}$} -- node[pos=0.4, above]{$V_{A}$} node[near end, below]{$A$} (0:4.5) node[below]{$R_{2}$};
+      \draw[densely dotted] (0:2) arc (0:20:2) node[midway, left]{$\alpha$};
+      \draw[densely dotted] (0:4.5) arc (0:20:4.5);
+    \end{tikzpicture}
+  \end{minipage}
+  \begin{enumerate}[label=\upshape\alph*)]
+    \item Les deux armatures sont portées respectivement aux potenteils $V_{A}=0$ et $V_{B} = V_{0}$. Si l'on néglige les effets de bords, quelle est l'allure des équipotentielles et des lignes de champ entre $A$ et $B$? En déduire le potentiel $V(M)$ et le champ $\vv E(M)$ en un point quelconque entre les armature.
+    \item Retrouver l'expression de $V(M)$ à partir du laplacien en coordonnées cylindriques.
+    \item Calculer par deux méthodes la capacité de ce condensateur.
+  \end{enumerate}
 \end{cadre}
 
 \begin{cadre}{Association de condensateurs et bilan d'énergie}
