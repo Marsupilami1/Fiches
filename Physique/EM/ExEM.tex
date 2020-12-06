@@ -13,6 +13,7 @@
 \usepackage{tikz}
 \usepackage[straightvoltages]{circuitikz}
 \usepackage[load-configurations = abbreviations]{siunitx}
+\usepackage{mhchem}
 \usepackage{graphicx}
 \usepackage[f]{esvect}
 \usepackage[many]{tcolorbox}
@@ -122,6 +123,25 @@
   \begin{tabularx}{\linewidth}{XXr}
     \(\Delta V -4\pi G\mu = 0\) & \(\Delta U = -2\omega^{2}\) & \(\omega^{2} < 2\pi G \mu\)
   \end{tabularx}
+\end{cadre}
+
+\begin{cadre}{Particules colloîdales dans un électrolyte}
+  Dans un colloïde, des particules chargées sont en suspension dans un électrolyte. Pourétudier l'effet de ions dur le champ et le potentiel électrique, on considère en coordonnées sphériques une particule colloîdale de centre \(O\), de rayon \(R\), portant une charge \(Q\) uniformément répartie sur sa surface.
+  Les ions de charge \(\pm e\) (cations ou anions), auraint en l'abscence de paticule colloîdale la même densité particulaire \(n_{0}\). Soumis à un potentiel \(V(r)\), un ion de qharge \(a\) a (en raison de la loi de Boltzmann) la densité particulaire \(n_{0}\exp\pof{-\frac{qV(r)}{k_{B}T}}\).
+  \begin{enumerate}[label=\upshape\alph*)]
+    \item Exprimer, pour \(r>R\), la densité volumique de charge \(\rho(r)\) en fonction du potentiel \(V(r)\), de \(n_0\), \(T\) et de constantes. Simplifier cette expression en faisant l'hypothèse que \(eV(r)\ll k_{B}T\) (cela signifie que l'agitation thermique est prépondérente).
+    \item Dans ce cas, calculer le potentiel \(V(r)\), en posant \(U(r) = rV(r)\) et \(\lambda^{2} = \frac{\varepsilon_{0}k_{B}T}{2n_{0}e^{2}}\).
+      On donne le laplacien en coordonnées sphériques pour \(V(r)\) :
+      \[\Delta V = \dfrac{1}{r^{2}}\dfrac{d}{dr}\pof{r^{2}\dfrac{dV}{dr}}\]
+    \item Quelle est la signification de \(\lambda\), appelé \emph{longueur de Debye} de la suspension colloïdale ? Que devient \(V(r)\) si \(\lambda\) tend vers zéro ou l'infini? Calculer \(\lambda\) pour de l'eau pure à \(\SI{300}{\kelvin}\), et pour une solution molaire de \(\ce{NaCl}\). (On donne \(k_{B} = \SI{1.38e-23}{\joule\per\kelvin}\))
+  \end{enumerate}
+  \tcblower
+  \begin{enumerate}[label=\upshape\alph*)]
+    \item \(\rho(r) \approx -2e^{2}n_{0}\dfrac{V(r)}{k_{B}T}\)
+    \item Avec l'équation de Poisson : \(V(r) = \dfrac{A}{r}\exp\pof{\dfrac{-r}{\lambda}}\). On trouve la constante \(A\) en écrivant le champ életrique pour \(r=R\). Alors
+      \[V(r) = \dfrac{Q\exp\pof{\frac{R-r}{\lambda}}}{4\pi\varepsilon_{0}r\pof{1+\frac{R}{\lambda}}}\]
+    \item Pour l'eau pure, \(\lambda = \SI{0.15}{\micro\meter}\); pour \(\ce{NaCl}\) molaire, \(\lambda=\SI{49}{\picometer}\), de l'ordre d'un rayon ionique.
+  \end{enumerate}
 \end{cadre}
 
 \begin{cadre}{Répartition surfacique de dipôles sur un disque}
