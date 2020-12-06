@@ -135,13 +135,27 @@
       \[\Delta V = \dfrac{1}{r^{2}}\dfrac{d}{dr}\pof{r^{2}\dfrac{dV}{dr}}\]
     \item Quelle est la signification de \(\lambda\), appelé \emph{longueur de Debye} de la suspension colloïdale ? Que devient \(V(r)\) si \(\lambda\) tend vers zéro ou l'infini? Calculer \(\lambda\) pour de l'eau pure à \(\SI{300}{\kelvin}\), et pour une solution molaire de \(\ce{NaCl}\). (On donne \(k_{B} = \SI{1.38e-23}{\joule\per\kelvin}\))
   \end{enumerate}
+  Rappel: Un colloïde est une suspension d'une ou plusieurs substances dispersées régulièrement dans un liquide, formant un système à deux phases séparées.
   \tcblower
   \begin{enumerate}[label=\upshape\alph*)]
     \item \(\rho(r) \approx -2e^{2}n_{0}\dfrac{V(r)}{k_{B}T}\)
     \item Avec l'équation de Poisson : \(V(r) = \dfrac{A}{r}\exp\pof{\dfrac{-r}{\lambda}}\). On trouve la constante \(A\) en écrivant le champ életrique pour \(r=R\). Alors
       \[V(r) = \dfrac{Q\exp\pof{\frac{R-r}{\lambda}}}{4\pi\varepsilon_{0}r\pof{1+\frac{R}{\lambda}}}\]
-    \item Pour l'eau pure, \(\lambda = \SI{0.15}{\micro\meter}\); pour \(\ce{NaCl}\) molaire, \(\lambda=\SI{49}{\picometer}\), de l'ordre d'un rayon ionique.
+    \item Pour l'eau pure, \(\lambda = \SI{0.15}{\micro\meter}\); pour \(\ce{NaCl}\) molaire, \(\lambda=\SI{49}{\pico\meter}\), de l'ordre d'un rayon ionique.
   \end{enumerate}
+\end{cadre}
+
+\begin{cadre}{Distribution quadripolaire : molécule de dioxyde de carbone}
+  Compte tenu des différences d'électronégativité de l'oxygène et du carbone, on peut schématiser la molécule de dioxyde de carbone, d'un point de vue électrostatique, par trois charges alignées sur un axe $Oz$ : $+2q$ en $O$, $-q$ aux points d'abscisse $a$ et $-a$.
+  \begin{enumerate}[label=\upshape\alph*)]
+    \item Calculer le potentiel et le champ en un point $M$ éloigné de $O$ (on pose $OM=r$ et $(Oz, OM) = \theta$).
+    \item Quelle est l'équation des lignes de champ?
+    \item Tracer l'allure de la carte de champ avec les équipotentielles.
+  \end{enumerate}
+  \tcblower
+  \begin{tabularx}{\linewidth}{Xr}
+    $V(M) = qa^2\dfrac{1-3\cos^{2}(\theta)}{4\pi\varepsilon_{0}r^{3}}$ & $r=k\lvert\sin(\theta)\rvert\sqrt{\lvert\cos(\theta)\rvert}$
+  \end{tabularx}
 \end{cadre}
 
 \begin{cadre}{Répartition surfacique de dipôles sur un disque}
