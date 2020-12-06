@@ -1,0 +1,140 @@
+\documentclass[french, a4paper, 11pt]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm, bottom=3cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage[straightvoltages]{circuitikz}
+\usepackage[load-configurations = abbreviations]{siunitx}
+\usepackage{mhchem}
+\usepackage{graphicx}
+\usepackage[f]{esvect}
+\usepackage[many]{tcolorbox}
+\usepackage{euler}
+\usepackage[nointegrals]{wasysym}
+\usepackage[french]{babel}
+
+
+\sisetup{
+  locale=FR,
+  detect-all,
+}
+
+%______FONCTIONS______%
+\newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+% --ENSEMBLES--%
+\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
+\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
+\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
+\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
+\newcommand{\R}{\mathbb{R}}   % ~ Réels
+\newcommand{\C}{\mathbb{C}}   % ~ Complexes
+% --TRIGO--%
+\let\cosh\relax
+\DeclareMathOperator{\cosh}{ch}       % ~ cosinus hyperbolique
+\DeclareMathOperator{\sh}{sh}         % ~ sinus hyperbolique
+\let\tanh\relax
+\DeclareMathOperator{\tanh}{th}       % ~ tangente hyperbolique
+\DeclareMathOperator{\argch}{Argch}   % ~ Argument cosinus hyperbolique
+\DeclareMathOperator{\argsh}{Argsh}   % ~ Argument sinus hyperbolique
+\DeclareMathOperator{\argth}{Argth}   % ~ Argument tangente hyperbolique
+\DeclareMathOperator{\cotan}{cotan}   % ~ cotangente
+% --PARENTHESES--%
+\newcommand{\po}{\left(}         % ~ (
+\newcommand{\pf}{\right)}        % ~ )
+\newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
+\newcommand{\co}{\left[}         % ~ [
+\newcommand{\cf}{\right]}        % ~ ]
+\newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
+\newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+% --VECTEURS--%
+\newcommand{\ux}{\vv{u_x}}          % ~ Vecteur ux
+\newcommand{\uy}{\vv{u_y}}          % ~ Vecteur uy
+\newcommand{\uz}{\vv{u_z}}          % ~ Vecteur uz
+\newcommand{\ur}{\vv{u_r}}          % ~ Vecteur ur
+\newcommand{\uth}{\vv{u_\theta}}    % ~ Vecteur utheta
+\newcommand{\uph}{\vv{u_\varphi}}   % ~ Vecteur uphi
+\newcommand{\om}{\vv{OM}}           % ~ Vecteur position
+\newcommand{\vvi}{\vv{v}}           % ~ Vecteur vitesse
+\newcommand{\vvio}{\vv{v_0}}        % ~ Vecteur v0
+\newcommand{\va}{\vv{a}}            % ~ Vecteur	accélération
+\newcommand{\vp}{\vv{p}}            % ~ Vecteur quantité de mouvement
+\newcommand{\fr}{\vv{F_r}}          % ~ Vecteur force de rappel
+\newcommand{\vabla}{\vv{\nabla}}    % ~ nabla
+\newcommand{\grad}{\vv{\mathrm{grad}}}  % ~ grad
+\DeclareMathOperator{\diverg}{div}        % ~ grad
+\newcommand{\rot}{\vv{\mathrm{rot}}}    % ~ grad
+
+\newtcolorbox{cadre}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+\newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
+
+\ctikzset{
+  resistors/scale=0.7,
+  capacitors/scale=0.7,
+  diodes/scale=0.7,
+  sources/scale=0.5
+}
+
+\title{Exercices d'électronique}
+\author{Martin \textsc{Andrieux}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{cadre}{Compteur de franges d'interférences}
+  \shorthandoff{:!}
+  \begin{circuitikz}
+    \node at (0,0) [en amp] (ao1) {};
+    \node at (4,-2.2) [en amp, noinv input up] (ao2) {};
+    \node at (9,-0.2) [en amp] (ao3) {};
+    \draw (-2, -0.5) to[isource, i<=$i_{cc}$] ++(0,1);
+    \draw (-1,1.5) to[generic, label=$R_{0}$] ++(2,0);
+    \draw (2,0) to[generic, label=$R$] ++(0,-2);
+    \draw (5.9,-2.2) to[generic, label=$R_{1}$] ++(2,0);
+    \draw (7.9,-2.2) to[generic, label=$R_{2}$] ++(2,0);
+    \draw (12,-4) to[generic, label=$R_{3}$] ++(0,2);
+    \draw (12,0) to[generic, label=$R_{4}$] ++(0,-2);
+    \draw (2,-4.3) node[eground]{} -- ++(0,0.3) to[C, label=$C$] ++(0,2);
+    \draw (13, -4) to[diode] ++(0, 2);
+    \node at (14.5, -2) [draw] (c) {Compteur};
+    \draw (ao1.out) -| (ao3.-);
+    \draw (ao1.-) |- (-2,0.5);
+    \draw (ao1.-) |- (-1,1.5);
+    \draw (ao1.+) |- (-2,-0.5);
+    \draw (ao1.+) |- (2,-4);
+    \draw (1,1.5) -| (2,0);
+    \draw[thin] (ao2.+) -| (2,-2);
+    \draw (ao2.-) |- (5.2, -3.6) |- (ao2.out);
+    \draw (ao2.out) -- (5.9, -2.2);
+    \draw (7.8, -2.2) |- (ao3.+);
+    \draw (ao3.out) |- (12,0);
+    \draw (9.9, -2.2) -| (ao3.out);
+    \draw (12,-2) -- (c.west);
+    \draw (c.south) |- (2, -4);
+  \end{circuitikz}
+  \shorthandon{:!}
+\end{cadre}
+
+\end{document}
