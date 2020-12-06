@@ -59,22 +59,22 @@
 \newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
 \newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
 % --VECTEURS--%
-\newcommand{\ux}{\vect{u_x}}          % ~ Vecteur ux
-\newcommand{\uy}{\vect{u_y}}          % ~ Vecteur uy
-\newcommand{\uz}{\vect{u_z}}          % ~ Vecteur uz
-\newcommand{\ur}{\vect{u_r}}          % ~ Vecteur ur
-\newcommand{\uth}{\vect{u_\theta}}    % ~ Vecteur utheta
-\newcommand{\uph}{\vect{u_\varphi}}   % ~ Vecteur uphi
-\newcommand{\om}{\vect{OM}}           % ~ Vecteur position
-\newcommand{\vvi}{\vect{v}}           % ~ Vecteur vitesse
-\newcommand{\vvio}{\vect{v_0}}        % ~ Vecteur v0
-\newcommand{\va}{\vect{a}}            % ~ Vecteur	accélération
-\newcommand{\vp}{\vect{p}}            % ~ Vecteur quantité de mouvement
-\newcommand{\fr}{\vect{F_r}}          % ~ Vecteur force de rappel
-\newcommand{\vabla}{\vect{\nabla}}    % ~ nabla
-\newcommand{\grad}{\vect{\mathrm{grad}}}  % ~ grad
+\newcommand{\ux}{\vv{u_x}}          % ~ Vecteur ux
+\newcommand{\uy}{\vv{u_y}}          % ~ Vecteur uy
+\newcommand{\uz}{\vv{u_z}}          % ~ Vecteur uz
+\newcommand{\ur}{\vv{u_r}}          % ~ Vecteur ur
+\newcommand{\uth}{\vv{u_\theta}}    % ~ Vecteur utheta
+\newcommand{\uph}{\vv{u_\varphi}}   % ~ Vecteur uphi
+\newcommand{\om}{\vv{OM}}           % ~ Vecteur position
+\newcommand{\vvi}{\vv{v}}           % ~ Vecteur vitesse
+\newcommand{\vvio}{\vv{v_0}}        % ~ Vecteur v0
+\newcommand{\va}{\vv{a}}            % ~ Vecteur	accélération
+\newcommand{\vp}{\vv{p}}            % ~ Vecteur quantité de mouvement
+\newcommand{\fr}{\vv{F_r}}          % ~ Vecteur force de rappel
+\newcommand{\vabla}{\vv{\nabla}}    % ~ nabla
+\newcommand{\grad}{\vv{\mathrm{grad}}}  % ~ grad
 \DeclareMathOperator{\diverg}{div}        % ~ grad
-\newcommand{\rot}{\vect{\mathrm{rot}}}    % ~ grad
+\newcommand{\rot}{\vv{\mathrm{rot}}}    % ~ grad
 
 \newtcolorbox{cadre}[2][]
 {
@@ -148,15 +148,15 @@
 
 \begin{cadre}{Distribution quadripolaire : molécule de dioxyde de carbone}
   \paragraph*{}
-  Compte tenu des différences d'électronégativité de l'oxygène et du carbone, on peut schématiser la molécule de dioxyde de carbone, d'un point de vue électrostatique, par trois charges alignées sur un axe $Oz$ : $+2q$ en $O$, $-q$ aux points d'abscisse $a$ et $-a$.
+  Compte tenu des différences d'électronégativité de l'oxygène et du carbone, on peut schématiser la molécule de dioxyde de carbone, d'un point de vue électrostatique, par trois charges alignées sur un axe \(Oz\) : \(+2q\) en \(O\), \(-q\) aux points d'abscisse \(a\) et \(-a\).
   \begin{enumerate}[label=\upshape\alph*)]
-    \item Calculer le potentiel et le champ en un point $M$ éloigné de $O$ (on pose $OM=r$ et $(Oz, OM) = \theta$).
+    \item Calculer le potentiel et le champ en un point \(M\) éloigné de \(O\) (on pose \(OM=r\) et \((Oz, OM) = \theta\)).
     \item Quelle est l'équation des lignes de champ?
     \item Tracer l'allure de la carte de champ avec les équipotentielles.
   \end{enumerate}
   \tcblower
   \begin{tabularx}{\linewidth}{Xr}
-    $V(M) = qa^2\dfrac{1-3\cos^{2}(\theta)}{4\pi\varepsilon_{0}r^{3}}$ & $r=k\lvert\sin(\theta)\rvert\sqrt{\lvert\cos(\theta)\rvert}$
+    \(V(M) = qa^2\dfrac{1-3\cos^{2}(\theta)}{4\pi\varepsilon_{0}r^{3}}\) & \(r=k\lvert\sin(\theta)\rvert\sqrt{\lvert\cos(\theta)\rvert}\)
   \end{tabularx}
 \end{cadre}
 
@@ -190,24 +190,29 @@
 \begin{cadre}{Capacité d'un condensateur diédrique}
   \begin{minipage}{0.65\linewidth}
   \paragraph*{}
-  On considère un condensateur dont les deux armatures, rectangulaires, sont situées dans deux plans verticaux faisant entre eux un angle $\alpha$. Les côtés veticaux de ces rectangles, de hauteur $h$, sont respectivement situés aux distance $R_{1}$ et$R_{2}$ de l'axe $Oz$ (voir figure).
+  On considère un condensateur dont les deux armatures, rectangulaires, sont situées dans deux plans verticaux faisant entre eux un angle \(\alpha\). Les côtés veticaux de ces rectangles, de hauteur \(h\), sont respectivement situés aux distance \(R_{1}\) et\(R_{2}\) de l'axe \(Oz\) (voir figure).
   \end{minipage}
   \begin{minipage}{0.3\linewidth}
     \begin{tikzpicture}
-      \draw[->, >=stealth] (0,0) node[below left]{$O$} -- (5,0) node[above]{$x$};
-      \draw (0,0) circle (0.15) node{$\bullet$} node[above left]{$z$};
+      \draw[->, >=stealth] (0,0) node[below left]{\(O\)} -- (5,0) node[above]{\(x\)};
+      \draw (0,0) circle (0.15) node{\(\bullet\)} node[above left]{\(z\)};
       \draw[densely dashed] (0:0) -- (20:2);
-      \draw[ultra thick] (20:2) -- node[pos=0.4, above]{$V_{B}$} node[near end, below]{$B$} (20:4.5);
-      \draw[ultra thick] (0:2) node[below]{$R_{1}$} -- node[pos=0.4, above]{$V_{A}$} node[near end, below]{$A$} (0:4.5) node[below]{$R_{2}$};
-      \draw[densely dotted] (0:2) arc (0:20:2) node[midway, left]{$\alpha$};
+      \draw[ultra thick] (20:2) -- node[pos=0.4, above]{\(V_{B}\)} node[near end, below]{\(B\)} (20:4.5);
+      \draw[ultra thick] (0:2) node[below]{\(R_{1}\)} -- node[pos=0.4, above]{\(V_{A}\)} node[near end, below]{\(A\)} (0:4.5) node[below]{\(R_{2}\)};
+      \draw[densely dotted] (0:2) arc (0:20:2) node[midway, left]{\(\alpha\)};
       \draw[densely dotted] (0:4.5) arc (0:20:4.5);
     \end{tikzpicture}
   \end{minipage}
   \begin{enumerate}[label=\upshape\alph*)]
-    \item Les deux armatures sont portées respectivement aux potenteils $V_{A}=0$ et $V_{B} = V_{0}$. Si l'on néglige les effets de bords, quelle est l'allure des équipotentielles et des lignes de champ entre $A$ et $B$? En déduire le potentiel $V(M)$ et le champ $\vv E(M)$ en un point quelconque entre les armature.
-    \item Retrouver l'expression de $V(M)$ à partir du laplacien en coordonnées cylindriques.
+    \item Les deux armatures sont portées respectivement aux potenteils \(V_{A}=0\) et \(V_{B} = V_{0}\). Si l'on néglige les effets de bords, quelle est l'allure des équipotentielles et des lignes de champ entre \(A\) et \(B\)? En déduire le potentiel \(V(M)\) et le champ \(\vv E(M)\) en un point quelconque entre les armature.
+    \item Retrouver l'expression de \(V(M)\) à partir du laplacien en coordonnées cylindriques.
     \item Calculer par deux méthodes la capacité de ce condensateur.
   \end{enumerate}
+  \tcblower
+  \begin{tabularx}{\linewidth}{Xr}
+    \(V=V_{0}\dfrac{\theta}{\alpha}\) et \(\vv E = -\dfrac{V_{0}}{\alpha r}\uth\) &
+                                                                                \(C = \dfrac{\varepsilon_{0}h}{a}\ln\pof{\dfrac{R_{1}}{R_{1}}}\)
+  \end{tabularx}
 \end{cadre}
 
 \begin{cadre}{Association de condensateurs et bilan d'énergie}
