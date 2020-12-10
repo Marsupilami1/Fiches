@@ -8,7 +8,7 @@
 \usepackage{varioref} % ~ Références croisées
 \usepackage{enumitem} % ~ Listes
 \usepackage{xcolor}   % ~ Couleurs fs
-\usepackage{mhchem}
+\usepackage[version=4]{mhchem}
 \usepackage{float}
 \usepackage[load-configurations = abbreviations, output-decimal-marker={,}]{siunitx}
 \usepackage{graphicx}
@@ -42,6 +42,36 @@
 
 \begin{document}
 \maketitle
+
+\begin{cadre}{Température de flamme adiabatique}
+  Un chalumeau oxhydrique réalise la combustion d'un mélange d'hydrogène et d'oxygène dans les
+  proportions st\oe{}chiométriques et sous la pression de \(\SI{1}{\bar}\). On donne pour :
+    \[\ce{H2(g) + (1/2)O2(g) \rightarrow H2O(g)} \Delta_rH^{\circ}=\SI{-243}{\kilo\joule\per\mole^{-1}} \text{ à } \SI{20}{\celsius}\].
+  Pour la vapeur d'eau : \(C_p^{\circ}=C_0+\alpha \theta (\theta \text{ en } ^{\circ} \text{C})\), avec \(C_0=\SI{36.8}{\joule\per\mole\per\celsius} \text{ et }
+  \alpha=\SI{0.013}{\joule\per\mole\per\celsius\squared}.\) La température initiale étant prise à \(\SI{20}{celsius}\), calculer la température maximale que peut atteindre la flamme.
+  
+  \tcblower
+  \(\theta_{\text{max}}=\SI{3 918}{\celsius}\)
+\end{cadre}
+
+\begin{cadre}{Variétés allotropiques du soufre}
+  Le soufre existe à l'état solide sous les variétés allotropiques \(S_{\alpha}\) et \(S_{\beta}\). Sous la pression \(P^0=\SI{1}{\bar}\),
+  la température de transition est de \(\SI{95.5}{\celsius}\). Dans ces conditions, la différence d'entropie molaire est
+  \({S_m(S_{\alpha})-S_m(S_{\beta})=\SI{7.87}{\joule\per\kelvin\per\mole}}\) et la différence de volume molaire est
+  \({V_m(S_{\alpha})-V_m(S_{\beta})=\SI{0.8}{\centi\metre\cubed\per\mole}}\), ces valeurs étant supposées indépendantes de \(T\) et \(P\) dans le domaine considéré.
+  \begin{enumerate}
+    \item Rappeler, pour un corps pur, l'expression de d$\mu$ en fonction de $\mathrm{d}P$ et $\mathrm{d}T$.
+    \item Quelle est la variété allotropique stable à \(\SI{25}{\celsius}\) et \(\SI{1}{\bar}\) ?
+    \item Calculer l'élévation de la température de transition lorsque la pression augmente de \(\SI{10}{\bar}\).
+  \end{enumerate}
+  
+  \tcblower
+  \begin{enumerate}
+    \item \(\mathrm{d}(\mu_{\alpha}^0-\mu_{\beta}^0)=-[S_{m\alpha}^0-S_{m\beta}^0]\mathrm{d}T\); il en découle que,
+    si \(\mathrm{d}T < 0\), alors \(\mu_{\alpha}^0<\mu_{\beta}^0\), de sorte que \(S_{\alpha}\) est la variété stable.
+    \item \(\Delta T \equiv \SI{0.1}{\kelvin}\)
+  \end{enumerate}    
+\end{cadre}
 
 \begin{cadre}{Équilibres hétérogènes}
 
