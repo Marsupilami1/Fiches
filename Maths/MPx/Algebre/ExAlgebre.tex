@@ -77,7 +77,7 @@
 
 \begin{document}
 \maketitle
-
+\section*{Groupes}
 \begin{cadre}{Groupes et ordres}
   Soient \(G\) et \(H\) deux groupes finis; le produit \(G\times H\) est muni de sa structure de groupe produit.
   Soient \(x\in G\) et \(y\in H\), d'ordres respectifs \(n\) et \(m\). Montrer que \((x,y)\) est d'ordre \(n\vee m\).
@@ -106,6 +106,7 @@
     \end{itemize}   
 \end{cadre}
 
+\section*{Anneaux}
 \begin{cadre}{Système}
   Résoudre dans \(\R\) le système suivant:
   \[\begin{cases}
@@ -127,7 +128,50 @@
 
 \begin{cadre}{Égalité avec une congruence}
   Soit \(p\) un nombre premier. Montrer :
-    \[(p-1)! \equiv (-1)^p \, \cof{p}\].
+    \[(p-1)! \equiv (-1)^p \, \cof{p}.\]
+\end{cadre}
+
+\section*{Espaces Vectoriels}
+
+\begin{cadre}{Dimensions d'espaces vetoriels}
+  Soit $E$ un espace vectoriel de dimension finie $n$.
+  \begin{itemize}[label=$\bullet$]
+    \item Soit $A$ un sous-espace de $E$. Montrer que \(\alpha=\left\{ u \in \mathcal{L}, A \subset \text{ Ker}(u)\right\}
+  \text{ et } \beta=\left\{ u \in \mathcal{L}, u(A) \subset A\right\}\) sont des sous-espaces de $\mathcal{L}(E)$
+  et donner leurs dimensions en fonction de celle de $A$.
+    \item Soient $F$ et $G$ deux sous-espaces vectoriels de $E$. On note $f,g,h$ les dimensions respectives de \(F,G \text{ et } {F \cap G}\).
+  Déterminer la dimension de \(\gamma=\left\{ u \in \mathcal{L}(E), u(F) \subset F \text{ et } u(G) \subset G\right\}\).
+  \end{itemize}
+\end{cadre}
+
+\section*{Calcul matriciel}
+
+\begin{cadre}{Inversibilité des matrices par blocs}
+  Soient $A$ et $B$ deux matrices inversibles de tailles $n$ et $m$ et soit $C$ matrice de taille $n,m$.Montrer que la matrice :
+    \[P=\begin{pmatrix}
+      A & C \\
+      0 & B
+    \end{pmatrix}\]
+  est inversible et calculer son inverse.
+\end{cadre}
+
+\begin{cadre}{Calculs de déterminants}
+  Calculer le déterminant :
+  \[A=\begin{vmatrix}
+    1 & \cos(x) & \cos(2x) \\
+    1 & \cos(y) & \cos(2y) \\
+    1 & \cos(z) & \cos(2z)
+  \end{vmatrix}\] et 
+  \[B=\begin{vmatrix}
+    1 & 1 & 1 & 1 \\
+    a & b & c & d \\
+    a^3 & b^3 & c^3 & d^3 \\
+    a^4 & b^4 & c^4 & d^4
+  \end{vmatrix}\]
+\end{cadre}
+
+\begin{cadre}{Une histoire de rang}
+  Soit \(A \in M_n(\mathbb{K})\). Montrer que \(A^n \text{ et } A^{n+1}\) ont le même rang.
 \end{cadre}
 
 \end{document}
