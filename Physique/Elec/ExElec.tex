@@ -104,22 +104,28 @@
 \maketitle
 
 \begin{cadre}{Compteur de franges d'interférences}
+  \paragraph*{}
+  Le circuit électronique suivant permet de compter les franges d'interférences produites par un dispositif optique. On utilise un détecteur \((D)\) fonctionnant comme une source de courant parfaite débitant un courant de court-circuit proportionnel à l'intensité lumineuse reçue, et on admet que celle-ci est alors de la forme:
+  \[i_{cc} = I_{0}(1+\gamma\cos(\omega t))\]
+  Avec \(I_{0}=\SI{10}{\milli\ampere}\), \(\gamma=0,4\) et \(\omega=\SI{20}{\radian\per\second}\)
+
   \shorthandoff{:!}
   \begin{circuitikz}
-    \node at (0,0) [en amp] (ao1) {};
-    \node at (4,-2.2) [en amp, noinv input up] (ao2) {};
-    \node at (9,-0.2) [en amp] (ao3) {};
-    \draw (-2, -0.5) to[isource, i<=$i_{cc}$] ++(0,1);
-    \draw (-1,1.5) to[generic, label=$R_{0}$] ++(2,0);
-    \draw (2,0) to[generic, label=$R$] ++(0,-2);
-    \draw (5.9,-2.2) to[generic, label=$R_{1}$] ++(2,0);
-    \draw (7.9,-2.2) to[generic, label=$R_{2}$] ++(2,0);
-    \draw (12,-4) to[generic, label=$R_{3}$] ++(0,2);
-    \draw (12,0) to[generic, label=$R_{4}$] ++(0,-2);
-    \draw (2,-4.3) node[eground]{} -- ++(0,0.3) to[C, label=$C$] ++(0,2);
-    \draw (13, -4) to[diode] ++(0, 2);
-    \node at (14.5, -2) [draw] (c) {Compteur};
-    \draw (ao1.out) -| (ao3.-);
+    \node at (0,0) [en amp] (ao1) {A.O. 1};
+    \node at (4,-2.2) [en amp, noinv input up] (ao2) {A.O. 2};
+    \node at (8.5,-0.2) [en amp] (ao3) {A.O. 3};
+    \draw (-2, -0.5) to[isource, i<=\(i_{cc}\)] ++(0,1);
+    \node at (-2.2, 0.8) {\((D)\)};
+    \draw (-1,1.5) to[generic, label=\(R_{0}\)] ++(2,0);
+    \draw (2,0) to[generic, label=\(R\)] ++(0,-2);
+    \draw (5.4,-2.2) to[generic, label=\(R_{1}\)] ++(2,0);
+    \draw (7.4,-2.2) to[generic, label=\(R_{2}\)] ++(2,0);
+    \draw (11.5,-4) to[generic, label=\(R_{3}\)] ++(0,2);
+    \draw (11.5,0) to[generic, label=\(R_{4}\)] ++(0,-2);
+    \draw (2,-4.2) node[eground]{} -- ++(0,0.2) to[C, label=\(C\)] ++(0,2);
+    \draw (12.1, -4) to[diode] ++(0, 2);
+    \node at (14, -2) [draw] (c) {Compteur};
+    \draw (ao1.out) -| (2,0)   |- (ao3.-);
     \draw (ao1.-) |- (-2,0.5);
     \draw (ao1.-) |- (-1,1.5);
     \draw (ao1.+) |- (-2,-0.5);
@@ -128,13 +134,27 @@
     \draw[thin] (ao2.+) -| (2,-2);
     \draw (ao2.-) |- (5.2, -3.6) |- (ao2.out);
     \draw (ao2.out) -- (5.9, -2.2);
-    \draw (7.8, -2.2) |- (ao3.+);
-    \draw (ao3.out) |- (12,0);
-    \draw (9.9, -2.2) -| (ao3.out);
-    \draw (12,-2) -- (c.west);
+    \draw (7.3, -2.2) |- (ao3.+);
+    \draw (ao3.out) |- (11.5,0);
+    \draw (9.4, -2.2) -| (ao3.out);
+    \draw (11.5,-2) to[short, i=\( \)] node[pos=0.1, above]{\(i=0\)} (c.west);
     \draw (c.south) |- (2, -4);
+    \draw[->, >= stealth, thick] (1.1, -3.8) -- node[midway, left]{\(v_{1}\)} ++(0, 3.6);
+    \draw[->, >= stealth, thick] (2.5, -3.8) -- node[very near end, right]{\(v_{2}\)} ++(0, 1.8);
+    \draw[->, >= stealth, thick] (5.5, -3.9) -- node[midway, right]{\(v'_{2}\)} ++(0, 1.6);
+    \draw[->, >= stealth, thick] (10.5, -3.85) -- node[midway, left]{\(v_{4}\)} ++(0, 3.7);
+    \draw[->, >= stealth, thick] (12.7, -3.85) -- node[midway, right]{\(v_{5}\)} ++(0, 1.7);
   \end{circuitikz}
   \shorthandon{:!}
+
+  \begin{enumerate}[label=\upshape\alph*)]
+    \item La diode et les A.O. sont considérés comme parfaits. Les tensions de saturation des A.O. valent \(\pm V_{s} = \SI{\pm 12}{\volt}\) pour les A.O. 2 et 3, et \(\SI{\pm 15}{\volt}\) pour l'A.O. 1. Enfin, les A.O. 1 et 2 fonctionnent en régime linéaire, et l'A.O. 3 en régime saturé. Décomposer le montage en sous-sensembles simples dont on précisera la fonction.
+    \item Calculer \(v_{1}(t)\), sachant que \(R_{0}=\SI{1000}{\ohm}\).
+    \item Si \(R=\SI{100}{\kilo\ohm}\) et \(C=\SI{100}{\micro\farad}\), calculer \(v'_{2}(t)\) en régime établi (faire les approximations qui s'imposent).
+    \item Quelles valeurs peut prendre la tension d'entrée \(v+\) de l'A.O. 3, si \(R_{1}=\SI{1}{\kilo\ohm}\) et \(R_{2=}=\SI{100}{\kilo\ohm}\)?
+    \item Pour simplifier les calcules, on fait l'approximation \(v^{+}=v'_{2}\). Tracer alors sur un même graphe les courbes \(v_{1}(t)\) et \(v_{4}(t)\).
+    \item Si l'on veut que la valeur maximale de la tension \(v_{5}(t)\) à l'entrée du compteur vaille \(\SI{5}{\volt}\), quelle doit être la valeur du rapport \(\frac{R_{3}}{R_{4}}\)? Tracer sur un même graphe l'allure de \(v_{4}(t)\) et \(v_{5}(t)\).
+  \end{enumerate}
 \end{cadre}
 
 \end{document}
