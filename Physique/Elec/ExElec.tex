@@ -27,7 +27,7 @@
   detect-all,
 }
 
-%______FONCTIONS______%
+% ______FONCTIONS______%
 \newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
 % --ENSEMBLES--%
 \newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
@@ -48,10 +48,10 @@
 \DeclareMathOperator{\cotan}{cotan}   % ~ cotangente
 % --PARENTHESES--%
 \newcommand{\po}{\left(}         % ~ (
-\newcommand{\pf}{\right)}        % ~ )
+  \newcommand{\pf}{\right)}        % ~ )
 \newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
 \newcommand{\co}{\left[}         % ~ [
-\newcommand{\cf}{\right]}        % ~ ]
+  \newcommand{\cf}{\right]}        % ~ ]
 \newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
 \newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
 \newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
@@ -133,10 +133,55 @@
   \end{minipage}
   \tcblower
   \begin{tabularx}{\linewidth}{Xr}
-  b) $H = -\dfrac{R_{2}}{R_{1}}\dfrac{2+jx}{1+2jx-x^{2}}$ &
-  c) Signal triangulaire, avec $\Delta V=\SI{19.6}{\volt}$. \\
-  d) Crénaux légèrement déformés au début, avec $\Delta V=\SI{20.4}{\volt}$ &
+    b) $H = -\dfrac{R_{2}}{R_{1}}\dfrac{2+jx}{1+2jx-x^{2}}$ &
+    c) Signal triangulaire, avec $\Delta V=\SI{19.6}{\volt}$. \\
+    d) Crénaux légèrement déformés au début, avec $\Delta V=\SI{20.4}{\volt}$ &
   \end{tabularx}
+\end{cadre}
+
+\begin{cadre}{CNA bits en échelle}
+  \begin{minipage}{\0.32\linewidth}
+    \paragraph*{}
+    Dans le montage ci-contre, l'A.O. est idéal et fonctionne en régime linéaire. La tension $E$ est constante. On définit pour chaque interrupteur une variable ligique $k_{i}$ telle que:
+    \begin{itemize}
+      \item $k_{i} = 0$ si l'interrupteur est relié à la masse,
+      \item $k_{i} = 1$ dans le cas contraire.
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}{\0.65\linewidth}
+    \shorthandoff{:!}
+    \begin{circuitikz}[scale=0.9]
+      \draw (0,2) to[vsource] (0,0);
+      \draw[->, >=stealth] (-0.3,1.5) -- node[midway, left]{$E$} (-0.3,0.5);
+      \draw (0.6,0) to[short] ++(0,1.8) arc(-90:90:0.2) to[generic, l=$2R$] ++(0,2) to[short] ++(1.1,0);
+      \foreach \x in {0,1,2} {
+        \draw (1.4+\x*1.5,0) to[short, -*] ++(0,0.8);
+        \draw (1.4+\x*1.5,1.2) to[short, *-] ++(0,0.8);
+        \draw (1.4+\x*1.5,1) node[left]{$k_{\x}$} to[short, -*] ++(0.3,0) to[short] ++(0,0.8) arc(-90:90:0.2) to[generic, l=$2R$, -*] ++(0,2) to[generic, l=$R$] ++(1.5,0);
+      }
+      \draw (5.9,0) to[short, -*] ++(0,0.8);
+      \draw (5.9,1.2) to[short, *-] ++(0,0.8);
+      \draw (5.9,1) node[left]{$k_{3}$} to[short, -*] ++(0.3,0) to[short] ++(0,1.2) to[generic, l=$2R$, -*] ++(0,2) coordinate (a);
+      \draw (0,2) to[short] ++(5.9,0);
+      \draw (0,0) to[short] ++(11.5,0) node[eground, rotate=90]{};
+      \node at (9,3.83) [en amp] (ao) {};
+      \draw (a) |- node[pos=0.8, name=c, scale=0.9]{$\bullet$} (ao.-);
+      \draw (ao.+) |- (8,0);
+      \draw (ao.out) -- node[midway, name=b]{} ++(1,0);
+      \draw (b.center) to[short, *-] ++(0,1.7) to[generic, l_=$R'$] ++(-3.6,0) -| (c.center);
+      \draw[->, >=stealth] (10.5, 0.3) -- node[midway, right]{$s(t)$} ++(0,3.3);
+    \end{circuitikz}
+    \shorthandon{:!}
+  \end{minipage}
+
+  \begin{enumerate}[label=\upshape\alph*)]
+    \item En remplaçant de proche en proche l'échelle par le générateur de Thévnin équilvalent, montrer que l'ensemble de l'échelle équivaut à un générateur de résitance interne $T$ et de fem :
+   \[e=k_{0}\dfrac{E}{16}+k_{1}\dfrac{e}{8}+k_2\dfrac{E}{4}+k_{3}\dfrac{E}{2}\]
+    \item En déduire la tension de sortie $s(t)$. À quel nombre binaire peut-on l'associer? Quelle est la tension de sortie maximale de ce CNA? Quel est son pas?
+  \end{enumerate}
+  \tcblower
+  \[s(t)=\pof{8k_{3}+4k_{2}+2k_{1}+k_{0}}\dfrac{ER'}{16R}\]
+  Ceka correspond au nombre $k_{3}k_{2}k_{1}k_{0}$.
 \end{cadre}
 
 \begin{cadre}{Compteur de franges d'interférences}
