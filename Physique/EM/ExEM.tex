@@ -314,4 +314,41 @@
     \end{tabularx}
 \end{cadre}
 
+\begin{cadre}{Inductance mutuelle de deux spires par deux méthodes}
+  \paragraph*{}
+  Soient deux spires coaxiales de rayons respectifs \(b\) et \(R\), et dont les centres sont séparés par la distance \(a\).
+  On admet que \(b \ll a\) et \(b \ll R\). Montrer que l'on peut, par deux méthodes différentes, calculer le coefficient
+  de mutuelle inductance \(M\) des deux spires.
+
+  \tcblower
+  \begin{tabularx}{\linewidth}{Xr}
+  \(M=\dfrac{\mu_0\pi b^2}{2R\left(1+\frac{a^2}{R^2}\right)^{3/2}}\) (on peut calculer le flux de la grande spire dans la
+  petite, ou celui de la petite -considérée comme un dipôle magnétique- dans la grande)
+  \end{tabularx}
+\end{cadre}
+
+\begin{cadre}{Inductance propre d'une bobine torique à spires carrées}
+  \paragraph*{}
+  On enroule régulièrement \(N\) spires sur la surface torique engendrée par la rotation d'un cadre
+  carré autour d'un axe \(Oz\) contenu dans le plan du cadre et parallèle à un de ses côtés.
+  Chaque côté du cadre a pour longueur \(2a\), et le centre du cadre est à la distance \(d\) de l'axe \(Oz\).
+  \begin{enumerate}[label=\upshape\alph*)]
+    \item Calculer le coefficient d'inductance propre \(L\) de la bobine ainsi constituée
+  (deux méthodes possibles). A.N. : \(N=500, a=\SI{0.9}{\centi\metre}, d=\SI{5}{\centi\metre}\).
+  Simplifier cette expression lorsque \(\frac{a}{d} \ll 1\), et comparer le résultat obtenu avec celui d'un solénoïde rectiligne.
+    \item Un second tore comportant \(N'\) spires est superposé au précédent. Calculer le coefficient d'inductance mutuelle \(M\)
+  entre les deux circuits.
+  \end{enumerate}
+
+  \tcblower
+  \begin{tabularx}{\linewidth}{Xr}
+    \paragraph*{}
+    \(L=\dfrac{\mu_0N^2a}{\pi}\ln\left(\frac{d+a}{d-a}\right)=\SI{0.328}{\milli\henry};\)
+    si \(a \ll d, L=\dfrac{2\mu_0N^2a^2}{\pi d}=\SI{0.324}{\milli\henry}\)
+    (on peut calculer \(L\) avec le flux u avec l'énergie magnétique)
+    \paragraph*{}
+    \(M^2=LL'\)
+  \end{tabularx}
+\end{cadre}
+
 \end{document}
