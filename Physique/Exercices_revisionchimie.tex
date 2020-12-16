@@ -1,0 +1,50 @@
+\documentclass[french, a4paper, 11pt]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage[version=4]{mhchem}
+\usepackage{float}
+\usepackage[load-configurations = abbreviations, output-decimal-marker={,}]{siunitx}
+\usepackage{graphicx}
+\usepackage[many]{tcolorbox}
+\usepackage{euler}
+\usepackage[french]{babel}
+
+
+% ______FONCTIONS______%
+\newcommand{\inv}[1]{\dfrac{1}{#1}}
+% ______CHIMIE______%
+\newcommand{\s}{{}_{(s)}}
+\newcommand{\g}{{}_{(g)}}
+
+\newtcolorbox{cadre}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+\newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
+
+\title{Exercices de révisions de MPSI de Chimie}
+\author{Nathan \textsc{Maillet}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{cadre}{Vie moyenne d'un nucléide}
+  Montrer que la vie moyenne d'un nucléide radioactif est \(\tau=\inv{\lambda}\) (où \(\lambda\) est une constante de désintégration)
+\end{cadre}
+
+\end{document}
