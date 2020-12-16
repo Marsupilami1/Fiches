@@ -9,9 +9,6 @@
 \usepackage{enumitem} % ~ Listes
 \usepackage{xcolor}   % ~ Couleurs fs
 \usepackage{float}
-\usepackage{tikz}
-\usepackage[straightvoltages]{circuitikz}
-\usepackage[squaren, cdot, derived]{SIunits}
 \usepackage{graphicx}
 \usepackage[f]{esvect}
 \usepackage[many]{tcolorbox}
@@ -52,23 +49,6 @@
 \newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
 \newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
 \newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
-% --VECTEURS--%
-\newcommand{\ux}{\vect{u_x}}          % ~ Vecteur ux
-\newcommand{\uy}{\vect{u_y}}          % ~ Vecteur uy
-\newcommand{\uz}{\vect{u_z}}          % ~ Vecteur uz
-\newcommand{\ur}{\vect{u_r}}          % ~ Vecteur ur
-\newcommand{\uth}{\vect{u_\theta}}    % ~ Vecteur utheta
-\newcommand{\uph}{\vect{u_\varphi}}   % ~ Vecteur uphi
-\newcommand{\om}{\vect{OM}}           % ~ Vecteur position
-\newcommand{\vvi}{\vect{v}}           % ~ Vecteur vitesse
-\newcommand{\vvio}{\vect{v_0}}        % ~ Vecteur v0
-\newcommand{\va}{\vect{a}}            % ~ Vecteur accélération
-\newcommand{\vp}{\vect{p}}            % ~ Vecteur quantité de mouvement
-\newcommand{\fr}{\vect{F_r}}          % ~ Vecteur force de rappel
-\newcommand{\vabla}{\vect{\nabla}}    % ~ nabla
-\newcommand{\grad}{\vect{\mathrm{grad}}}  % ~ grad
-\DeclareMathOperator{\diverg}{div}        % ~ div
-\newcommand{\rot}{\vect{\mathrm{rot}}}    % ~ rot
 
 \newtcolorbox{theoreme}[2][]
 {
@@ -146,6 +126,7 @@
 \begin{theoreme}{Théorème spécial des séries alternées}
   Avec \(\sum_{n\geqslant 0} \alpha_{n}\) et \(\forall n\, \alpha_{n}\geqslant 0\),
   si \(\alpha_{n}\) décroit vers \(0\), alors la série est convergente.
+  De plus: \[\left\lvert R_n \right\rvert =\left\lvert\sum_{k=n+1}^{+\infty}(-1)^k \alpha_{k}\right\rvert \leq \alpha_{n+1}\]
 \end{theoreme}
 
 \begin{theoreme}{Utilisation de DL}
