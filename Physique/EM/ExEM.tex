@@ -90,7 +90,7 @@
 \newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
 
 \title{Exercices d'électromagnétisme}
-\author{Martin \textsc{Andrieux}}
+\author{Martin \textsc{Andrieux}, Nathan \textsc{Maillet}}
 \date{}
 
 \begin{document}
@@ -277,6 +277,41 @@
   \begin{tabularx}{\linewidth}{Xr}
     \(\vv B(O) = \dfrac{\mu_{0}Q}{6\pi R}\omega\) & \(\vv{\mathcal M} = \dfrac{QR^{2}}{3}\omega\)
   \end{tabularx}
+\end{cadre}
+
+\begin{cadre}{Équilibre d'un cade rectangulaire dans un champs magnétique}
+    \paragraph*{}
+    Un cadre rectangulaire, parcouru par un courant continu d'intensité \(I>0\), est mobile sans frottemtn autour d'un de ses côtés
+    horizontaux, de longueur \(2a\) (les deux côtés non nécessairement horizontaux ont pour longueur 2b). Il est placé dans un champ
+    magnétique uniforme et vertical \(\vv B\) (voir figure ci-dessous). On note \(m\) la masse totale du cade et \(J\) son moment d'inertie
+    par rapport à l'axe de rotation \(Ox\).
+
+    \begin{center}
+        \begin{tikzpicture}[scale=0.6][h]
+            \draw (0,0,0) node[]{\(O\)};
+            \draw[->, >=stealth] (0,0,-4.3) -- (0,0,5) node[below]{\(x\)};
+            \draw[->, >=stealth] (0,0,0) -- (0,3.8,0) node[right]{\(z\)};
+            \draw[->, >=stealth] (0,0,0) -- (7,0,0) node[below]{\(y\)};
+            \draw[ultra thick, <-, >=latex] (0,2,1.8) -- node[midway, left]{\(\vv g\)} ++ (0,2.5,0);
+            \draw[ultra thick, ->, >=latex] (0,0,0) -- (0,2.5,0) node[right]{\(\vv B\)};
+            \draw[ultra thick] (0,0,-4) -- (0,0,4) node[pos=0.75, sloped]{\(\blacktriangleleft\)};
+            \draw[ultra thick] (0,0,-4) -- (5.5,3.3,-4) node[pos=0.3, sloped]{\(\blacktriangleleft\)} node[pos=0.3, above]{\(I\)};
+            \draw[ultra thick] (0,0,4) -- (5.5,3.3,4) node[pos=0.75, sloped]{\(\blacktriangleright\)} node[pos=0.4, below]{\(2b\)};
+            \draw[ultra thick] (5.5,3.3,-4) -- (5.5,3.3,4) node[pos=0.75, sloped]{\(\blacktriangleright\)};
+            \draw[thick, dashed] (0,0,0) -- (5.5,3.3,0) node[right]{\(2a\)};
+            \draw[thick, ->] (3.3,0,0) arc(0:60:1) node[midway, right]{\(\theta\)};
+        \end{tikzpicture}
+    \end{center}
+    
+    \paragraph*{}
+    Déterminer les positions d'équilibre du cadre et discuter leur stabilité. Pour la position d'équilibre stable, déterminer
+    la pulsation des petites oscillations au voisinage de l'équilibre.
+
+    \tcblower
+    \begin{tabularx}{\linewidth}{Xr}
+        On a équilibre pour \(\tan(\theta)=-\dfrac{mg}{4aIB}\). La position d'équilibre est \(\theta_0 \in \interof{-\frac{\pi}{2}}{0}\),
+        et la pulsation des oscillations est alors telle que \(\omega^2=\dfrac{4abIB\cos(\theta_0)-mgb\sin(\theta_0)}{J}\)
+    \end{tabularx}
 \end{cadre}
 
 \end{document}
