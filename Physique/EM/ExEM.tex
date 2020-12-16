@@ -253,6 +253,20 @@
 
 \begin{cadre}{Moment magnétique d'une sphère chargée en surface et en rotation}
   \paragraph*{}
+  \begin{tikzpicture}[scale=2.5]
+    \draw[->, >=stealth] (-0.5,0) -- (3,0) node[below]{\(z\)};
+    \node at (2,0) [name=m] {\(\bullet\)};
+    \node at (2,0) [below]{\(M\)};
+    \draw[very thick] (0,-0.7) .. node[pos=0.3, name=a]{}  controls (0.2,-0.7) and (0.2,0.7) .. (0,0.7) node[name=b]{};
+    \draw[very thick] (0,-0.7) .. node[pos=0.7, sloped, scale=0.7]{\(\blacktriangleleft\)} node[pos=0.7, left]{\(I\)} controls (-0.2,-0.7) and (-0.2,0.7) .. (0,0.7);
+    \draw[->, >=latex] (0,0) node{\(\bullet\)} node[above]{\(O\)} -- node[midway, left]{\(R\)} (a.center);
+    \draw (b.center) -- (m.center);
+    \draw (1.5,0) arc(180:161:0.5) node[midway, left]{\(\alpha\)};
+    \draw[ultra thick, ->, >=latex] (m.center) -- node[midway, above]{\(\vv B(M)\)} ++(0.4,0);
+    \node at (5,0) {\(\vv B(M) = \dfrac{\mu_{0}I}{2R}\sin^{3}(\alpha)\uz\)};
+
+  \end{tikzpicture}
+
   Une sphère de rayon \(R\) porte une charge \(Q\) uniformément répartie à sa surface, et tourne avec la vitesse angulaire constante \(\omega\) autour d'un de ses diamètres.
   \begin{enumerate}[label=\upshape\alph*)]
     \item Calculer le champ magnétique \(\vv B\) au centre \(O\) de la sphère.
