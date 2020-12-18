@@ -288,7 +288,7 @@
 
     \begin{center}
         \begin{tikzpicture}[scale=0.6][h]
-            \draw (0,0,0) node[]{\(O\)};
+            \draw (0,0,0) node[left]{\(O\)};
             \draw[->, >=stealth] (0,0,-4.3) -- (0,0,5) node[below]{\(x\)};
             \draw[->, >=stealth] (0,0,0) -- (0,3.8,0) node[right]{\(z\)};
             \draw[->, >=stealth] (0,0,0) -- (7,0,0) node[below]{\(y\)};
@@ -299,7 +299,7 @@
             \draw[ultra thick] (0,0,4) -- (5.5,3.3,4) node[pos=0.75, sloped]{\(\blacktriangleright\)} node[pos=0.4, below]{\(2b\)};
             \draw[ultra thick] (5.5,3.3,-4) -- (5.5,3.3,4) node[pos=0.75, sloped]{\(\blacktriangleright\)};
             \draw[thick, dashed] (0,0,0) -- (5.5,3.3,0) node[right]{\(2a\)};
-            \draw[thick, ->] (3.3,0,0) arc(0:60:1) node[midway, right]{\(\theta\)};
+            \draw[thick, ->, >=latex] (3.3,0,0) arc(0:30.5:3.3) node[midway, right]{\(\theta\)};
         \end{tikzpicture}
     \end{center}
     
