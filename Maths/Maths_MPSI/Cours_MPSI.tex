@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt, french]{article}
+\documentclass[a4paper, french]{article}
 
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}
@@ -12,6 +12,14 @@
 \usepackage{graphicx}
 \usepackage{gensymb}
 \usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 
 \newcommand{\R}{\mathbb{R}}
@@ -55,7 +63,9 @@
 
 \begin{document}
 	\maketitle
-	\section*{Complexes et Trigonométrie}
+	\tableofcontents
+
+	\section{Complexes et Trigonométrie}
 	\begin{itemize}
 	  \item |z|=$\sqrt{z\overline{z}}$
 	  \item $\cos(a+b)=\cos(a)\cos(b)-\sin(a)\sin(b)$ et $\sin(a+b)=\sin(a)\cos(b)+\sin(b)\cos(a)$
@@ -71,7 +81,7 @@
 	  \item \ppt $\arctan(x)+\arctan(\inv{x})=\text{(signe de x)}*\frac{\pi}{2}$
 	\end{itemize}
 
-	\section*{Ensembles}
+	\section{Ensembles}
 	\begin{itemize}
 	  \item $(g\circ f)^{-1}=f^{-1}\circ g^{-1}$
 	  \item Partition : recouvrement, $\forall i \neq j, A_i \cap A_j=\varnothing, \forall i, A_i \neq \varnothing$
@@ -79,7 +89,7 @@
 	  \item \ppt Soit $A \neq \varnothing, A\subset \R$ majorée, A possède une borne supérieur
 	\end{itemize}
 
-	\section*{Equations différentielles}
+	\section{Equations différentielles}
 	\subsection*{Premier ordre}
 	 $y'+\al(x)y=a \implies y=\la e^{-\int{\al(x)\dx}}+y_0$
 	\subsection*{Deuxième ordre}
@@ -92,7 +102,7 @@
 	\subsubsection*{Raccordements :}
 	\thm : Soit $f$ une fonction continue en a et $f' \limit{a} l$, alors $f'(a)=l$ et f est de classe $C^1$ en a
 
-	\section*{Continuité}
+	\section{Continuité}
 	 \thm Soit $f$ une fonction continue en a et $(u_n)_{\N}\limit{\infty}a$ alors $f(u_n)\limit{\infty}f(a)$ \\
 	 \thm TVI : Si $f$ est continue sur un intervalle $I$ alors $f(I)$ est un intervalle \\
 	 \thm Soit $I$ un intervalle réel,\, $f$ continue et strictement monotone sur $I$ alors $f$ réalise une bijection de $I$ vers $f(I)$.$f^{-1}$ existe va de $f(I)$ vers $I$, possède la même monotonie et si $f\in \D(I,f(I))$ et 0 $\notin f'(I)$ alors $f^{-1} \in \D(f(I),I)$ et $(f^{-1})'=\inv{f'\circ f^{-1}}$
@@ -106,7 +116,7 @@
 	\end{itemize}
 	 \thm Toute fonction continue sur un segment est uniformément continue
 
-	\section*{Suites}
+	\section{Suites}
 	 \thm Suites adjacentes : Soit $(u_n)_{n \in \N}, (v_n)_{n \in \N}$ deux suites réelles telles que $(u_n)_{n \in \N}$ soit croissante et $(v_n)_{n \in \N}$ décroissantes et $v_n-u_n\limit{\infty}0$ alors $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ convergent et ce vers la même limite\\
 	 \thm Segments emboités : Soit $S_n=[a_n,b_n], \forall n \in \N, S_{n+1} \subset S_n, b_n-a_n \limit{\infty}0 \implies \overset{\infty}{\underset{n=1}{\cap}} S_n={\al}$
 	\begin{itemize}
@@ -124,7 +134,7 @@
 	  \item \ppt Soit $I$ un intervalle stable par $f$, continue décroissante, $u_{n+1}=f(u_n)$ avec $u_0 \in I$ alors $(u_{2n})_{n \in \N}$ et $(u_{2n+1})_{n \in \N}$ sont de monotonie opposée
 	\end{itemize}
 
-	\subparagraph*{Suites récurentes linéaires d'ordres 2} 
+	\subparagraph{Suites récurentes linéaires d'ordres 2} 
 	\subsubsection*{$\De > 0$ :}
 	 $u_n=\al r_1^n+\be r_2^n,(\al,\be) \in \C^2$
 	\subsubsection*{$\De = 0$ :}
@@ -132,9 +142,9 @@
 	\subsubsection*{$\De < 0$ :}
 	 $r=\rho e^{i\theta}, u_n=\rho^n(\al \cos(n\theta) + \be \sin(n\theta))$
 
-	\section*{Propiétés de $\R$ en tout genre}
+	\section{Propiétés de $\R$ en tout genre}
 	 \thm Cauchy-Schwarz : $\forall (x_i,y_i) \in (\R^2)^n, |\som{i=1}{n}x_iy_i| \leqslant \sqrt{\som{i=1}{n}x_i^2}\sqrt{\som{i=1}{n}y_i^2}$
-	\subparagraph*{Topologie}
+	\subparagraph{Topologie}
 	\begin{itemize}
 	  \item $A\subset E$ est dense dans E si et seulement si $$\forall B(a,r)=\acc{x\in E / d(x,a)<r}, \exists \al \in A / \al \in B(a,r)$$
 	  \item $\mathbb{Q}$ est dense dans $\R$
@@ -146,7 +156,7 @@
 	  \item \ppt Soit $(F_j)_{j : 1\rightarrow s}$ des fermés, $\overset{s}{\underset{j=1}{\cup}} F_j$ est fermé
 	\end{itemize}
 
-	\section*{Dérivabilité}
+	\section{Dérivabilité}
 	\begin{itemize}
 	  \item Tangente en $x_0 : T_{x_0} : y=f'(x_0)(x-x_0)+f(x)$
 	  \item Si $f \in \D(I,f(I))$ et $ G \in \D(J,g(J))$ avec $f(I) \subset J$ alors $g\circ f \in \D(I,g(J))$ et $(g\circ f)'=f'(g'\circ f)$
@@ -160,8 +170,8 @@
 			Cas d'inégalité : $f\in C^0([a,b],\C), f \in \D(]a,b[,\C)$ et $\exists M=\sup(|f'|) \implies f(b)-f(a)\leqslant M(b-a)$
 		\end{center}
 
-	\section*{Lois de compositions internes}
-	\subparagraph*{Groupe}
+	\section{Lois de compositions internes}
+	\subparagraph{Groupe}
 	$(G,*)$ est un groupe si $*$ est une lois de composition interne associative avec un neutre et que $\forall a \in G, \exists a^- \in G / a*a^-=a-*a=e$ \\
 	\thm Caractérisation des sous-groupes : Soit $(G,*)$ un groupe, $H \subset G, H \neq \varnothing, \\ (H,*)$ est un groupe si $\forall (a,b) \in H^2, a*b^- \in H$
 	\begin{itemize}
@@ -170,7 +180,7 @@
 	\end{itemize}
 	 \thm Les seuls sous groupes de $\Z$ sont de la forme $a\Z$
 
-	\subparagraph*{Anneaux}
+	\subparagraph{Anneaux}
 	Soit $(A,+)$ un groupe abélien, c'est un anneau pour la loi $*$ si $*$ est une lci associative avec un neutre et que $\forall (a,b,c)\in A^3, a*(b+c)=a*b+a*c$ et $ (b+c)*a=b*a+c*a$ \\
 	 \thm Caractérisation des sous-anneaux : Soit $(A,+,*)$ un anneau, $B \subset A, B\neq \varnothing, \\ (B+,*)$ est un anneau si $\forall (a,b) \in B^2, a+b^-\in B, a*b \in B$ et $1_A \in B$
 	\begin{itemize}
@@ -178,11 +188,11 @@
 	  \item Un anneau est dit intègre si il n'a pas de diviseurs de 0 et que $*$ est commutatif
 	\end{itemize}
 
-	\subparagraph*{Corps}
+	\subparagraph{Corps}
 	Soit $(K,+,*)$ un anneau et $\forall x \in K, x\neq0$ alors $\exists x^- \in K / x*x^-=x^-*x=1$
 	\thm Caractérisation des sous-corps : Soit $(K,+,*)$ un corps, $L \subset K, L\neq \varnothing, \\ (L,+,*)$ est un corps si $\forall (a,b) \in L^2, a-b \in L, a*b \in L$ et $\forall a\in L, a\neq, \exists a^- \in L / a*a^-=a^-*a=1$
 
-	\section*{Arithmétique}
+	\section{Arithmétique}
 	\begin{itemize}
 	  \item La division conserve l'intégralité des diviseurs donc aussi le pgcd
 	\end{itemize}
@@ -200,7 +210,7 @@
 	\end{itemize}
 	 \thm Petit théorème de Fermat : $\forall a \in \Z, \forall p \in \mathbb{P}, a^p \equiv a[p]$ et si $a \p p=1, a^{p-1} \equiv 1[p]$
 
-	\section*{Polynômes}
+	\section{Polynômes}
 	 \thm Taylor : $\forall a, P=\som{k=0}{n} \frac{P^{(k)}(a)}{k!}(X-a)^k$ \\
 	 \thm Bezout : $\forall A,B \in \K^2[X], A \p B = 1 \iff \exists (U,V) \in \K^2[X] / AU+BV=1$. De plus, $\exists! (U_0,V_0) \in \K^2[X] / AU_0+BV_0=1,
 		d \degree V_0 < d \degree A$ et $d \degree U_0 < d \degree B$
@@ -210,7 +220,7 @@
 	  \item Si $\frac{A}{B}=\frac{A}{(X-\al)C}=\frac{\be}{X-\al}+\dots$ alors $\be=\frac{A}{B'}(\al)$
 	\end{itemize}
 
-	\section*{Intégration}
+	\section{Intégration}
 	\begin{itemize}
 	  \item $J_n=\int{\inv{(1+t^2)^2}\dt}$ : IPP sur $J_{n-1}$
 	  \item $\int{\frac{\dx}{ax^2+bx+c}}, \De<0$ : forme canonique puis $\arctan$
@@ -236,10 +246,10 @@
 	 \thm Somme de Riemann : $\forall f \in C^0, \frac{b-a}{n}\som{k=0}{n-1}f(a+\frac{k(b-a)}{n}) \limit{\infty}\int_a^b f(t)\dt$ \\
 	 \thm Taylor avec reste intégrale : $$\forall f \in C^{n+1}([a,b],\R), f(x)=\som{k=0}{n} \frac{(x-a)^k}{k!}f^{(k)}(a)+\int_a^x\frac{(x-t)^n}{n!}f^{(n+1)}(t)\dt$$
 
-	\section*{Développements limités}
+	\section{Développements limités}
 	 \thm Taylor-Young : $\forall f \in C^0([a,b],\R) f(x)=\som{k=0}{n}\frac{(x-a)^k}{k!}f^{(k)}(a)+o(x-a)^n$ \\
 	 \thm $\int f=F(0)+P_{n+1}(x)+o(x^{n+1})$
-	\subparagraph*{Développemenrts limités usuels en 0}
+	\subparagraph{Développements limités usuels en 0}
 	\begin{itemize}
 	  \item $e^x=1+x+\frac{x^2}{2}+\frac{x^3}{6}+\frac{x^4}{24}+\cdots+\frac{x^n}{n!}+o(x^n)$
 	  \item $\cos(x)=1-\frac{x^2}{2}+\frac{x^4}{24}-\frac{x^6}{720}+\cdots+o(x^n)$
@@ -255,7 +265,7 @@
 	  \item argth$(x)=x+\frac{x^3}{3}+o(x^3)$
 	\end{itemize}
 
-	\section*{Espaces vectoriels}
+	\section{Espaces vectoriels}
 	Soit $\K$ un corps, $(E,+)$ un groupe abélien stable par combinaison linéaire avec la loi $*$ et tel que $\forall (x,y,z)\in E^3,\forall (\al,\be) \in \K^2 \, (\al+\be)*x=(\al*x)+(\be*x), \al*(x+y)=(\al*x)+(\al*y), \al*(\be*x)=(\al  \be)*x$ et $1*x=x$, alors $E$ est un espace vectoriel.
 
 
@@ -288,7 +298,7 @@
  		\item SI $\dim E = \dim F$ alors :
 				 $$rg(f)=n \iff f \text{est injective} \iff \text{f est surjective} \iff \text{f est bijective}$$
 	\end{itemize}
-	\subparagraph*{Projecteurs et symétries \\}
+	\subparagraph{Projecteurs et symétries \\}
 	$p \in L(E)$ est un projecteur si et seulement si $p\circ p=p$ \\
 	$p$ projette sur $E_1$ parrallèlement à $E_2$ : $p$ se comporte comme l'identité sur $E_1$ et est nul sur $E_2$ \\
 	 \thm Si $p$ est un projecteur, alors $E=Ker(p)+Im(p)$
@@ -301,7 +311,7 @@
  		\item\ppt $s=2p-Id$
 	\end{itemize}
 
-	\section*{Matrices}
+	\section{Matrices}
 	\begin{itemize}
  		\item Produit matriciel :
 			$$A=(a_{i,j}),B=(b_{i,j}), A\in M_{m,n}, B \in M_{n,q} \implies AB=(\gamma_{i,j}) \text{ avec } \gamma_{i,j}=\som{l=1}{n}a_{i,l}b_{l,j}$$
@@ -329,7 +339,7 @@
  		\item $B$ est semblable à $A$ si et seulement si $\exists P \in GL_n / A=P^{-1}BP$
 	\end{itemize}
 
-	\subparagraph*{Valeurs propres}
+	\subparagraph{Valeurs propres}
 			\begin{align*}
 				&f(\vec{x}) = \la \vec{x}, \vec{x}\neq \vec{0} \\
 				&\iff AX-\la X=O_n\\
@@ -339,8 +349,8 @@
 			\end{align*}
 	 \thm Si une matrice est de rang r alors il existe au moins une matrice extraite de taille $r*r$ inversible. Réciproquement, si on a une matrice $r*r$ inversible et pas de matrice $(r+1)*(r+1)$ alors la matrice globale est de rang r.
 
-	\section*{Groupes symétriques et déterminants}
-	\subparagraph*{Groupes symétriques}
+	\section{Groupes symétriques et déterminants}
+	\subparagraph{Groupes symétriques}
 	\begin{itemize}
  		\item Groupe symétrique $S_n$ : ensemble des bijections de n élements de $E$ vers $E$
  		\item $\forall f \in S_n, f=t_1\circ t_2\circ \cdots \circ t_s$ avec $(t_i)$ des transpositions
@@ -350,7 +360,7 @@
 		\item $\forall f \in S, f=t_1\circ t_2\circ \cdots \circ t_r \implies \sigma(f)=(-1)^r$
 	\end{itemize}
 
-	\subparagraph*{Déterminants}
+	\subparagraph{Déterminants}
 	\begin{itemize}
  		\item Une application n-linéaire est symétrique si l'ordre des vecteurs ne change pas le résultat : $\ph(\vec{a},\vec{b})=\ph(\vec{b},\vec{a})$
  		\item Une application n-linéaire est anti-symétrique si l'ordre des vecteurs change le signe du résultat :$\ph(\vec{a},\vec{b})= - \ph(\vec{b},\vec{a})$
@@ -371,7 +381,7 @@
  		\item $\forall A \in GL_n, A^{-1}=\inv{det(A)}\,^tB$ avec $B$ la matrice des cofacteurs
 	\end{itemize}
 
-	\section*{Formes linéaires et hyperplans}
+	\section{Formes linéaires et hyperplans}
 	 \thm $H$ est un hyperplan $\iff \exists f \neq \omega \in E^* / Ker(f)=H$
 	\begin{itemize}
  		\item \ppt $(u,v)\in (E^*)^2, H=Ker(u), H'=Ker(v) \implies H=H' \iff u=\la v$
@@ -379,7 +389,7 @@
 	\end{itemize}
 	 \thm $H$ est un hyperplan de $E, \dim_{\K}E=n$ si et seulement si $$\exists (a_j)_1^n \neq (0)_1^n / \vec{x} \in H \iff \som{j=1}{N}a_jx_j=0$$
 
-	\section*{Séries}
+	\section{Séries}
 	\begin{itemize}
  		\item $e^x=\som{k=0}{\infty}\frac{x^k}{k!}$
  		\item $\som{k=0}{\infty}\frac{(-1)^{k-1}}{k}x^k=\ln(1+x)$ et $\som{k=0}{\infty}\frac{(-1)^{k-1}}{k}=\ln(2)$
@@ -394,8 +404,8 @@
 	 \thm Critère spécial des séries alternées : Si $(u_n)_{n \in \N}$ est une suite décroissante de limite nulle, alors la série $\som{}{}(-1)^nu_n$ est convergente
 
 
-	\section*{Espaces euclidiens}
-	\subparagraph*{Vocabulaire}
+	\section{Espaces euclidiens}
+	\subparagraph{Vocabulaire}
 	\begin{itemize}
  		\item Soit $f$ une forme bilinéaire symétrique, on appelle forme quadratique $q(\vec{x})=f(\vec{x},\vec{x})$
 		\item Soit $f$ une forme bilinéaire symétrique, $\vec{x}$ et $\vec{y}$ sont dit orthogonaux par rapport à $f$ si $f(\vec{x},\vec{y})=0$
