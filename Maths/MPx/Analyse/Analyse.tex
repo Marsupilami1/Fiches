@@ -1,0 +1,189 @@
+\documentclass[french, a4paper, 10pt, twocolumn]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[f]{esvect}
+\usepackage[many]{tcolorbox}
+\usepackage{euler}
+\usepackage[nointegrals]{wasysym}
+\usepackage[french]{babel}
+
+
+%______FONCTIONS______%
+\newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+\newcommand{\inv}[1]{\dfrac{1}{#1}}             % ~ inverse
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{\(#1\)}\left/\raisebox{-.2em}{\(#2\)}\right.}}
+\DeclareMathOperator{\Sp}{Sp}
+\newcommand{\norme}[1]{\left\| #1\right\|}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\limit}[1]{\underset{#1}{\rightarrow}}  % ~limite
+% --ENSEMBLES--%
+\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
+\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
+\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
+\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
+\newcommand{\R}{\mathbb{R}}   % ~ Réels
+\newcommand{\C}{\mathbb{C}}   % ~ Complexes
+\newcommand{\czero}{\mathcal{C}^{0}}
+\newcommand{\cun}{\mathcal{C}^{1}}
+% --PARENTHESES--%
+\newcommand{\po}{\left(}         % ~ (
+\newcommand{\pf}{\right)}        % ~ )
+\newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
+\newcommand{\co}{\left[}         % ~ [
+\newcommand{\cf}{\right]}        % ~ ]
+\newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
+\newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+\renewcommand{\phi}{\varphi}
+
+\newtcolorbox{theoreme}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+\newtcolorbox{definition}[1][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=Définition,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+
+\newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
+
+\title{Analyse}
+\author{Martin \textsc{Andrieux}, Nathan \textsc{Maillet}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Continuité et Dérivabilité}
+\begin{definition}
+  $f$ est dite \emph{convexe} \ssi pour $a$ et $b$ dans $I$ et pour $t$ dans $\interff{0}{1}$:
+  \[f((1-t)a+tb)\leqslant (1-t)f(a)+tf(b)\]
+\end{definition}
+
+\begin{theoreme}{Inégalité de Taylor-Lagrange}
+  \[\left\lVert f(b)-\sum_{k=0}^{n}\dfrac{\pof{b-a}^{k}}{k!}f^{(k)}(a)\right\rVert \leqslant\dfrac{\pof{b-a}^{n+1}}{(n+1)!}\left\lVert f^{(n+1)}\right\rVert_{\infty}\]
+\end{theoreme}
+
+\begin{theoreme}{Taylor avec reste intégral}
+\[f(b)=\sum_{k=0}^{n}\dfrac{\pof{b-a}^{k}}{k!}f^{(k)}(a)+\int_{a}^{b}\dfrac{\pof{b-t}^{n}}{n!}f^{(n+1)}(t)dt\]
+\end{theoreme}
+
+\begin{theoreme}{Taylor-Young}
+\[f(x)=\sum_{k=0}^{n}\dfrac{\pof{x-a}^{k}}{k!}f^{(k)}(a)+o\pof{(x-a)^{n}}\]
+\end{theoreme}
+
+\begin{theoreme}{Prolongement $\mathcal C^{1}$}
+  $f$ continue de $I$ dans $\R$, $a$ dans $I$, $f$ dérivable sur $I\backslash \lbrace a\rbrace$.
+
+  Si $f'$ a une limite $l$ en $a$, alors $f$ est dérivable en $a$ et $f'(a)=l$.
+\end{theoreme}
+
+\begin{theoreme}{Théorème fondamental}
+  \[F : x\mapsto \int_{a}^{x}f(t)dt\]
+  $F$ est continue et dérivable avec $F'=f$.
+
+  Si $f$ est continue, alors $f$ possède des primitives.
+\end{theoreme}
+
+\section{Intégrale à paramètre}
+\begin{theoreme}{Théorème de continuité}
+  \begin{itemize}[label=$\bullet$]
+    \item $f:U\times I\rightarrow\C$
+    \item $\forall x\in U$, $t\mapsto f(x,t)$ est $\czero_{\text{pm}}$
+    \item $\forall t \in I$, $x\mapsto f(x,t)$ est $\czero$
+    \item Il existe $\phi : I\rightarrow \R$, $\czero_{\text{pm}}$ et sommable telle que
+      \[\forall x\in U,\,\forall t\in I\quad \vert f(x,t)\vert\leqslant\phi(t)\]
+  \end{itemize}
+  \tcblower
+  Alors $F$ est définie et $\czero$ sur $U$, avec
+  \[F(x)=\int_{I}f(x,t)dt\]
+\end{theoreme}
+
+\begin{theoreme}{Théorème de dérivabilité}
+  \begin{itemize}[label=$\bullet$]
+    \item $f:U\times I\rightarrow\C$
+    \item $\forall x\in U$, $t\mapsto f(x,t)$ est $\czero_{\text{pm}}$ et sommable
+    \item $\forall t \in I$, $x\mapsto f(x,t)$ est $\cun$
+    \item $\forall x\in U$, $t\mapsto \dfrac{\partial f}{\partial x}(x,t)$ est $\czero_{\text{pm}}$
+    \item Il existe $\phi : I\rightarrow \R$, $\czero_{\text{pm}}$ et sommable telle que
+      \[\forall x\in U,\,\forall t\in I\quad \left\vert\dfrac{\partial f}{\partial x}(x,t)\right\vert\leqslant\phi(t)\]
+  \end{itemize}
+  \tcblower
+  Alors $F$ est définie et $\cun$ sur $U$, avec
+  \[F'(x)=\int_{I}\dfrac{\partial f}{\partial x}(x,t)dt\]
+\end{theoreme}
+
+\begin{theoreme}{fonction $\Gamma$}
+  On défnit la fonction $\Gamma$ comme suit:
+  \[\Gamma:x\mapsto\int_{0}^{+\infty}t^{x-1}e^{-t}dt\]
+  On a alors $\Gamma(x+1)=x\Gamma(x)$ et $\Gamma(n+1)=n!$ pour $n$ dans $\N$. $\Gamma(\frac{1}{2})=\sqrt{\pi}$.
+\end{theoreme}
+
+\section{Suites et séries de fonctions}
+\begin{definition}
+  On dit qu'une suite de fonctions $f_{n}$ converge \emph{simplement} vers $f$ si:
+  \[\forall x\quad f_{n(x)}\xrightarrow[n\rightarrow +\infty]{} f(x)\]
+  La limite simple conserve les propriétés portant sur un nombre fini de points, comme la positivité, la croissance et la convexité.
+\end{definition}
+
+\begin{definition}
+  On dit qu'une suite de fonctions $f_{n}$ converge \emph{uniformément} vers $f$ si
+  \begin{align*}
+    \forall \varepsilon >0,\,\exists\, n_{\varepsilon}\in\N \,\slash\, \forall n\geqslant n_{\varepsilon} \\
+    \forall\, x,\quad \left\lVert f_{n}(x)-f(x)\right\rVert \leqslant \varepsilon
+  \end{align*}
+  La convergence uniforme de $(f_{n})$ est la convergence pour $\lVert\,\rVert_{\infty}$
+
+  La convergence uniforme d'une série est équivalente à la convergence uniforme du reste vers $0$.
+
+  La convergence uniforme entraîne la convergence simple.
+\end{definition}
+
+\begin{definition}
+  On dit qu'une série converge \emph{normalement} si la série des normes infinies converge.
+  La convergence normale entraîne la convergence uniforme.
+\end{definition}
+
+\begin{theoreme}{Théorèmes pour la convergence uniforme}
+  La convergence uniforme conserve:
+  \begin{itemize}
+    \item la continuité
+    \item la limite
+    \item la sommabilité
+    \item la dérivabilité et la continuité de la dérivée
+  \end{itemize}
+\end{theoreme}
+
+\begin{theoreme}{Théorème de la double limite}
+
+\end{theoreme}
+
+\end{document}
