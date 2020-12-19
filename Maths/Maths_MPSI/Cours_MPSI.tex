@@ -1,6 +1,6 @@
-\documentclass[a4paper, french]{article}
+\documentclass[a4paper, 11pts, french]{article}
 
-\usepackage[utf8]{inputenc} 
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
 \usepackage{enumitem}
@@ -11,7 +11,9 @@
 \usepackage{varioref}
 \usepackage{graphicx}
 \usepackage{gensymb}
+\usepackage[f]{esvect}
 \usepackage{xcolor}
+\usepackage{scalerel}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
@@ -54,7 +56,7 @@
 \newcommand{\inv}[1]{\frac{1}{#1}}
 \newcommand{\acc}[1]{\left\{ #1 \right\}}
 \newcommand{\mat}[2]{\left\{\[ \left( \begin{array}{#1} #2 \end{array} \right)\]}
-
+\newcommand{\ssum}[2]{\vcenter{\hbox{\scaleto[4ex]{\displaystyle\sum_{\scriptscriptstyle #1}^{\scriptscriptstyle #2}}{7ex}}}}
 
 
 \title{Maths MPSI}
@@ -142,7 +144,7 @@
 	\subsubsection*{$\De < 0$ :}
 	 $r=\rho e^{i\theta}, u_n=\rho^n(\al \cos(n\theta) + \be \sin(n\theta))$
 
-	\section{Propiétés de $\R$ en tout genre}
+	\section{Propiétés de \(\R\) en tout genre}
 	 \thm Cauchy-Schwarz : $\forall (x_i,y_i) \in (\R^2)^n, |\som{i=1}{n}x_iy_i| \leqslant \sqrt{\som{i=1}{n}x_i^2}\sqrt{\som{i=1}{n}y_i^2}$
 	\subparagraph{Topologie}
 	\begin{itemize}
@@ -269,18 +271,18 @@
 	Soit $\K$ un corps, $(E,+)$ un groupe abélien stable par combinaison linéaire avec la loi $*$ et tel que $\forall (x,y,z)\in E^3,\forall (\al,\be) \in \K^2 \, (\al+\be)*x=(\al*x)+(\be*x), \al*(x+y)=(\al*x)+(\al*y), \al*(\be*x)=(\al  \be)*x$ et $1*x=x$, alors $E$ est un espace vectoriel.
 
 
-	\thm Caractérisation des sous espaces vectoriels : Soit $(E,+,*)$ un \ev, $F \subset E, F \neq \varnothing$, $(F,+,*)$ est un \ev \, si $\forall(\vec{f_1},\vec{f_2}) \in F^2, \forall \la \in \K \, \la \vec{f_1}+\vec{f_2} \in F$
+	\thm Caractérisation des sous espaces vectoriels : Soit $(E,+,*)$ un \ev, $F \subset E, F \neq \varnothing$, $(F,+,*)$ est un \ev \, si $\forall(\vv{f_1},\vv{f_2}) \in F^2, \forall \la \in \K \, \la \vv{f_1}+\vv{f_2} \in F$
 	\begin{itemize}
 	  \item La somme et l'intersection de 2 sous espaces vectoriel est un sous espace vectoriel
-	  \item \ppt $S=\acc{\vec{x_1},\cdots,\vec{x_p}}$ est lié si et seulement si l'un des vecteurs est combinaison linéaire des autres
+	  \item \ppt $S=\acc{\vv{x_1},\cdots,\vv{x_p}}$ est lié si et seulement si l'un des vecteurs est combinaison linéaire des autres
 	\end{itemize}
-	 \thm Base incomplète : Soit une famille libre $L_0$ et une génératrice $G$ tels que $L_0 \subset G$ alors $\exists (\vec{g_s},\vec{g_r},\cdots) \in G$ \textbackslash $L_0 \, /  L_0 \cup \acc{\vec{g_s},\vec{g_r},\cdots}$ soit une base \\
+	 \thm Base incomplète : Soit une famille libre $L_0$ et une génératrice $G$ tels que $L_0 \subset G$ alors $\exists (\vv{g_s},\vv{g_r},\cdots) \in G$ \textbackslash $L_0 \, /  L_0 \cup \acc{\vv{g_s},\vv{g_r},\cdots}$ soit une base \\
 	 \thm Echange : Soit $E$ un $\K$ \ev \, de dimension finit, $G$ une famille génératrice et $L$ libre, alors on peut ajouter des vecteurs de $G$ a $L$ pour avoir une base de $E$ \\
 	 \thm Soit $E$ un $\K$ \ev \, de dimension n, $E_1$ un sous \ev de dimension p, alors $E_1$ a de supplémentaires de dimension $n-p$ dans $E$\\
 	 \thm Formule de Grassmann : $\dim(A+B)=\dim A + \dim B - \dim(A\cap B)$ \\
 	 \thm On ne change pas le rang d'un système de vecteur en remplaçant les dits vecteurs par une combinaison des autres avec un coefficient non nul
 	\begin{itemize}
-	  \item Structure d'Algèbre : E est un algèbre si $(E,+,*_e)$ est un \ev, $(E,+,*_i)$ un anneau et si $\forall \la \in \K,\forall (\vec{u},\vec{v}) \in E, \la(\vec{u}\vec{v})=(\la\vec{u})\vec{v}=\vec{u}(\la \vec{v})$
+	  \item Structure d'Algèbre : E est un algèbre si $(E,+,*_e)$ est un \ev, $(E,+,*_i)$ un anneau et si $\forall \la \in \K,\forall (\vv{u},\vv{v}) \in E, \la(\vv{u}\vv{v})=(\la\vv{u})\vv{v}=\vv{u}(\la \vv{v})$
 	  \item $\forall f \in L(E,F), \forall A$ sous \ev \, de $E, f(A)$ est un sous \ev \, de $F$ 
 	\end{itemize}
 	 \thm L'image d'une famille génératrice par une application linéaire est génératrice de l'image \\
@@ -321,7 +323,7 @@
  		\item Soit :
 			\begin{align*}
 				\Phi &: L(E,F) \rightarrow M_{m,n}(\R) \\
-				      &f \mapsto Mat(f,(\vec{e_j})_1^m,(\vec{b_i})_1^m)
+				      &f \mapsto Mat(f,(\vv{e_j})_1^m,(\vv{b_i})_1^m)
 			\end{align*}
 			$\Phi$ est un isomorphisme d'\ev \, et $\dim_{\R}(M_{m,n}(\R))=m*n$ donc : $$\dim_{\R}L(E,F)=\dim_{\R}E \dim_{\R}F$$
 	\end{itemize}
@@ -330,7 +332,7 @@
 	\begin{itemize}
  		\item\ppt $[P_{B\rightarrow B'}]^{-1}=P_{B'\rightarrow B}$
 	\end{itemize}
-	 \thm Soit $E$ un \ev \, de dimension n, $$\forall f \in L(E), \, \tr(Mat(f,\vec{a_j}))=\tr(Mat(f,\vec{a'_j}))$$
+	 \thm Soit $E$ un \ev \, de dimension n, $$\forall f \in L(E), \, \tr(Mat(f,\vv{a_j}))=\tr(Mat(f,\vv{a'_j}))$$
 	\begin{itemize}
  		\item \ppt La trace d'un projecteur est son rang
  		\item $B$ est équivalente à $A$ si et seulement si $\exists (R,S) \in GL_m \times GL_n / B=RAS$
@@ -341,9 +343,9 @@
 
 	\subparagraph{Valeurs propres}
 			\begin{align*}
-				&f(\vec{x}) = \la \vec{x}, \vec{x}\neq \vec{0} \\
+				&f(\vv{x}) = \la \vv{x}, \vv{x}\neq \vv{0} \\
 				&\iff AX-\la X=O_n\\
-				&\iff \vec{x}\in Ker(f-\la Id) \\
+				&\iff \vv{x}\in Ker(f-\la Id) \\
 				&\iff f-\la Id \text{ est non injective} \\
 				&\iff \det(A-\la I_n)=0
 			\end{align*}
@@ -362,32 +364,33 @@
 
 	\subparagraph{Déterminants}
 	\begin{itemize}
- 		\item Une application n-linéaire est symétrique si l'ordre des vecteurs ne change pas le résultat : $\ph(\vec{a},\vec{b})=\ph(\vec{b},\vec{a})$
- 		\item Une application n-linéaire est anti-symétrique si l'ordre des vecteurs change le signe du résultat :$\ph(\vec{a},\vec{b})= - \ph(\vec{b},\vec{a})$
- 		\item Soit $\ph$ une applciation n-linéaire anti-symétrique, p permmutations des variables donne : $\ph(\vec{x_{p(1)}},\cdots,\vec{x_{p(n)}})= \sigma(p) \ph(\vec{x_1},\cdots,\vec{x_n})$
- 		\item Une application est dite n-linéaire alternée si et seulement si elle est n-linéaire et $\forall (\vec{x_1},\cdots,\vec{x_n}) \in E^n / \exists i  \neq j, \vec{x_i}=\vec{x_j} \implies \ph(\vec{x_1},\cdots,\vec{x_n})=0$
+ 		\item Une application n-linéaire est symétrique si l'ordre des vecteurs ne change pas le résultat : $\ph(\vv{a},\vv{b})=\ph(\vv{b},\vv{a})$
+ 		\item Une application n-linéaire est anti-symétrique si l'ordre des vecteurs change le signe du résultat :$\ph(\vv{a},\vv{b})= - \ph(\vv{b},\vv{a})$
+ 		\item Soit $\ph$ une applciation n-linéaire anti-symétrique, p permmutations des variables donne : $\ph(\vv{x_{p(1)}},\cdots,\vv{x_{p(n)}})= \sigma(p) \ph(\vv{x_1},\cdots,\vv{x_n})$
+		\item Une application est dite n-linéaire alternée si et seulement si elle est n-linéaire et
+		 \[\forall (\vv{x_1},\cdots,\vv{x_n}) \in E^n / \exists i  \neq j, \vv{x_i}=\vv{x_j} \implies \ph(\vv{x_1},\cdots,\vv{x_n})=0\]
 	\end{itemize}
 	 \thm Une fonction est alternée si et seulement si elle est antisymétrique
 	\begin{itemize}
- 		\item Soit $\vec{x_k}=\som{i=1}{n}\al_{i,k}\vec{e_i}$, 
+ 		\item Soit $\vv{x_k}=\som{i=1}{n}\al_{i,k}\vv{e_i}$, 
 			\begin{align*}
 				g &: E^n \rightarrow \K \\
-				&(\vec{x_1},\cdots,\vec{x_n}) \mapsto \som{p\in S_n}{}\sigma(p)\al_{p(1),1}\cdots\al_{p(n),n}
+				&(\vv{x_1},\cdots,\vv{x_n}) \mapsto \som{p\in S_n}{}\sigma(p)\al_{p(1),1}\cdots\al_{p(n),n}
 			\end{align*}
-			on appelle $g=\det(\vec{x_1},\cdots,\vec{x_n})=\som{p\in S_n}{}\sigma(p)\al_{p(1),1}\cdots\al_{p(n),n}$
- 		\item $g$ est une forme n-linéaire anti-symétrique (donc alternée) : $$(\vec{x_i})_1^n \text{ sont liés }\iff \det(\vec{x_1},\cdots,\vec{x_n})=0$$
+			on appelle $g=\det(\vv{x_1},\cdots,\vv{x_n})=\som{p\in S_n}{}\sigma(p)\al_{p(1),1}\cdots\al_{p(n),n}$
+ 		\item $g$ est une forme n-linéaire anti-symétrique (donc alternée) : $$(\vv{x_i})_1^n \text{ sont liés }\iff \det(\vv{x_1},\cdots,\vv{x_n})=0$$
  		\item $\det(A)=\det(\,^tA)$
- 		\item \ppt $\forall (A,B)\in M_n^2(\R) \, \det(AB)=\det(A)\det(B)$ donc $\det(A^{-1})=\inv{\det(A)}$
- 		\item $\forall A \in GL_n, A^{-1}=\inv{det(A)}\,^tB$ avec $B$ la matrice des cofacteurs
+ 		\item \ppt $\forall (A,B)\in M_n^2(\R) \, \det(AB)=\det(A)\det(B)$ donc $\det(A^{-1})=\dfrac{1}{\det(A)}$
+ 		\item $\forall A \in GL_n, A^{-1}=\dfrac{1}{\det(A)}\,^tB$ avec $B$ la matrice des cofacteurs
 	\end{itemize}
 
 	\section{Formes linéaires et hyperplans}
 	 \thm $H$ est un hyperplan $\iff \exists f \neq \omega \in E^* / Ker(f)=H$
 	\begin{itemize}
  		\item \ppt $(u,v)\in (E^*)^2, H=Ker(u), H'=Ker(v) \implies H=H' \iff u=\la v$
- 		\item \ppt $\dim_{\K}(\cap_i^m H_i)\geqslant n-m$
+ 		\item \ppt $\dim_{\K}(\cap_{i=1}^m H_i)\geqslant n-m$
 	\end{itemize}
-	 \thm $H$ est un hyperplan de $E, \dim_{\K}E=n$ si et seulement si $$\exists (a_j)_1^n \neq (0)_1^n / \vec{x} \in H \iff \som{j=1}{N}a_jx_j=0$$
+	 \thm $H$ est un hyperplan de $E, \dim_{\K}E=n$ si et seulement si $$\exists (a_j)_1^n \neq (0)_1^n / \vv{x} \in H \iff \som{j=1}{N}a_jx_j=0$$
 
 	\section{Séries}
 	\begin{itemize}
@@ -395,7 +398,7 @@
  		\item $\som{k=0}{\infty}\frac{(-1)^{k-1}}{k}x^k=\ln(1+x)$ et $\som{k=0}{\infty}\frac{(-1)^{k-1}}{k}=\ln(2)$
 		\item $\som{}{}u_k \limit{}l \implies \lim u_k=0$
 		\item Si $u_k$ ne tend pas vers 0 alors on dira que la série est grossièrement divergente
-		\item \ppt Soit $(u_k))_{k \in \N}$ une suite de $\K$. La suite $(u_k)_{k \in \N}$ et la série $\som{}{}(u_{k+1}-u_k)$ sont de même nature
+		\item \ppt Soit $(u_k)_{k \in \N}$ une suite de $\K$. La suite $(u_k)_{k \in \N}$ et la série $\som{}{}(u_{k+1}-u_k)$ sont de même nature
 		\item \ppt Soit $\som{}{}u_k,\som{}{}v_k$ 2 suites positives, alors si $u_k \eq{\infty} v_k$, les séries sont de même nature
 		\item Comparaison série-intégrale
 	\end{itemize}
@@ -409,58 +412,59 @@
 	 \subparagraph{Vocabulaire}
 	 
 	 \begin{itemize}
-		  \item Soit $f$ une forme bilinéaire symétrique, on appelle forme quadratique $q(\vec{x})=f(\vec{x},\vec{x})$
-		 \item Soit $f$ une forme bilinéaire symétrique, $\vec{x}$ et $\vec{y}$ sont dit orthogonaux par rapport à $f$ si $f(\vec{x},\vec{y})=0$
-		 \item Soit $f$ une forme bilinéaire symétrique, elle sera dit positive si et seulement si $\forall \vec{x} \in  E, f(\vec{x},\vec{x})\geqslant 0$
-		 \item Soit $f$ une forme bilinéaire symétrique, elle sera dit définie si et seulement si ${\forall \vec{x} \in  E}, f(\vec{x},\vec{x})=0 \iff \vec{x}=\vec{0_E}$
-		 \item Soit $E$ un $\R$ \ev \, et $f$ une forme bilinéaire symétrique positive et définie, on parlera alors de produit scalaire.
-		 \item $||\vec{x}||=\sqrt{\vec{x} \cdot \vec{x}}$ est la norme euclidienne
-		 \item $d(\vec{x},\vec{y})=||\vec{x}-\vec{y}||$ est la distance euclidienne
-		 \item $\vec{x}\perp\vec{y}$ dans le cas où $\vec{x}/\vec{y}=\vec{0}$
-		 \item $A,B \subset E, A \neq \varnothing, B \neq \varnothing, E$ \eve \, alors $A\perp B \iff {\forall (\vec{a},\vec{b}) \in A\times B}, {(\vec{a}\cdot\vec{b})=0}$
-		 \item $F,G$ 2 sous \ev \, de E alors $F\perp G \iff F\subset G^{\perp} \iff G \subset F^{\perp}$
-		 \item $F,G$ 2 sous \ev \, de $E$ sont dits perpendiculaires si ${F^{\perp} \subset G \iff G^{\perp} \subset F}$
-		 \item Une base $(\vec{e_i})_1^n$ est dite orthogonale si $\forall i \neq j, (\vec{e_i}\cdot \vec{e_j})=0$
-		 \item Une base $(\vec{b_i})_1^n$ est dite orthonormale si $\forall i \neq j, (\vec{b_i}\cdot \vec{b_j})=\de_i^j$
-		 \item $f \in L(E,F)$ est une isométrie si et seulement si $f$ conserve la norme 
-		 \item $A \in M_n(\R)$ est orthogonale quand $A\,^tA=I_n$
+		\item Soit $f$ une forme bilinéaire symétrique, on appelle forme quadratique $q(\vv{x})=f(\vv{x},\vv{x})$
+		\item Soit $f$ une forme bilinéaire symétrique, $\vv{x}$ et $\vv{y}$ sont dit orthogonaux par rapport à $f$ si $f(\vv{x},\vv{y})=0$
+		\item Soit $f$ une forme bilinéaire symétrique, elle sera dit positive si et seulement si $\forall \vv{x} \in  E, f(\vv{x},\vv{x})\geqslant 0$
+		\item Soit $f$ une forme bilinéaire symétrique, elle sera dit définie si et seulement si ${\forall \vv{x} \in  E}, f(\vv{x},\vv{x})=0 \iff \vv{x}=\vv{0_E}$
+		\item Soit $E$ un $\R$ \ev \, et $f$ une forme bilinéaire symétrique positive et définie, on parlera alors de produit scalaire.
+		\item $||\vv{x}||=\sqrt{\vv{x} \cdot \vv{x}}$ est la norme euclidienne
+		\item $d(\vv{x},\vv{y})=||\vv{x}-\vv{y}||$ est la distance euclidienne
+		\item $\vv{x}\perp\vv{y}$ dans le cas où $\vv{x}/\vv{y}=\vv{0}$
+		\item $A,B \subset E, A \neq \varnothing, B \neq \varnothing, E$ \eve \, alors $A\perp B \iff {\forall (\vv{a},\vv{b}) \in A\times B}, {(\vv{a}\cdot\vv{b})=0}$
+		\item $F,G$ 2 sous \ev \, de E alors $F\perp G \iff F\subset G^{\perp} \iff G \subset F^{\perp}$
+		\item $F,G$ 2 sous \ev \, de $E$ sont dits perpendiculaires si ${F^{\perp} \subset G \iff G^{\perp} \subset F}$
+		\item Une base $(\vv{e_i})_1^n$ est dite orthogonale si $\forall i \neq j, (\vv{e_i}\cdot \vv{e_j})=0$
+		\item Une base $(\vv{b_i})_1^n$ est dite orthonormale si $\forall i \neq j, (\vv{b_i}\cdot \vv{b_j})=\de_i^j$
+		\item $f \in L(E,F)$ est une isométrie si et seulement si $f$ conserve la norme 
+		\item $A \in M_n(\R)$ est orthogonale quand $A\,^tA=I_n$
 	 \end{itemize}
-	  \thm Inégalité de Cauchy-Swartz : $\forall (\vec{x},\vec{y}) \in E^2, ||\vec{x}\cdot\vec{y}|| \leqslant ||\vec{x}|| \times ||\vec{y}||$ \\
-	  \thm Pythagore : Soit $E$ un \eve, $\vec{x} \perp \vec{y} \iff {||\vec{x}+\vec{y}||^2=||\vec{x}||^2+||\vec{y}||^2}$ \\
-	  \thm Soit $E$  un \eve, $\dim E=n, (\vec{x_1},\cdots,\vec{x_p}) \in E^p$ tel que aucun vecteur ne soit nul et qu'ils soient tous orthogonaux 2 à 2 alors c'est une famille libre. \\
+	  \thm Inégalité de Cauchy-Swartz :
+	\[\forall (\vv{x},\vv{y}) \in E^2, ||\vv{x}\cdot\vv{y}|| \leqslant ||\vv{x}|| \times ||\vv{y}||\]
+	  \thm Pythagore : Soit $E$ un \eve, $\vv{x} \perp \vv{y} \iff {||\vv{x}+\vv{y}||^2=||\vv{x}||^2+||\vv{y}||^2}$ \\
+	  \thm Soit $E$  un \eve, $\dim E=n, (\vv{x_1},\cdots,\vv{x_p}) \in E^p$ tel que aucun vecteur ne soit nul et qu'ils soient tous orthogonaux 2 à 2 alors c'est une famille libre. \\
 	  \thm Procédé de Gram-Schmidt : Dans tous  \eve \, il existe des bases orthonormales \\
 	  \thm Soit $E$ un \eve \, de dimension finie, F sous \ev\, de E alors $E=F\oplus F^{\perp}$ et $(F^{\perp})^{\perp}=F$ \\
-	  \thm Soit $F$ un sous \ev \, de $E$ et $\vec{a} \in E$, $d(\vec{a},F)=\underset{\vec{y} \in F}\inf ||\vec{a}-\vec{y}||$ alors $$d(\vec{a},F)=||\vec{a}-\vec{x}|| \iff \vec{a}-\vec{x} \in F^{\perp} \text{ et }\vec{x}=P_F(\vec{a})$$
+	  \thm Soit $F$ un sous \ev \, de $E$ et $\vv{a} \in E$, $d(\vv{a},F)=\underset{\vv{y} \in F}\inf ||\vv{a}-\vv{y}||$ alors $$d(\vv{a},F)=||\vv{a}-\vv{x}|| \iff \vv{a}-\vv{x} \in F^{\perp} \text{ et }\vv{x}=P_F(\vv{a})$$
 	  \thm L'isométrie entraine l'injectivité \\
 	  \thm $f$ est une isométrie si et seulement si $f$ conserve le produit scalaire \\
 	  \thm Soit $E,F$ 2 \eve \, de même dimension alors :
 			 \begin{align*}
 				 &f \text{ isométrie de $E$ vers $F$} \\
-				 &\iff \text{il existe une base orthonormale de $E$ et une de $F$ telle que $M(f,(\vec{e_j})_1^n,(\vec{f_i})_1^n)$ soit orthogonale} \\
+				 &\iff \text{il existe une base orthonormale de $E$ et une de $F$ telle que $M(f,(\vv{e_j})_1^n,(\vv{f_i})_1^n)$ soit orthogonale} \\
 				 &\iff \text{il existe une base orthonormale de $E$ dont l'image par $f$ est une base orthonormale de $F$}
 			 \end{align*}
 	 \begin{itemize}
-		  \item \ppt Soit E un \eve, $\dim_{\R}E=n, (\vec{e_i})_1^n,(\vec{e'_i})_1^n$ 2 bases orthonormales alors $P_{(\vec{e_i}) \rightarrow (\vec{e'_i})} \in O_n(\R) : P^{-1}=\,^tP$
-		  \item Pour $A \in O_n(\R)$, si $\det(A)=1, f$ est une isométrie positive et si $\det(A)=-1,f$ est une isométrie négative
-		  \item $S_\ph=\left( \begin{array}{c c} \cos(\ph) & \sin(\ph) \\ \sin(\ph) & -\cos(\ph) \end{array} \right)$
-		  \item $R_\te=\left( \begin{array}{c c} \cos(\te) & -\sin(\te) \\ \sin(\te) & \cos(\te) \end{array} \right)$
-		  \item Toute isométrie positive (rotation) peut se décomposer en produit de 2 isométries négatives (symétries) dont l'une est choisie arbitrairement
-		 \item Soient 2 vecteurs normés de $E$, alors il existe une unique rotation qui envoi le $1^{\text{er}}$ sur le $2^{\text{è}}$ (idem avec symétries)
-		 \item En dimension 3 : là où sa change rien : rotation ou symétrie d'axe orienté suivant l'axe où sa change rien
+		\item \ppt Soit E un \eve, $\dim_{\R}E=n, (\vv{e_i})_1^n,(\vv{e'_i})_1^n$ 2 bases orthonormales alors $P_{(\vv{e_i}) \rightarrow (\vv{e'_i})} \in O_n(\R) : P^{-1}=\,^tP$
+		\item Pour $A \in O_n(\R)$, si $\det(A)=1, f$ est une isométrie positive et si $\det(A)=-1,f$ est une isométrie négative
+		\item $S_\ph=\left( \begin{array}{c c} \cos(\ph) & \sin(\ph) \\ \sin(\ph) & -\cos(\ph) \end{array} \right)$
+		\item $R_\te=\left( \begin{array}{c c} \cos(\te) & -\sin(\te) \\ \sin(\te) & \cos(\te) \end{array} \right)$
+		\item Toute isométrie positive (rotation) peut se décomposer en produit de 2 isométries négatives (symétries) dont l'une est choisie arbitrairement
+		\item Soient 2 vecteurs normés de $E$, alors il existe une unique rotation qui envoi le $1^{\text{er}}$ sur le $2^{\text{è}}$ (idem avec symétries)
+		\item En dimension 3 : là où sa change rien : rotation ou symétrie d'axe orienté suivant l'axe où sa change rien
 	 \end{itemize}
 	 
 	 \subparagraph{Produit mixte, vectoriel, application antisymétrique}
 	 \begin{itemize}
-		  \item On appelle produit mixte l'application trilinéaire alternée qui a 3 vecteurs $\vec{x}, \vec{y}, \vec{z}$ associe $\det_B(\vec{x},\vec{y},\vec{z})=[\vec{x},\vec{y},\vec{z}]$
-		  \item Soit $(\vec{u},\vec{v}) \in E^2, \exists! \vec{w} \in E / \forall \vec{x} \in E, [\vec{u},\vec{v},\vec{x}]=\vec{w}\cdot\vec{x}.$ Ce vecteur sera appelé produit vectoriel de $\vec{u},\vec{v}$ dans cet ordre noté $\vec{w}=\vec{u}\p\vec{v}$
-		 \item \ppt $\forall \vec{x},\vec{y},\vec{z}, [\vec{x},\vec{y},\vec{z}]=(\vec{x}\p\vec{y})\cdot\vec{z}$
-		 \item \ppt Le produit vectoriel est anti-commutatif : $\vec{u}\p\vec{v}=-\vec{v}\p\vec{u}$
-		 \item \ppt $\forall (\vec{u},\vec{v}) \in E^2, \vec{u}\p\vec{v}$ est orthogonal à $\vec{u}$ et $\vec{v}$
-		 \item \ppt Si $(\vec{u},\vec{v})$ est libre, $(\vec{u},\vec{v},\vec{u}\p\vec{v})$ est une base directe
-		 \item \ppt $\forall (\vec{u},\vec{v}) \in E^2, (\vec{u}\cdot\vec{v})^2+||\vec{u}\p\vec{v}||^2=||\vec{u}||^2||\vec{v}||^2$
-		 \item \ppt Le double produit vectoriel n'est PAS associatif : $\forall (\vec{u},\vec{v},\vec{w}) \in E^3,\\ {\vec{u}\p (\vec{v} \p \vec{w})=(\vec{u} \cdot \vec{w})\vec{v}-(\vec{u} \cdot \vec{v})\vec{w}}$
-		 \item Soit $f \in L(E)$, elle sera dite antisymétrique si $\forall (\vec{x},\vec{y}) \in E^2, (f(\vec{x})\cdot\vec{y})=-(\vec{x}\cdot f(\vec{y}))$
-		 \item \ppt $f$ est un endomorphisme antisymétrique si et seulement si la matrice de $f$ dans une base orthonormale directe est antisymétrique
+		\item On appelle produit mixte l'application trilinéaire alternée qui a 3 vecteurs $\vv{x}, \vv{y}, \vv{z}$ associe $\det_B(\vv{x},\vv{y},\vv{z})=[\vv{x},\vv{y},\vv{z}]$
+		\item Soit $(\vv{u},\vv{v}) \in E^2, \exists! \vv{w} \in E / \forall \vv{x} \in E, [\vv{u},\vv{v},\vv{x}]=\vv{w}\cdot\vv{x}.$ Ce vecteur sera appelé produit vectoriel de $\vv{u},\vv{v}$ dans cet ordre noté $\vv{w}=\vv{u}\p\vv{v}$
+		\item \ppt $\forall \vv{x},\vv{y},\vv{z}, [\vv{x},\vv{y},\vv{z}]=(\vv{x}\p\vv{y})\cdot\vv{z}$
+		\item \ppt Le produit vectoriel est anti-commutatif : $\vv{u}\p\vv{v}=-\vv{v}\p\vv{u}$
+		\item \ppt $\forall (\vv{u},\vv{v}) \in E^2, \vv{u}\p\vv{v}$ est orthogonal à $\vv{u}$ et $\vv{v}$
+		\item \ppt Si $(\vv{u},\vv{v})$ est libre, $(\vv{u},\vv{v},\vv{u}\p\vv{v})$ est une base directe
+		\item \ppt $\forall (\vv{u},\vv{v}) \in E^2, (\vv{u}\cdot\vv{v})^2+||\vv{u}\p\vv{v}||^2=||\vv{u}||^2||\vv{v}||^2$
+		\item \ppt Le double produit vectoriel n'est PAS associatif : $\forall (\vv{u},\vv{v},\vv{w}) \in E^3,\\ {\vv{u}\p (\vv{v} \p \vv{w})=(\vv{u} \cdot \vv{w})\vv{v}-(\vv{u} \cdot \vv{v})\vv{w}}$
+		\item Soit $f \in L(E)$, elle sera dite antisymétrique si $\forall (\vv{x},\vv{y}) \in E^2, (f(\vv{x})\cdot\vv{y})=-(\vv{x}\cdot f(\vv{y}))$
+		\item \ppt $f$ est un endomorphisme antisymétrique si et seulement si la matrice de $f$ dans une base orthonormale directe est antisymétrique
 	 \end{itemize}
 
 
@@ -473,34 +477,35 @@
 	 
 	  \section{Probabilités}
 	 \begin{itemize}
-		  \item $P$ est une probabilité sur un ensemble fini $\Om$ si $P : P(\Om)\rightarrow [0,1], P(\Om)=1$ et $\forall (A,B) \in P^2(\Om)/A\cap B =\varnothing, P(A\cup B)=P(A)+P(B)$
-		  \item $P_B(a)=\frac{P(A\cap B)}{P(B)}$
+		\item $P$ est une probabilité sur un ensemble fini $\Om$ si $P : P(\Om)\rightarrow [0,1], P(\Om)=1$ et $\forall A,B \in P(\Om)/A\cap B =\varnothing, P(A\cup B)=P(A)+P(B)$
+		\item $P_B(A)=\dfrac{P(A\cap B)}{P(B)}$
 	 \end{itemize}
-	  \thm Formule des probabilitées composées : Soit $(\Om,P)$ un espace probabilisé, $(A_1,\cdots,A_n) / P(A_1\cap\cdots\cap A_n)>0 : P(A_1\cap\cdots\cap A_n)=P(A_1)*P_{A_1}(A_2)*P_{A_1\cap A_2}(A_3)\cdots$ \\
+	  \thm Formule des probabilitées composées : Soit $(\Om,P)$ un espace probabilisé et \((A_1,\cdots,A_n)\) des évènements tels que \(P(A_1\cap\cdots\cap A_n)>0\):
+	  \[P(A_1\cap\cdots\cap A_n)=P(A_1)*P_{A_1}(A_2)*P_{A_1\cap A_2}(A_3)\cdots\]
 	  \thm Formule des probabilités totales : Soit $(A_i)$ un \sce \, avec aucun évènement impossible alors $\forall B, P(B)=\som{i}{}P(A_i)P_{A_i}(B)$ \\
-	  \thm Formule de Bayes : Soit $(\Om,P)$ un espace probabilisé. Si ${P(A)P(B)>0,} \, {P_B(A)=\frac{P(A)}{P(B)}P_A(B)}$
+	  \thm Formule de Bayes : Soit $(\Om,P)$ un espace probabilisé. Si ${P(A)P(B)>0,} \, {P_B(A)=\dfrac{P(A)}{P(B)}P_A(B)}$
 	 \begin{itemize}
-		  \item 2 évènements $A$ et $B$ sont indépendants si $P(A\cap B)=P(A)P(B)$
-		 \item Pour $X$ une lois de probabilité, $P_X(A)=P(X\in A)$
-		 \item \ppt Formule de Van der Monde : $\som{k=0}{r} \dbinom{n}{k}*\dbinom{m}{r-k}=\dbinom{n+m}{r}$
-		 \item $E(X)=\som{i}{}x_iP(X=X_i).$ Si $E(X)=0$, $X$ est dite centrée
-		 \item L'espérance est linéaire
-		 \item Lois binomiale : $E(X)=np$
+		\item 2 évènements $A$ et $B$ sont indépendants si $P(A\cap B)=P(A)P(B)$
+		\item Pour $X$ une lois de probabilité, $P_X(A)=P(X\in A)$
+		\item \ppt Formule de Van der Monde : $\ssum{k=0}{r} \left[\dbinom{n}{k}*\dbinom{m}{r-k}\right]=\dbinom{n+m}{r}$
+		\item $E(X)=\som{i}{}x_iP(X=X_i).$ Si $E(X)=0$, $X$ est dite centrée
+		\item L'espérance est linéaire
+		\item Lois binomiale : $E(X)=np$
 	 \end{itemize}
 	  \thm Inégalité de Markov : Soit $X$ une variable aléatoire réelle, alors $\forall a>0, {P(|X|\geqslant a)\leqslant \frac{E(|X|)}{a}}$
 	  \thm Si $X,Y$ sont deux variables aléatoires réelles, alors $E(XY)=E(X)E(Y)$
 	 \begin{itemize}
-		  \item $V(x)=E((X-E(X))^2)=E(X^2)-E^2(X)$
-		  \item $\si(X)=\sqrt{V(X)}$
-		  \item \ppt $\forall (a,b) \in \R^2, V(aX+B)=a^2V(X)$
+		\item $V(x)=E((X-E(X))^2)=E(X^2)-E^2(X)$
+		\item $\si(X)=\sqrt{V(X)}$
+		\item \ppt $\forall (a,b) \in \R^2, V(aX+B)=a^2V(X)$
 	 \end{itemize}
-	  \thm Inégalité de Bienaymé-Tchebychev : Soit $X$ une variable aléatoire réelle, $E(X)=m, \ep>0, P(|X-E(X)|\geqslant\ep)\leqslant \frac{V(X)}{\ep^2}$
+	  \thm Inégalité de Bienaymé-Tchebychev : Soit $X$ une variable aléatoire réelle, ${E(X)=m,} \ep>0, P(|X-E(X)|\geqslant\ep)\leqslant \frac{V(X)}{\ep^2}$
 	 \begin{itemize}
-		  \item $cov(X,Y)=E[(X-E(X))(Y-E(Y))]=E(XY)-E(X)E(Y)$
-		  \item \ppt La covariance est bilinéaire symétrique
-		 \item \ppt $\forall X,Y, V(X+Y)=V(X)+V(Y)-2cov(X,Y)$
-		 \item \ppt Si $X$ et $Y$ sont indépendants, $cov(X,Y)=0$
-		 \item Soient $X,Y$ deux variables aléatoires réelles, le coefficient de corrélation linéaire de $X$ et $Y$ est : $\rho(X,Y)=\frac{cov(X,Y)}{\si(X)\si(Y)}$
+		\item $cov(X,Y)=E[(X-E(X))(Y-E(Y))]=E(XY)-E(X)E(Y)$
+		\item \ppt La covariance est bilinéaire symétrique
+		\item \ppt $\forall X,Y, V(X+Y)=V(X)+V(Y)-2cov(X,Y)$
+		\item \ppt Si $X$ et $Y$ sont indépendants, $cov(X,Y)=0$
+		\item Soient $X,Y$ deux variables aléatoires réelles, le coefficient de corrélation linéaire de $X$ et $Y$ est : $\rho(X,Y)=\dfrac{cov(X,Y)}{\si(X)\si(Y)}$
 	 \end{itemize}
 	  \thm  Soient $X,Y$ deux variables aléatoires réelles de variances non nulles, alors : ${|\rho(X,Y)|\leqslant1}$ et si $|\rho(X,Y)|=1$ alors $\exists  (a,b) \in \R^2 / P(Y=aX+b)=1$
  \end{document}
