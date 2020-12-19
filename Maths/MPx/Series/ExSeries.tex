@@ -83,4 +83,22 @@
   \[\alpha)\frac{(-1)^n}{3n+1} \hspace*{1cm} \beta)\frac{E(\sqrt{n-1})-E(\sqrt{n})}{n} \hspace*{1cm} \gamma)\frac{4n}{n^4+2n^2+9}\]
 \end{cadre}
 
+\begin{cadre}{Nature d'une série}
+Soit $(u_{n})_{n \in \N} $ une suite croissante de réels strictement positifs. Etudier la nature de $\sum_{n \ge 0}^{} \frac{u_{n+1}-u_{n}}{u_{n}}$.
+\tcblower
+\paragraph*{}
+L'hypothèse de croissance dans les exercices est très utile car elle nous assure l'existence d'une limite en l'infini. Nous sommes donc amenés à faire une disjonction de cas, selon que la suite soit bornée ou non. De plus, il faut remarquer que le terme de général de la série est positif, ce qui nous donne la possibilité d'utiliser tous les outils de comparaison.
+
+\begin{itemize}[label=$\bullet$]
+\item Si $(u_n)$ est majorée, la suite converge vers une valeur réelle $l$. On a donc, en plus l'infini:
+\[\dfrac{u_{n+1}-u_{n}}{u_{n}}\sim \dfrac{u_{n+1}-u_{n}}{l}\] qui est un terme général de série convergente, la série étudiée est donc convergente.
+
+\item Si $(u_n)$ n'est pas majorée, elle tend vers $+\infty$ en $+\infty$. On a pour $n \in \N$, par croissance de $(u_n)$:
+    \[
+    \dfrac{u_{n+1}-u_{n}}{u_{n}}=\displaystyle \int_{u_n}^{u_{n+1}} \dfrac{1}{u_n} \, \mathrm{d}t \ge \displaystyle \int_{u_n}^{u_{n+1}} \dfrac{1}{t} \, \mathrm{d}t =\ln(u_{n+1})-\ln(u_n)
+    \]
+La série est donc dans ce cas divergente.
+\end{itemize}
+\end{cadre}
+
 \end{document}
