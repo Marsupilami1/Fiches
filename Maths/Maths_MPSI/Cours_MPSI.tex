@@ -57,6 +57,7 @@
 \newcommand{\acc}[1]{\left\{ #1 \right\}}
 \newcommand{\mat}[2]{\left\{\[ \left( \begin{array}{#1} #2 \end{array} \right)\]}
 \newcommand{\ssum}[2]{\vcenter{\hbox{\scaleto[4ex]{\displaystyle\sum_{\scriptscriptstyle #1}^{\scriptscriptstyle #2}}{7ex}}}}
+\newcommand{\sint}[2]{\vcenter{\hbox{\scaleto[4ex]{\displaystyle\int_{\scriptscriptstyle #1}^{\scriptscriptstyle #2}}{7ex}}}}
 
 
 \title{Maths MPSI}
@@ -125,7 +126,7 @@
 	  \item \ppt Si $u_n \limit{\infty}l$ alors toutes les sous-suites de $u_n$ aussi.
 	\end{itemize}
 	 \thm Bolzano-Weierstrass : De toute suite de réels bornées on peut extraire une sous-suite convergente \\
-	 \thm Cesaro : $u_n \limit{\infty}l, l \in \bar{\R} \implies \inv{n}\som{k=1}{n}u_k \limit{\infty}l$ \\
+	 \thm Cesaro : $u_n \limit{\infty}l, l \in \overline{\R} \implies \inv{n}\som{k=1}{n}u_k \limit{\infty}l$ \\
 	 \thm "Cesaro multiplicatif" : Soit $(a_n)_{n \in \N}$ une suite dans $\R$ telle que $\frac{a_{n+1}}{a_n}\limit{\infty}\la$ alors $\sqrt[n]{a_n}\limit{\infty}\la$
 
 	\begin{itemize}
@@ -145,7 +146,7 @@
 	 $r=\rho e^{i\theta}, u_n=\rho^n(\al \cos(n\theta) + \be \sin(n\theta))$
 
 	\section{Propiétés de \(\R\) en tout genre}
-	 \thm Cauchy-Schwarz : $\forall (x_i,y_i) \in (\R^2)^n, |\som{i=1}{n}x_iy_i| \leqslant \sqrt{\som{i=1}{n}x_i^2}\sqrt{\som{i=1}{n}y_i^2}$
+	 \thm Cauchy-Schwarz : $\forall (x_i,y_i) \in (\R^2)^n, \left\lvert \som{i=1}{n}x_iy_i \right\rvert \leqslant \sqrt{\som{i=1}{n}x_i^2}\sqrt{\som{i=1}{n}y_i^2}$
 	\subparagraph{Topologie}
 	\begin{itemize}
 	  \item $A\subset E$ est dense dans E si et seulement si $$\forall B(a,r)=\acc{x\in E / d(x,a)<r}, \exists \al \in A / \al \in B(a,r)$$
@@ -162,10 +163,10 @@
 	\begin{itemize}
 	  \item Tangente en $x_0 : T_{x_0} : y=f'(x_0)(x-x_0)+f(x)$
 	  \item Si $f \in \D(I,f(I))$ et $ G \in \D(J,g(J))$ avec $f(I) \subset J$ alors $g\circ f \in \D(I,g(J))$ et $(g\circ f)'=f'(g'\circ f)$
-	  \item Leibniz : $\forall (f,g) \in C^n(I,\R), (fg)^n=\som{k=0}{n} \dbinom{n}{k} f^{(k)}g^{(n-k)}$
+	  \item Leibniz : $\forall (f,g) \in C^n(I,\R), (fg)^n=\ssum{k=0}{n} \dbinom{n}{k} f^{(k)}g^{(n-k)}$
 	  \item Taylor-Lagrange ordre 2 : $$\forall f \in C^1[a,b], f \in \D^2]a,b[, \exists c \in ]a,b[ / f(b)=f(a)+(b-a)f'(a)+\frac{(b-a)^2}{2}f"(c)$$
 	\end{itemize}
-	 \thm Rolle : $f\in C^0[a,b], f \in \D]a,b[, f(a)=f(b) \implies \exists c \in ]a,b[ / f'(c)=0$
+	 \thm Rolle : \[f\in C^0[a,b], f \in \D]a,b[, f(a)=f(b) \implies \exists c \in ]a,b[ / f'(c)=0\]
 	 \thm Accroissements finits : 
 		\begin{center}
 			Cas d'égalité : $f\in C^0[a,b], f \in \D]a,b[ \implies \exists c \in ]a,b[ / f'(c)=\frac{f(b)-f(a)}{b-a}$ \\
@@ -174,7 +175,7 @@
 
 	\section{Lois de compositions internes}
 	\subparagraph{Groupe}
-	$(G,*)$ est un groupe si $*$ est une lois de composition interne associative avec un neutre et que $\forall a \in G, \exists a^- \in G / a*a^-=a-*a=e$ \\
+	$(G,*)$ est un groupe si $*$ est une lois de composition interne associative avec un neutre et que $\forall a \in G, \exists a^- \in G / a*a^-=a^-*a=e$ \\
 	\thm Caractérisation des sous-groupes : Soit $(G,*)$ un groupe, $H \subset G, H \neq \varnothing, \\ (H,*)$ est un groupe si $\forall (a,b) \in H^2, a*b^- \in H$
 	\begin{itemize}
 	  \item Le produit cartésien de 2 groupes est 1 groupe
@@ -184,7 +185,7 @@
 
 	\subparagraph{Anneaux}
 	Soit $(A,+)$ un groupe abélien, c'est un anneau pour la loi $*$ si $*$ est une lci associative avec un neutre et que $\forall (a,b,c)\in A^3, a*(b+c)=a*b+a*c$ et $ (b+c)*a=b*a+c*a$ \\
-	 \thm Caractérisation des sous-anneaux : Soit $(A,+,*)$ un anneau, $B \subset A, B\neq \varnothing, \\ (B+,*)$ est un anneau si $\forall (a,b) \in B^2, a+b^-\in B, a*b \in B$ et $1_A \in B$
+	 \thm Caractérisation des sous-anneaux : Soit $(A,+,*)$ un anneau, $B \subset A, B\neq \varnothing, \\ (B,+,*)$ est un anneau si $\forall (a,b) \in B^2, a+b^-\in B, a*b \in B$ et $1_A \in B$
 	\begin{itemize}
 	  \item Le centre d'un anneau est l'ensemble des éléments de cet anneau qui commutent avec tous les autres éléments de l'anneau
 	  \item Un anneau est dit intègre si il n'a pas de diviseurs de 0 et que $*$ est commutatif
@@ -198,7 +199,7 @@
 	\begin{itemize}
 	  \item La division conserve l'intégralité des diviseurs donc aussi le pgcd
 	\end{itemize}
-	$$\text{Soient} a,b,c \in \Z :$$
+	$$\text{Soient } a,b,c \in \Z :$$
 	 \thm Bézout : $a \p b=1 \iff \exists (u,v) \in \Z^2 / au+bv=1$ \\
 	 \thm Si $a \p b= a \p c = 1$, alors $a \p bc =1$ \\
 	 \thm $b|a, c|a$ et $b\p c =1 \implies bc|a$
@@ -235,7 +236,7 @@
 	\end{itemize}
 	 \thm Toute fonction continue par morceaux sur un segment est bornée sur ce segment
 	\begin{itemize}
-	  \item $f\in \ep([a,b],\R) \int_a^b f=\som{j=0}{p-1}(c_{j+1}-c{j})\la_j$ avec $\la_j$ la valeur de $f$ sur $]c_j,c_{j+1}[$
+	  \item $f\in \ep([a,b],\R) \sint{a}{b} f=\som{j=0}{p-1}(c_{j+1}-c{j})\la_j$ avec $\la_j$ la valeur de $f$ sur $]c_j,c_{j+1}[$
 	  \item $F_1=\acc{\int_a^b \varphi / \varphi \in \ep([a,b],\R), \varphi \leqslant f}, F_2=\left\{ \int_a^b \psi / \psi \in \ep([a,b],\R), \psi \geqslant f \right\}$
 			$$\forall f \in C_{pm}^0 \int_a^b f=\sup(F_1)=\inf(F_2)$$
 	  \item \ppt $\forall (f,g) \in (C_{pm}^0[a,b])^2, b>a, f\leqslant g \implies \int_a^b f(t)\dt\leqslant \int_a^b g(t)\dt$
@@ -300,15 +301,21 @@
  		\item SI $\dim E = \dim F$ alors :
 				 $$rg(f)=n \iff f \text{est injective} \iff \text{f est surjective} \iff \text{f est bijective}$$
 	\end{itemize}
+	
 	\subparagraph{Projecteurs et symétries \\}
+	
 	$p \in L(E)$ est un projecteur si et seulement si $p\circ p=p$ \\
 	$p$ projette sur $E_1$ parrallèlement à $E_2$ : $p$ se comporte comme l'identité sur $E_1$ et est nul sur $E_2$ \\
 	 \thm Si $p$ est un projecteur, alors $E=Ker(p)+Im(p)$
-	\begin{itemize}
+	
+	 \begin{itemize}
  		\item Si la somme de projecteurs forme l'indentité et que leur composition est nulle, les projecteurs sont dits associés
 	\end{itemize}
-	$s \in L(E)$ est une symétrie si et seulement si $s\circ s=Id$ \\
+
+	$s \in L(E)$ est une symétrie si et seulement si $s\circ s=Id$.
+	\paragraph*{}
 	$s$ est une symétrie vectorielle par rapport à $E_1$ parrallèlement à $E_2$ : $s$ se comporte comme l'identité sur $E_1$ et - l'identité sur $E_2$ \\
+	
 	\begin{itemize}
  		\item\ppt $s=2p-Id$
 	\end{itemize}
@@ -317,7 +324,7 @@
 	\begin{itemize}
  		\item Produit matriciel :
 			$$A=(a_{i,j}),B=(b_{i,j}), A\in M_{m,n}, B \in M_{n,q} \implies AB=(\gamma_{i,j}) \text{ avec } \gamma_{i,j}=\som{l=1}{n}a_{i,l}b_{l,j}$$
- 		\item \ppt $\forall A \in M_{m,n}, B \in M_{n,p} \, ^t(AB)=\, ^tB\, ^tA$
+ 		\item \ppt $\forall A \in M_{m,n}(\K), B \in M_{n,p}(\K) \, ^t(AB)=\, ^tB\, ^tA$
  		\item \ppt $\forall (A,B) \in M_n^2(\R), \tr(AB)=\tr(BA)$
  		\item $E_{i,j}E_{k,l}= \de_j^kE_{i,l}$
  		\item Soit :
@@ -411,16 +418,18 @@
 	 
 	 \subparagraph{Vocabulaire}
 	 
+	 Soient \(E\) un \eve et $f$ une forme bilinéaire symétrique
+	 
 	 \begin{itemize}
-		\item Soit $f$ une forme bilinéaire symétrique, on appelle forme quadratique $q(\vv{x})=f(\vv{x},\vv{x})$
-		\item Soit $f$ une forme bilinéaire symétrique, $\vv{x}$ et $\vv{y}$ sont dit orthogonaux par rapport à $f$ si $f(\vv{x},\vv{y})=0$
-		\item Soit $f$ une forme bilinéaire symétrique, elle sera dit positive si et seulement si $\forall \vv{x} \in  E, f(\vv{x},\vv{x})\geqslant 0$
-		\item Soit $f$ une forme bilinéaire symétrique, elle sera dit définie si et seulement si ${\forall \vv{x} \in  E}, f(\vv{x},\vv{x})=0 \iff \vv{x}=\vv{0_E}$
+		\item On appelle forme quadratique de $f: q(\vv{x})=f(\vv{x},\vv{x})$
+		\item $\vv{x}$ et $\vv{y}$ sont dit orthogonaux par rapport à $f$ si $f(\vv{x},\vv{y})=0$
+		\item $f$ est dite positive si et seulement si $\forall \vv{x} \in  E, f(\vv{x},\vv{x})\geqslant 0$
+		\item $f$ sera dite définie si et seulement si ${\forall \vv{x} \in  E}, f(\vv{x},\vv{x})=0 \iff \vv{x}=\vv{0_E}$
 		\item Soit $E$ un $\R$ \ev \, et $f$ une forme bilinéaire symétrique positive et définie, on parlera alors de produit scalaire.
 		\item $||\vv{x}||=\sqrt{\vv{x} \cdot \vv{x}}$ est la norme euclidienne
 		\item $d(\vv{x},\vv{y})=||\vv{x}-\vv{y}||$ est la distance euclidienne
 		\item $\vv{x}\perp\vv{y}$ dans le cas où $\vv{x}/\vv{y}=\vv{0}$
-		\item $A,B \subset E, A \neq \varnothing, B \neq \varnothing, E$ \eve \, alors $A\perp B \iff {\forall (\vv{a},\vv{b}) \in A\times B}, {(\vv{a}\cdot\vv{b})=0}$
+		\item $A,B \subset E, A,B \neq \varnothing$ \, alors $A\perp B \iff {(\vv{a}\cdot\vv{b})=0} \, {\forall (\vv{a},\vv{b}) \in A\times B}$
 		\item $F,G$ 2 sous \ev \, de E alors $F\perp G \iff F\subset G^{\perp} \iff G \subset F^{\perp}$
 		\item $F,G$ 2 sous \ev \, de $E$ sont dits perpendiculaires si ${F^{\perp} \subset G \iff G^{\perp} \subset F}$
 		\item Une base $(\vv{e_i})_1^n$ est dite orthogonale si $\forall i \neq j, (\vv{e_i}\cdot \vv{e_j})=0$
@@ -428,10 +437,10 @@
 		\item $f \in L(E,F)$ est une isométrie si et seulement si $f$ conserve la norme 
 		\item $A \in M_n(\R)$ est orthogonale quand $A\,^tA=I_n$
 	 \end{itemize}
-	  \thm Inégalité de Cauchy-Swartz :
-	\[\forall (\vv{x},\vv{y}) \in E^2, ||\vv{x}\cdot\vv{y}|| \leqslant ||\vv{x}|| \times ||\vv{y}||\]
-	  \thm Pythagore : Soit $E$ un \eve, $\vv{x} \perp \vv{y} \iff {||\vv{x}+\vv{y}||^2=||\vv{x}||^2+||\vv{y}||^2}$ \\
-	  \thm Soit $E$  un \eve, $\dim E=n, (\vv{x_1},\cdots,\vv{x_p}) \in E^p$ tel que aucun vecteur ne soit nul et qu'ils soient tous orthogonaux 2 à 2 alors c'est une famille libre. \\
+	  \thm Inégalité de Cauchy-Swartz : \(\forall (\vv{x},\vv{y}) \in E^2,\)
+	\[||\vv{x}\cdot\vv{y}|| \leqslant ||\vv{x}|| \times ||\vv{y}||\]
+	  \thm Pythagore : $\vv{x} \perp \vv{y} \iff {||\vv{x}+\vv{y}||^2=||\vv{x}||^2+||\vv{y}||^2}$ \\
+	  \thm $\dim E=n, (\vv{x_1},\cdots,\vv{x_p}) \in E^p$ tel que aucun vecteur ne soit nul et qu'ils soient tous orthogonaux 2 à 2 alors c'est une famille libre. \\
 	  \thm Procédé de Gram-Schmidt : Dans tous  \eve \, il existe des bases orthonormales \\
 	  \thm Soit $E$ un \eve \, de dimension finie, F sous \ev\, de E alors $E=F\oplus F^{\perp}$ et $(F^{\perp})^{\perp}=F$ \\
 	  \thm Soit $F$ un sous \ev \, de $E$ et $\vv{a} \in E$, $d(\vv{a},F)=\underset{\vv{y} \in F}\inf ||\vv{a}-\vv{y}||$ alors $$d(\vv{a},F)=||\vv{a}-\vv{x}|| \iff \vv{a}-\vv{x} \in F^{\perp} \text{ et }\vv{x}=P_F(\vv{a})$$
@@ -444,7 +453,7 @@
 				 &\iff \text{il existe une base orthonormale de $E$ dont l'image par $f$ est une base orthonormale de $F$}
 			 \end{align*}
 	 \begin{itemize}
-		\item \ppt Soit E un \eve, $\dim_{\R}E=n, (\vv{e_i})_1^n,(\vv{e'_i})_1^n$ 2 bases orthonormales alors $P_{(\vv{e_i}) \rightarrow (\vv{e'_i})} \in O_n(\R) : P^{-1}=\,^tP$
+		\item \ppt $\dim_{\R}E=n, (\vv{e_i})_1^n,(\vv{e'_i})_1^n$ 2 bases orthonormales alors $P_{(\vv{e_i}) \rightarrow (\vv{e'_i})} \in O_n(\R) : P^{-1}=\,^tP$
 		\item Pour $A \in O_n(\R)$, si $\det(A)=1, f$ est une isométrie positive et si $\det(A)=-1,f$ est une isométrie négative
 		\item $S_\ph=\left( \begin{array}{c c} \cos(\ph) & \sin(\ph) \\ \sin(\ph) & -\cos(\ph) \end{array} \right)$
 		\item $R_\te=\left( \begin{array}{c c} \cos(\te) & -\sin(\te) \\ \sin(\te) & \cos(\te) \end{array} \right)$
@@ -480,32 +489,43 @@
 		\item $P$ est une probabilité sur un ensemble fini $\Om$ si $P : P(\Om)\rightarrow [0,1], P(\Om)=1$ et $\forall A,B \in P(\Om)/A\cap B =\varnothing, P(A\cup B)=P(A)+P(B)$
 		\item $P_B(A)=\dfrac{P(A\cap B)}{P(B)}$
 	 \end{itemize}
-	  \thm Formule des probabilitées composées : Soit $(\Om,P)$ un espace probabilisé et \((A_1,\cdots,A_n)\) des évènements tels que \(P(A_1\cap\cdots\cap A_n)>0\):
+	
+	 \thm Probabilitées composées : Soit $(\Om,P)$ un espace probabilisé et \((A_1,\cdots,A_n)\) des évènements tels que \(P(A_1\cap\cdots\cap A_n)>0\):
 	  \[P(A_1\cap\cdots\cap A_n)=P(A_1)*P_{A_1}(A_2)*P_{A_1\cap A_2}(A_3)\cdots\]
-	  \thm Formule des probabilités totales : Soit $(A_i)$ un \sce \, avec aucun évènement impossible alors $\forall B, P(B)=\som{i}{}P(A_i)P_{A_i}(B)$ \\
-	  \thm Formule de Bayes : Soit $(\Om,P)$ un espace probabilisé. Si ${P(A)P(B)>0,} \, {P_B(A)=\dfrac{P(A)}{P(B)}P_A(B)}$
-	 \begin{itemize}
+	 \thm Formule des probabilités totales : Soit $(A_i)$ un \sce \, avec aucun évènement impossible alors $\forall B, P(B)=\ssum{i}{}P(A_i)P_{A_i}(B)$ \\
+	 \thm Formule de Bayes : Soit $(\Om,P)$ un espace probabilisé. Si ${P(A)P(B)>0,} \, {P_B(A)=\dfrac{P(A)}{P(B)}P_A(B)}$
+	 
+	  \begin{itemize}
 		\item 2 évènements $A$ et $B$ sont indépendants si $P(A\cap B)=P(A)P(B)$
 		\item Pour $X$ une lois de probabilité, $P_X(A)=P(X\in A)$
 		\item \ppt Formule de Van der Monde : $\ssum{k=0}{r} \left[\dbinom{n}{k}*\dbinom{m}{r-k}\right]=\dbinom{n+m}{r}$
-		\item $E(X)=\som{i}{}x_iP(X=X_i).$ Si $E(X)=0$, $X$ est dite centrée
+		\item $E(X)=\ssum{i}{}x_iP(X=X_i).$ Si $E(X)=0$, $X$ est dite centrée
 		\item L'espérance est linéaire
 		\item Lois binomiale : $E(X)=np$
 	 \end{itemize}
-	  \thm Inégalité de Markov : Soit $X$ une variable aléatoire réelle, alors $\forall a>0, {P(|X|\geqslant a)\leqslant \frac{E(|X|)}{a}}$
-	  \thm Si $X,Y$ sont deux variables aléatoires réelles, alors $E(XY)=E(X)E(Y)$
-	 \begin{itemize}
+	
+	 \thm Inégalité de Markov : Soit $X$ une variable aléatoire réelle,  :
+	 	\[\forall a>0, {P(|X|\geqslant a)\leqslant \frac{E(|X|)}{a}}\]
+	 \thm Si $X,Y$ sont deux variables aléatoires réelles, alors $E(XY)=E(X)E(Y)$
+	 
+	  \begin{itemize}
 		\item $V(x)=E((X-E(X))^2)=E(X^2)-E^2(X)$
 		\item $\si(X)=\sqrt{V(X)}$
 		\item \ppt $\forall (a,b) \in \R^2, V(aX+B)=a^2V(X)$
 	 \end{itemize}
-	  \thm Inégalité de Bienaymé-Tchebychev : Soit $X$ une variable aléatoire réelle, ${E(X)=m,} \ep>0, P(|X-E(X)|\geqslant\ep)\leqslant \frac{V(X)}{\ep^2}$
-	 \begin{itemize}
+	
+	 \thm Inégalité de Bienaymé-Tchebychev : Pour $X$ variable aléatoire réelle et ${E(X)=m,}$
+	 	\[\forall \ep>0, P(|X-E(X)|\geqslant\ep)\leqslant \frac{V(X)}{\ep^2}\]
+	 
+	  \begin{itemize}
 		\item $cov(X,Y)=E[(X-E(X))(Y-E(Y))]=E(XY)-E(X)E(Y)$
 		\item \ppt La covariance est bilinéaire symétrique
 		\item \ppt $\forall X,Y, V(X+Y)=V(X)+V(Y)-2cov(X,Y)$
 		\item \ppt Si $X$ et $Y$ sont indépendants, $cov(X,Y)=0$
 		\item Soient $X,Y$ deux variables aléatoires réelles, le coefficient de corrélation linéaire de $X$ et $Y$ est : $\rho(X,Y)=\dfrac{cov(X,Y)}{\si(X)\si(Y)}$
 	 \end{itemize}
-	  \thm  Soient $X,Y$ deux variables aléatoires réelles de variances non nulles, alors : ${|\rho(X,Y)|\leqslant1}$ et si $|\rho(X,Y)|=1$ alors $\exists  (a,b) \in \R^2 / P(Y=aX+b)=1$
+	
+	 \thm  Soient $X,Y$ deux variables aléatoires réelles de variances non nulles, alors :
+	  \[{|\rho(X,Y)|\leqslant1}\] \text{ et si } \(|\rho(X,Y)|=1\) alors :
+	  \[\exists  (a,b) \in \R^2 / P(Y=aX+b)=1\]
  \end{document}
