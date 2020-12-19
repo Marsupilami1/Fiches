@@ -84,7 +84,7 @@
 
 \section{Continuité et Dérivabilité}
 \begin{definition}
-  $f$ est dite \emph{convexe} \ssi pour $a$ et $b$ dans $I$ et pour $t$ dans $\interff{0}{1}$:
+  \(f\) est dite \emph{convexe} \ssi pour \(a\) et \(b\) dans \(I\) et pour \(t\) dans \(\interff{0}{1}\):
   \[f((1-t)a+tb)\leqslant (1-t)f(a)+tf(b)\]
 \end{definition}
 
@@ -100,69 +100,69 @@
 \[f(x)=\sum_{k=0}^{n}\dfrac{\pof{x-a}^{k}}{k!}f^{(k)}(a)+o\pof{(x-a)^{n}}\]
 \end{theoreme}
 
-\begin{theoreme}{Prolongement $\mathcal C^{1}$}
-  $f$ continue de $I$ dans $\R$, $a$ dans $I$, $f$ dérivable sur $I\backslash \lbrace a\rbrace$.
+\begin{theoreme}{Prolongement \(\mathcal C^{1}\)}
+  \(f\) continue de \(I\) dans \(\R\), \(a\) dans \(I\), \(f\) dérivable sur \(I\backslash \lbrace a\rbrace\).
 
-  Si $f'$ a une limite $l$ en $a$, alors $f$ est dérivable en $a$ et $f'(a)=l$.
+  Si \(f'\) a une limite \(l\) en \(a\), alors \(f\) est dérivable en \(a\) et \(f'(a)=l\).
 \end{theoreme}
 
 \begin{theoreme}{Théorème fondamental}
   \[F : x\mapsto \int_{a}^{x}f(t)dt\]
-  $F$ est continue et dérivable avec $F'=f$.
+  \(F\) est continue et dérivable avec \(F'=f\).
 
-  Si $f$ est continue, alors $f$ possède des primitives.
+  Si \(f\) est continue, alors \(f\) possède des primitives.
 \end{theoreme}
 
 \section{Intégrale à paramètre}
 \begin{theoreme}{Théorème de continuité}
-  \begin{itemize}[label=$\bullet$]
-    \item $f:U\times I\rightarrow\C$
-    \item $\forall x\in U$, $t\mapsto f(x,t)$ est $\czero_{\text{pm}}$
-    \item $\forall t \in I$, $x\mapsto f(x,t)$ est $\czero$
-    \item Il existe $\phi : I\rightarrow \R$, $\czero_{\text{pm}}$ et sommable telle que
+  \begin{itemize}[label=\(\bullet\)]
+    \item \(f:U\times I\rightarrow\C\)
+    \item \(\forall x\in U\), \(t\mapsto f(x,t)\) est \(\czero_{\text{pm}}\)
+    \item \(\forall t \in I\), \(x\mapsto f(x,t)\) est \(\czero\)
+    \item Il existe \(\phi : I\rightarrow \R\), \(\czero_{\text{pm}}\) et sommable telle que
       \[\forall x\in U,\,\forall t\in I\quad \vert f(x,t)\vert\leqslant\phi(t)\]
   \end{itemize}
   \tcblower
-  Alors $F$ est définie et $\czero$ sur $U$, avec
+  Alors \(F\) est définie et \(\czero\) sur \(U\), avec
   \[F(x)=\int_{I}f(x,t)dt\]
 \end{theoreme}
 
 \begin{theoreme}{Théorème de dérivabilité}
-  \begin{itemize}[label=$\bullet$]
-    \item $f:U\times I\rightarrow\C$
-    \item $\forall x\in U$, $t\mapsto f(x,t)$ est $\czero_{\text{pm}}$ et sommable
-    \item $\forall t \in I$, $x\mapsto f(x,t)$ est $\cun$
-    \item $\forall x\in U$, $t\mapsto \dfrac{\partial f}{\partial x}(x,t)$ est $\czero_{\text{pm}}$
-    \item Il existe $\phi : I\rightarrow \R$, $\czero_{\text{pm}}$ et sommable telle que
+  \begin{itemize}[label=\(\bullet\)]
+    \item \(f:U\times I\rightarrow\C\)
+    \item \(\forall x\in U\), \(t\mapsto f(x,t)\) est \(\czero_{\text{pm}}\) et sommable
+    \item \(\forall t \in I\), \(x\mapsto f(x,t)\) est \(\cun\)
+    \item \(\forall x\in U\), \(t\mapsto \dfrac{\partial f}{\partial x}(x,t)\) est \(\czero_{\text{pm}}\)
+    \item Il existe \(\phi : I\rightarrow \R\), \(\czero_{\text{pm}}\) et sommable telle que
       \[\forall x\in U,\,\forall t\in I\quad \left\vert\dfrac{\partial f}{\partial x}(x,t)\right\vert\leqslant\phi(t)\]
   \end{itemize}
   \tcblower
-  Alors $F$ est définie et $\cun$ sur $U$, avec
+  Alors \(F\) est définie et \(\cun\) sur \(U\), avec
   \[F'(x)=\int_{I}\dfrac{\partial f}{\partial x}(x,t)dt\]
 \end{theoreme}
 
-\begin{theoreme}{fonction $\Gamma$}
-  On défnit la fonction $\Gamma$ comme suit:
+\begin{theoreme}{fonction \(\Gamma\)}
+  On défnit la fonction \(\Gamma\) comme suit:
   \[\Gamma:x\mapsto\int_{0}^{+\infty}t^{x-1}e^{-t}dt\]
-  On a alors $\Gamma(x+1)=x\Gamma(x)$ et $\Gamma(n+1)=n!$ pour $n$ dans $\N$. $\Gamma(\frac{1}{2})=\sqrt{\pi}$.
+  On a alors \(\Gamma(x+1)=x\Gamma(x)\) et \(\Gamma(n+1)=n!\) pour \(n\) dans \(\N\). \(\Gamma(\frac{1}{2})=\sqrt{\pi}\).
 \end{theoreme}
 
 \section{Suites et séries de fonctions}
 \begin{definition}
-  On dit qu'une suite de fonctions $f_{n}$ converge \emph{simplement} vers $f$ si:
+  On dit qu'une suite de fonctions \(f_{n}\) converge \emph{simplement} vers \(f\) si:
   \[\forall x\quad f_{n(x)}\xrightarrow[n\rightarrow +\infty]{} f(x)\]
   La limite simple conserve les propriétés portant sur un nombre fini de points, comme la positivité, la croissance et la convexité.
 \end{definition}
 
 \begin{definition}
-  On dit qu'une suite de fonctions $f_{n}$ converge \emph{uniformément} vers $f$ si
+  On dit qu'une suite de fonctions \(f_{n}\) converge \emph{uniformément} vers \(f\) si
   \begin{align*}
     \forall \varepsilon >0,\,\exists\, n_{\varepsilon}\in\N \,\slash\, \forall n\geqslant n_{\varepsilon} \\
     \forall\, x,\quad \left\lVert f_{n}(x)-f(x)\right\rVert \leqslant \varepsilon
   \end{align*}
-  La convergence uniforme de $(f_{n})$ est la convergence pour $\lVert\,\rVert_{\infty}$
+  La convergence uniforme de \((f_{n})\) est la convergence pour \(\lVert\,\rVert_{\infty}\)
 
-  La convergence uniforme d'une série est équivalente à la convergence uniforme du reste vers $0$.
+  La convergence uniforme d'une série est équivalente à la convergence uniforme du reste vers \(0\).
 
   La convergence uniforme entraîne la convergence simple.
 \end{definition}
@@ -180,10 +180,6 @@
     \item la sommabilité
     \item la dérivabilité et la continuité de la dérivée
   \end{itemize}
-\end{theoreme}
-
-\begin{theoreme}{Théorème de la double limite}
-
 \end{theoreme}
 
 \end{document}
