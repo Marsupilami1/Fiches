@@ -404,99 +404,103 @@
 	 \thm Critère spécial des séries alternées : Si $(u_n)_{n \in \N}$ est une suite décroissante de limite nulle, alors la série $\som{}{}(-1)^nu_n$ est convergente
 
 
-	\section{Espaces euclidiens}
-	\subparagraph{Vocabulaire}
-	\begin{itemize}
- 		\item Soit $f$ une forme bilinéaire symétrique, on appelle forme quadratique $q(\vec{x})=f(\vec{x},\vec{x})$
-		\item Soit $f$ une forme bilinéaire symétrique, $\vec{x}$ et $\vec{y}$ sont dit orthogonaux par rapport à $f$ si $f(\vec{x},\vec{y})=0$
-		\item Soit $f$ une forme bilinéaire symétrique, elle sera dit positive si et seulement si $\forall \vec{x} \in  E, f(\vec{x},\vec{x})\geqslant 0$
-		\item Soit $f$ une forme bilinéaire symétrique, elle sera dit définie si et seulement si ${\forall \vec{x} \in  E}, f(\vec{x},\vec{x})=0 \iff \vec{x}=\vec{0_E}$
-		\item Soit $E$ un $\R$ \ev \, et $f$ une forme bilinéaire symétrique positive et définie, on parlera alors de produit scalaire.
-		\item $||\vec{x}||=\sqrt{\vec{x} \cdot \vec{x}}$ est la norme euclidienne
-		\item $d(\vec{x},\vec{y})=||\vec{x}-\vec{y}||$ est la distance euclidienne
-		\item $\vec{x}\perp\vec{y}$ dans le cas où $\vec{x}/\vec{y}=\vec{0}$
-		\item $A,B \subset E, A \neq \varnothing, B \neq \varnothing, E$ \eve \, alors $A\perp B \iff {\forall (\vec{a},\vec{b}) \in A\times B}, {(\vec{a}\cdot\vec{b})=0}$
-		\item $F,G$ 2 sous \ev \, de E alors $F\perp G \iff F\subset G^{\perp} \iff G \subset F^{\perp}$
-		\item $F,G$ 2 sous \ev \, de $E$ sont dits perpendiculaires si ${F^{\perp} \subset G \iff G^{\perp} \subset F}$
-		\item Une base $(\vec{e_i})_1^n$ est dite orthogonale si $\forall i \neq j, (\vec{e_i}\cdot \vec{e_j})=0$
-		\item Une base $(\vec{b_i})_1^n$ est dite orthonormale si $\forall i \neq j, (\vec{b_i}\cdot \vec{b_j})=\de_i^j$
-		\item $f \in L(E,F)$ est une isométrie si et seulement si $f$ conserve la norme 
-		\item $A \in M_n(\R)$ est orthogonale quand $A\,^tA=I_n$
-	\end{itemize}
-	 \thm Inégalité de Cauchy-Swarz : $\forall (\vec{x},\vec{y}) \in E^2, ||\vec{x}\cdot\vec{y}|| \leqslant ||\vec{x}|| \times ||\vec{y}||$ \\
-	 \thm Pythagore : Soit $E$ un \eve, $\vec{x} \perp \vec{y} \iff {||\vec{x}+\vec{y}||^2=||\vec{x}||^2+||\vec{y}||^2}$ \\
-	 \thm Soit $E$  un \eve, $\dim E=n, (\vec{x_1},\cdots,\vec{x_p}) \in E^p$ tel que aucun vecteur ne soit nul et qu'ils soient tous orthogonaux 2 à 2 alors c'est une famille libre. \\
-	 \thm Procédé de Gram-Schmidt : Dans tous  \eve \, il existe des bases orthonormales \\
-	 \thm Soit $E$ un \eve \, de dimension finie, F sous \ev\, de E alors $E=F\oplus F^{\perp}$ et $(F^{\perp})^{\perp}=F$ \\
-	 \thm Soit $F$ un sous \ev \, de $E$ et $\vec{a} \in E$, $d(\vec{a},F)=\underset{\vec{y} \in F}\inf ||\vec{a}-\vec{y}||$ alors $$d(\vec{a},F)=||\vec{a}-\vec{x}|| \iff \vec{a}-\vec{x} \in F^{\perp} \text{ et }\vec{x}=P_F(\vec{a})$$
-	 \thm L'isométrie entraine l'injectivité \\
-	 \thm $f$ est une isométrie si et seulement si $f$ conserve le produit scalaire \\
-	 \thm Soit $E,F$ 2 \eve \, de même dimension alors :
-			\begin{align*}
-				&f \text{ isométrie de $E$ vers $F$} \\
-				&\iff \text{il existe une base orthonormale de $E$ et une de $F$ telle que $M(f,(\vec{e_j})_1^n,(\vec{f_i})_1^n)$ soit orthogonale} \\
-				&\iff \text{il existe une base orthonormale de E$$ dont l'image par $f$ est une base orthonormale de $F$}
-			\end{align*}
-	\begin{itemize}
- 		\item \ppt Soit E un \eve, $\dim_{\R}E=n, (\vec{e_i})_1^n,(\vec{e'_i})_1^n$ 2 bases orthonormales alors $P_{(\vec{e_i}) \rightarrow (\vec{e'_i})} \in O_n(\R) : P^{-1}=\,^tP$
- 		\item Pour $A \in O_n(\R)$, si $\det(A)=1, f$ est une isométrie positive et si $\det(A)=-1,f$ est une isométrie négative
- 		\item $S_\ph=\left( \begin{array}{c c} \cos(\ph) & \sin(\ph) \\ \sin(\ph) & -\cos(\ph) \end{array} \right)$
- 		\item $R_\te=\left( \begin{array}{c c} \cos(\te) & -\sin(\te) \\ \sin(\te) & \cos(\te) \end{array} \right)$
- 		\item Toute isométrie positive (rotation) peut se décomposer en produit de 2 isométries négatives (symétries) dont l'une est choisie arbitrairement
-		\item Soient 2 vecteurs normés de $E$, alors il existe une unique rotation qui envoi le $1^{\text{er}}$ sur le $2^{\text{è}}$ (idem avec symétries)
-		\item En dimension 3 : là où sa change rien : rotation ou symétrie d'axe orienté suivant l'axe où sa change rien
-	\end{itemize}
+	 \section{Espaces euclidiens}
+	 
+	 \subparagraph{Vocabulaire}
+	 
+	 \begin{itemize}
+		  \item Soit $f$ une forme bilinéaire symétrique, on appelle forme quadratique $q(\vec{x})=f(\vec{x},\vec{x})$
+		 \item Soit $f$ une forme bilinéaire symétrique, $\vec{x}$ et $\vec{y}$ sont dit orthogonaux par rapport à $f$ si $f(\vec{x},\vec{y})=0$
+		 \item Soit $f$ une forme bilinéaire symétrique, elle sera dit positive si et seulement si $\forall \vec{x} \in  E, f(\vec{x},\vec{x})\geqslant 0$
+		 \item Soit $f$ une forme bilinéaire symétrique, elle sera dit définie si et seulement si ${\forall \vec{x} \in  E}, f(\vec{x},\vec{x})=0 \iff \vec{x}=\vec{0_E}$
+		 \item Soit $E$ un $\R$ \ev \, et $f$ une forme bilinéaire symétrique positive et définie, on parlera alors de produit scalaire.
+		 \item $||\vec{x}||=\sqrt{\vec{x} \cdot \vec{x}}$ est la norme euclidienne
+		 \item $d(\vec{x},\vec{y})=||\vec{x}-\vec{y}||$ est la distance euclidienne
+		 \item $\vec{x}\perp\vec{y}$ dans le cas où $\vec{x}/\vec{y}=\vec{0}$
+		 \item $A,B \subset E, A \neq \varnothing, B \neq \varnothing, E$ \eve \, alors $A\perp B \iff {\forall (\vec{a},\vec{b}) \in A\times B}, {(\vec{a}\cdot\vec{b})=0}$
+		 \item $F,G$ 2 sous \ev \, de E alors $F\perp G \iff F\subset G^{\perp} \iff G \subset F^{\perp}$
+		 \item $F,G$ 2 sous \ev \, de $E$ sont dits perpendiculaires si ${F^{\perp} \subset G \iff G^{\perp} \subset F}$
+		 \item Une base $(\vec{e_i})_1^n$ est dite orthogonale si $\forall i \neq j, (\vec{e_i}\cdot \vec{e_j})=0$
+		 \item Une base $(\vec{b_i})_1^n$ est dite orthonormale si $\forall i \neq j, (\vec{b_i}\cdot \vec{b_j})=\de_i^j$
+		 \item $f \in L(E,F)$ est une isométrie si et seulement si $f$ conserve la norme 
+		 \item $A \in M_n(\R)$ est orthogonale quand $A\,^tA=I_n$
+	 \end{itemize}
+	  \thm Inégalité de Cauchy-Swartz : $\forall (\vec{x},\vec{y}) \in E^2, ||\vec{x}\cdot\vec{y}|| \leqslant ||\vec{x}|| \times ||\vec{y}||$ \\
+	  \thm Pythagore : Soit $E$ un \eve, $\vec{x} \perp \vec{y} \iff {||\vec{x}+\vec{y}||^2=||\vec{x}||^2+||\vec{y}||^2}$ \\
+	  \thm Soit $E$  un \eve, $\dim E=n, (\vec{x_1},\cdots,\vec{x_p}) \in E^p$ tel que aucun vecteur ne soit nul et qu'ils soient tous orthogonaux 2 à 2 alors c'est une famille libre. \\
+	  \thm Procédé de Gram-Schmidt : Dans tous  \eve \, il existe des bases orthonormales \\
+	  \thm Soit $E$ un \eve \, de dimension finie, F sous \ev\, de E alors $E=F\oplus F^{\perp}$ et $(F^{\perp})^{\perp}=F$ \\
+	  \thm Soit $F$ un sous \ev \, de $E$ et $\vec{a} \in E$, $d(\vec{a},F)=\underset{\vec{y} \in F}\inf ||\vec{a}-\vec{y}||$ alors $$d(\vec{a},F)=||\vec{a}-\vec{x}|| \iff \vec{a}-\vec{x} \in F^{\perp} \text{ et }\vec{x}=P_F(\vec{a})$$
+	  \thm L'isométrie entraine l'injectivité \\
+	  \thm $f$ est une isométrie si et seulement si $f$ conserve le produit scalaire \\
+	  \thm Soit $E,F$ 2 \eve \, de même dimension alors :
+			 \begin{align*}
+				 &f \text{ isométrie de $E$ vers $F$} \\
+				 &\iff \text{il existe une base orthonormale de $E$ et une de $F$ telle que $M(f,(\vec{e_j})_1^n,(\vec{f_i})_1^n)$ soit orthogonale} \\
+				 &\iff \text{il existe une base orthonormale de $E$ dont l'image par $f$ est une base orthonormale de $F$}
+			 \end{align*}
+	 \begin{itemize}
+		  \item \ppt Soit E un \eve, $\dim_{\R}E=n, (\vec{e_i})_1^n,(\vec{e'_i})_1^n$ 2 bases orthonormales alors $P_{(\vec{e_i}) \rightarrow (\vec{e'_i})} \in O_n(\R) : P^{-1}=\,^tP$
+		  \item Pour $A \in O_n(\R)$, si $\det(A)=1, f$ est une isométrie positive et si $\det(A)=-1,f$ est une isométrie négative
+		  \item $S_\ph=\left( \begin{array}{c c} \cos(\ph) & \sin(\ph) \\ \sin(\ph) & -\cos(\ph) \end{array} \right)$
+		  \item $R_\te=\left( \begin{array}{c c} \cos(\te) & -\sin(\te) \\ \sin(\te) & \cos(\te) \end{array} \right)$
+		  \item Toute isométrie positive (rotation) peut se décomposer en produit de 2 isométries négatives (symétries) dont l'une est choisie arbitrairement
+		 \item Soient 2 vecteurs normés de $E$, alors il existe une unique rotation qui envoi le $1^{\text{er}}$ sur le $2^{\text{è}}$ (idem avec symétries)
+		 \item En dimension 3 : là où sa change rien : rotation ou symétrie d'axe orienté suivant l'axe où sa change rien
+	 \end{itemize}
+	 
+	 \subparagraph{Produit mixte, vectoriel, application antisymétrique}
+	 \begin{itemize}
+		  \item On appelle produit mixte l'application trilinéaire alternée qui a 3 vecteurs $\vec{x}, \vec{y}, \vec{z}$ associe $\det_B(\vec{x},\vec{y},\vec{z})=[\vec{x},\vec{y},\vec{z}]$
+		  \item Soit $(\vec{u},\vec{v}) \in E^2, \exists! \vec{w} \in E / \forall \vec{x} \in E, [\vec{u},\vec{v},\vec{x}]=\vec{w}\cdot\vec{x}.$ Ce vecteur sera appelé produit vectoriel de $\vec{u},\vec{v}$ dans cet ordre noté $\vec{w}=\vec{u}\p\vec{v}$
+		 \item \ppt $\forall \vec{x},\vec{y},\vec{z}, [\vec{x},\vec{y},\vec{z}]=(\vec{x}\p\vec{y})\cdot\vec{z}$
+		 \item \ppt Le produit vectoriel est anti-commutatif : $\vec{u}\p\vec{v}=-\vec{v}\p\vec{u}$
+		 \item \ppt $\forall (\vec{u},\vec{v}) \in E^2, \vec{u}\p\vec{v}$ est orthogonal à $\vec{u}$ et $\vec{v}$
+		 \item \ppt Si $(\vec{u},\vec{v})$ est libre, $(\vec{u},\vec{v},\vec{u}\p\vec{v})$ est une base directe
+		 \item \ppt $\forall (\vec{u},\vec{v}) \in E^2, (\vec{u}\cdot\vec{v})^2+||\vec{u}\p\vec{v}||^2=||\vec{u}||^2||\vec{v}||^2$
+		 \item \ppt Le double produit vectoriel n'est PAS associatif : $\forall (\vec{u},\vec{v},\vec{w}) \in E^3,\\ {\vec{u}\p (\vec{v} \p \vec{w})=(\vec{u} \cdot \vec{w})\vec{v}-(\vec{u} \cdot \vec{v})\vec{w}}$
+		 \item Soit $f \in L(E)$, elle sera dite antisymétrique si $\forall (\vec{x},\vec{y}) \in E^2, (f(\vec{x})\cdot\vec{y})=-(\vec{x}\cdot f(\vec{y}))$
+		 \item \ppt $f$ est un endomorphisme antisymétrique si et seulement si la matrice de $f$ dans une base orthonormale directe est antisymétrique
+	 \end{itemize}
 
-	\subparagraph*{Produit mixte, vectoriel, application antisymétrique}
-	\begin{itemize}
- 		\item On appelle produit mixte l'application trilinéaire alternée qui a 3 vecteurs $\vec{x}, \vec{y}, \vec{z}$ associe $\det_B(\vec{x},\vec{y},\vec{z})=[\vec{x},\vec{y},\vec{z}]$
- 		\item Soit $(\vec{u},\vec{v}) \in E^2, \exists! \vec{w} \in E / \forall \vec{x} \in E, [\vec{u},\vec{v},\vec{x}]=\vec{w}\cdot\vec{x}.$ Ce vecteur sera appelé produit vectoriel de $\vec{u},\vec{v}$ dans cet ordre noté $\vec{w}=\vec{u}\p\vec{v}$
-		\item \ppt $\forall \vec{x},\vec{y},\vec{z}, [\vec{x},\vec{y},\vec{z}]=(\vec{x}\p\vec{y})\cdot\vec{z}$
-		\item \ppt Le produit vectoriel est anti-commutatif : $\vec{u}\p\vec{v}=-\vec{v}\p\vec{u}$
-		\item \ppt $\forall (\vec{u},\vec{v}) \in E^2, \vec{u}\p\vec{v}$ est orthogonal à $\vec{u}$ et $\vec{v}$
-		\item \ppt Si $(\vec{u},\vec{v})$ est libre, $(\vec{u},\vec{v},\vec{u}\p\vec{v})$ est une base directe
-		\item \ppt $\forall (\vec{u},\vec{v}) \in E^2, (\vec{u}\cdot\vec{v})^2+||\vec{u}\p\vec{v}||^2=||\vec{u}||^2||\vec{v}||^2$
-		\item \ppt Le double produit vectoriel n'est PAS associatif : $\forall (\vec{u},\vec{v},\vec{w}) \in E^3,\\ {\vec{u}\p (\vec{v} \p \vec{w})=(\vec{u} \cdot \vec{w})\vec{v}-(\vec{u} \cdot \vec{v})\vec{w}}$
-		\item Soit $f \in L(E)$, elle sera dite antisymétrique si $\forall (\vec{x},\vec{y}) \in E^2, (f(\vec{x})\cdot\vec{y})=-(\vec{x}\cdot f(\vec{y}))$
-		\item \ppt $f$ est un endomorphisme antisymétrique si et seulement si la matrice de $f$ dans une base orthonormale directe est antisymétrique
-	\end{itemize}
 
-	\section*{Convexité}
-	 $f$ est convexe si et seulement si $\forall \la \in [0,1] f(\la a+(1-\la)b) \leqslant \la f(a)+(1-\la)f(b) \iff 0 \leqslant \al_i \leqslant 1, \som{i=1}{n}\al_i=1, f(\som{i=1}{n}\al_i x_i) \leqslant \som{i=1}{n}\al_i f(x_i)$ \\
-	 \thm Si $f \in \D^1,$ la croissance de $f'$ sur $I$ est équivalente à la convexité de $f$ sur $I$ \\
-	 \thm $f$ est convexe sur $I$ si et seulement si $f$ est toujours au dessus de ses tangentes \\
-	 \thm $\produit{i=1}{n}t_i^{\al_i} \leqslant \som{i=1}{n}\al_it_i$ (prendre $f(x)=e^x$ pour la démo)
-
-	\section*{Probabilités}
-	\begin{itemize}
- 		\item $P$ est une probabilité sur un ensemble fini $\Om$ si $P : P(\Om)\rightarrow [0,1], P(\Om)=1$ et $\forall (A,B) \in P^2(\Om)/A\cap B =\varnothing, P(A\cup B)=P(A)+P(B)$
- 		\item $P_B(a)=\frac{P(A\cap B)}{P(B)}$
-	\end{itemize}
-	 \thm Formule des probabilitées composées : Soit $(\Om,P)$ un espace probabilisé, $(A_1,\cdots,A_n) / P(A_1\cap\cdots\cap A_n)>0 : P(A_1\cap\cdots\cap A_n)=P(A_1)*P_{A_1}(A_2)*P_{A_1\cap A_2}(A_3)\cdots$ \\
-	 \thm Formule des probabilités totales : Soit $(A_i)$ un \sce \, avec aucun évènement impossible alors $\forall B, P(B)=\som{i}{}P(A_i)P_{A_i}(B)$ \\
-	 \thm Formule de Bayes : Soit $(\Om,P)$ un espace probabilisé. Si ${P(A)P(B)>0,} \, {P_B(A)=\frac{P(A)}{P(B)}P_A(B)}$
-	\begin{itemize}
- 		\item 2 évènements $A$ et $B$ sont indépendants si $P(A\cap B)=P(A)P(B)$
-		\item Pour $X$ une lois de probabilité, $P_X(A)=P(X\in A)$
-		\item \ppt Formule de Van der Monde : $\som{k=0}{r} \dbinom{n}{k}*\dbinom{m}{r-k}=\dbinom{n+m}{r}$
-		\item $E(X)=\som{i}{}x_iP(X=X_i).$ Si $E(X)=0$, $X$ est dite centrée
-		\item L'espérance est linéaire
-		\item Lois binomiale : $E(X)=np$
-	\end{itemize}
-	 \thm Inégalité de Markov : Soit $X$ une variable aléatoire réelle, alors $\forall a>0, {P(|X|\geqslant a)\leqslant \frac{E(|X|)}{a}}$
-	 \thm Si $X,Y$ sont deux variables aléatoires réelles, alors $E(XY)=E(X)E(Y)$
-	\begin{itemize}
- 		\item $V(x)=E((X-E(X))^2)=E(X^2)-E^2(X)$
- 		\item $\si(X)=\sqrt{V(X)}$
- 		\item \ppt $\forall (a,b) \in \R^2, V(aX+B)=a^2V(X)$
-	\end{itemize}
-	 \thm Inégalité de Bienaymé-Tchebychev : Soit $X$ une variable aléatoire réelle, $E(X)=m, \ep>0, P(|X-E(X)|\geqslant\ep)\leqslant \frac{V(X)}{\ep^2}$
-	\begin{itemize}
- 		\item $cov(X,Y)=E[(X-E(X))(Y-E(Y))]=E(XY)-E(X)E(Y)$
- 		\item \ppt La covariance est bilinéaire symétrique
-		\item \ppt $\forall X,Y, V(X+Y)=V(X)+V(Y)-2cov(X,Y)$
-		\item \ppt Si $X$ et $Y$ sont indépendants, $cov(X,Y)=0$
-		\item Soient $X,Y$ deux variables aléatoires réelles, le coefficient de corrélation linéaire de $X$ et $Y$ est : $\rho(X,Y)=\frac{cov(X,Y)}{\si(X)\si(Y)}$
-	\end{itemize}
-	 \thm  Soient $X,Y$ deux variables aléatoires réelles de variances non nulles, alors : ${|\rho(X,Y)|\leqslant1}$ et si $|\rho(X,Y)|=1$ alors $\exists  (a,b) \in \R^2 / P(Y=aX+b)=1$
-\end{document}
+	 \section{Convexité}
+	  $f$ est convexe si et seulement si $\forall \la \in [0,1] f(\la a+(1-\la)b) \leqslant \la f(a)+(1-\la)f(b) \iff 0 \leqslant \al_i \leqslant 1, \som{i=1}{n}\al_i=1, f(\som{i=1}{n}\al_i x_i) \leqslant \som{i=1}{n}\al_i f(x_i)$ \\
+	  \thm Si $f \in \D^1,$ la croissance de $f'$ sur $I$ est équivalente à la convexité de $f$ sur $I$ \\
+	  \thm $f$ est convexe sur $I$ si et seulement si $f$ est toujours au dessus de ses tangentes \\
+	  \thm $\produit{i=1}{n}t_i^{\al_i} \leqslant \som{i=1}{n}\al_it_i$ (prendre $f(x)=e^x$ pour la démo)
+	 
+	 
+	  \section{Probabilités}
+	 \begin{itemize}
+		  \item $P$ est une probabilité sur un ensemble fini $\Om$ si $P : P(\Om)\rightarrow [0,1], P(\Om)=1$ et $\forall (A,B) \in P^2(\Om)/A\cap B =\varnothing, P(A\cup B)=P(A)+P(B)$
+		  \item $P_B(a)=\frac{P(A\cap B)}{P(B)}$
+	 \end{itemize}
+	  \thm Formule des probabilitées composées : Soit $(\Om,P)$ un espace probabilisé, $(A_1,\cdots,A_n) / P(A_1\cap\cdots\cap A_n)>0 : P(A_1\cap\cdots\cap A_n)=P(A_1)*P_{A_1}(A_2)*P_{A_1\cap A_2}(A_3)\cdots$ \\
+	  \thm Formule des probabilités totales : Soit $(A_i)$ un \sce \, avec aucun évènement impossible alors $\forall B, P(B)=\som{i}{}P(A_i)P_{A_i}(B)$ \\
+	  \thm Formule de Bayes : Soit $(\Om,P)$ un espace probabilisé. Si ${P(A)P(B)>0,} \, {P_B(A)=\frac{P(A)}{P(B)}P_A(B)}$
+	 \begin{itemize}
+		  \item 2 évènements $A$ et $B$ sont indépendants si $P(A\cap B)=P(A)P(B)$
+		 \item Pour $X$ une lois de probabilité, $P_X(A)=P(X\in A)$
+		 \item \ppt Formule de Van der Monde : $\som{k=0}{r} \dbinom{n}{k}*\dbinom{m}{r-k}=\dbinom{n+m}{r}$
+		 \item $E(X)=\som{i}{}x_iP(X=X_i).$ Si $E(X)=0$, $X$ est dite centrée
+		 \item L'espérance est linéaire
+		 \item Lois binomiale : $E(X)=np$
+	 \end{itemize}
+	  \thm Inégalité de Markov : Soit $X$ une variable aléatoire réelle, alors $\forall a>0, {P(|X|\geqslant a)\leqslant \frac{E(|X|)}{a}}$
+	  \thm Si $X,Y$ sont deux variables aléatoires réelles, alors $E(XY)=E(X)E(Y)$
+	 \begin{itemize}
+		  \item $V(x)=E((X-E(X))^2)=E(X^2)-E^2(X)$
+		  \item $\si(X)=\sqrt{V(X)}$
+		  \item \ppt $\forall (a,b) \in \R^2, V(aX+B)=a^2V(X)$
+	 \end{itemize}
+	  \thm Inégalité de Bienaymé-Tchebychev : Soit $X$ une variable aléatoire réelle, $E(X)=m, \ep>0, P(|X-E(X)|\geqslant\ep)\leqslant \frac{V(X)}{\ep^2}$
+	 \begin{itemize}
+		  \item $cov(X,Y)=E[(X-E(X))(Y-E(Y))]=E(XY)-E(X)E(Y)$
+		  \item \ppt La covariance est bilinéaire symétrique
+		 \item \ppt $\forall X,Y, V(X+Y)=V(X)+V(Y)-2cov(X,Y)$
+		 \item \ppt Si $X$ et $Y$ sont indépendants, $cov(X,Y)=0$
+		 \item Soient $X,Y$ deux variables aléatoires réelles, le coefficient de corrélation linéaire de $X$ et $Y$ est : $\rho(X,Y)=\frac{cov(X,Y)}{\si(X)\si(Y)}$
+	 \end{itemize}
+	  \thm  Soient $X,Y$ deux variables aléatoires réelles de variances non nulles, alors : ${|\rho(X,Y)|\leqslant1}$ et si $|\rho(X,Y)|=1$ alors $\exists  (a,b) \in \R^2 / P(Y=aX+b)=1$
+ \end{document}
