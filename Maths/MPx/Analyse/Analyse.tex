@@ -177,9 +177,34 @@
   \begin{itemize}
     \item la continuité
     \item la limite
-    \item la sommabilité
-    \item la dérivabilité et la continuité de la dérivée
+    \item la sommabilité avec égalité des intégrales
+    \item la dérivabilité et la continuité de la dérivée, avec égalité des dérivées. (Dans ce cas, la convergence simple des $f_{n}$ suffit, avec convergenence uniforme des $f'_{n}$)
   \end{itemize}
+\end{theoreme}
+
+\begin{theoreme}{Convergence dominée}
+  \begin{itemize}[label=$\bullet$]
+    \item Pour tout $n$, $f_{n}$ est $\czero_{\text{pm}}$
+    \item $f$ est $\czero_{\text{pm}}$
+    \item $(f_{n})$ converge simplement vers $f$
+    \item Il existe $\phi$ continue par morceaux et sommable telle que \(\left\lvert f_{n}(x)\right\rvert\leqslant \phi(x)\)
+  \end{itemize}
+  \tcblower
+  Alors les $f_{n}$ et $f$ sont sommables sur $I$ est
+  \[\int_{I}f_{n}(x)dx\xrightarrow[n\rightarrow +\infty]{}\int_{I}f(x)dx\]
+\end{theoreme}
+
+\begin{theoreme}{Sommation terme à terme}
+  \begin{itemize}[label=$\bullet$]
+    \item Pour tout $n$, $u_{n}$ est $\czero_{\text{pm}}$
+    \item La série des $u_{n}$ converge simplement
+    \item Les sommes partielles sont $\czero_{\text{pm}}$
+    \item Les $u_{n}$ sont sommables et $\sum_{n\geqslant 0}\int_I |u_{n(x)}|dx$ converge
+
+  \end{itemize}
+  \tcblower
+  Alors les $\sum\limits_{0}^{+\infty}u_{n}$ est sommable sur $I$ et
+  \[\int_{I}\pof{\sum_{n=0}^{+\infty}u_{n}(x)}dx = \sum_{n=0}^{+\infty} \pof{\int_{I}u_{n}(x)dx}\]
 \end{theoreme}
 
 \end{document}
