@@ -11,7 +11,7 @@
 \usepackage{float}
 \usepackage{tikz}
 \usepackage[straightvoltages]{circuitikz}
-\usepackage[squaren, cdot, derived]{SIunits}
+\usepackage[load-configurations = abbreviations]{siunitx}
 \usepackage{graphicx}
 \usepackage[f]{esvect}
 \usepackage[many]{tcolorbox}
@@ -198,7 +198,7 @@
 \end{cadre}
 
 \begin{cadre}{Loi de Joule locale}
-  \[p = \vv\jmath\cdot\vv E\]
+  \[\mathcal P = \vv\jmath\cdot\vv E\]
 \end{cadre}
 
 \begin{cadre}{Résistance d'un conducteur cylindrique}
@@ -296,4 +296,54 @@
     \tcblower
     Ce résultat constitue le \emph{théorème d'Ampère généralisé}.
 \end{cadre}
+
+\section{Vecteur de Poynting}
+\begin{cadre}{Expression}
+  \[\vv\Pi = \dfrac{\vv E\wedge\vv B}{\mu_{0}}\]
+  Le vecteur de Poynting correspond à un flux surfacique d'énergie, ou encore à une puissance surfacique. Il s'exprime en $\si{\watt\per\meter\squared}$.
+\end{cadre}
+
+\begin{cadre}{Équation de Poynting}
+  \[\dfrac{\partial u_{\text{em}}}{\partial t} + \diverg \vv\Pi + \vv\jmath\cdot\vv E = 0\]
+  Cette équation traduit localement la conservation de l'énergie.
+\end{cadre}
+
+\begin{cadre}{Énergie d'un photon}
+  \[E = h\nu\]
+  \[E = pc\]
+\end{cadre}
+
+\begin{cadre}{Quantité de mouvement volumique}
+  \[\dfrac{d\vv p}{d\tau} = \dfrac{\vv \Pi}{c^{2}} = \dfrac{\vv E \wedge\vv B}{\mu_{0}\cdot c^{2}}=\varepsilon_{0}\vv E\wedge\vv B\]
+\end{cadre}
+
+\section{Induction}
+\begin{cadre}{Loi de Faraday}
+  \[e = -\dfrac{d\phi}{dt}\]
+\end{cadre}
+
+\begin{cadre}{Loi de Lenz}
+  \og La f.é.m. induite tend par ses effets à s'opposer à la cause qui lui a donné naissance.\fg{}
+\end{cadre}
+
+\begin{cadre}{Puissances pour l'induction de Lorentz}
+  En notant:
+  \begin{itemize}
+    \item $\mathcal{P}_{l}$ la puissance des forces de Laplace
+    \item $\mathcal{P}_{e}$ la puissance de la f.é.m. induite
+  \end{itemize}
+  \[\mathcal{P}_{l}+\mathcal{P}_{e} = 0\]
+\end{cadre}
+
+\begin{cadre}{Effet de peau}
+  Les courants sont presque entièrement concentrés dans une couche dont l'épaisseur $\delta$ est de l'ordre de:
+  \[\delta = \sqrt{\dfrac{2}{\mu_{0}\sigma}\omega}\]
+\end{cadre}
+
+\section{Ondes électromagnétique}
+\begin{cadre}{équations de propagation}
+  \[\vv\Delta \vv E - \dfrac{1}{c^{2}}\dfrac{\partial^{2}\vv E}{\partial t^{2}} = \vv 0\]
+  \[\vv\Delta \vv B - \dfrac{1}{c^{2}}\dfrac{\partial^{2}\vv B}{\partial t^{2}} = \vv 0\]
+\end{cadre}
+
 \end{document}
