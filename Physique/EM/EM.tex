@@ -108,7 +108,7 @@
 \end{cadre}
 
 \begin{cadre}{Énergie}
-  Pour $n$ charges ponctuelles:
+  Pour \(n\) charges ponctuelles:
   \[U_{e} = \dfrac{1}{2}\sum_{i=1}^n q_{i}v_{i}\]
   Pour une distributuion continue:
   \[U_{e} = \inv{2}\iiint_{\text{espace}}\varepsilon_{0}{\vv E}^{2}(M) d\tau\]
@@ -157,7 +157,7 @@
 \section{Conducteurs}
 \begin{cadre}{Équilibre}
   \[\vv E = \vv 0 \text{ donc } V = 0\]
-  Or, $\diverg \vv E = 0$ donc $\rho = 0$. La densité volumique de charge est nulle dans tout le volume du conducteur: la charge se localise uniquement sur la surface.
+  Or, \(\diverg \vv E = 0\) donc \(\rho = 0\). La densité volumique de charge est nulle dans tout le volume du conducteur: la charge se localise uniquement sur la surface.
   D'où:
   \[\vv {E_{ext}} = \dfrac{\sigma}{\varepsilon_{0}}\vv n\]
 \end{cadre}
@@ -165,14 +165,14 @@
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
-    \draw (0,0) -- node[near end, left]{$V_{1}$} ++(0,4) node[right]{$+\sigma$};
-    \draw (2,0) -- node[near end, right]{$V_{2}$} ++(0,4) node[right]{$-\sigma$};
-    \draw[<->, >=latex] (0.2,0) -- node[midway, below]{$e$} ++(1.6,0);
-    \draw[->, >=latex] (-1,1) node[above left]{$S$} to[bend right=20] (-0.1, 0.5);
+    \draw (0,0) -- node[near end, left]{\(V_{1}\)} ++(0,4) node[right]{\(+\sigma\)};
+    \draw (2,0) -- node[near end, right]{\(V_{2}\)} ++(0,4) node[right]{\(-\sigma\)};
+    \draw[<->, >=latex] (0.2,0) -- node[midway, below]{\(e\)} ++(1.6,0);
+    \draw[->, >=latex] (-1,1) node[above left]{\(S\)} to[bend right=20] (-0.1, 0.5);
   \end{tikzpicture}
 \end{figure}
 \begin{cadre}{Capacité}
-  La capacité $C$ est telle que:
+  La capacité \(C\) est telle que:
   \[Q = C\cdot\pof{V1 - V2}\]
   \[C = \dfrac{\varepsilon_{0}S}{e}\]
 \end{cadre}
@@ -189,12 +189,12 @@
   La démonstration de ce résultat est à connaître, en voici les grandes lignes:
   \[-\dfrac{dq}{dt} = \ooint_{(S)}\vv \jmath \cdot\vv{dS}\]
   \[q(t) = \iiint_{(V)} \rho(M, t)d\tau\]
-  Ensuite, dériver $q$, permuter la dérivation et la sommation, appliquer Ostrogradski. L'égalité des intégrales entraîne l'égalité des grandeurs sommées.
+  Ensuite, dériver \(q\), permuter la dérivation et la sommation, appliquer Ostrogradski. L'égalité des intégrales entraîne l'égalité des grandeurs sommées.
 \end{cadre}
 
 \begin{cadre}{Loi d'Ohm locale}
   \[\vv \jmath = \sigma\vv E\]
-  Avec $\sigma$ la \emph{conductivité} du milieu, aussi notée $\gamma$.
+  Avec \(\sigma\) la \emph{conductivité} du milieu, aussi notée \(\gamma\).
 \end{cadre}
 
 \begin{cadre}{Loi de Joule locale}
@@ -211,7 +211,7 @@
   \[ \vv f = q\pof{\vv E + \vv v \wedge \vv B}\]
 \end{cadre}
 
-\begin{cadre}{$\vv B$ est à flux conservatif}
+\begin{cadre}{\(\vv B\) est à flux conservatif}
   \[\ooint_{(S)}\vv B \cdot\vv{dS} = 0\]
   Or d'après le théorème d'Ostrogradski,
   \[\ooint_{(S)}\vv B \cdot\vv{dS} = \iiint_{(V)}\diverg \vv B d\tau = 0\]
@@ -226,7 +226,7 @@
 \end{cadre}
 
 \begin{cadre}{Discontinuité}
-  La discontinuité d'un champ de part et d'autre d'une surface est en $\mu_{0}\vv{\jmath_{s}}$. Cela est à raprocher du $\frac{\sigma}{\varepsilon_{0}}$ en électrostatique.
+  La discontinuité d'un champ de part et d'autre d'une surface est en \(\mu_{0}\vv{\jmath_{s}}\). Cela est à raprocher du \(\frac{\sigma}{\varepsilon_{0}}\) en électrostatique.
 \end{cadre}
 
 \begin{cadre}{Champ dans un solénoïde}
@@ -240,7 +240,7 @@
 
 \begin{cadre}{Champ créé par un dipôle}
   \[\vv B(M) = \dfrac{\mu_0\mathcal M}{4\pi r^3}\pof{2\cos(\theta)\ur + \sin(\theta)\uth}\]
-  Cette expression est totalement analogue à celle obtenue pour le dipôle électrostatique, il suffit en effet de remplacer $p$ par $\mathcal M$ et $\frac{1}{\varepsilon_{0}}$ par $\mu_{0}$.
+  Cette expression est totalement analogue à celle obtenue pour le dipôle électrostatique, il suffit en effet de remplacer \(p\) par \(\mathcal M\) et \(\frac{1}{\varepsilon_{0}}\) par \(\mu_{0}\).
 \end{cadre}
 
 \begin{cadre}{Moment des forces de Laplace}
@@ -254,13 +254,13 @@
 \begin{cadre}{Flux du champ magnétique}
   \[\Phi = \iint_{(S)}\vv B\cdot\vv{dS}\]
   \[\Phi = L_{1}i_{1} (+ M_{12} i_{2})\]
-  Avec $L$ les coefficients d'\emph{auto-induction} et $M$ les coefficients d'\emph{iduction mutelle}.
-  $L$ est bien sûr positif.
-  On peut montrer que $M_{ij} = M_{ji}$.
+  Avec \(L\) les coefficients d'\emph{auto-induction} et \(M\) les coefficients d'\emph{iduction mutelle}.
+  \(L\) est bien sûr positif.
+  On peut montrer que \(M_{ij} = M_{ji}\).
 \end{cadre}
 
 \begin{cadre}{Inductance propre}
-  Lorsque que l'on connait $\vv B$, il est possible de calculer le flux du champ, et donc l'inductance propre du circuit avec $\Phi =\Lambda i$.
+  Lorsque que l'on connait \(\vv B\), il est possible de calculer le flux du champ, et donc l'inductance propre du circuit avec \(\Phi =\Lambda i\).
 \end{cadre}
 
 \begin{cadre}{Énergie magnétique}
@@ -282,7 +282,7 @@
 \begin{cadre}{Flux magnétique}
     \[\diverg \vv B = 0\]
     \tcblower
-    Cette équation signifie que $\vv B$ est à flux conservatif.
+    Cette équation signifie que \(\vv B\) est à flux conservatif.
 \end{cadre}
 
 \begin{cadre}{Maxwell-Faraday}
@@ -297,10 +297,10 @@
     Ce résultat constitue le \emph{théorème d'Ampère généralisé}.
 \end{cadre}
 
-\section{Vecteur de Poynting}
-\begin{cadre}{Expression}
+\begin{cadre}{Vecteur de Poynting}
   \[\vv\Pi = \dfrac{\vv E\wedge\vv B}{\mu_{0}}\]
-  Le vecteur de Poynting correspond à un flux surfacique d'énergie, ou encore à une puissance surfacique. Il s'exprime en $\si{\watt\per\meter\squared}$.
+  Le vecteur de Poynting correspond à un flux surfacique d'énergie, ou encore à une puissance surfacique. Il s'exprime en \(\si{\watt\per\meter\squared}\).
+  Les calculs de puissances et d'énergies se font impérativement en réel.
 \end{cadre}
 
 \begin{cadre}{Équation de Poynting}
@@ -329,21 +329,80 @@
 \begin{cadre}{Puissances pour l'induction de Lorentz}
   En notant:
   \begin{itemize}
-    \item $\mathcal{P}_{l}$ la puissance des forces de Laplace
-    \item $\mathcal{P}_{e}$ la puissance de la f.é.m. induite
+    \item \(\mathcal{P}_{l}\) la puissance des forces de Laplace
+    \item \(\mathcal{P}_{e}\) la puissance de la f.é.m. induite
   \end{itemize}
   \[\mathcal{P}_{l}+\mathcal{P}_{e} = 0\]
 \end{cadre}
 
 \begin{cadre}{Effet de peau}
-  Les courants sont presque entièrement concentrés dans une couche dont l'épaisseur $\delta$ est de l'ordre de:
+  Les courants sont presque entièrement concentrés dans une couche dont l'épaisseur \(\delta\) est de l'ordre de:
   \[\delta = \sqrt{\dfrac{2}{\mu_{0}\sigma}\omega}\]
 \end{cadre}
 
 \section{Ondes électromagnétique}
-\begin{cadre}{équations de propagation}
+\begin{cadre}{Équations de propagation}
   \[\vv\Delta \vv E - \dfrac{1}{c^{2}}\dfrac{\partial^{2}\vv E}{\partial t^{2}} = \vv 0\]
   \[\vv\Delta \vv B - \dfrac{1}{c^{2}}\dfrac{\partial^{2}\vv B}{\partial t^{2}} = \vv 0\]
+\end{cadre}
+
+\begin{cadre}{Vecteur d'onde}
+  \(\vv u\) est la direction du mouvement.
+  \[\vv k = \dfrac{\omega}{c}\vv u\]
+\end{cadre}
+
+\begin{cadre}{Opérateurs d'analyse vectorielle}
+  Ces règles ne que pour des OPPM.
+  \begin{align*}
+    \dfrac{\partial\vv E}{\partial t} = j\omega\vv E && \diverg\vv E = -j\vv k\cdot\vv E \\
+    \rota\vv E = -j\vv k\wedge\vv E && \vv\Delta\vv E = -k^{2}\vv E
+  \end{align*}
+\end{cadre}
+
+\begin{cadre}{Relation de structure}
+  \[\vv B=\dfrac{\vv k\wedge\vv E}{\omega}\]
+  Il faut savoir retrouver cette relation, avec la loi de Maxwell-Faraday:
+  \[\rota\vv E = -\dfrac{\partial\vv B}{\partial t} = -j\vv k\wedge\vv E = -j\omega\vv B\]
+\end{cadre}
+
+\begin{cadre}{Loi de Malus}
+  Si l'angle entre les directions d'un analyseur et d'un polariseur est $\alpha$, l'intensité de l'onde après l'analyseur est $I_{0}\cos^{2}(\alpha)$.
+\end{cadre}
+
+\section{Dispersion}
+\begin{cadre}{Vitesse de phase}
+  \[v_{\varphi}=\dfrac{\omega}{k}\]
+  Si $v_{\varphi}$ est indépendante de $\omega$, le milieu est \emph{non-dispersif}. Dans le cas contraire, le milieu est \emph{dispersif}.
+  Le vide est le seul milieu rigoureusement non dispersif.
+\end{cadre}
+
+\begin{cadre}{Relation spectre-signal}
+  \[\Delta\omega\cdot\Delta t \sim 2\pi\]
+  \[\Delta\nu\cdot\Delta t \sim 1\]
+\end{cadre}
+
+\begin{cadre}{Vitesse de groupe}
+  \[v_{g}=\pof{\dfrac{d\omega}{dk}}_{\omega_{0}}\]
+\end{cadre}
+
+\begin{cadre}{Relation de Klein-Gordon}
+  C'est une relation de dispertion de la forme:
+  \[k^{2}c^{2} = \omega^{2}-\omega_{c}^{2}\]
+  Rencontrée notamment dans l'étude des plasmas.
+\end{cadre}
+
+\section{Rayonnement dipolaire électrique}
+\begin{cadre}{Dipôle oscillant}
+  Nous appellerons dipôle oscillant une distribution telle que:
+  \[\vv p = p_{0}\cos(\omega t)\uz\]
+\end{cadre}
+
+\begin{cadre}{Hypothèses}
+  \begin{itemize}[label=$\bullet$]
+    \item $a\ll r$ permet d'utiliser les formules relatives aux dipôles,
+    \item $a\ll\lambda$ peut être appelée \emph{approximation non relativiste},
+    \item $\lambda\ll r$ n'a pas de signification physique, mais simplifie les expressions.
+  \end{itemize}
 \end{cadre}
 
 \end{document}
