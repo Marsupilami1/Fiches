@@ -1,0 +1,97 @@
+\documentclass[french, a4paper, 11pt, twocolumn]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage[version=4]{mhchem}
+\usepackage{float}
+\usepackage[load-configurations = abbreviations, output-decimal-marker={,}]{siunitx}
+\usepackage{graphicx}
+\usepackage[many]{tcolorbox}
+\usepackage{euler}
+\usepackage{calrsfs}
+\usepackage[french]{babel}
+
+
+%______FONCTIONS______%
+\newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+\newcommand{\inv}[1]{\dfrac{1}{#1}}
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+% --PARENTHESES--%
+\newcommand{\po}{\left(}         % ~ (
+\newcommand{\pf}{\right)}        % ~ )
+\newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
+\newcommand{\co}{\left[}         % ~ [
+\newcommand{\cf}{\right]}        % ~ ]
+\newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
+\newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+
+\newtcolorbox{cadre}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+
+\title{Oxydorécution}
+\author{Nathan \textsc{Maillet}}
+\date{}
+
+\begin{document}
+    \maketitle
+
+    \begin{cadre}{Nombre d'oxydation}
+        Pour tous les édifices comprenant de l'hydrogène, de l'oxygène et un unique autre atome, le nombre d'oxydation
+        est donné par la formule :
+        
+        Somme des nombres d'oxydations = Charge totale de l'édifice considéré
+
+        \tcblower
+        Exemple :
+        \begin{itemize}
+            \item Dans \(\ce{MnO_{4-}}\), l'oxygène étant au degré d'oxydation -\RNum{2},
+            il en découle que l'on a \(\ce{Mn^{+\RNum{8}}}\) 
+        \end{itemize}
+    \end{cadre}
+
+    \begin{cadre}{Formule de Nernst}
+        Pour un couple avec la demi-équation :
+        \[\alpha \mathrm{ox} + \mathrm{n_1} \mathrm{e^-} = \beta \mathrm{red},\] on a :
+        \begin{align*}
+            E &=E^0(\mathrm{T})+\frac{\mathrm{RT}}{\mathrm{n}\mathcal{F}}\ln\pof{\frac{\mathrm{a_{ox}^{\alpha}}}{\mathrm{a_{red}^{\beta}}}} \\
+            E &=E^0(\mathrm{T})+\frac{0,06}{\mathrm{n}}\ln\pof{\frac{\mathrm{a_{ox}^{\alpha}}}{\mathrm{a_{red}^{\beta}}}}
+        \end{align*}
+    \end{cadre}
+
+    \begin{cadre}{Thermodynamique de l'oxydorécution}
+        Avec la même demi-équation que ci-dessus, on a :
+        \[\Delta_rG^0=-\mathrm{n}\mathcal{F}(\mathrm{E^0_1-E^0_2})\]
+        et
+        \[\Delta_rG^0=-\mathrm{n_i}\mathcal{F}\mathrm{E_i}\]
+
+        \tcblower
+        Très utile dans les calculs de \(\mathrm{E^0}\) pour trouver facilement les potentiels standard de couples inconnus
+        à partir de couples connus. En effet, il faut dans ce cas appliquer la loi de Hess et ne \textbf{surtout pas} écrire bêtement
+        que \(\mathrm{E^0_3=E^0_1+E^0_2}\)
+    \end{cadre}
+
+    \begin{cadre}{L'électrode standard à hydrogène}
+        Par convention, la référence pour les potentiels est :
+        \[\mathrm{E^0(H^+/H_2(g))=\SI{0}{\volt}}\]
+    \end{cadre}
+\end{document}
