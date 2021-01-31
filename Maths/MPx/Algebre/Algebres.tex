@@ -1,0 +1,190 @@
+\documentclass[french, a4paper, 11pt, twocolumn]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[f]{esvect}
+\usepackage[many]{tcolorbox}
+\usepackage{euler}
+\usepackage[nointegrals]{wasysym}
+\usepackage[french]{babel}
+
+
+%______FONCTIONS______%
+\newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+\newcommand{\inv}[1]{\dfrac{1}{#1}}
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{\(#1\)}\left/\raisebox{-.2em}{\(#2\)}\right.}}
+% --ENSEMBLES--%
+\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
+\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
+\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
+\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
+\newcommand{\R}{\mathbb{R}}   % ~ Réels
+\newcommand{\C}{\mathbb{C}}   % ~ Complexes
+% --PARENTHESES--%
+\newcommand{\po}{\left(}         % ~ (
+\newcommand{\pf}{\right)}        % ~ )
+\newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
+\newcommand{\co}{\left[}         % ~ [
+\newcommand{\cf}{\right]}        % ~ ]
+\newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
+\newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+
+\newtcolorbox{theoreme}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+\newtcolorbox{definition}[1][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=Définition,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+
+\newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
+
+\title{Algèbre}
+\author{Martin \textsc{Andrieux}, Nathan \textsc{Maillet}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Groupes}
+\begin{definition}
+  Soit \(H\subset G\), \(H\) est un \emph{sous-groupe} de \(G\) si:
+  \begin{itemize}[label=\(\bullet\)]
+    \item \(H\neq\emptyset\)
+    \item \(H\) est stable par \(\cdot\)
+    \item \(1\in H\)
+    \item \(\forall a \in H,\, a^{-1}\in H\)
+  \end{itemize}
+\end{definition}
+
+\begin{theoreme}{Théorèmes}
+  \begin{itemize}[label=\(\bullet\)]
+    \item Les sous-groupes de \(\Z\) sont de la forme \(n\Z\)
+    \item Tout groupe fini de cardinal \(n\) est isomorphe à un sous-groupe de \(\mathfrak S_{n}\)
+    \item L'intersection de deux sous-groupes est un sous-groupe
+  \end{itemize}
+\end{theoreme}
+
+\begin{definition}
+  Pour \(A\subset G\), il existe un plus petit sous-groupe de \(G\) contenant \(A\), c'est le sous-groupe \emph{engendré} par \(A\), noté \(\langle A\rangle\).
+\end{definition}
+
+\begin{theoreme}{Théorème de Lagrange}
+  Le cardinal de tout sous-groupe divise le cardinal du groupe.
+  \tcblower
+  En particulier, pour \(x\) dans \(G\), le cardinal de \(\langle x \rangle\), aussi appelé \emph{ordre} de \(x\), divise le cardinal de \(G\).
+\end{theoreme}
+
+\section{Anneaux}
+\begin{definition}
+  Soit \(B\subset A\), \(B\) est un \emph{sous-anneau} de \(A\) si:
+  \begin{itemize}[label=\(\bullet\)]
+    \item \(B\neq\emptyset\)
+    \item \(B\) est stable par \(\cdot\) et \(+\)
+    \item \(1\in B\)
+  \end{itemize}
+\end{definition}
+
+\begin{definition}
+  Un \emph{corps} est un anneau dans lequel tous les éléments non nuls sont inversibles.
+
+  Soit \(A\) un anneau, on note \(A^{*}\) l'ensemble des éléments inversibles de \(A\). \(A^{*}\) est un groupe pour la loi \(\cdot\).
+\end{definition}
+
+\begin{definition}
+  Soit \(A\) un anneau, on dit que \(x\) et \(y\) sont des \emph{diviseurs de \(0\)} si \(x\neq 0\), \(y\neq 0\) et \(xy=0\).
+
+  Si \(A\) ne possède pas de diviseur de \(0\), il est dit \emph{intègre}.
+\end{definition}
+
+\section{Arithmétique}
+\begin{definition}
+  Soit \(I\subset A\) avec \(A\) un anneau. On dit que \(I\) est un \emph{idéal à gauche} (resp \emph{à droite}), si \(I\) est un groupe non vide et pour tout \(x\) de \(I\) et pour tout \(a\) de \(A\), \(ax\in I\) (resp \(xa \in I\)). Si \(I\) est un idéal à gauche et à droite, on dit qu'il est \emph{bilatère}.
+\end{definition}
+
+\begin{definition}
+  Soit \(A\) un anneau. Il est dit \emph{principal} si ses idéaux sont de la forme \(aA\) avec \(a\in A\). Ces idéaux sont appelés \emph{idéaux principaux}
+\end{definition}
+
+\begin{theoreme}{Lemme chinois}
+  Si \(a \wedge b = 1\), alors
+  \[\bigslant{\Z}{a\Z}\times\bigslant{\Z}{b\Z} = \bigslant{\Z}{ab\Z}\]
+\end{theoreme}
+
+\begin{theoreme}{Lemme de Gauss}
+  Si \(a,b,c\in A\), on a:
+  \[\begin{cases}
+      a|bc\\
+      a\wedge b = 1
+    \end{cases}\implies a|c\]
+\end{theoreme}
+
+\section{Espaces vectoriels}
+\begin{theoreme}{Somme directe de sous-espaces}
+  Une somme de sous-espaces \((F_{i})_{1}^{k}\) est directe si:
+  \[\forall (x_{1},\ldots,x_{n}) \in F_{1}\times \cdots\times F_{n}\]
+  \[\sum_{i=1}^k x_{i} = 0 \implies \forall i,\, x_{i}=0\]
+\end{theoreme}
+
+\begin{theoreme}{Dualité}
+  L'ensemble des formes linéaires sur \(E\), noté \(\mathcal L(E, K)\) ou \(E^{*}\) est l'\emph{espace dual} de \(E\).
+
+  On note \(e_{i}^{*}\) l'application qui à un vecteur \(x\) de \(E\) associe sa \(i\)-ième coordonnée dans la base \((e_{i})_{1}^{n}\)
+  Ainsi, pour tout \(x\) de \(E\):
+  \[x = \sum_{i=1}^n e_{i}^{*}(x)e_{i}\]
+\end{theoreme}
+
+\section{Déterminants}
+\begin{theoreme}{Matrice de Vandermonde}
+  Le déterminant d'une matrice de Vandermonde est de la forme suivante:
+  \[\begin{vmatrix}
+      1                & 1                & 1                & \cdots & 1              \\
+      \alpha_{1}       & \alpha_{2}       & \alpha_{3}       & \cdots & \alpha_{n}     \\
+      \alpha_{1}^{2}   & \alpha_{2}^{2}   & \alpha_{3}^{2}   & \cdots & \alpha_{n}^{2} \\
+      \vdots           & \vdots           & \vdots           & \ddots & \vdots         \\
+      \alpha_{1}^{n-1} & \alpha_{2}^{n-1} & \alpha_{3}^{n-1} & \cdots & \alpha_{n}^{n-1}
+    \end{vmatrix}\]
+  Il est égal à \(\prod\limits_{1\leqslant i < j \leqslant n}(\alpha_{j}-\alpha_{i})\).
+\end{theoreme}
+
+\begin{theoreme}{Formule de Cramer}
+  On s'interesse aux solution de l'équation \(AX=B\) avec \(A\) dans \(GL_{n}(\R)\).
+  Les solutions sont de la forme \(X = \begin{pmatrix}x_{1}                   \\ \vdots\\ x_{n}\end{pmatrix}\) avec:
+  \[x_{i} = \dfrac{
+      \begin{vmatrix}
+        a_{1,1} & \cdots & a_{1,i-1} & b_{1}  & a_{1,i+1} & \cdots & a_{1,n} \\
+        \vdots  &        & \vdots    & \vdots & \vdots    &        & \vdots  \\
+        a_{n,1} & \cdots & a_{n,i-1} & b_{n}  & a_{n,i+1} & \cdots & a_{n,n}
+      \end{vmatrix}}{\det A}\]
+\end{theoreme}
+
+\end{document}
