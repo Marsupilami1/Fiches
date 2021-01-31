@@ -92,8 +92,8 @@
   \[\left\lVert f(b)-\sum_{k=0}^{n}\dfrac{\pof{b-a}^{k}}{k!}f^{(k)}(a)\right\rVert \leqslant\dfrac{\pof{b-a}^{n+1}}{(n+1)!}\left\lVert f^{(n+1)}\right\rVert_{\infty}\]
 \end{theoreme}
 
-\begin{theoreme}{Taylor avec reste intégral}
-\[f(b)=\sum_{k=0}^{n}\dfrac{\pof{b-a}^{k}}{k!}f^{(k)}(a)+\int_{a}^{b}\dfrac{\pof{b-t}^{n}}{n!}f^{(n+1)}(t)dt\]
+\begin{theoreme}{Taylor avec reste intégrale}
+\[f(x)=\sum_{k=0}^{n}\dfrac{\pof{x-a}^{k}}{k!}f^{(k)}(a)+\int_{a}^{x}\dfrac{\pof{x-t}^{n}}{n!}f^{(n+1)}(t)dt\]
 \end{theoreme}
 
 \begin{theoreme}{Taylor-Young}
@@ -101,13 +101,13 @@
 \end{theoreme}
 
 \begin{theoreme}{Prolongement \(\mathcal C^{1}\)}
-  \(f\) continue de \(I\) dans \(\R\), \(a\) dans \(I\), \(f\) dérivable sur \(I\backslash \lbrace a\rbrace\).
+  Soit \(f\) continue de \(I\) dans \(\R\), \(a\) dans \(I\), \(f\) dérivable sur \(I\backslash \lbrace a\rbrace\).
 
   Si \(f'\) a une limite \(l\) en \(a\), alors \(f\) est dérivable en \(a\) et \(f'(a)=l\).
 \end{theoreme}
 
-\begin{theoreme}{Théorème fondamental}
-  \[F : x\mapsto \int_{a}^{x}f(t)dt\]
+\begin{theoreme}{Théorème fondamental de l'analyse}
+  \[\mathrm{Soit } F : x\mapsto \int_{a}^{x}f(t)dt\]
   \(F\) est continue et dérivable avec \(F'=f\).
 
   Si \(f\) est continue, alors \(f\) possède des primitives.
@@ -117,9 +117,9 @@
 \begin{theoreme}{Théorème de continuité}
   \begin{itemize}[label=\(\bullet\)]
     \item \(f:U\times I\rightarrow\C\)
-    \item \(\forall x\in U\), \(t\mapsto f(x,t)\) est \(\czero_{\text{pm}}\)
-    \item \(\forall t \in I\), \(x\mapsto f(x,t)\) est \(\czero\)
-    \item Il existe \(\phi : I\rightarrow \R\), \(\czero_{\text{pm}}\) et sommable telle que
+    \item \(\forall x\in U\), \(t\mapsto f(x,t)\) est \(\czero_{\text{pm}}\) sur \(I\)
+    \item \(\forall t \in I\), \(x\mapsto f(x,t)\) est \(\czero\) sur \(U\)
+    \item Il existe \(\phi : I\rightarrow \R\), \(\czero_{\text{pm}}\) et sommable sur \(I\) telle que
       \[\forall x\in U,\,\forall t\in I\quad \vert f(x,t)\vert\leqslant\phi(t)\]
   \end{itemize}
   \tcblower
@@ -130,10 +130,10 @@
 \begin{theoreme}{Théorème de dérivabilité}
   \begin{itemize}[label=\(\bullet\)]
     \item \(f:U\times I\rightarrow\C\)
-    \item \(\forall x\in U\), \(t\mapsto f(x,t)\) est \(\czero_{\text{pm}}\) et sommable
-    \item \(\forall t \in I\), \(x\mapsto f(x,t)\) est \(\cun\)
-    \item \(\forall x\in U\), \(t\mapsto \dfrac{\partial f}{\partial x}(x,t)\) est \(\czero_{\text{pm}}\)
-    \item Il existe \(\phi : I\rightarrow \R\), \(\czero_{\text{pm}}\) et sommable telle que
+    \item \(\forall x\in U\), \(t\mapsto f(x,t)\) est \(\czero_{\text{pm}}\) et sommable sur \(I\)
+    \item \(\forall t \in I\), \(x\mapsto f(x,t)\) est \(\cun\) sur \(U\)
+    \item \(\forall x\in U\), \(t\mapsto \dfrac{\partial f}{\partial x}(x,t)\) est \(\czero_{\text{pm}}\) sur \(I\)
+    \item Il existe \(\phi : I\rightarrow \R\), \(\czero_{\text{pm}}\) et sommable sur \(I\) telle que
       \[\forall x\in U,\,\forall t\in I\quad \left\vert\dfrac{\partial f}{\partial x}(x,t)\right\vert\leqslant\phi(t)\]
   \end{itemize}
   \tcblower
@@ -141,7 +141,7 @@
   \[F'(x)=\int_{I}\dfrac{\partial f}{\partial x}(x,t)dt\]
 \end{theoreme}
 
-\begin{theoreme}{fonction \(\Gamma\)}
+\begin{theoreme}{Fonction \(\Gamma\)}
   On défnit la fonction \(\Gamma\) comme suit:
   \[\Gamma:x\mapsto\int_{0}^{+\infty}t^{x-1}e^{-t}dt\]
   On a alors \(\Gamma(x+1)=x\Gamma(x)\) et \(\Gamma(n+1)=n!\) pour \(n\) dans \(\N\). \(\Gamma(\frac{1}{2})=\sqrt{\pi}\).
@@ -172,22 +172,33 @@
   La convergence normale entraîne la convergence uniforme.
 \end{definition}
 
+\begin{theoreme}{Théorème d'approximation de Weierstrass}
+  Toute fonction continue sur un segment à valeurs dans \(\C\) est limite uniforme d'une suite de fonctions polynomiales.
+\end{theoreme}
+
 \begin{theoreme}{Théorèmes pour la convergence uniforme}
   La convergence uniforme conserve:
-  \begin{itemize}
-    \item la continuité
+  \begin{itemize}[label=\(\bullet\)]
     \item la limite
-    \item la sommabilité avec égalité des intégrales
-    \item la dérivabilité et la continuité de la dérivée, avec égalité des dérivées. (Dans ce cas, la convergence simple des $f_{n}$ suffit, avec convergenence uniforme des $f'_{n}$)
+    \item la continuité
+    \item la sommabilité
+    \item la dérivabilité et la continuité de la dérivée, avec égalité des dérivées dans le cas où il y a convergence simple des $f_{n}$, avec convergenence uniforme des $f'_{n}$.
   \end{itemize}
+\end{theoreme}
+
+\begin{theoreme}{Échanges sur un intervalle borné}
+  Sur un intervalle d'intégration borné \([a,b]\), la convergence uniforme des \(f_n\) suffit pour avoir:
+    \[\int_a^b f_n(x)dx \xrightarrow[n\rightarrow +\infty]{} \int_a^b f(x)dx\]
+    et
+    \[\int_a^b \sum_0^{+\infty} u_n(x)dx = \sum_0^{+\infty} \int_a^b u_n(x)dx\]
 \end{theoreme}
 
 \begin{theoreme}{Convergence dominée}
   \begin{itemize}[label=$\bullet$]
-    \item Pour tout $n$, $f_{n}$ est $\czero_{\text{pm}}$
-    \item $f$ est $\czero_{\text{pm}}$
-    \item $(f_{n})$ converge simplement vers $f$
-    \item Il existe $\phi$ continue par morceaux et sommable telle que \(\left\lvert f_{n}(x)\right\rvert\leqslant \phi(x)\)
+    \item Les \(f_n\) et \(f\) sont \(\czero_{\text{pm}}\) sur \(I\)
+    \item $(f_{n})$ converge simplement vers $f$ sur \(I\)
+    \item Il existe $\phi$ continue par morceaux et sommable sur \(I\) telle que
+      \[\forall n \in \N, \forall x \in I, \left\lvert f_{n}(x)\right\rvert\leqslant \phi(x)\]
   \end{itemize}
   \tcblower
   Alors les $f_{n}$ et $f$ sont sommables sur $I$ est
@@ -196,19 +207,22 @@
 
 \begin{theoreme}{Sommation terme à terme}
   \begin{itemize}[label=$\bullet$]
-    \item Pour tout $n$, $u_{n}$ est $\czero_{\text{pm}}$
-    \item La série des $u_{n}$ converge simplement
-    \item Les sommes partielles sont $\czero_{\text{pm}}$
-    \item Les $u_{n}$ sont sommables et $\sum_{n\geqslant 0}\int_I |u_{n(x)}|dx$ converge
+    \item Pour tout $n$, $u_{n}$ est $\czero_{\text{pm}}$ sur \(I\)
+    \item La série $\sum_{n \geq 0} u_{n}$ converge simplement sur \(I\) et sa somme y est \(\czero_{\text{pm}}\)
+    \item La série \(\sum_{n\geqslant 0}\int_I |u_{n(x)}|dx\) converge
 
   \end{itemize}
   \tcblower
-  Alors les $\sum\limits_{0}^{+\infty}u_{n}$ est sommable sur $I$ et
+  Alors les $\sum\limits_{n=0}^{+\infty}u_{n}$ est sommable sur $I$ et
   \[\int_{I}\pof{\sum_{n=0}^{+\infty}u_{n}(x)}dx = \sum_{n=0}^{+\infty} \pof{\int_{I}u_{n}(x)dx}\]
 \end{theoreme}
 
-\begin{theoreme}{Théorème d'approximation de Weierstrass}
-    Toute fonction continue sur un segment à valeurs dans \(\C\) est limite uniforme d'une suite de fonctions polynomiales.
+\begin{theoreme}{Fubini discret}
+  Si \((u_{p,q})_{p,q \in \N}\) est une famille de nombres complexes indexée par \(\N^2\) telle que:
+    \[\forall p \in \N, \text{ la série } \sum_{p\geq 0} u_{p,q} \text{ converge absoluement} \]
+    \[\text{La série} \sum_{p\geq 0} \left( \sum_{q=0}^{+\infty} |u_{p,q}| \right) \text{ est convergente}\]
+  Alors,
+    \[\sum_{p=0}^{+\infty} \left( \sum_{q=0}^{+\infty} |u_{p,q}| \right) = \sum_{q=0}^{+\infty} \left( \sum_{p=0}^{+\infty} |u_{p,q}| \right)\]
 \end{theoreme}
 
 \end{document}
