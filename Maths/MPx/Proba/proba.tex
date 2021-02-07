@@ -1,0 +1,218 @@
+\documentclass[french, a4paper, 10pt, twocolumn]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[f]{esvect}
+\usepackage[many]{tcolorbox}
+\usepackage{euler}
+\usepackage[nointegrals]{wasysym}
+\usepackage[french]{babel}
+
+
+%______FONCTIONS______%
+\newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+\newcommand{\inv}[1]{\dfrac{1}{#1}}             % ~ inverse
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{\(#1\)}\left/\raisebox{-.2em}{\(#2\)}\right.}}
+\DeclareMathOperator{\Sp}{Sp}
+\newcommand{\norme}[1]{\left\| #1\right\|}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\limit}[1]{\underset{#1}{\rightarrow}}  % ~limite
+% --ENSEMBLES--%
+\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
+\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
+\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
+\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
+\newcommand{\R}{\mathbb{R}}   % ~ Réels
+\newcommand{\C}{\mathbb{C}}   % ~ Complexes
+\newcommand{\czero}{\mathcal{C}^{0}}
+\newcommand{\cun}{\mathcal{C}^{1}}
+% --PARENTHESES--%
+\newcommand{\po}{\left(}         % ~ (
+\newcommand{\pf}{\right)}        % ~ )
+\newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
+\newcommand{\co}{\left[}         % ~ [
+\newcommand{\cf}{\right]}        % ~ ]
+\newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
+\newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+\renewcommand{\phi}{\varphi}
+
+\newtcolorbox{theoreme}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+\newtcolorbox{definition}[1][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=Définition,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+
+\newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
+
+\title{Probabilités}
+\author{Nathan \textsc{Maillet}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{definition}{Tribus}
+    Soit \(\Omega\) un ensemble.
+    Une tribu sur \(\Omega\) est une partie \(\mathcal{T}\) de \(\mathcal{P(T)}\) telle que :
+        \begin{itemize}
+            \item \(\varnothing \in \mathcal{T}\)
+            \item \(\forall A \in \mathcal{P(T)}, A \in \mathcal{T} \implies A^c \in  \mathcal{T}\)
+            \item \(\forall (A_i)_{i\in \N} \in \mathcal{T}^{\N}, \cup_{i\in \N}A_i \in \mathcal{T}\)
+        \end{itemize}
+    \tcblower
+    Quand \(\Omega\) est finit ou dénombrable, on choisira \(\mathcal{P(\Omega)}\) comme tribu.
+
+    Les tribus sont stables par intersection.
+\end{definition}
+
+\begin{definition}{Probabilités}
+    Une loi de probabilité sur $(\Omega,\mathcal{T})$ est une appication \(P : \mathcal{T} \rightarrow \R^+\) tel que :
+    \begin{itemize}
+        \item \(P(\Omega)=1\)
+        \item \(\forall (A_i)_{i\in \N} \in \mathcal{T}^{\N}, A_i\cap A_j =\varnothing,\)
+        \[\sum_{i\geq 0}^{}P(A_i) \text{ converge et } \sum_{i=0}^{+\infty}P(A_i)=P(\sqcup_{i\in \N}A_i)\] 
+    \end{itemize}
+\end{definition}
+
+\begin{theoreme}{Continuité croissante et décroissante}
+    Si \((A_n)_{n\in \N} \in \mathcal{T}^{\N}\) est croissante, \[P(A_n)\limit{+\infty}P(\cup_{k\in \N A_k})\].
+    
+    Si \((A_n)_{n\in \N} \in \mathcal{T}^{\N}\) est décroissante, \[P(A_n)\limit{+\infty}P(\cap_{k\in \N A_k})\].
+\end{theoreme}
+
+\begin{definition}{Indépendance mutuelle}
+    On dit que \((A_i)_{i \in I} \in \mathcal{T}^I\) sont mutuellements indépendants si \(\forall n \in \N^*, \forall i_1,\dots,i_n\)
+    éléments distincts de \(I\), \(P(A_{i_1}\cap\dots\cap A_{i_n})=P(A_{i_1})\times\dots\times P(A_{i_n})\)
+\end{definition}
+
+\begin{definition}{Système complet d'évènements}
+    Soit \((A_i)_{1 \leq i \leq n} \in \mathcal{T}^{\N}\), c'est un système complet d'évènements si :
+    \begin{itemize}
+        \item Les \(A_i\) sont deux à deux disjoints
+        \item \(P(\cup_{i=1}^{n}A_i)=1\)
+        \item \(\forall i, P(A_i)\neq 0\)
+    \end{itemize}
+\end{definition}
+
+\begin{theoreme}{Formule des probabilités totales}
+    Soit $(A_i)$ un système complet d'évènements, on a :
+        \[\forall B, P(B)=\sum_{i}^{}P(A_i)P_{A_i}(B)\]
+\end{theoreme}
+
+\begin{definition}{Variable aléatoire}
+    Soit \(\mathcal{X}\) un ensemble fini ou dénombrable.
+    Une variable aléatoire discrète de \(\Omega\) dans \(\mathcal{X}\) est une application
+        \[X : \Omega \rightarrow \mathcal{X} / \forall A \subset \mathcal{X}, X^{-1}(A) \in \mathcal{T}\]
+    
+    \tcblower
+    \begin{itemize}
+        \item Un couple de variables aléatoires est une variable aléatoire
+        \item Les composantes d'une variable aléatoire sont des variables aléatoires
+        \item \(X\) est une variable aléatoire, \(f\circ X\) en est une
+        \item On retrouve la même définition d'indépendance mutuelle avec les variables aléatoires
+    \end{itemize}
+\end{definition}
+
+\begin{theoreme}{Lemne des coalitions}
+    Soit \(X_1\dots X_n\) des variables aléatoires indépendantes,
+    \(\forall k \leq n-1, (X_1,\dots,X_k),(X_{k+1},\dots,X_n)\) sont indépendantes
+\end{theoreme}
+
+\begin{theoreme}{Théorème de transfert}
+    Soit \(X\) une variable aléatoire de \(\Omega\) dans \(\mathcal{X}\) et \(f : \mathcal{X} \rightarrow \R\).
+    \(f(x)\) a une espérance si et seulement si la famille \((f(x_i)P(X=x_i))_{i\in I}\) est sommable.
+    Si \(f(x)\) a une espérance, alors : 
+        \[E(f(x))=\sum_{i\in I}^{}f(x_i)P(X=x_i)\]
+\end{theoreme}
+
+\begin{theoreme}{Espérance}
+    L'espérance est linéraire et si \(X,Y\) possèdent un moment d'ordre 1 et sont indépendants,
+    \[E(XY)=E(X)E(Y)\]
+\end{theoreme}
+
+\begin{theoreme}{Inégalité de Markov}
+    Inégalité de Markov : Soit $X$ une variable aléatoire réelle positive qui possède un moment d'ordre 1 :
+     \[\forall a>0, {P(X\geqslant a)\leqslant \frac{E(|X|)}{a}}\]
+\end{theoreme}
+ 
+\begin{definition}{Variance, écart-type et covariance}
+    Soient \((X,Y)\) deux variables aléatoires discretes qui possèdent un moment d'ordre 2, on a :
+    \begin{itemize}
+        \item \(X-E(X)\) possède un moment d'ordre 2 appelé variance de X
+        \item \(V(X)=E((X-E(X))^2)\)
+        \item On appel écart-type de \(X\) : \(\sigma(X)=\sqrt(V(X))\)
+        \item On appel covariance de \((X,Y)\) : Cov\((X,Y)=E[(X-E(x))(Y-E(Y))]\)
+    \end{itemize}
+
+    \tcblower
+    \begin{itemize}
+        \item \(V(X)=E(X^2)-(E(X))^2\)
+        \item \(\forall \alpha \in \R, V(X+\alpha)=V(X)\) et \(V(\alpha X)=\alpha^2V(x)\)
+        \item La variable aléatoire \(\dfrac{X-E(X)}{\sigma(X)}\) est dite centrée réduite
+        \item \(V(X+Y)=V(X)+V(Y)+2*\text{Cov}(X,Y)\) et si \(X,Y\) sont indépendants, Cov\((X,Y)=0\)
+        \item \(\sqrt{V(X+Y)}\leq\sqrt{V(X)}+\sqrt{V(Y)}\)
+        \item Définition : \(\rho(X,Y)=\dfrac{\text{Cov}(X,Y)}{\sigma(X)\sigma(Y)}\)
+    \end{itemize}
+\end{definition}
+
+\begin{theoreme}{Inégalité de Cauchy-Swarz}
+    Soient \((X,Y)\) deux variables aléatoires discretes qui possèdent un moment d'ordre 2, on a :
+        \[|\text{Cov}(X,Y)|\leq \sigma(X)\sigma(Y)\] 
+\end{theoreme}
+
+\begin{theoreme}{Inégalité de Bienaymé-Tchebychev}
+    Soit $X$ une variable aléatoire réelle possédant un moment d'ordre 2, on a :
+     \[\forall a>0, P(|X-E(X)|\geqslant a)\leqslant \frac{V(X)}{a^2}\]
+\end{theoreme}
+
+Soit \(X : \Omega \rightarrow \N\) une variable aléatoire.
+
+\begin{definition}{Série génératrice}
+    La série génératrice de \(X\) est la série entière \(G_X(z)=\sum_{n\geq 0}P(X=n)z^n\).
+    Son noyaux est au moins 1 et il y a convergence normale pour \(z \in \C, |z|\leq 1\).
+\end{definition}
+
+\begin{theoreme}{Application des série génératrice}
+    \(X\) possède une espérance finie si et seulement si \(G_X\) est dérivable en \(1^-\), avec :
+        \[E(X)=G'_X(1)\]
+
+    \tcblower
+    \begin{itemize}
+        \item En dérivant \(G_X\) on retrouve facilement que \(X\) possède un moment d'ordre 2 si et seulement si \(G_X\) est
+        2 fois dérivable en 1 et \(V(X)=G"_X(1)+G'_x(1)-(G'_X(1))^2\)
+        \item Soit \(Y : \Omega \rightarrow \N\) une variable aléatoire indépendate de \(X\). On a : \(G_{X+Y}=G_X G_Y\)
+    \end{itemize}
+\end{theoreme}
+
+\end{document}
