@@ -1,0 +1,233 @@
+\documentclass[french, a4paper, 11pt, twocolumn]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm, bottom=3cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage[straightvoltages]{circuitikz}
+\usepackage[load-configurations = abbreviations]{siunitx}
+\usepackage{graphicx}
+\usepackage[f]{esvect}
+\usepackage[many]{tcolorbox}
+\usepackage{euler}
+\usepackage[nointegrals]{wasysym}
+\usepackage{array}
+\usepackage{babel}
+
+
+\sisetup{
+  locale=FR,
+  detect-all,
+}
+
+%______FONCTIONS______%
+\newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+% --ENSEMBLES--%
+\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
+\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
+\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
+\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
+\newcommand{\R}{\mathbb{R}}   % ~ Réels
+\newcommand{\C}{\mathbb{C}}   % ~ Complexes
+% --TRIGO--%
+\let\cosh\relax
+\DeclareMathOperator{\cosh}{ch}       % ~ cosinus hyperbolique
+\DeclareMathOperator{\sh}{sh}         % ~ sinus hyperbolique
+\let\tanh\relax
+\DeclareMathOperator{\tanh}{th}       % ~ tangente hyperbolique
+\DeclareMathOperator{\argch}{Argch}   % ~ Argument cosinus hyperbolique
+\DeclareMathOperator{\argsh}{Argsh}   % ~ Argument sinus hyperbolique
+\DeclareMathOperator{\argth}{Argth}   % ~ Argument tangente hyperbolique
+\DeclareMathOperator{\cotan}{cotan}   % ~ cotangente
+% --PARENTHESES--%
+\newcommand{\po}{\left(}         % ~ (
+\newcommand{\pf}{\right)}        % ~ )
+\newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
+\newcommand{\co}{\left[}         % ~ [
+\newcommand{\cf}{\right]}        % ~ ]
+\newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
+\newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+% --VECTEURS--%
+\newcommand{\ux}{\vv{u_x}}          % ~ Vecteur ux
+\newcommand{\uy}{\vv{u_y}}          % ~ Vecteur uy
+\newcommand{\uz}{\vv{u_z}}          % ~ Vecteur uz
+\newcommand{\ur}{\vv{u_r}}          % ~ Vecteur ur
+\newcommand{\uth}{\vv{u_\theta}}    % ~ Vecteur utheta
+\newcommand{\uph}{\vv{u_\varphi}}   % ~ Vecteur uphi
+\newcommand{\om}{\vv{OM}}           % ~ Vecteur position
+\newcommand{\vvi}{\vv{v}}           % ~ Vecteur vitesse
+\newcommand{\vvio}{\vv{v_0}}        % ~ Vecteur v0
+\newcommand{\va}{\vv{a}}            % ~ Vecteur	accélération
+\newcommand{\vp}{\vv{p}}            % ~ Vecteur quantité de mouvement
+\newcommand{\fr}{\vv{F_r}}          % ~ Vecteur force de rappel
+\newcommand{\vabla}{\vv{\nabla}}    % ~ nabla
+\newcommand{\grad}{\vv{\mathrm{grad}}}  % ~ grad
+\DeclareMathOperator{\diverg}{div}        % ~ grad
+\newcommand{\rot}{\vv{\mathrm{rot}}}    % ~ grad
+
+\newtcolorbox{cadre}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+\newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
+
+\title{Optique}
+\author{Nathan \textsc{Maillet}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Notions générales sur les ondes lumineuses}
+\begin{cadre}{Intensité avec le modèle scalaire}
+    Le vecteur de Poynting donne, avec le modèle scalaire :
+        \[I=\mathcal{E}\propto <s^2> \propto a^2\]
+\end{cadre}
+
+\begin{cadre}{Théorème de Mallus}
+    Le théorème de Mallus est utile pour trouver la différence de marche.
+    Il stipule que les surfaces d'onde sont orthogonales aux rayons lumineux.    
+\end{cadre}
+
+\section{Interférences de deux ondes cohérentes}
+\begin{cadre}{Forme de Fresnel}
+    En écrivant que pour deux ondes \(s_1,s_2\) on a \(I=<(s_1+s_2)^2\), on trouve :
+        \[I(M)=I_1+I_2+2\sqrt{I_1I_2}\cos(\varphi(S_1)-\varphi(S_2)+\frac{2\pi \delta}{\lambda_0})\]
+    
+    \tcblower
+    Dans le cas où \(\mathcal{E_1}=\mathcal(E_2)=\mathcal{E_0}\) et \(\varphi(S_1)=\varphi(S_2)\) on a donc :
+        \[\mathcal{E}(M)=2\mathcal{E_0}\pof{1+\cos{\frac{2\pi \delta}{\lambda_0}}}\]
+\end{cadre}
+
+\begin{cadre}{Contraste ou visiblité}
+    On déinit le contraste (ou visiblité) par :
+        \[C=V=\dfrac{\mathcal{E_{\text{max}}-E_{\text{min}}}}{\mathcal{E_{\text{max}}+E_{\text{min}}}}\]    
+\end{cadre}
+
+\begin{cadre}{Fentes d'Young}
+    Dans le cas des fentes d'Young on a \(\delta=\frac{ax}{D}\) avec a l'écartement entre les fentes, D la distance entre
+    les fentes et l'écran et x la position du point sur l'écran.
+
+    Dans ce cas, on a : \(i=\frac{\lambda_0D}{a}\)
+
+    Si l'on ajoute une lentille avec des franges d'Young à l'infini, on a : \(\delta=\frac{ax}{f}\) et \(i=\frac{\lambda_0f}{a}\)
+\end{cadre}
+
+\begin{cadre}{Degré de cohérence temporelle}
+    Dans le cas d'ondes polychromatiques, on a : \(I\propto 1+\gamma_t\cos(2\pi \delta \sigma_0)\) avec \(\gamma_t\) le degré de cohérence temporelle
+    
+    \tcblower
+    Le degré de cohérence temporelle donne l'enveloppe de la courbe \(I(\delta)\)
+\end{cadre}
+
+\begin{cadre}{Brouillage}
+    Le contraste est maximal lorsque la différence des ordres \(p_1-p_2\) est entier.
+    Quand le contraste est nul, il y a anti-coïncidence et les brouillages sont données par \(p_1-p_2=q+\frac{1}{2}\) avec \(q\in \Z\)
+    Le premier brouillage est alors donné pour \(p_1-p_2=\delta\Delta\sigma=\frac{1}{2}\)
+\end{cadre}
+
+\begin{cadre}{Finesse}
+    On définit la finesse par : \(\mathcal{F}=\frac{\nu_0}{\Delta \nu}=\frac{\omega_0}{\Delta \omega}=\frac{\sigma_0}{\Delta \sigma}\)
+\end{cadre}
+
+\begin{cadre}{Observation des interférences}
+    Pour observer des interférences \(\delta\) doit vérifier : \(|\delta|<c\tau_c=\emph{l}_c\).
+    \(\emph{l}_c\) est alors la longueur de cohérence de la source lumineuse.
+
+    \tcblower
+    \(\tau_c, \Delta\nu\) et \(\emph{l}_c\) vérifient :
+        \[\tau_c \Delta\nu \sim 1 \text{ et } \emph{l}_c \Delta\nu \sim c\]
+\end{cadre}
+
+\section{Interféromètre de Michelson}
+Remarque : Pour avoir une table du vocabulaire lié au Michelson, se référé à la fin de la fiche.
+\begin{cadre}{Différence de marche}
+    \(\delta=2ne\cos(i)\) avec \(i\) l'angle incident que fait le rayon en passant par l'image de (M\(_1\)) par la séparatrice.
+    
+    \tcblower
+    Quand l'on place un verre d'indice n entre la séparatrice et un des miroirs et en notant \(\delta'\) la nouvelle différence de marche,
+    on a \(|\delta-\delta'|=2(n-1)e\) car l'onde passe deux fois par le verre
+\end{cadre}
+
+\section{Diffraction}
+\begin{cadre}{Ordres de grandeurs}
+    La lumière diffractée est concentrée dans des directions limités parrapport à
+    la direction de l'onde incidente par le demi-angle \(\theta\sim \frac{\lambda}{a}\).
+
+    Le rayon de la tache d'Airy est donné par : \(\sin(\theta)=\frac{0.61\lambda}{R}\)
+\end{cadre}
+
+\begin{cadre}{Critère de Rayleigh}
+    Deux taches de diffraction sont séparées si le maximum central de l'une est au-delà
+    du premier minimum de l'autre.
+\end{cadre}
+
+\section{Réseaux de diffraction}
+Soit \(N\) le nombre de motifs, \(h\) le pas et \(L=Nh\) la largeur du réseau.
+
+\begin{cadre}{Maxima principaux}
+    Les maxima principaux sont atteints pour un déphasage entre deux motifs successifs
+    \(\varphi=0[2\pi]\) ou encore \(\delta=p\lambda, p \in \Z\).
+    Sur la courbe \(I(\varphi)\), les maxima principaux sont étroits avec :
+    \begin{itemize}
+        \item \(N-1\) annulations de l'Intensité
+        \item \(N-2\) maxima secondaires (jamais observés en pratique quand \(N\) est grand)
+    \end{itemize}
+\end{cadre}
+
+\begin{cadre}{Relation des réseaux}
+    Relation des réseaux en prenant les angles dans le sens trigonométrique.
+    Pour un réseau par transmission, on a :
+        \(h(\sin(\theta)-\sin(i))=p\lambda=\delta, p \in \Z\) avec i l'angle de déviation
+    Pour un réseau par réflexion, on a :
+        \(h(\sin(\theta)+\sin(i))=p\lambda=\delta, p \in \Z\)avec i l'angle d'incidence
+    
+    \tcblower
+    Avec d'autres conventions d'orientations pour les angles, les signes "+" et "-" sont inversés
+\end{cadre}
+
+\begin{cadre}{Pouvoir de résolution}
+    Le pouvoir de résolution du réseau est défini par \(\mathcal{R}=\frac{\lambda}{\Delta\lambda_{text{min}}}\)
+    On peut donc écrire : 
+        \[\mathcal{R}=\frac{\lambda}{\Delta\lambda_{text{min}}}=|p|N\]
+
+    \tcblower
+    En écrivant la limite du critère re Rayleigh pour \(p>0\), on a :
+        \[\delta=(p+\frac{1}{N})\lambda=p(\lambda + \Delta\lambda_{\text{min}})\]
+    ce qui donne l'écriture finale du pouvoir de résolution
+\end{cadre}
+
+\begin{center}
+    \textbf{Vocabulaire relatif au Michelson}
+    \begin{tabular}{|l|l|l}
+        \hline Séparatrice & Lame semi-réfléchissante \\
+        \hline Division d'amplitude & Conséquence de la séparatrice \\
+        \hline Compensatrice & Assure l'indépendance entre \(\delta\) et \(\lambda\) \\
+        \hline Lame d'air & Espace entre (M'\(_1\)) et (M\(_2\)) \\
+        \hline Non localisé & Observables dans tout l'espace \\
+        \hline Contact optique & Lame d'air d'épaisseur nulle \\
+        \hline Éclairement uniforme & \(\delta(M)=0\) \\
+        \hline Franges d'égale inclinaison& \(i=\)cste \\
+        \hline Franges d'égale épaisses & Lame d'air constante \\
+        \hline 
+    \end{tabular}
+\end{center}
+\end{document}
