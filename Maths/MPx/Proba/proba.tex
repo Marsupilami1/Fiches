@@ -120,7 +120,7 @@
     Soit \((A_i)_{1 \leq i \leq n} \in \mathcal{T}^{\N}\), c'est un système complet d'évènements si :
     \begin{itemize}
         \item Les \(A_i\) sont deux à deux disjoints
-        \item \[P(\cup_{i=1}^{n}A_i)=1\]
+        \item \(P(\cup_{i=1}^{n}A_i)=1\)
         \item \(\forall i, P(A_i)\neq 0\)
     \end{itemize}
 \end{definition}
@@ -162,17 +162,17 @@
 \end{theoreme}
 
 \begin{theoreme}{Inégalité de Markov}
-    Inégalité de Markov : Soit $X$ une variable aléatoire réelle positive qui possède un moment d'ordre 1 :
+    Soit $X$ une variable aléatoire réelle positive qui possède un moment d'ordre 1 :
      \[\forall a>0, {P(X\geqslant a)\leqslant \frac{E(|X|)}{a}}\]
 \end{theoreme}
  
 \begin{definition}
-    Soient \((X,Y)\) deux variables aléatoires discretes qui possèdent un moment d'ordre 2, on a :
+    Soient \((X,Y)\) deux variables aléatoires discrètes qui possèdent un moment d'ordre 2, on a :
     \begin{itemize}[label=\(\bullet\)]
         \item \(X-E(X)\) possède un moment d'ordre 2 appelé variance de X
         \item \(V(X)=E((X-E(X))^2)\)
-        \item On appel écart-type de \(X\) : \(\sigma(X)=\sqrt(V(X))\)
-        \item On appel covariance de \((X,Y)\) : Cov\((X,Y)=E[(X-E(x))(Y-E(Y))]\)
+        \item On appel écart-type de \(X\) : \(\sigma(X)=\sqrt{(V(X))}\)
+        \item On appel covariance de \((X,Y)\) : \[\mathrm{Cov}(X,Y)=E[(X-E(x))(Y-E(Y))]\]
     \end{itemize}
 
     \tcblower
@@ -187,20 +187,22 @@
 \end{definition}
 
 \begin{theoreme}{Inégalité de Cauchy-Swarz}
-    Soient \((X,Y)\) deux variables aléatoires discretes qui possèdent un moment d'ordre 2, on a :
+    Soient \((X,Y)\) deux variables aléatoires discrètes qui possèdent un moment d'ordre 2, on a :
         \[|\text{Cov}(X,Y)|\leq \sigma(X)\sigma(Y)\] 
 \end{theoreme}
 
 \begin{theoreme}{Inégalité de Bienaymé-Tchebychev}
     Soit $X$ une variable aléatoire réelle possédant un moment d'ordre 2, on a :
-     \[\forall a>0, P(|X-E(X)|\geqslant a)\leqslant \frac{V(X)}{a^2}\]
+     \[\forall a>0, P\left(|X-E(X)|\geqslant a\right)\leqslant \frac{V(X)}{a^2}\]
 \end{theoreme}
+
+\section*{Séries génératrices}
 
 Soit \(X : \Omega \rightarrow \N\) une variable aléatoire.
 
 \begin{definition}
     La série génératrice de \(X\) est la série entière \(G_X(z)=\sum_{n\geq 0}P(X=n)z^n\).
-    Son noyaux est au moins 1 et il y a convergence normale pour \(z \in \C, |z|\leq 1\).
+    Son rayon est au moins 1 et il y a convergence normale pour \(z \in \C, |z|\leq 1\).
 \end{definition}
 
 \begin{theoreme}{Application des série génératrice}
