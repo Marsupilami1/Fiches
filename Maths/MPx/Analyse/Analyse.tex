@@ -14,7 +14,7 @@
 \usepackage[many]{tcolorbox}
 \usepackage{euler}
 \usepackage[nointegrals]{wasysym}
-\usepackage[french]{babel}
+\usepackage{babel}
 
 
 %______FONCTIONS______%
@@ -107,7 +107,7 @@
 \end{theoreme}
 
 \begin{theoreme}{Théorème fondamental de l'analyse}
-  \[\mathrm{Soit } F : x\mapsto \int_{a}^{x}f(t)dt\]
+  \[\mathrm{Soit \,} F : x\mapsto \int_{a}^{x}f(t)dt\]
   \(F\) est continue et dérivable avec \(F'=f\).
 
   Si \(f\) est continue, alors \(f\) possède des primitives.
@@ -150,7 +150,7 @@
 \section{Suites et séries de fonctions}
 \begin{definition}
   On dit qu'une suite de fonctions \(f_{n}\) converge \emph{simplement} vers \(f\) si:
-  \[\forall x\quad f_{n(x)}\xrightarrow[n\rightarrow +\infty]{} f(x)\]
+  \[\forall x\quad f_{n}(x)\xrightarrow[n\rightarrow +\infty]{} f(x)\]
   La limite simple conserve les propriétés portant sur un nombre fini de points, comme la positivité, la croissance et la convexité.
 \end{definition}
 
@@ -160,7 +160,7 @@
     \forall \varepsilon >0,\,\exists\, n_{\varepsilon}\in\N \,\slash\, \forall n\geqslant n_{\varepsilon} \\
     \forall\, x,\quad \left\lVert f_{n}(x)-f(x)\right\rVert \leqslant \varepsilon
   \end{align*}
-  La convergence uniforme de \((f_{n})\) est la convergence pour \(\lVert\,\rVert_{\infty}\)
+  La convergence uniforme de \((f_{n})\) est la convergence pour \(\lVert\,\rVert_{\infty}\).
 
   La convergence uniforme d'une série est équivalente à la convergence uniforme du reste vers \(0\).
 
@@ -219,7 +219,7 @@
 
 \begin{theoreme}{Fubini discret}
   Si \((u_{p,q})_{p,q \in \N}\) est une famille de nombres complexes indexée par \(\N^2\) telle que:
-    \[\forall p \in \N, \text{ la série } \sum_{p\geq 0} u_{p,q} \text{ converge absoluement} \]
+    \[\forall p \in \N, \text{ la série } \sum_{p\geq 0} u_{p,q} \text{ converge absolument} \]
     \[\text{La série} \sum_{p\geq 0} \left( \sum_{q=0}^{+\infty} |u_{p,q}| \right) \text{ est convergente}\]
   Alors,
     \[\sum_{p=0}^{+\infty} \left( \sum_{q=0}^{+\infty} |u_{p,q}| \right) = \sum_{q=0}^{+\infty} \left( \sum_{p=0}^{+\infty} |u_{p,q}| \right)\]
