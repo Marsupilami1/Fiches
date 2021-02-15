@@ -82,7 +82,7 @@
 \begin{document}
 \maketitle
 
-\begin{definition}{Tribus}
+\begin{definition}
     Soit \(\Omega\) un ensemble.
     Une tribu sur \(\Omega\) est une partie \(\mathcal{T}\) de \(\mathcal{P(T)}\) telle que :
         \begin{itemize}
@@ -96,7 +96,7 @@
     Les tribus sont stables par intersection.
 \end{definition}
 
-\begin{definition}{Probabilités}
+\begin{definition}
     Une loi de probabilité sur $(\Omega,\mathcal{T})$ est une appication \(P : \mathcal{T} \rightarrow \R^+\) tel que :
     \begin{itemize}
         \item \(P(\Omega)=1\)
@@ -111,16 +111,16 @@
     Si \((A_n)_{n\in \N} \in \mathcal{T}^{\N}\) est décroissante, \[P(A_n)\limit{+\infty}P(\cap_{k\in \N A_k})\]
 \end{theoreme}
 
-\begin{definition}{Indépendance mutuelle}
+\begin{definition}
     On dit que \((A_i)_{i \in I} \in \mathcal{T}^I\) sont mutuellements indépendants si \(\forall n \in \N^*, \forall i_1,\dots,i_n\)
     éléments distincts de \(I\), \(P(A_{i_1}\cap\dots\cap A_{i_n})=P(A_{i_1})\times\dots\times P(A_{i_n})\)
 \end{definition}
 
-\begin{definition}{Système complet d'évènements}
+\begin{definition}
     Soit \((A_i)_{1 \leq i \leq n} \in \mathcal{T}^{\N}\), c'est un système complet d'évènements si :
     \begin{itemize}
         \item Les \(A_i\) sont deux à deux disjoints
-        \item \(P(\cup_{i=1}^{n}A_i)=1\)
+        \item \[P(\cup_{i=1}^{n}A_i)=1\]
         \item \(\forall i, P(A_i)\neq 0\)
     \end{itemize}
 \end{definition}
@@ -130,7 +130,7 @@
         \[\forall B, P(B)=\sum_{i}^{}P(A_i)P_{A_i}(B)\]
 \end{theoreme}
 
-\begin{definition}{Variable aléatoire}
+\begin{definition}
     Soit \(\mathcal{X}\) un ensemble fini ou dénombrable.
     Une variable aléatoire discrète de \(\Omega\) dans \(\mathcal{X}\) est une application
         \[X : \Omega \rightarrow \mathcal{X} / \forall A \subset \mathcal{X}, X^{-1}(A) \in \mathcal{T}\]
@@ -166,7 +166,7 @@
      \[\forall a>0, {P(X\geqslant a)\leqslant \frac{E(|X|)}{a}}\]
 \end{theoreme}
  
-\begin{definition}{Variance, écart-type et covariance}
+\begin{definition}
     Soient \((X,Y)\) deux variables aléatoires discretes qui possèdent un moment d'ordre 2, on a :
     \begin{itemize}[label=\(\bullet\)]
         \item \(X-E(X)\) possède un moment d'ordre 2 appelé variance de X
@@ -198,7 +198,7 @@
 
 Soit \(X : \Omega \rightarrow \N\) une variable aléatoire.
 
-\begin{definition}{Série génératrice}
+\begin{definition}
     La série génératrice de \(X\) est la série entière \(G_X(z)=\sum_{n\geq 0}P(X=n)z^n\).
     Son noyaux est au moins 1 et il y a convergence normale pour \(z \in \C, |z|\leq 1\).
 \end{definition}
