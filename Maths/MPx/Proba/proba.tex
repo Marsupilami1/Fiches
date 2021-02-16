@@ -97,7 +97,7 @@
 \end{definition}
 
 \begin{definition}
-    Une loi de probabilité sur $(\Omega,\mathcal{T})$ est une appication \(P : \mathcal{T} \rightarrow \R^+\) tel que :
+    Une loi de probabilité sur $(\Omega,\mathcal{T})$ est une application \(P : \mathcal{T} \rightarrow \R^+\) telle que :
     \begin{itemize}
         \item \(P(\Omega)=1\)
         \item \(\forall (A_i)_{i\in \N} \in \mathcal{T}^{\N}, A_i\cap A_j =\varnothing,\)
@@ -139,7 +139,7 @@
     \begin{itemize}
         \item Un couple de variables aléatoires est une variable aléatoire
         \item Les composantes d'une variable aléatoire sont des variables aléatoires
-        \item \(X\) est une variable aléatoire, \(f\circ X\) en est une
+        \item Si \(X\) est une variable aléatoire, \(f\circ X\) en est une
         \item On retrouve la même définition d'indépendance mutuelle avec les variables aléatoires
     \end{itemize}
 \end{definition}
@@ -151,9 +151,9 @@
 
 \begin{theoreme}{Théorème de transfert}
     Soit \(X\) une variable aléatoire de \(\Omega\) dans \(\mathcal{X}\) et \(f : \mathcal{X} \rightarrow \R\).
-    \(f(x)\) a une espérance si et seulement si la famille \((f(x_i)P(X=x_i))_{i\in I}\) est sommable.
-    Si \(f(x)\) a une espérance, alors : 
-        \[E(f(x))=\sum_{i\in I}^{}f(x_i)P(X=x_i)\]
+    \(f(X)\) a une espérance si et seulement si la famille \((f(x_i)P(X=x_i))_{i\in I}\) est sommable.
+    Si \(f(X)\) a une espérance, alors : 
+        \[E(f(X))=\sum_{i\in I}^{}f(x_i)P(X=x_i)\]
 \end{theoreme}
 
 \begin{theoreme}{Espérance}
@@ -172,7 +172,7 @@
         \item \(X-E(X)\) possède un moment d'ordre 2 appelé variance de X
         \item \(V(X)=E((X-E(X))^2)\)
         \item On appel écart-type de \(X\) : \(\sigma(X)=\sqrt{(V(X))}\)
-        \item On appel covariance de \((X,Y)\) : \[\mathrm{Cov}(X,Y)=E[(X-E(x))(Y-E(Y))]\]
+        \item On appel covariance de \((X,Y)\) : \[\mathrm{Cov}(X,Y)=E\left[(X-E(x))(Y-E(Y))\right]\]
     \end{itemize}
 
     \tcblower
