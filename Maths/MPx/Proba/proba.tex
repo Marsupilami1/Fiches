@@ -129,8 +129,8 @@
 \end{definition}
 
 \begin{theoreme}{Formule des probabilités totales}
-  Soit $(A_i)$ un système complet d'évènements, on a:
-  \[\forall B, P(B)=\sum_{i}P(A_i)P_{A_i}(B)\]
+  Si $(A_i)$ est un système complet d'évènements, on a:
+    \[\forall B, P(B)=\sum_{i}P(A_i)P_{A_i}(B)\]
 \end{theoreme}
 
 \begin{definition}
@@ -166,11 +166,11 @@
 
 \begin{theoreme}{Inégalité de Markov}
   Soit $X$ une variable aléatoire réelle \emph{positive} qui possède un moment d'ordre 1:
-  \[\forall a>0, {P(X\geqslant a)\leqslant \frac{E(|X|)}{a}}\]
+  \[\forall a>0, {P(X\geqslant a)\leqslant \frac{E(X)}{a}}\]
 \end{theoreme}
 
 \begin{definition}
-  Soient \((X,Y)\) deux variables aléatoires discrètes qui possèdent un moment d'ordre 2, on a:
+  Soient \(X,Y\) deux variables aléatoires discrètes qui possèdent un moment d'ordre 2, on a:
   \begin{itemize}[label=\(\bullet\)]
     \item \(X-E(X)\) possède un moment d'ordre 2 appelé variance de X
     \item \(V(X)=E\left({(X-E(X))}^2\right)\)
@@ -189,7 +189,7 @@
 \end{definition}
 
 \begin{theoreme}{Inégalité de Cauchy-Schwarz}
-  Soient \((X,Y)\) deux variables aléatoires discrètes qui possèdent un moment d'ordre 2, on a:
+  Soient \(X,Y\) deux variables aléatoires discrètes qui possèdent un moment d'ordre 2, on a:
   \[\left\lvert\cov(X,Y)\right\rvert \leqslant \sigma(X)\sigma(Y)\]
 \end{theoreme}
 
@@ -214,7 +214,7 @@
   \tcblower
   \begin{itemize}
     \item En dérivant \(G_X\) on retrouve facilement que \(X\) possède un moment d'ordre 2 si et seulement si \(G_X\) est
-      2 fois dérivable en 1 et \(V(X)=G''X(1)+G'_x(1)-(G'_X(1))^2\)
+      2 fois dérivable en 1 et \(V(X)=G''_X(1)+G'_X(1)-(G'_X(1))^2\)
     \item Soit \(Y: \Omega \rightarrow \N\) une variable aléatoire indépendate de \(X\). On a: \(G_{X+Y}=G_X G_Y\)
   \end{itemize}
 \end{theoreme}
