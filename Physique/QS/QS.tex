@@ -1,0 +1,162 @@
+\documentclass[french, a4paper, 11pt, twocolumn]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm, bottom=3cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage[straightvoltages]{circuitikz}
+\usepackage[load-configurations = abbreviations]{siunitx}
+\usepackage{graphicx}
+\usepackage[f]{esvect}
+\usepackage[many]{tcolorbox}
+\usepackage{euler}
+\usepackage[nointegrals]{wasysym}
+\usepackage{array}
+\usepackage{babel}
+
+
+\sisetup{
+  locale=FR,
+  detect-all,
+}
+
+% ______FONCTIONS______%
+\newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+% --ENSEMBLES--%
+\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
+\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
+\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
+\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
+\newcommand{\R}{\mathbb{R}}   % ~ Réels
+\newcommand{\C}{\mathbb{C}}   % ~ Complexes
+% --TRIGO--%
+\let\cosh\relax
+\DeclareMathOperator{\cosh}{ch}       % ~ cosinus hyperbolique
+\DeclareMathOperator{\sh}{sh}         % ~ sinus hyperbolique
+\let\tanh\relax
+\DeclareMathOperator{\tanh}{th}       % ~ tangente hyperbolique
+\DeclareMathOperator{\argch}{Argch}   % ~ Argument cosinus hyperbolique
+\DeclareMathOperator{\argsh}{Argsh}   % ~ Argument sinus hyperbolique
+\DeclareMathOperator{\argth}{Argth}   % ~ Argument tangente hyperbolique
+\DeclareMathOperator{\cotan}{cotan}   % ~ cotangente
+% --PARENTHESES--%
+\newcommand{\po}{\left(}         % ~ (
+  \newcommand{\pf}{\right)}        % ~ )
+\newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
+\newcommand{\co}{\left[}         % ~ [
+  \newcommand{\cf}{\right]}        % ~ ]
+\newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
+\newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+% --VECTEURS--%
+\newcommand{\ux}{\vv{u_x}}          % ~ Vecteur ux
+\newcommand{\uy}{\vv{u_y}}          % ~ Vecteur uy
+\newcommand{\uz}{\vv{u_z}}          % ~ Vecteur uz
+\newcommand{\ur}{\vv{u_r}}          % ~ Vecteur ur
+\newcommand{\uth}{\vv{u_\theta}}    % ~ Vecteur utheta
+\newcommand{\uph}{\vv{u_\varphi}}   % ~ Vecteur uphi
+\newcommand{\om}{\vv{OM}}           % ~ Vecteur position
+\newcommand{\vvi}{\vv{v}}           % ~ Vecteur vitesse
+\newcommand{\vvio}{\vv{v_0}}        % ~ Vecteur v0
+\newcommand{\va}{\vv{a}}            % ~ Vecteur	accélération
+\newcommand{\vp}{\vv{p}}            % ~ Vecteur quantité de mouvement
+\newcommand{\fr}{\vv{F_r}}          % ~ Vecteur force de rappel
+\newcommand{\vabla}{\vv{\nabla}}    % ~ nabla
+\newcommand{\grad}{\vv{\mathrm{grad}}}  % ~ grad
+\DeclareMathOperator{\diverg}{div}        % ~ grad
+\newcommand{\rot}{\vv{\mathrm{rot}}}    % ~ grad
+
+\newtcolorbox{cadre}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+\newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
+
+\title{Physique quantique}
+\author{Martin \textsc{Andrieux}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{cadre}{Relation de Planck-Einstein}
+  \[E = h\nu = \hbar\omega = \dfrac{hc}{\lambda}\]
+\end{cadre}
+
+\begin{cadre}{Quantité de mouvement}
+  \[E = pc\]
+  \[p = \dfrac{E}{c} = \dfrac{h\nu}{c} = \dfrac{h}{\lambda}\]
+  D'où la relation de de Broglie:
+  \[\lambda = \dfrac{h}{p}\]
+\end{cadre}
+
+\begin{cadre}{Domaine de la mécanique quantique}
+  Pour un milieu de dimension caractéristique \(l\), si \(\lambda = \frac{h}{p} \ll l\), la mécanique classique peut suffire.
+
+  Sinon, la mécanique quantique est nécessaire.
+\end{cadre}
+
+\begin{cadre}{Fonction d'onde}
+  Une particule est caractérisée par sa fonction d'onde \(\Psi(x, y, z, t)\).
+  Lorsque \(\Psi\) est de carré sommable, il est possible de la normaliser pour avoir
+  \[\iiint_{\text{espace}}\lvert\Psi\rvert^{2}d\tau = 1\]
+\end{cadre}
+
+\begin{cadre}{Équation de Schrödinger}
+  \[-\dfrac{\hbar^{2}}{2m}\Delta\Psi + V\Psi = i\hbar\dfrac{\partial \Psi}{\partial t}\]
+  \[\widehat H\Psi = i\hbar\dfrac{\partial \Psi}{\partial t}\]
+\end{cadre}
+\begin{cadre}{États stationnaires}
+  \[\Psi(x, t) = \psi(x)f(t)\]
+  Dans le cas d'une particule à un seul degré de liberté \((x)\) et dont l'énergie potentielle \(V(x)\) ne dépend pas du temps, l'équation de Schrödinger indépendante du temps est simplement:
+  \[-\dfrac{\hbar^{2}}{2m}\dfrac{\Delta\psi(x)}{\psi(x)} + V(x) = i\hbar\dfrac{f'(t)}{f(t)} = E\]
+  \(E\) est l'énergie de la fonction d'onde.
+\end{cadre}
+
+\begin{cadre}{Onde de de Broglie}
+  Dans le cas d'une particule libre (ne subissant aucune force), l'énergie potentielle étant choisie nulle, on peut écrire:
+  \[-\dfrac{\hbar^{2}}{2m}\dfrac{d^{2}\psi}{dx^{2}}(x)=E\psi(x)\]
+  On pose \(k=\frac{\sqrt{2me}}{\hbar}\), les solutions sont alors de la forme:
+  \[\psi(x) = Ae^{-ikx} + Be^{-ikx}\]
+  \(f\) est de la forme suivante:
+  \[f(t) = Ce^{-i\frac{Et}{\hbar}}=Ce^{-i\omega t}\]
+  D'où une solution générale de la forme:
+  \[\Psi(x,t) = \alpha e^{i(kx-\omega t)} + \beta e^{i(-kx -\omega t)}\]
+  \[\Psi(x,t) = \alpha e^{-i(\omega t - kx)} + \beta e^{-i(\omega t + kx)}\]
+  \tcblower
+  \begin{align*}
+    k = \dfrac{2\pi}{\lambda} && \vv p = \hbar\vv k \\
+    E = \dfrac{k^{2}\hbar^{2}}{2m} = \hbar\omega && \omega = \dfrac{k^{2}\hbar}{2m}
+  \end{align*}
+\end{cadre}
+
+\begin{cadre}{Principe d'incertitude de Heisenberg}
+  \[\Delta E \cdot \Delta t    \geqslant \dfrac{\hbar}{2}\]
+  \[\Delta x \cdot \Delta p_{x} \geqslant \dfrac{\hbar}{2}\]
+\end{cadre}
+
+\begin{cadre}{Densité de courant de probabilité}
+  Pour une particule en mouvement à la vitesse \(\vv v\):
+  \[\vv J = \lvert\Psi\rvert^2\cdot \vv v = \lvert\Psi\rvert^2\dfrac{\hbar\vv k}{m}\]
+  \tcblower
+  \[\diverg \vv J + \dfrac{\partial\lvert\Psi\rvert^2}{\partial t} = 0\]
+\end{cadre}
+
+\end{document}
