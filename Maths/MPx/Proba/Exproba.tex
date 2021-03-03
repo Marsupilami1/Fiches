@@ -78,6 +78,40 @@
 \begin{document}
 \maketitle
 
+\begin{cadre}{Pile ou face}
+  Soit \(p \in \interoo{0}{1}\) et \(r \in \N, r\geq 2\). On effectue une suite infinie de tirages à pile ou face.
+  Les tirages sont indépendants et la probabilité de tirer face,à chaque tirage, vaut \(p\). Pour
+  \(n\in \N\), on note \(F_n\) l'évènement "face sort au \(n\)èième tirage" et \(P_n\) l'événement "pile sort au \(n\)-ième
+  tirage". Pour \(n \in \N^*,\) on note \(E_n\) l'événement "au \(n\)-ième tirage, on obtient \(r\) faces consécutives
+  pour la première fois".
+  \begin{enumerate}
+    \item
+      \begin{enumerate}
+        \item Déterminer \(E_1 \cdots E_{r-1}\) et \(E_r\)
+        \item Soit \(n \in \N\). Montrer que :
+                \[E_{n+r+1}=\left(\bigcap_{i=n+2}^{n+r+1}F_i\right)\cap P_{n+1}\cap \left(\bigcap_{i=1}^{n}\overline{E_i}\right)\]
+        \item En déduire que chaque \(E_n\) est un événement.
+      \end{enumerate}
+    \item On pose \(p_0=0\) et, pour \(n\in \N, p_n=P(E_n)\).
+        Montrer que \(\sum p_n\) converge.
+    \item 
+      \begin{enumerate}
+        \item Montrer que \[\forall n \in \N, p_{n+r+1}=p^r(1-p)\left(1-\sum_{i=1}^{n}p_i\right)\]
+        \item Exprimer, pour \(n \in \N, p_{n+r+1}\) en fonction de \(p_,+r,p_n,p\) et \(q=1-p\)
+      \end{enumerate}
+    \item Soit \begin{align*}
+                    G :\, & \interff{-1}{1} \rightarrow \R \\
+                          & x \mapsto \sum_{k=0}^{+\infty}p_k x^k
+                \end{align*}
+          \begin{enumerate}
+            \item Montrer que \(G\) est bien définie et qu'elle est continue
+            \item Montrer que 
+                  \[\forall x \in \interoo{-1}{1}, \frac{G(x)}{1-x}=\sum_{n=0}^{+\infty}\left(\sum_{k=0}^{n} p_k\right) x^k\]
+            \item Exprimer \(G(x)\)
+          \end{enumerate}
+  \end{enumerate}
+\end{cadre}
+
 \begin{cadre}{Variable aléatoire}
   Soit \(\pof{X_{n}}_{n\geqslant 1}\) une suite de variables aléatoires indépendantes définies sur un espace probabilisé \(\pof{\Omega, A, P}\) à valeurs dans \(\lbrace -1;1\rbrace\), telles que, pour \(n\geqslant 1\) :
   \[P\pof{X_{n} = 1} = P\pof{X_{n} = -1} = \dfrac{1}{2}\]
@@ -97,7 +131,7 @@
   \end{enumerate}
 \end{cadre}
 
-\begin{cadre}{Inégalités}
+\begin{cadre}{Inégalités - 1}
   Soit $X$ une variable aléatoire suivant la loi de Poisson de paramètre $\lambda >0$. On note $G_{X}$ sa série génératrice.
   \begin{enumerate}
     \item Montrer que $P\pof{\lvert X-\lambda\rvert \geqslant \lambda}\leqslant \dfrac{1}{\lambda}$; en déduire l'inégalité $P(X\geqslant 2\lambda) \leqslant \dfrac{1}{\lambda}$.
@@ -105,6 +139,23 @@
     \item Déterminer le minimum sur $\interfo{1}{+\infty}$ de la fonction $g:x\mapsto\dfrac{e^{t-1}}{t^{2}}$.
     \item Calculer $G_{x}(t)$; en déduire $P(X\geqslant 2\lambda)\leqslant\pof{\dfrac{e}{4}}^{\lambda}$.
     \item Montrer que cette inégalité est meilleure que la première dès que $\lambda$ prend des valeurs assez grandes.
+  \end{enumerate}
+\end{cadre}
+
+\begin{cadre}{Inégalités - 2}
+  \begin{enumerate}
+    \item Pour \(t \in \R, x \in \interff{-1}{1},\) montrer que \(e^{tx} \leq \frac{1}{2}(1-x)e^{-t} + \frac{1}{2}(1+x)e^t\)
+    \item Soit \(X\) une variable aléatoire à valeurs dans \(\interff{-1}{1}\) et d'espérance nulle. Montrer que \(e^{X}\) est d'espérance finie
+          et que \(E(e^{tX}) \leq \mathrm{ch}(t) \leq e^{t^2/2}\)
+    \item Soient \(X_1 \cdots X_n\) des variables aléatoires centrées indépendantes telles que,
+          pour tout \(i, |X_i| \leq a_i.\) On pose \(S_n=\sum_{i=1}^{n}X_i.\)
+          \begin{enumerate}
+            \item Montrer que \[E(e^{tS_n}) \leq \exp\left(\frac{t^2}{2} \sum_{i=1}^{n}a_i^2\right)\]
+            \item Soit \(\epsilon > 0, t > 0.\) Montrer que 
+                    \[P(S_n > \epsilon) \leq \exp\left(-t\epsilon + \frac{t^2}{2} \sum_{i=1}^{n} a_i^2\right)\]
+            \item En choisissant une bonne valeur de \(t,\) montrer que
+                    \[P(S_n > \epsilon) \leq \exp\left(-\dfrac{\epsilon^2}{2\sum_{i=1}^{n} a_i^2}\right)\]
+          \end{enumerate}
   \end{enumerate}
 \end{cadre}
 
