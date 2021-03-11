@@ -8,10 +8,11 @@
 \usepackage{varioref} % ~ Références croisées
 \usepackage{enumitem} % ~ Listes
 \usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{graphicx}
+\usepackage{tikz}
 \usepackage[version=4]{mhchem}
 \usepackage{float}
 \usepackage[load-configurations = abbreviations, output-decimal-marker={,}]{siunitx}
-\usepackage{graphicx}
 \usepackage[many]{tcolorbox}
 \usepackage{euler}
 \usepackage{calrsfs}
@@ -144,7 +145,23 @@
     \end{cadre}
 
     \begin{cadre}{Potentiel mixte}
+        Quand la réaction est thermodynamiquement et cinétiquement possible,
+        l'intensité commune à chaque couple est proportionnelle à la vitesse de 
+        réaction rédox. Le potentiel \(\mathrm{E_m}\) associé est appelé potentiel mixte.
         
+        \begin{tikzpicture}[scale=1.5]
+          \draw[->, >=stealth] (0,-1.6) -- (0, 1.6) node[left]{$\mathrm{I}$};
+          \draw[->, >=stealth] (-0.3,0) -- (3.5, 0) node[below right]{$\mathrm{V}$};
+          \draw[dashed] (0, 1) node[left]{\(\mathrm{I}\)}-- (1.3, 1);
+          \draw[dashed] (0, -1) node[left]{\(\mathrm{-I}\)}-- (1.3, -1);
+          \draw[dashed] (1.3,1) -- (1.3,-1);
+          \draw [domain=0:3.5,scale=0.4] plot(\x,{exp(\x-2.3)-exp(-2.3)});
+          \draw [domain=2.3:5,scale=0.5] plot(\x,{ln(\x-2.22)-1.0225});
+          \draw (1.3,0) node[thick, above right]{\(\mathrm{E_m}\)};
+        \end{tikzpicture}
+
+        \tcblower
+        \(\mathrm{E_m}\) est différent de la moyenne
     \end{cadre}
 
     \begin{cadre}{Domaines et diagramme}
@@ -169,7 +186,7 @@
         
         \tcblower
         \begin{itemize}
-            \item Pour une évolution dans le sens direct, \(\mathrm{U_{CA}\leq E_2-E_2}\)
+            \item Dans le sens direct : \(\mathrm{U_{CA}\leq E_2-E_2}\)
             \item Les \emph{surtensions} sont liées à la diffusion des ions dans les électrolytes,
                 aux transfets d'électrons au niveau des électrodes \dots
             \item La \emph{chute ohmique} est due aux électrodes, mais surtout au milieu électrolytiques (notamment le pont salin).
@@ -187,7 +204,11 @@
     \end{cadre}
 
     \begin{cadre}{Électrolyse}
-        Le schéma d'une électrolyse est différent de celui d'une pile et est le suivant :
+        Le schéma d'une électrolyse est différent de celui d'une pile :
+            \begin{itemize}
+                \item Le pont salin est enlever
+                \item La charge de la pile est remplacée par un générateur pour forcer la réaction
+            \end{itemize}
 
         \tcblower
         Pour une électrolyse on utilise la règle du gamma "inversée" car l'électrolyse réalise
