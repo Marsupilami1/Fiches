@@ -94,23 +94,21 @@
 
 	\section{Equations différentielles}
 	\subsection*{Premier ordre}
-	 $y'+\al(x)y=a \implies y=\la e^{-\int{\al(x)\dx}}+y_0$
+	\[ y'+\al(x)y=a \implies y=\la e^{-\int{\al(x)\dx}}+y_0 \]
 	\subsection*{Deuxième ordre}
-	\subsubsection*{$\De > 0$ :}
-	 $y=\la e^{r_1x}+\mu e^{r_2x}$
-	\subsubsection*{$\De = 0$ :}
-	 $y=e^{rx}(\la+\mu x)$
-	\subsubsection*{$\De < 0$ :}
-	 $r=\al + i\be, y=e^{\al x}(\la \cos(\be x) + \mu \sin(\be x))$
+	\[ \De > 0 : y=\la e^{r_1x}+\mu e^{r_2x} \]
+	\[ \De = 0 : y=e^{rx}(\la+\mu x) \]
+	\[ \De < 0 : y=e^{\al x}(\la \cos(\be x) + \mu \sin(\be x)) \text{ avec } r=\al + i\be\]
+
 	\subsubsection*{Raccordements :}
 	\thm : Soit $f$ une fonction continue en a et $f' \limit{a} l$, alors $f'(a)=l$ et f est de classe $C^1$ en a
 
 	\section{Continuité}
-	 \thm Soit $f$ une fonction continue en a et $(u_n)_{\N}\limit{\infty}a$ alors $f(u_n)\limit{\infty}f(a)$ \\
+	 \thm Soit $f$ une fonction continue en a et $(u_n)_{n \in \N}\limit{+\infty}a$ alors $f(u_n)\limit{+\infty}f(a)$ \\
 	 \thm TVI : Si $f$ est continue sur un intervalle $I$ alors $f(I)$ est un intervalle \\
 	 \thm Soit $I$ un intervalle réel,\, $f$ continue et strictement monotone sur $I$ alors $f$ réalise une bijection de $I$ vers $f(I)$.$f^{-1}$ existe va de $f(I)$ vers $I$, possède la même monotonie et si $f\in \D(I,f(I))$ et 0 $\notin f'(I)$ alors $f^{-1} \in \D(f(I),I)$ et $(f^{-1})'=\inv{f'\circ f^{-1}}$
 	\begin{itemize}
-	 \item \ppt $f$ continue sur [a,b] implique $f([a,b])=[m,M]$. De plus, si f est strictement monotone, $f(\text{fermé})=\text{fermé}$ et $f(\text{semi-ouvert})=\text{semi-ouvert}$
+	 \item \ppt $f$ continue sur implique $f(\text{fermé})=\text{fermé}$ et \(f(\text{ouvert})=\text{ouvert}\) De plus, si f est strictement monotone, $f(\text{semi-ouvert})=\text{semi-ouvert}$
 	  \item $f$ est Lipschitzienne de rapport k si $\exists k>0 / \forall (x,x') \in I^2, |f(x)-f(x')|\leqslant k|x-x'|$
 	  \item Si k<1, $f$ est dite contractante
 	  \item Uniforme continuité : $\forall \ep>0,\exists \al>0/ \forall(x,x') \in \D_f,$
@@ -120,30 +118,27 @@
 	 \thm Toute fonction continue sur un segment est uniformément continue
 
 	\section{Suites}
-	 \thm Suites adjacentes : Soit $(u_n)_{n \in \N}, (v_n)_{n \in \N}$ deux suites réelles telles que $(u_n)_{n \in \N}$ soit croissante et $(v_n)_{n \in \N}$ décroissantes et $v_n-u_n\limit{\infty}0$ alors $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ convergent et ce vers la même limite\\
-	 \thm Segments emboités : Soit $S_n=[a_n,b_n], \forall n \in \N, S_{n+1} \subset S_n, b_n-a_n \limit{\infty}0 \implies \overset{\infty}{\underset{n=1}{\cap}} S_n={\al}$
+	 \thm Suites adjacentes : Soit $(u_n)_{n \in \N}, (v_n)_{n \in \N}$ deux suites réelles telles que $(u_n)_{n \in \N}$ soit croissante et $(v_n)_{n \in \N}$ décroissantes et $v_n-u_n\limit{+\infty}0$ alors $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ convergent et ce vers la même limite\\
+	 \thm Segments emboités : Soit $S_n=[a_n,b_n], \forall n \in \N, S_{n+1} \subset S_n, b_n-a_n\limit{+\infty}0 \implies \overset{+\infty}{\underset{n=1}{\cap}} S_n={\al}$
 	\begin{itemize}
-	  \item \ppt Si $u_n \limit{\infty}l$ alors toutes les sous-suites de $u_n$ aussi.
+	  \item \ppt Si $u_n \limit{+\infty}l$ alors toutes les sous-suites de $u_n$ aussi.
 	\end{itemize}
 	 \thm Bolzano-Weierstrass : De toute suite de réels bornées on peut extraire une sous-suite convergente \\
-	 \thm Cesaro : $u_n \limit{\infty}l, l \in \overline{\R} \implies \inv{n}\som{k=1}{n}u_k \limit{\infty}l$ \\
-	 \thm "Cesaro multiplicatif" : Soit $(a_n)_{n \in \N}$ une suite dans $\R$ telle que $\frac{a_{n+1}}{a_n}\limit{\infty}\la$ alors $\sqrt[n]{a_n}\limit{\infty}\la$
+	 \thm Cesàro : $u_n \limit{+\infty}l, l \in \overline{\R} \implies \dfrac{1}{n}\som{k=1}{n}u_k \limit{+\infty}l$ \\
+	 \thm "Cesàro multiplicatif" : Soit $(a_n)_{n \in \N}$ une suite dans $\R$ telle que $\frac{a_{n+1}}{a_n}\limit{+\infty}\la$ alors $\sqrt[n]{a_n}\limit{+\infty}\la$
 
 	\begin{itemize}
 	  \item \ppt Soit $(a_n)_{n \in \N},(b_n)_{n \in \N}$ deux suites dans $\R^{+*},$ si $\exists p / \forall n \geqslant p, \frac{a_{n+1}}{a_n} < \frac{b_{n+1}}{b_n}$ alors $\exists \la = \frac{a_p}{b_p}>0/ \forall n \geqslant p, a_n \leqslant \la b_n$
-	  \item $(\frac{n}{n+1})^n\limit{\infty}\inv{e}$
+	  \item $(\frac{n}{n+1})^n\limit{+\infty}\inv{e}$
 	  \item \ppt Soit $(u_n)_{n \in \N}$ telle que $u_{n+1}=f(u_n), u_o \in I, f(I) \subset I$ et $f$ soit croissante sur $I$ alors $(u_n)_{n \in \N}$ est monotone et sa monotonie est donnée suivant $u_1 \geqslant/\leqslant u_0$
-	  \item \ppt Soit $I$ un intervalle stable par $f$, continue, $u_{n+1}=f(u_n)$, et $u_n\limit{\infty}c$ alors c est tel que $f(c)=c$
+	  \item \ppt Soit $I$ un intervalle stable par $f$, continue, $u_{n+1}=f(u_n)$, et $u_n\limit{+\infty}c$ alors c est tel que $f(c)=c$
 	  \item \ppt Soit $I$ un intervalle stable par $f$, continue décroissante, $u_{n+1}=f(u_n)$ avec $u_0 \in I$ alors $(u_{2n})_{n \in \N}$ et $(u_{2n+1})_{n \in \N}$ sont de monotonie opposée
 	\end{itemize}
 
-	\subparagraph{Suites récurentes linéaires d'ordres 2} 
-	\subsubsection*{$\De > 0$ :}
-	 $u_n=\al r_1^n+\be r_2^n,(\al,\be) \in \C^2$
-	\subsubsection*{$\De = 0$ :}
-	 $y=r^n(\al n+\be)$
-	\subsubsection*{$\De < 0$ :}
-	 $r=\rho e^{i\theta}, u_n=\rho^n(\al \cos(n\theta) + \be \sin(n\theta))$
+	\subparagraph{Suites récurentes linéaires d'ordres 2}  
+	\[ \De>0 : u_n=\al r_1^n+\be r_2^n,(\al,\be) \in \C^2 \]
+	\[ \De=0 : u_n=r^n(\al n+\be) \]
+	\[ \De<0 : u_n=\rho^n(\al \cos(n\theta) + \be \sin(n\theta)) \text{ avec } r=\rho e^{i\theta}\]
 
 	\section{Propiétés de \(\R\) en tout genre}
 	 \thm Cauchy-Schwarz : $\forall (x_i,y_i) \in (\R^2)^n, \left\lvert \som{i=1}{n}x_iy_i \right\rvert \leqslant \sqrt{\som{i=1}{n}x_i^2}\sqrt{\som{i=1}{n}y_i^2}$
@@ -153,17 +148,17 @@
 	  \item $\mathbb{Q}$ est dense dans $\R$
 	  \item $A \subset E$ est ouvert si $\forall a \in A, \exists r>0 / B(a,r) \subset A$
 	  \item Un ensemble est fermé si sont complémentaire est ouvert
-	  \item \ppt Soit $O_j$ des ouverts, $\underset{j}\cup O_j$ est ouvert
-	  \item \ppt Soit $F_j$ des fermés, $\underset{j}\cap F_j$ est fermé
-	  \item \ppt Soit $(O_j)_{j : 1\rightarrow s}$ des ouverts, $\overset{s}{\underset{j=1}{\cap}} O_j$ est ouvert
-	  \item \ppt Soit $(F_j)_{j : 1\rightarrow s}$ des fermés, $\overset{s}{\underset{j=1}{\cup}} F_j$ est fermé
+	  \item \ppt Soit $O_j$ des ouverts, $\underset{j}\bigcup O_j$ est ouvert
+	  \item \ppt Soit $F_j$ des fermés, $\underset{j}\bigcap F_j$ est fermé
+	  \item \ppt Soit $(O_j)_{j : 1\rightarrow s}$ des ouverts, $\overset{s}{\underset{j=1}{\bigcap}} O_j$ est ouvert
+	  \item \ppt Soit $(F_j)_{j : 1\rightarrow s}$ des fermés, $\overset{s}{\underset{j=1}{\bigcup}} F_j$ est fermé
 	\end{itemize}
 
 	\section{Dérivabilité}
 	\begin{itemize}
 	  \item Tangente en $x_0 : T_{x_0} : y=f'(x_0)(x-x_0)+f(x)$
 	  \item Si $f \in \D(I,f(I))$ et $ G \in \D(J,g(J))$ avec $f(I) \subset J$ alors $g\circ f \in \D(I,g(J))$ et $(g\circ f)'=f'(g'\circ f)$
-	  \item Leibniz : $\forall (f,g) \in C^n(I,\R), (fg)^n=\ssum{k=0}{n} \dbinom{n}{k} f^{(k)}g^{(n-k)}$
+	  \item Leibniz : $\forall (f,g) \in C^n(I,\R), (fg)^{(n)}=\ssum{k=0}{n} \dbinom{n}{k} f^{(k)}g^{(n-k)}$
 	  \item Taylor-Lagrange ordre 2 : $$\forall f \in C^1[a,b], f \in \D^2]a,b[, \exists c \in ]a,b[ / f(b)=f(a)+(b-a)f'(a)+\frac{(b-a)^2}{2}f"(c)$$
 	\end{itemize}
 	 \thm Rolle : \[f\in C^0[a,b], f \in \D]a,b[, f(a)=f(b) \implies \exists c \in ]a,b[ / f'(c)=0\]
@@ -209,7 +204,7 @@
 	\end{itemize}
 	 \thm Gauss : $a \p b = 1$ et $a|bc \implies a|c$
 	\begin{itemize}
-	  \item Relation de Bezout : $\forall (a,b) \in \N^2, ab=(a \p b)(a \vee b)$
+	  \item Relation de Bézout : $\forall (a,b) \in \N^2, ab=(a \p b)(a \vee b)$
 	\end{itemize}
 	 \thm Petit théorème de Fermat : $\forall a \in \Z, \forall p \in \mathbb{P}, a^p \equiv a[p]$ et si $a \p p=1, a^{p-1} \equiv 1[p]$
 
@@ -218,7 +213,7 @@
 	 \thm Bezout : $\forall A,B \in \K^2[X], A \p B = 1 \iff \exists (U,V) \in \K^2[X] / AU+BV=1$. De plus, $\exists! (U_0,V_0) \in \K^2[X] / AU_0+BV_0=1,
 		d \degree V_0 < d \degree A$ et $d \degree U_0 < d \degree B$
 	\begin{itemize}
-	  \item Soit $\al_i$ les racines d'un polynome $P=\som{k=0}{d\degree P}a_kX^k$. On a :
+	  \item Soit $\al_i$ les racines d'un polynôme $P=\som{k=0}{d\degree P}a_kX^k$. On a :
 			$$\si_1=\som{i=1}{n}\al_i=-\frac{a_{n-1}}{a_n} \text{ et } \si_n=\produit{i=1}{n}\al_i=(-1)^n\frac{a_0}{a_n}$$
 	  \item Si $\frac{A}{B}=\frac{A}{(X-\al)C}=\frac{\be}{X-\al}+\dots$ alors $\be=\frac{A}{B'}(\al)$
 	\end{itemize}
@@ -246,8 +241,10 @@
 	 \thm Chauchy-Swarz : $a<b, (f,g)\in (C_{pm}^0)^2 \implies (\int_a^b (fg)(t)\dt)^2 \leqslant \int_a^b f^2(t)\dt \int_a^b g^2(t) \dt$ \\
 	 \thm Valeur moyenne : $f \in C_{pm}^0[a,b], a<b \implies \int_a^b f(t)\dt=(b-a)\mu, \mu$ la valeur moyenne de $f$ sur $[a,b]$ \\
 	 \thm Théorème fondamental de l'analyse : Soit $f \in C^0, \forall x \in I, F(x)=\int_a^xf(t)\dt$ est continue et dérivable sur $I$ et $F'(x)=f(x)$ \\
-	 \thm Somme de Riemann : $\forall f \in C^0, \frac{b-a}{n}\som{k=0}{n-1}f(a+\frac{k(b-a)}{n}) \limit{\infty}\int_a^b f(t)\dt$ \\
-	 \thm Taylor avec reste intégrale : $$\forall f \in C^{n+1}([a,b],\R), f(x)=\som{k=0}{n} \frac{(x-a)^k}{k!}f^{(k)}(a)+\int_a^x\frac{(x-t)^n}{n!}f^{(n+1)}(t)\dt$$
+	 \thm Somme de Riemann : 
+	 		\[ \forall f \in C^0, \frac{(b-a)}{n}\som{k=0}{n-1}f\left(a+\frac{k(b-a)}{n}\right) \limit{+\infty}\int_a^b f(t)\dt \]
+	 \thm Taylor avec reste intégrale :
+	 		\[ \forall f \in C^{n+1}([a,b],\R), f(x)=\som{k=0}{n} \frac{(x-a)^k}{k!}f^{(k)}(a)+\int_a^x\frac{(x-t)^n}{n!}f^{(n+1)}(t)\dt\]
 
 	\section{Développements limités}
 	 \thm Taylor-Young : $\forall f \in C^0([a,b],\R) f(x)=\som{k=0}{n}\frac{(x-a)^k}{k!}f^{(k)}(a)+o(x-a)^n$ \\
@@ -269,9 +266,7 @@
 	\end{itemize}
 
 	\section{Espaces vectoriels}
-	Soit $\K$ un corps, $(E,+)$ un groupe abélien stable par combinaison linéaire avec la loi $*$ et tel que $\forall (x,y,z)\in E^3,\forall (\al,\be) \in \K^2 \, (\al+\be)*x=(\al*x)+(\be*x), \al*(x+y)=(\al*x)+(\al*y), \al*(\be*x)=(\al  \be)*x$ et $1*x=x$, alors $E$ est un espace vectoriel.
-
-
+	Soit $\K$ un corps, $(E,+)$ un groupe abélien stable par combinaison linéaire avec la loi $*$ et tel que $\forall (x,y,z)\in E^3,\forall (\al,\be) \in \K^2 \, (\al+\be)*x=(\al*x)+(\be*x), \al*(x+y)=(\al*x)+(\al*y), \al*(\be*x)=(\al  \be)*x$ et $1*x=x$, alors $E$ est un espace vectoriel.\\
 	\thm Caractérisation des sous espaces vectoriels : Soit $(E,+,*)$ un \ev, $F \subset E, F \neq \varnothing$, $(F,+,*)$ est un \ev \, si $\forall(\vv{f_1},\vv{f_2}) \in F^2, \forall \la \in \K \, \la \vv{f_1}+\vv{f_2} \in F$
 	\begin{itemize}
 	  \item La somme et l'intersection de 2 sous espaces vectoriel est un sous espace vectoriel
@@ -289,7 +284,7 @@
 	 \thm L'image d'une famille génératrice par une application linéaire est génératrice de l'image \\
 	 \thm Pour tout $f \in L(E,F)$ injective, alors l'image d'une famille libre est libre \\
 	 \thm Pour définir une application linéaire il suffit de définir l'image d'une base \\
-	 \thm Un espace $E$ est de dimension finie n si et seulement si il existe un isomorphisme d'\ev de $E$ vers $\K^n$
+	 \thm Un espace $E$ est de dimension finie n si et seulement si il existe un isomorphisme d'\ev \, de $E$ vers $\K^n$
 	\begin{itemize}
 	  \item Les isomorphismes conservent les dimensions
 	\end{itemize}
@@ -372,7 +367,7 @@
 	\subparagraph{Déterminants}
 	\begin{itemize}
  		\item Une application n-linéaire est symétrique si l'ordre des vecteurs ne change pas le résultat : $\ph(\vv{a},\vv{b})=\ph(\vv{b},\vv{a})$
- 		\item Une application n-linéaire est anti-symétrique si l'ordre des vecteurs change le signe du résultat :$\ph(\vv{a},\vv{b})= - \ph(\vv{b},\vv{a})$
+ 		\item Une application n-linéaire est anti-symétrique si l'ordre des vecteurs change le signe du résultat : $\ph(\vv{a},\vv{b})= - \ph(\vv{b},\vv{a})$
  		\item Soit $\ph$ une applciation n-linéaire anti-symétrique, p permmutations des variables donne : $\ph(\vv{x_{p(1)}},\cdots,\vv{x_{p(n)}})= \sigma(p) \ph(\vv{x_1},\cdots,\vv{x_n})$
 		\item Une application est dite n-linéaire alternée si et seulement si elle est n-linéaire et
 		 \[\forall (\vv{x_1},\cdots,\vv{x_n}) \in E^n / \exists i  \neq j, \vv{x_i}=\vv{x_j} \implies \ph(\vv{x_1},\cdots,\vv{x_n})=0\]
@@ -401,12 +396,12 @@
 
 	\section{Séries}
 	\begin{itemize}
- 		\item $e^x=\som{k=0}{\infty}\frac{x^k}{k!}$
- 		\item $\som{k=0}{\infty}\frac{(-1)^{k-1}}{k}x^k=\ln(1+x)$ et $\som{k=0}{\infty}\frac{(-1)^{k-1}}{k}=\ln(2)$
+ 		\item $e^x=\som{k=0}{+\infty}\frac{x^k}{k!}$
+ 		\item $\som{k=0}{+\infty}\frac{(-1)^{k-1}}{k}x^k=\ln(1+x)$ et $\som{k=0}{+\infty}\frac{(-1)^{k-1}}{k}=\ln(2)$
 		\item $\som{}{}u_k \limit{}l \implies \lim u_k=0$
 		\item Si $u_k$ ne tend pas vers 0 alors on dira que la série est grossièrement divergente
 		\item \ppt Soit $(u_k)_{k \in \N}$ une suite de $\K$. La suite $(u_k)_{k \in \N}$ et la série $\som{}{}(u_{k+1}-u_k)$ sont de même nature
-		\item \ppt Soit $\som{}{}u_k,\som{}{}v_k$ 2 suites positives, alors si $u_k \eq{\infty} v_k$, les séries sont de même nature
+		\item \ppt Soit $\som{}{}u_k,\som{}{}v_k$ 2 suites positives, alors si $u_k \eq{+\infty} v_k$, les séries sont de même nature
 		\item Comparaison série-intégrale
 	\end{itemize}
 	 \thm Séries de Riemann : La séries $\som{n\geqslant 1}{} \inv{n^\al}$ converge si et seulement si $\al > 1$ \\
@@ -438,7 +433,7 @@
 		\item $A \in M_n(\R)$ est orthogonale quand $A\,^tA=I_n$
 	 \end{itemize}
 	  \thm Inégalité de Cauchy-Swartz : \(\forall (\vv{x},\vv{y}) \in E^2,\)
-	\[||\vv{x}\cdot\vv{y}|| \leqslant ||\vv{x}|| \times ||\vv{y}||\]
+	\[<\vv{x},\vv{y}> \leqslant ||\vv{x}|| \times ||\vv{y}||\]
 	  \thm Pythagore : $\vv{x} \perp \vv{y} \iff {||\vv{x}+\vv{y}||^2=||\vv{x}||^2+||\vv{y}||^2}$ \\
 	  \thm $\dim E=n, (\vv{x_1},\cdots,\vv{x_p}) \in E^p$ tel que aucun vecteur ne soit nul et qu'ils soient tous orthogonaux 2 à 2 alors c'est une famille libre. \\
 	  \thm Procédé de Gram-Schmidt : Dans tous  \eve \, il existe des bases orthonormales \\
@@ -489,7 +484,6 @@
 		\item $P$ est une probabilité sur un ensemble fini $\Om$ si $P : P(\Om)\rightarrow [0,1], P(\Om)=1$ et $\forall A,B \in P(\Om)/A\cap B =\varnothing, P(A\cup B)=P(A)+P(B)$
 		\item $P_B(A)=\dfrac{P(A\cap B)}{P(B)}$
 	 \end{itemize}
-	
 	 \thm Probabilitées composées : Soit $(\Om,P)$ un espace probabilisé et \((A_1,\cdots,A_n)\) des évènements tels que \(P(A_1\cap\cdots\cap A_n)>0\):
 	  \[P(A_1\cap\cdots\cap A_n)=P(A_1)*P_{A_1}(A_2)*P_{A_1\cap A_2}(A_3)\cdots\]
 	 \thm Formule des probabilités totales : Soit $(A_i)$ un \sce \, avec aucun évènement impossible alors $\forall B, P(B)=\ssum{i}{}P(A_i)P_{A_i}(B)$ \\
