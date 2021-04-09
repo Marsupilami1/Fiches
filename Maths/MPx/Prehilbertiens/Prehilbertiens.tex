@@ -1,0 +1,156 @@
+\documentclass[french, a4paper, 11pt, twocolumn]{article}
+
+\usepackage[utf8]{inputenc} % ~ Encodage
+\usepackage[T1]{fontenc}    % ~ Encodage
+\usepackage[left=1cm, right=1cm]{geometry} % ~ Mise en page et marges
+\usepackage{amssymb} % ~ Pour écrire les maths
+\usepackage{xspace}  % ~ Commandes à texte
+\usepackage{varioref} % ~ Références croisées
+\usepackage{enumitem} % ~ Listes
+\usepackage{xcolor}   % ~ Couleurs fs
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[f]{esvect}
+\usepackage[many]{tcolorbox}
+\usepackage{euler}
+\usepackage[nointegrals]{wasysym}
+\usepackage[french]{babel}
+
+
+%______FONCTIONS______%
+\newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
+\newcommand{\inv}[1]{\dfrac{1}{#1}}             % ~ inverse
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{\(#1\)}\left/\raisebox{-.2em}{\(#2\)}\right.}}
+\DeclareMathOperator{\Sp}{Sp}
+\newcommand{\norme}[1]{\left\| #1\right\|}
+\newcommand{\scal}[2]{\langle #1\, ,#2 \rangle}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\limit}[1]{\underset{#1}{\rightarrow}}  % ~limite
+% --ENSEMBLES--%
+\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
+\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
+\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
+\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
+\newcommand{\R}{\mathbb{R}}   % ~ Réels
+\newcommand{\C}{\mathbb{C}}   % ~ Complexes
+% --PARENTHESES--%
+\newcommand{\po}{\left(}         % ~ (
+\newcommand{\pf}{\right)}        % ~ )
+\newcommand{\pof}[1]{\po #1 \pf} % ~ ( )
+\newcommand{\co}{\left[}         % ~ [
+\newcommand{\cf}{\right]}        % ~ ]
+\newcommand{\cof}[1]{\co #1 \cf} % ~ [ ]
+\newcommand{\chof}[1]{\left\langle #1 \right\rangle } % ~ < >
+\newcommand{\interoo}[2]{\left]#1\,;#2\right[}   % ~ ]a,b[
+\newcommand{\interof}[2]{\left]#1\,;#2\right]}   % ~ ]a,b]
+\newcommand{\interfo}[2]{\left[#1\,;#2\right[}   % ~ [a,b[
+\newcommand{\interff}[2]{\left[#1\,;#2\right]}   % ~ [a,b]
+
+\newtcolorbox{theorem}[2][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=#2,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+\newtcolorbox{definition}[1][]
+{
+  enhanced,
+  attach boxed title to top left={yshift=-3.4mm, xshift = -2.3mm},
+  adjusted title=Définition,
+  colback=white, colframe=black,
+  colbacktitle=white, coltitle=black, fonttitle=\bfseries,
+  breakable, sharp corners,
+  boxed title style={colback=white, sharp corners, colframe=white},
+  boxrule = 0.5mm, drop fuzzy shadow
+}
+
+
+\newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
+
+\title{Espaces préhilbertiens}
+\author{Nathan \textsc{Maillet}}
+\date{Dans toute la suite, \(\left(E,\scal{.}{.}\right)\) désigne un espace préhilbertien et \(x,y\) deux éléments de \(E\)}
+
+\begin{document}
+\maketitle
+
+\begin{theorem}{Égalités de polarisations}
+  \begin{align*}
+    \scal{x}{y} &= \frac{\norme{x+y}^2-\norme{x-y}^2}{4} \\
+                &= \frac{\norme{x+y}^2-\norme{x}^2-\norme{y}^2}{2}  
+  \end{align*}
+
+  \tcblower
+  Égalité du parallélogramme :
+    \[\norme{x+y}^2+\norme{x-y}^2=2\left(\norme{x}^2+\norme{y}^2\right)\]
+   
+  Théorème de Pythagore :
+    \[x\perp y \iff \norme{x+y}^2=\norme{x}^2+\norme{y}^2\]
+\end{theorem}
+
+\begin{theorem}{Procédé de Gram-Schmidt}
+  Soit \((e_i)_{1\leq i \leq n}\) une base de \(E\) euclidien.
+  Il existe une unique base orthonormale \((\varepsilon_i)_{1\leq i \leq n}\) telle que \(P_{(e_i)}^{(\varepsilon_i)}\)
+  soit triangulaire supérieure à diagonale strictement positive.
+  La formule générale pour les \(\varepsilon_i\) est :
+    \[\varepsilon_{i+1}=\frac{\varepsilon_{i+1}'}{\norme{\varepsilon_{i+1}'}} \text{ avec }  
+  \varepsilon_{i+1}'=e_{i+1}-\sum_{j=1}^{i}\scal{e_{i+1}}{\varepsilon_j}\varepsilon_j\]
+\end{theorem}
+
+\begin{theorem}{Théorème de projection}
+  Soit \(F\) un sous espace vectoriel de \(E\) de dimension fini.
+  La projection sur \(F\) parallèlement à \(F^{\perp}\) est la projection orthogonale sur \(F\) notée \(P_F\).
+  \(P_F\) est le seul point en lequel \(\mathrm{d}(x,F)\) est atteinte.
+  Si \((e_i)_1^n\) est une base \emph{orthonormale} de \(E\), on a :
+    \[P_F(x)=\sum_{i=1}^n \scal{x}{e_i}e_i\]
+\end{theorem}
+
+\begin{definition}
+  Une famille \((e_i)_{i\in I}\) est orthonormale totale si elle est orthonormale et \(\mathrm{Vect}\left(e_n, n \in \N\right)\)
+  est dense dans \(E\).
+
+  \tcblower
+  Si \((e_n)_{n\in \N}\) est une famille orthonormale totale, on a :
+    \[\sum_{k=0}^n \scal{x}{e_k}e_k \limit{n\rightarrow +\infty} x\]
+\end{definition}
+
+\begin{definition}
+  \(f \in \mathcal{L}(E)\) est dit symétrique (\(f\in S(E)\)) si \(\scal{x}{f(y)}=\scal{f(x)}{y}\)
+\end{definition}
+
+\begin{theorem}{Théorème spectrale}
+  \(f \in S(E)\) si et seulement si il existe une base orthonormale qui diagonalise \(f\)
+  
+  \tcblower
+
+  Si \(S \in S_n(\R)\), \(S\) est diagonale dans une base orthonormale
+\end{theorem}
+
+\begin{definition}
+  Un élément \(f\) de \(\mathcal{L}(E)\) est dit orthogonal si \(\scal{f(x)}{f(u)}=\scal{x}{y}\).
+  C'est équivalent à : \(f\) conserve la norme
+\end{definition}
+
+\begin{theorem}{Groupe orthogonal}
+  Si \(E\) est de dimension \(n, f \in O(E)\) si et seulement si
+  il existe une base orthonormale dans laquelle la matrice de \(f\) est de la forme :
+  \[\begin{pmatrix}
+    R_{\theta_1} & 0 & 0 & 0 & 0 \\
+    0 & \ddots & 0 & 0 & 0 \\
+    0 & 0 & R_{\theta_k} & 0 & 0 \\
+    0 & 0 & 0 & I_p & 0 \\
+    0 & 0 & 0 & 0 & -I_q
+  \end{pmatrix}\]
+  avec \(\forall 1\leq i\leq k,
+  R_{\theta_i}=\begin{pmatrix}
+    \cos(\theta_i) & -\sin(\theta_i) \\
+    \sin(\theta_i) & \cos(\theta_i)
+  \end{pmatrix}\)
+\end{theorem}
+\end{document}
