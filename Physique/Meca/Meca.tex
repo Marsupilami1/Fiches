@@ -8,17 +8,14 @@
 \usepackage{varioref} % ~ Références croisées
 \usepackage{enumitem} % ~ Listes
 \usepackage{xcolor}   % ~ Couleurs fs
-\usepackage{tabularx}
 \usepackage{float}
-\usepackage{tikz}
-\usepackage[straightvoltages]{circuitikz}
 \usepackage[load-configurations = abbreviations]{siunitx}
 \usepackage{graphicx}
 \usepackage[f]{esvect}
 \usepackage[many]{tcolorbox}
 \usepackage{euler}
 \usepackage[nointegrals]{wasysym}
-\usepackage[french]{babel}
+\usepackage{babel}
 
 
 \sisetup{
@@ -28,23 +25,6 @@
 
 %______FONCTIONS______%
 \newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
-% --ENSEMBLES--%
-\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
-\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
-\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
-\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
-\newcommand{\R}{\mathbb{R}}   % ~ Réels
-\newcommand{\C}{\mathbb{C}}   % ~ Complexes
-% --TRIGO--%
-\let\cosh\relax
-\DeclareMathOperator{\cosh}{ch}       % ~ cosinus hyperbolique
-\DeclareMathOperator{\sh}{sh}         % ~ sinus hyperbolique
-\let\tanh\relax
-\DeclareMathOperator{\tanh}{th}       % ~ tangente hyperbolique
-\DeclareMathOperator{\argch}{Argch}   % ~ Argument cosinus hyperbolique
-\DeclareMathOperator{\argsh}{Argsh}   % ~ Argument sinus hyperbolique
-\DeclareMathOperator{\argth}{Argth}   % ~ Argument tangente hyperbolique
-\DeclareMathOperator{\cotan}{cotan}   % ~ cotangente
 % --PARENTHESES--%
 \newcommand{\po}{\left(}         % ~ (
 \newcommand{\pf}{\right)}        % ~ )
@@ -132,8 +112,8 @@
   \[L_{\Delta} = J_{\Delta}\omega\]
 \end{cadre}
 
-\begin{cadre}{Théorème d'Huygens}
-  \[J_{\Delta'} = j_{\Delta} + md^{2}\]
+\begin{cadre}{Théorème d'Huygens (HP)}
+  \[J_{\Delta'} = J_{\Delta} + md^{2}\]
   Où \(\Delta\) et \(\Delta'\) sont deux axes parallèles séparés d'une distance \(d\). L'axe \(\Delta\) doit passer par \(G\).
 \end{cadre}
 
@@ -148,7 +128,7 @@
 \end{cadre}
 
 \begin{cadre}{Théorème du moment cinétique}
-  \[\dfrac{d\vv L}{dt}=J\ddot\theta=\sum\vv{\mathcal M_{O}}\]
+  \[\dfrac{d\vv L}{dt}=\vv J\ddot\theta=\sum\vv{\mathcal M_{O}}\]
 \end{cadre}
 
 \begin{cadre}{Énergie cinétique}
