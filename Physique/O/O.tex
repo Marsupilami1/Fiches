@@ -16,7 +16,7 @@
 \usepackage[many]{tcolorbox}
 \usepackage{euler}
 \usepackage{calrsfs}
-\usepackage[french]{babel}
+\usepackage{babel}
 
 
 %______FONCTIONS______%
@@ -100,13 +100,13 @@
 
     \section{Cinétique et corrosion}
     \begin{cadre}{Convention}
-        On compte positivement le courant dans le sens : électrode \(\rightarrow\) solution, donc si \(I>0\) il ya oxydation,
+        On compte positivement le courant dans le sens : électrode \(\rightarrow\) solution, donc si \(I>0\) il y a oxydation,
         sinon il y a réduction.
     \end{cadre}
 
     \begin{cadre}{Intensité et vitesse de réaction}
-        Soit \(\mathcal{V}\) la vitesse de réaction.
-        On a : \(I=\frac{\mathrm{d}q}{\mathrm{d}t}=n\mathcal{FV}\)
+        Soit \(\mathscr{V}\) la vitesse de réaction.
+        On a : \(I=\frac{\mathrm{d}q}{\mathrm{d}t}=n\mathcal{F}\mathscr{V}\)
     \end{cadre}
 
     \begin{cadre}{Types d'électrodes}
@@ -119,16 +119,13 @@
     \end{cadre}
 
     \begin{cadre}{Intensité-potentiel}
-        \begin{itemize}
-            \item Lorsque \(I=0\) le potentiel est égal au potentiel rédox donné par la formule de Nersnt à l'équilibre
-            \item Lorsque \(I\neq 0\) il n'y a plus équilibre thermodynamique
-        \end{itemize}
-        \begin{itemize}
+        \begin{itemize}[label=\(\bullet\)]
+            \item Si \(I=0\) le potentiel est égal au potentiel rédox donné par la formule de Nersnt à l'équilibre. Sinon il n'y a plus équilibre thermodynamique
+            
             \item La différence entre le potentiel de l'électrode et redox est appelée surtension
             \item On parle de surtension anodique lorsque cette différence est positive, cathodique si elle est négative
             \item Les surtensions à vide (ou de seuil) sont telles que l'intensité commence à ne plus être négligeable
-        \end{itemize}
-        \begin{itemize}
+            
             \item Lorsque la tension devient importante, il arrive que \(I\) cesse d'augmenter, à cause d'un palier de diffusion
             \item Il n'y a pas de palier de diffusion pour les ions ou molécules du solvant ni pour l'oxydation du métal de l'électrode
         \end{itemize}
@@ -141,12 +138,14 @@
 
     \begin{cadre}{Vagues successives}
         Lorsque plusieurs couples peuvent réagir au niveau d'une électrode, l'intensité totale correspond à la somme des 
-        intensités associées à chaque couple. Ces augmentations successives (parfois simultanées quand elles coexistes)
+        intensités associées à chaque couple. 
+        
+        Ces augmentations successives (parfois simultanées quand elles coexistes)
         de l'intensée lorsqu'une nouvelle réaction commence sont qualifiées de vagues successives.
     \end{cadre}
 
     \begin{cadre}{Potentiel mixte}
-        Quand la réaction est thermodynamiquement et cinétiquement possible,
+        Pour une réaction thermodynamiquement et cinétiquement possible,
         l'intensité commune à chaque couple est proportionnelle à la vitesse de 
         réaction rédox. Le potentiel \(\mathrm{E_m}\) associé est appelé potentiel mixte.
         
@@ -197,7 +196,7 @@
 
     \begin{cadre}{Pile idéale}
         Une bonne pile doit vérifier :
-        \begin{itemize}
+        \begin{itemize}[label=\(\bullet\)]
             \item grande différence entre les potentiels de Nernst
             \item faibles surtensions
             \item intensité de court-circuit grande
@@ -207,7 +206,7 @@
 
     \begin{cadre}{Électrolyse}
         Le schéma d'une électrolyse est différent de celui d'une pile :
-            \begin{itemize}
+            \begin{itemize}[label=\(\bullet\)]
                 \item Le pont salin est enlever
                 \item La charge de la pile est remplacée par un générateur pour forcer la réaction
                 \item Il n'y a qu'un bac pour les 2 réactifs
