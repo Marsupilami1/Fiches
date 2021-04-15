@@ -9,37 +9,18 @@
 \usepackage{enumitem} % ~ Listes
 \usepackage{xcolor}   % ~ Couleurs fs
 \usepackage{float}
-\usepackage{tikz}
-\usepackage[straightvoltages]{circuitikz}
 \usepackage[load-configurations = abbreviations]{siunitx}
 \usepackage{graphicx}
 \usepackage[f]{esvect}
 \usepackage[many]{tcolorbox}
 \usepackage{euler}
 \usepackage[nointegrals]{wasysym}
-\usepackage[french]{babel}
+\usepackage{babel}
 
 
 %______FONCTIONS______%
 \newcommand{\ssi}{si et seulement si\xspace}		% ~ ssi
 \newcommand{\inv}[1]{\dfrac{1}{#1}}
-% --ENSEMBLES--%
-\newcommand{\N}{\mathbb{N}}   % ~ Entiers naturels
-\newcommand{\Z}{\mathbb{Z}}   % ~ Entiers relatifs
-\newcommand{\D}{\mathbb{D}}   % ~ Decimaux
-\newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
-\newcommand{\R}{\mathbb{R}}   % ~ Réels
-\newcommand{\C}{\mathbb{C}}   % ~ Complexes
-% --TRIGO--%
-\let\cosh\relax
-\DeclareMathOperator{\cosh}{ch}       % ~ cosinus hyperbolique
-\DeclareMathOperator{\sh}{sh}         % ~ sinus hyperbolique
-\let\tanh\relax
-\DeclareMathOperator{\tanh}{th}       % ~ tangente hyperbolique
-\DeclareMathOperator{\argch}{Argch}   % ~ Argument cosinus hyperbolique
-\DeclareMathOperator{\argsh}{Argsh}   % ~ Argument sinus hyperbolique
-\DeclareMathOperator{\argth}{Argth}   % ~ Argument tangente hyperbolique
-\DeclareMathOperator{\cotan}{cotan}   % ~ cotangente
 % --PARENTHESES--%
 \newcommand{\po}{\left(}         % ~ (
 \newcommand{\pf}{\right)}        % ~ )
@@ -85,7 +66,7 @@
 \newcommand{\ooint}{\ocircle\hspace{-3.65mm}\int\hspace{-2mm}\int}
 
 \title{Électromagnétisme}
-\author{Martin \textsc{Andrieux}}
+\author{Martin \textsc{Andrieux} \\ Nathan \textsc{Maillet}}
 \date{}
 
 \begin{document}
@@ -230,7 +211,7 @@
 \end{cadre}
 
 \begin{cadre}{Champ dans un solénoïde}
-  \[B_{\text{int}}=\mu_{0}nI\cdot\uz\]
+  \[\vv{B_{\text{int}}}=\mu_{0}nI\cdot\uz\]
 \end{cadre}
 
 \section{Dipôle magnétique}
@@ -352,7 +333,7 @@
 \end{cadre}
 
 \begin{cadre}{Opérateurs d'analyse vectorielle}
-  Ces règles ne que pour des OPPM.
+  Ces règles ne valent que pour des OPPM.
   \begin{align*}
     \dfrac{\partial\vv E}{\partial t} = j\omega\vv E && \diverg\vv E = -j\vv k\cdot\vv E \\
     \rota\vv E = -j\vv k\wedge\vv E && \vv\Delta\vv E = -k^{2}\vv E
