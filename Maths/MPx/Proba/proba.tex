@@ -14,7 +14,7 @@
 \usepackage[many]{tcolorbox}
 \usepackage{euler}
 \usepackage[nointegrals]{wasysym}
-\usepackage[french]{babel}
+\usepackage{babel}
 
 
 % ______FONCTIONS______%
@@ -88,7 +88,7 @@
 \begin{definition}
   Soit \(\Omega\) un ensemble.
   Une tribu sur \(\Omega\) est une partie \(\mathcal{T}\) de \(\mathcal{P(T)}\) telle que:
-  \begin{itemize}
+  \begin{itemize}[label=\(\bullet\)]
     \item \(\varnothing \in \mathcal{T}\)
     \item \(\forall A \in \mathcal{P(T)}, A \in \mathcal{T} \implies A^c \in  \mathcal{T}\)
     \item \(\forall (A_i)_{i\in \N} \in \mathcal{T}^{\N}, \bigcup_{i\in \N}A_i \in \mathcal{T}\)
@@ -101,7 +101,7 @@
 
 \begin{definition}
   Une loi de probabilité sur $(\Omega,\mathcal{T})$ est une application \(P: \mathcal{T} \rightarrow \R^+\) telle que:
-  \begin{itemize}
+  \begin{itemize}[label=\(\bullet\)]
     \item \(P(\Omega)=1\)
     \item \(\forall {(A_i)}_{i\in \N} \in \mathcal{T}^{\N}\), \(A_i\bigcap A_j =\varnothing\),
       \[\sum_{i\geqslant 0}P(A_i) \text{ converge et } \sum_{i=0}^{+\infty}P(A_i)=P\left(\bigsqcup_{i\in \N}A_i\right)\]
@@ -121,7 +121,7 @@
 
 \begin{definition}
   Soit \((A_i)_{1 \leqslant i \leqslant n} \in \mathcal{T}^{\N}\), c'est un système complet d'évènements si:
-  \begin{itemize}
+  \begin{itemize}[label=\(\bullet\)]
     \item Les \(A_i\) sont deux à deux disjoints
     \item \(P\left(\bigcup_{i=1}^{n}A_i\right)=1\)
     \item \(\forall i, P(A_i)\neq 0\)
@@ -149,7 +149,7 @@
 
 \begin{theoreme}{Lemme des coalitions}
   Soit \(X_1\dots X_n\) des variables aléatoires indépendantes,
-  \(\forall k \leqslant n-1, (X_1,\dots,X_k),(X_{k+1},\dots,X_n)\) sont indépendantes
+  \(\forall k \leqslant n-1, f(X_1,\dots,X_k) \text{ et } g(X_{k+1},\dots,X_n)\) sont indépendantes (\(f\) et \(g\) sont quelconques)
 \end{theoreme}
 
 \begin{theoreme}{Théorème de transfert}
@@ -173,13 +173,12 @@
   Soient \(X,Y\) deux variables aléatoires discrètes qui possèdent un moment d'ordre 2, on a:
   \begin{itemize}[label=\(\bullet\)]
     \item \(X-E(X)\) possède un moment d'ordre 2 appelé variance de X
-    \item \(V(X)=E\left({(X-E(X))}^2\right)\)
+    \item \(V(X)=E\left({(X-E(X))}^2\right)=E(X^2)-{E(X)}^2\)
     \item On appel écart-type de \(X\): \(\sigma(X)=\sqrt{V(X)}\)
-    \item On appel covariance de \((X,Y)\): \[\cov(X,Y)=E\left[(X-E(x))(Y-E(Y))\right]\]
+    \item On appel covariance de \((X,Y)\): \[\cov(X,Y)=E\left[(X-E(X))(Y-E(Y))\right]\]
   \end{itemize}
   \tcblower
   \begin{itemize}
-    \item \(V(X)=E(X^2)-{E(X)}^2\)
     \item \(\forall \alpha \in \R, V(X+\alpha)=V(X)\) et \(V(\alpha X)=\alpha^2V(x)\)
     \item La variable aléatoire \(\dfrac{X-E(X)}{\sigma(X)}\) est dite centrée réduite
     \item \(V(X+Y)=V(X)+V(Y)+2\cdot\cov(X,Y)\) et si \(X,Y\) sont indépendants, \(\cov(X,Y)=0\)
@@ -213,7 +212,7 @@
   \[E(X)=G'_X(1)\]
   \tcblower
   \begin{itemize}
-    \item En dérivant \(G_X\) on retrouve facilement que \(X\) possède un moment d'ordre 2 si et seulement si \(G_X\) est
+    \item En dérivant \(G_X\) on retrouve que \(X\) possède un moment d'ordre 2 si et seulement si \(G_X\) est
       2 fois dérivable en 1 et \(V(X)=G''_X(1)+G'_X(1)-(G'_X(1))^2\)
     \item Soit \(Y: \Omega \rightarrow \N\) une variable aléatoire indépendate de \(X\). On a: \(G_{X+Y}=G_X G_Y\)
   \end{itemize}
