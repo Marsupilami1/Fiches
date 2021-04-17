@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pts, french]{article}
+\documentclass[a4paper, french]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -15,6 +15,7 @@
 \usepackage{xcolor}
 \usepackage{scalerel}
 \usepackage{hyperref}
+\usepackage{babel}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -61,7 +62,7 @@
 
 
 \title{Maths MPSI}
-\author{Maillet Nathan\\MP*}
+\author{Maillet Nathan}
 \date{}
 
 \begin{document}
@@ -69,7 +70,7 @@
 	\tableofcontents
 
 	\section{Complexes et Trigonométrie}
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
 	  \item |z|=$\sqrt{z\overline{z}}$
 	  \item $\cos(a+b)=\cos(a)\cos(b)-\sin(a)\sin(b)$ et $\sin(a+b)=\sin(a)\cos(b)+\sin(b)\cos(a)$
 	  \item $\tan(a+b)=\frac{\tan(a)+\tan(b)}{1-\tan(a)\tan(b)}$
@@ -85,7 +86,7 @@
 	\end{itemize}
 
 	\section{Ensembles}
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
 	  \item $(g\circ f)^{-1}=f^{-1}\circ g^{-1}$
 	  \item Partition : recouvrement, $\forall i \neq j, A_i \cap A_j=\varnothing, \forall i, A_i \neq \varnothing$
 	  \item Relation binaire, réflexive, transitive, symétrique, anti-symétrique, d'équivalence, d'ordre (totale ou partielle)
@@ -104,30 +105,37 @@
 	\thm : Soit $f$ une fonction continue en a et $f' \limit{a} l$, alors $f'(a)=l$ et f est de classe $C^1$ en a
 
 	\section{Continuité}
-	 \thm Soit $f$ une fonction continue en a et $(u_n)_{n \in \N}\limit{+\infty}a$ alors $f(u_n)\limit{+\infty}f(a)$ \\
-	 \thm TVI : Si $f$ est continue sur un intervalle $I$ alors $f(I)$ est un intervalle \\
-	 \thm Soit $I$ un intervalle réel,\, $f$ continue et strictement monotone sur $I$ alors $f$ réalise une bijection de $I$ vers $f(I)$.$f^{-1}$ existe va de $f(I)$ vers $I$, possède la même monotonie et si $f\in \D(I,f(I))$ et 0 $\notin f'(I)$ alors $f^{-1} \in \D(f(I),I)$ et $(f^{-1})'=\inv{f'\circ f^{-1}}$
-	\begin{itemize}
-	 \item \ppt $f$ continue sur implique $f(\text{fermé})=\text{fermé}$ et \(f(\text{ouvert})=\text{ouvert}\) De plus, si f est strictement monotone, $f(\text{semi-ouvert})=\text{semi-ouvert}$
+	 \thm Soit $f$ une fonction continue en a et $(u_n)_{n \in \N}\limit{+\infty}a$ alors $f(u_n)\limit{+\infty}f(a)$
+	 
+	 \thm TVI : Si $f$ est continue sur un intervalle $I$ alors $f(I)$ est un intervalle 
+	 
+	 \thm Soit $I$ un intervalle réel,\, $f$ continue et strictement monotone sur $I$ alors $f$ réalise une bijection de $I$ vers \(f(I)\). \(f^{-1}\) existe et va de $f(I)$ vers $I$, possède la même monotonie et si $f\in \D(I,f(I))$ et 0 $\notin f'(I)$ alors $f^{-1} \in \D(f(I),I)$ et $(f^{-1})'=\inv{f'\circ f^{-1}}$
+	\begin{itemize}[label=\(\bullet\)]
+	 \item \ppt $f$ continue sur implique $f(\text{fermé})=\text{fermé}$ et \(f(\text{ouvert})=\text{ouvert}\). De plus, si f est strictement monotone, $f(\text{semi-ouvert})=\text{semi-ouvert}$
 	  \item $f$ est Lipschitzienne de rapport k si $\exists k>0 / \forall (x,x') \in I^2, |f(x)-f(x')|\leqslant k|x-x'|$
 	  \item Si k<1, $f$ est dite contractante
 	  \item Uniforme continuité : $\forall \ep>0,\exists \al>0/ \forall(x,x') \in \D_f,$
 			$$|x-x'|<\al \implies |f(x)-f(x')|<\ep$$
 	\item \ppt L'uniforme continuité implique la continuité
 	\end{itemize}
+
 	 \thm Toute fonction continue sur un segment est uniformément continue
 
 	\section{Suites}
-	 \thm Suites adjacentes : Soit $(u_n)_{n \in \N}, (v_n)_{n \in \N}$ deux suites réelles telles que $(u_n)_{n \in \N}$ soit croissante et $(v_n)_{n \in \N}$ décroissantes et $v_n-u_n\limit{+\infty}0$ alors $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ convergent et ce vers la même limite\\
+	 \thm Suites adjacentes : Soit $(u_n)_{n \in \N}, (v_n)_{n \in \N}$ deux suites réelles telles que $(u_n)_{n \in \N}$ soit croissante et $(v_n)_{n \in \N}$ décroissantes et $v_n-u_n\limit{+\infty}0$ alors $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ convergent et ce vers la même limite
+	 
 	 \thm Segments emboités : Soit $S_n=[a_n,b_n], \forall n \in \N, S_{n+1} \subset S_n, b_n-a_n\limit{+\infty}0 \implies \overset{+\infty}{\underset{n=1}{\cap}} S_n={\al}$
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
 	  \item \ppt Si $u_n \limit{+\infty}l$ alors toutes les sous-suites de $u_n$ aussi.
 	\end{itemize}
-	 \thm Bolzano-Weierstrass : De toute suite de réels bornées on peut extraire une sous-suite convergente \\
-	 \thm Cesàro : $u_n \limit{+\infty}l, l \in \overline{\R} \implies \dfrac{1}{n}\som{k=1}{n}u_k \limit{+\infty}l$ \\
+
+	 \thm Bolzano-Weierstrass : De toute suite de réels bornées on peut extraire une sous-suite convergente 
+	 
+	 \thm Cesàro : $u_n \limit{+\infty}l, l \in \overline{\R} \implies \dfrac{1}{n}\som{k=1}{n}u_k \limit{+\infty}l$ 
+	 
 	 \thm "Cesàro multiplicatif" : Soit $(a_n)_{n \in \N}$ une suite dans $\R$ telle que $\frac{a_{n+1}}{a_n}\limit{+\infty}\la$ alors $\sqrt[n]{a_n}\limit{+\infty}\la$
 
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
 	  \item \ppt Soit $(a_n)_{n \in \N},(b_n)_{n \in \N}$ deux suites dans $\R^{+*},$ si $\exists p / \forall n \geqslant p, \frac{a_{n+1}}{a_n} < \frac{b_{n+1}}{b_n}$ alors $\exists \la = \frac{a_p}{b_p}>0/ \forall n \geqslant p, a_n \leqslant \la b_n$
 	  \item $(\frac{n}{n+1})^n\limit{+\infty}\inv{e}$
 	  \item \ppt Soit $(u_n)_{n \in \N}$ telle que $u_{n+1}=f(u_n), u_o \in I, f(I) \subset I$ et $f$ soit croissante sur $I$ alors $(u_n)_{n \in \N}$ est monotone et sa monotonie est donnée suivant $u_1 \geqslant/\leqslant u_0$
@@ -143,7 +151,7 @@
 	\section{Propiétés de \(\R\) en tout genre}
 	 \thm Cauchy-Schwarz : $\forall (x_i,y_i) \in (\R^2)^n, \left\lvert \som{i=1}{n}x_iy_i \right\rvert \leqslant \sqrt{\som{i=1}{n}x_i^2}\sqrt{\som{i=1}{n}y_i^2}$
 	\subparagraph{Topologie}
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
 	  \item $A\subset E$ est dense dans E si et seulement si $$\forall B(a,r)=\acc{x\in E / d(x,a)<r}, \exists \al \in A / \al \in B(a,r)$$
 	  \item $\mathbb{Q}$ est dense dans $\R$
 	  \item $A \subset E$ est ouvert si $\forall a \in A, \exists r>0 / B(a,r) \subset A$
@@ -155,102 +163,130 @@
 	\end{itemize}
 
 	\section{Dérivabilité}
-	\begin{itemize}
-	  \item Tangente en $x_0 : T_{x_0} : y=f'(x_0)(x-x_0)+f(x)$
+	\begin{itemize}[label=\(\bullet\)]
+	  \item Tangente en $x_0 : T_{x_0} : y=f'(x_0)(x-x_0)+f(x_0)$
 	  \item Si $f \in \D(I,f(I))$ et $ G \in \D(J,g(J))$ avec $f(I) \subset J$ alors $g\circ f \in \D(I,g(J))$ et $(g\circ f)'=f'(g'\circ f)$
 	  \item Leibniz : $\forall (f,g) \in C^n(I,\R), (fg)^{(n)}=\ssum{k=0}{n} \dbinom{n}{k} f^{(k)}g^{(n-k)}$
 	  \item Taylor-Lagrange ordre 2 : $$\forall f \in C^1[a,b], f \in \D^2]a,b[, \exists c \in ]a,b[ / f(b)=f(a)+(b-a)f'(a)+\frac{(b-a)^2}{2}f"(c)$$
 	\end{itemize}
+
 	 \thm Rolle : \[f\in C^0[a,b], f \in \D]a,b[, f(a)=f(b) \implies \exists c \in ]a,b[ / f'(c)=0\]
+
 	 \thm Accroissements finits : 
 		\begin{center}
-			Cas d'égalité : $f\in C^0[a,b], f \in \D]a,b[ \implies \exists c \in ]a,b[ / f'(c)=\frac{f(b)-f(a)}{b-a}$ \\
+			Cas d'égalité : $f\in C^0[a,b], f \in \D]a,b[ \implies \exists c \in ]a,b[ / f'(c)=\frac{f(b)-f(a)}{b-a}$ 
+	 
 			Cas d'inégalité : $f\in C^0([a,b],\C), f \in \D(]a,b[,\C)$ et $\exists M=\sup(|f'|) \implies f(b)-f(a)\leqslant M(b-a)$
 		\end{center}
 
 	\section{Lois de compositions internes}
 	\subparagraph{Groupe}
-	$(G,*)$ est un groupe si $*$ est une lois de composition interne associative avec un neutre et que $\forall a \in G, \exists a^- \in G / a*a^-=a^-*a=e$ \\
-	\thm Caractérisation des sous-groupes : Soit $(G,*)$ un groupe, $H \subset G, H \neq \varnothing, \\ (H,*)$ est un groupe si $\forall (a,b) \in H^2, a*b^- \in H$
-	\begin{itemize}
+	$(G,*)$ est un groupe si $*$ est une lois de composition interne associative avec un neutre et que $\forall a \in G, \exists a^- \in G / a*a^-=a^-*a=e$ 
+	 
+	\thm Caractérisation des sous-groupes : Soit $(G,*)$ un groupe, $H \subset G, H \neq \varnothing, 
+	  (H,*)$ est un groupe si $\forall (a,b) \in H^2, a*b^- \in H$
+	\begin{itemize}[label=\(\bullet\)]
 	  \item Le produit cartésien de 2 groupes est 1 groupe
-	  \item (G,*) est un groupe abélien si * est commutatif et que (G,*) soit un groupe
+	  \item (G,*) est un groupe abélien si * est commutatif et que (G,*) est un groupe
 	\end{itemize}
+
 	 \thm Les seuls sous groupes de $\Z$ sont de la forme $a\Z$
 
 	\subparagraph{Anneaux}
-	Soit $(A,+)$ un groupe abélien, c'est un anneau pour la loi $*$ si $*$ est une lci associative avec un neutre et que $\forall (a,b,c)\in A^3, a*(b+c)=a*b+a*c$ et $ (b+c)*a=b*a+c*a$ \\
-	 \thm Caractérisation des sous-anneaux : Soit $(A,+,*)$ un anneau, $B \subset A, B\neq \varnothing, \\ (B,+,*)$ est un anneau si $\forall (a,b) \in B^2, a+b^-\in B, a*b \in B$ et $1_A \in B$
-	\begin{itemize}
+	Soit $(A,+)$ un groupe abélien, c'est un anneau pour la loi $*$ si $*$ est une lci associative avec un neutre et que $\forall (a,b,c)\in A^3, a*(b+c)=a*b+a*c$ et $ (b+c)*a=b*a+c*a$ 
+	 
+	 \thm Caractérisation des sous-anneaux : Soit $(A,+,*)$ un anneau, $B \subset A, B\neq \varnothing, 
+	  (B,+,*)$ est un anneau si $\forall (a,b) \in B^2, a+b^-\in B, a*b \in B$ et $1_A \in B$
+	\begin{itemize}[label=\(\bullet\)]
 	  \item Le centre d'un anneau est l'ensemble des éléments de cet anneau qui commutent avec tous les autres éléments de l'anneau
 	  \item Un anneau est dit intègre si il n'a pas de diviseurs de 0 et que $*$ est commutatif
 	\end{itemize}
 
 	\subparagraph{Corps}
 	Soit $(K,+,*)$ un anneau et $\forall x \in K, x\neq0$ alors $\exists x^- \in K / x*x^-=x^-*x=1$
-	\thm Caractérisation des sous-corps : Soit $(K,+,*)$ un corps, $L \subset K, L\neq \varnothing, \\ (L,+,*)$ est un corps si $\forall (a,b) \in L^2, a-b \in L, a*b \in L$ et $\forall a\in L, a\neq, \exists a^- \in L / a*a^-=a^-*a=1$
+
+	\thm Caractérisation des sous-corps : Soit $(K,+,*)$ un corps, $L \subset K, L\neq \varnothing, 
+	  (L,+,*)$ est un corps si $\forall (a,b) \in L^2, a-b \in L, a*b \in L$ et $\forall a\in L, a\neq, \exists a^- \in L / a*a^-=a^-*a=1$
 
 	\section{Arithmétique}
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
 	  \item La division conserve l'intégralité des diviseurs donc aussi le pgcd
 	\end{itemize}
 	$$\text{Soient } a,b,c \in \Z :$$
-	 \thm Bézout : $a \p b=1 \iff \exists (u,v) \in \Z^2 / au+bv=1$ \\
-	 \thm Si $a \p b= a \p c = 1$, alors $a \p bc =1$ \\
+
+	 \thm Bézout : $a \p b=1 \iff \exists (u,v) \in \Z^2 / au+bv=1$ 
+	 
+	 \thm Si $a \p b= a \p c = 1$, alors $a \p bc =1$ 
+	 
 	 \thm $b|a, c|a$ et $b\p c =1 \implies bc|a$
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
 	  \item \ppt $a \p b_i=1, 1 \leqslant i \leqslant n \implies a\p (\produit{i=1}{n} b_i)=1$
 	  \item \ppt $(ac)\p(bc)=|c|(a \p b)$
 	\end{itemize}
+
 	 \thm Gauss : $a \p b = 1$ et $a|bc \implies a|c$
-	\begin{itemize}
+	
+	 \begin{itemize}[label=\(\bullet\)]
 	  \item Relation de Bézout : $\forall (a,b) \in \N^2, ab=(a \p b)(a \vee b)$
 	\end{itemize}
+
 	 \thm Petit théorème de Fermat : $\forall a \in \Z, \forall p \in \mathbb{P}, a^p \equiv a[p]$ et si $a \p p=1, a^{p-1} \equiv 1[p]$
 
 	\section{Polynômes}
-	 \thm Taylor : $\forall a, P=\som{k=0}{n} \frac{P^{(k)}(a)}{k!}(X-a)^k$ \\
-	 \thm Bezout : $\forall A,B \in \K^2[X], A \p B = 1 \iff \exists (U,V) \in \K^2[X] / AU+BV=1$. De plus, $\exists! (U_0,V_0) \in \K^2[X] / AU_0+BV_0=1,
+	 \thm Taylor : $\forall a, P=\som{k=0}{n} \frac{P^{(k)}(a)}{k!}(X-a)^k$ 
+	 
+	 \thm Bézout : $\forall A,B \in \K^2[X], A \p B = 1 \iff \exists (U,V) \in \K^2[X] / AU+BV=1$. De plus, $\exists! (U_0,V_0) \in \K^2[X] / AU_0+BV_0=1,
 		d \degree V_0 < d \degree A$ et $d \degree U_0 < d \degree B$
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
 	  \item Soit $\al_i$ les racines d'un polynôme $P=\som{k=0}{d\degree P}a_kX^k$. On a :
 			$$\si_1=\som{i=1}{n}\al_i=-\frac{a_{n-1}}{a_n} \text{ et } \si_n=\produit{i=1}{n}\al_i=(-1)^n\frac{a_0}{a_n}$$
 	  \item Si $\frac{A}{B}=\frac{A}{(X-\al)C}=\frac{\be}{X-\al}+\dots$ alors $\be=\frac{A}{B'}(\al)$
 	\end{itemize}
 
 	\section{Intégration}
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
 	  \item $J_n=\int{\inv{(1+t^2)^2}\dt}$ : IPP sur $J_{n-1}$
 	  \item $\int{\frac{\dx}{ax^2+bx+c}}, \De<0$ : forme canonique puis $\arctan$
 	  \item Protocole (changements de variables) avec des puissances de $\sin$ et $\cos$ :
 		\begin{center}
-			$x\rightarrow-x (\dx\text{ compris}) : u=\cos(x)$\\
-			$x\rightarrow \pi-x : u=\sin(x)$\\
+			$x\rightarrow-x (\dx\text{ compris}) : u=\cos(x)$
+	 
+			$x\rightarrow \pi-x : u=\sin(x)$
+	 
 			Si les deux marchent : $u=\cos(2x)$
 		\end{center}
 	\end{itemize}
+
 	 \thm Toute fonction continue par morceaux sur un segment est bornée sur ce segment
-	\begin{itemize}
+	
+	 \begin{itemize}[label=\(\bullet\)]
 	  \item $f\in \ep([a,b],\R) \sint{a}{b} f=\som{j=0}{p-1}(c_{j+1}-c{j})\la_j$ avec $\la_j$ la valeur de $f$ sur $]c_j,c_{j+1}[$
 	  \item $F_1=\acc{\int_a^b \varphi / \varphi \in \ep([a,b],\R), \varphi \leqslant f}, F_2=\left\{ \int_a^b \psi / \psi \in \ep([a,b],\R), \psi \geqslant f \right\}$
 			$$\forall f \in C_{pm}^0 \int_a^b f=\sup(F_1)=\inf(F_2)$$
 	  \item \ppt $\forall (f,g) \in (C_{pm}^0[a,b])^2, b>a, f\leqslant g \implies \int_a^b f(t)\dt\leqslant \int_a^b g(t)\dt$
 	\end{itemize}
-	 \thm $b>a, f \in C^0, \forall t f(t)\geqslant 0$ et $\exists c \in [a,b] /f(c)>0 \implies \int_a^b f(t) \dt >0$ \\
-	 \thm $\int_a^b f(t) \dt=0, f \in C^0, \forall t f(t)\geqslant 0 \implies f=0_{[a,b]}$ \\
-	 \thm Chauchy-Swarz : $a<b, (f,g)\in (C_{pm}^0)^2 \implies (\int_a^b (fg)(t)\dt)^2 \leqslant \int_a^b f^2(t)\dt \int_a^b g^2(t) \dt$ \\
-	 \thm Valeur moyenne : $f \in C_{pm}^0[a,b], a<b \implies \int_a^b f(t)\dt=(b-a)\mu, \mu$ la valeur moyenne de $f$ sur $[a,b]$ \\
-	 \thm Théorème fondamental de l'analyse : Soit $f \in C^0, \forall x \in I, F(x)=\int_a^xf(t)\dt$ est continue et dérivable sur $I$ et $F'(x)=f(x)$ \\
+
+	 \thm $b>a, f \in C^0, \forall t f(t)\geqslant 0$ et $\exists c \in [a,b] /f(c)>0 \implies \int_a^b f(t) \dt >0$ 
+	 
+	 \thm $\int_a^b f(t) \dt=0, f \in C^0, \forall t f(t)\geqslant 0 \implies f=0_{[a,b]}$ 
+	 
+	 \thm Chauchy-Schwarz : $a<b, (f,g)\in (C_{pm}^0)^2 \implies (\int_a^b (fg)(t)\dt)^2 \leqslant \int_a^b f^2(t)\dt \int_a^b g^2(t) \dt$ 
+	 
+	 \thm Valeur moyenne : $f \in C_{pm}^0[a,b], a<b \implies \int_a^b f(t)\dt=(b-a)\mu, \mu$ la valeur moyenne de $f$ sur $[a,b]$ 
+	 
+	 \thm Théorème fondamental de l'analyse : Soit $f \in C^0, \forall x \in I, F(x)=\int_a^xf(t)\dt$ est continue et dérivable sur $I$ et $F'=f$ 
+	 
 	 \thm Somme de Riemann : 
 	 		\[ \forall f \in C^0, \frac{(b-a)}{n}\som{k=0}{n-1}f\left(a+\frac{k(b-a)}{n}\right) \limit{+\infty}\int_a^b f(t)\dt \]
 	 \thm Taylor avec reste intégrale :
 	 		\[ \forall f \in C^{n+1}([a,b],\R), f(x)=\som{k=0}{n} \frac{(x-a)^k}{k!}f^{(k)}(a)+\int_a^x\frac{(x-t)^n}{n!}f^{(n+1)}(t)\dt\]
 
 	\section{Développements limités}
-	 \thm Taylor-Young : $\forall f \in C^0([a,b],\R) f(x)=\som{k=0}{n}\frac{(x-a)^k}{k!}f^{(k)}(a)+o(x-a)^n$ \\
+	 \thm Taylor-Young : $\forall f \in C^0([a,b],\R) f(x)=\som{k=0}{n}\frac{(x-a)^k}{k!}f^{(k)}(a)+o(x-a)^n$ 
+	 
 	 \thm $\int f=F(0)+P_{n+1}(x)+o(x^{n+1})$
 	\subparagraph{Développements limités usuels en 0}
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
 	  \item $e^x=1+x+\frac{x^2}{2}+\frac{x^3}{6}+\frac{x^4}{24}+\cdots+\frac{x^n}{n!}+o(x^n)$
 	  \item $\cos(x)=1-\frac{x^2}{2}+\frac{x^4}{24}-\frac{x^6}{720}+\cdots+o(x^n)$
 	  \item $\sin(x)=x-\frac{x^3}{6}+\frac{x^5}{120}+\cdots+o(x^n)$
@@ -266,57 +302,77 @@
 	\end{itemize}
 
 	\section{Espaces vectoriels}
-	Soit $\K$ un corps, $(E,+)$ un groupe abélien stable par combinaison linéaire avec la loi $*$ et tel que $\forall (x,y,z)\in E^3,\forall (\al,\be) \in \K^2 \, (\al+\be)*x=(\al*x)+(\be*x), \al*(x+y)=(\al*x)+(\al*y), \al*(\be*x)=(\al  \be)*x$ et $1*x=x$, alors $E$ est un espace vectoriel.\\
+	Soit $\K$ un corps, $(E,+)$ un groupe abélien stable par combinaison linéaire avec la loi $*$ et tel que $\forall (x,y,z)\in E^3,\forall (\al,\be) \in \K^2 \, (\al+\be)*x=(\al*x)+(\be*x), \al*(x+y)=(\al*x)+(\al*y), \al*(\be*x)=(\al  \be)*x$ et $1*x=x$, alors $E$ est un espace vectoriel.
+	 
 	\thm Caractérisation des sous espaces vectoriels : Soit $(E,+,*)$ un \ev, $F \subset E, F \neq \varnothing$, $(F,+,*)$ est un \ev \, si $\forall(\vv{f_1},\vv{f_2}) \in F^2, \forall \la \in \K \, \la \vv{f_1}+\vv{f_2} \in F$
-	\begin{itemize}
+	
+	\begin{itemize}[label=\(\bullet\)]
 	  \item La somme et l'intersection de 2 sous espaces vectoriel est un sous espace vectoriel
 	  \item \ppt $S=\acc{\vv{x_1},\cdots,\vv{x_p}}$ est lié si et seulement si l'un des vecteurs est combinaison linéaire des autres
 	\end{itemize}
-	 \thm Base incomplète : Soit une famille libre $L_0$ et une génératrice $G$ tels que $L_0 \subset G$ alors $\exists (\vv{g_s},\vv{g_r},\cdots) \in G$ \textbackslash $L_0 \, /  L_0 \cup \acc{\vv{g_s},\vv{g_r},\cdots}$ soit une base \\
-	 \thm Echange : Soit $E$ un $\K$ \ev \, de dimension finit, $G$ une famille génératrice et $L$ libre, alors on peut ajouter des vecteurs de $G$ a $L$ pour avoir une base de $E$ \\
-	 \thm Soit $E$ un $\K$ \ev \, de dimension n, $E_1$ un sous \ev de dimension p, alors $E_1$ a de supplémentaires de dimension $n-p$ dans $E$\\
-	 \thm Formule de Grassmann : $\dim(A+B)=\dim A + \dim B - \dim(A\cap B)$ \\
+	
+	 \thm Base incomplète : Soit une famille libre $L_0$ et une génératrice $G$ tels que $L_0 \subset G$ alors $\exists (\vv{g_s},\vv{g_r},\cdots) \in G$ \textbackslash $L_0 \, /  L_0 \cup \acc{\vv{g_s},\vv{g_r},\cdots}$ soit une base 
+	 
+	 \thm Échange : Soit $E$ un $\K$ \ev \, de dimension finit, $G$ une famille génératrice et $L$ libre, alors on peut ajouter des vecteurs de $G$ a $L$ pour avoir une base de $E$ 
+	 
+	 \thm Soit $E$ un $\K$ \ev \, de dimension n, $E_1$ un sous \ev \, de dimension p, alors $E_1$ a de supplémentaires de dimension $n-p$ dans $E$
+	 
+	 \thm Formule de Grassmann : $\dim(A+B)=\dim A + \dim B - \dim(A\cap B)$ 
+	 
 	 \thm On ne change pas le rang d'un système de vecteur en remplaçant les dits vecteurs par une combinaison des autres avec un coefficient non nul
-	\begin{itemize}
-	  \item Structure d'Algèbre : E est un algèbre si $(E,+,*_e)$ est un \ev, $(E,+,*_i)$ un anneau et si $\forall \la \in \K,\forall (\vv{u},\vv{v}) \in E, \la(\vv{u}\vv{v})=(\la\vv{u})\vv{v}=\vv{u}(\la \vv{v})$
+	
+	 \begin{itemize}[label=\(\bullet\)]
+	  \item Structure d'algèbre : E est un algèbre si $(E,+,*_e)$ est un \ev, $(E,+,*_i)$ un anneau et si $\forall \la \in \K,\forall (\vv{u},\vv{v}) \in E, \la(\vv{u}\vv{v})=(\la\vv{u})\vv{v}=\vv{u}(\la \vv{v})$
 	  \item $\forall f \in L(E,F), \forall A$ sous \ev \, de $E, f(A)$ est un sous \ev \, de $F$ 
 	\end{itemize}
-	 \thm L'image d'une famille génératrice par une application linéaire est génératrice de l'image \\
-	 \thm Pour tout $f \in L(E,F)$ injective, alors l'image d'une famille libre est libre \\
-	 \thm Pour définir une application linéaire il suffit de définir l'image d'une base \\
+
+	 \thm L'image d'une famille génératrice par une application linéaire est génératrice de l'image 
+	 
+	 \thm Pour tout $f \in L(E,F)$ injective, alors l'image d'une famille libre est libre 
+	 
+	 \thm Pour définir une application linéaire il suffit de définir l'image d'une base 
+	 
 	 \thm Un espace $E$ est de dimension finie n si et seulement si il existe un isomorphisme d'\ev \, de $E$ vers $\K^n$
-	\begin{itemize}
+	
+	 \begin{itemize}[label=\(\bullet\)]
 	  \item Les isomorphismes conservent les dimensions
 	\end{itemize}
-	 \thm En dimension finie, tout supplémentaire du noyau est isomorphe à l'image \\
-	 \thm Théorème du rang : Soit $E$ un \ev \, de dimension $n$, $f\in L(E,F)$ alors $Im(f)=f(E)$ et $\dim Im(f)=rg(f)$. De plus, $rg(f)+\dim Ker(f)=n$ \\
+
+	 \thm En dimension finie, tout supplémentaire du noyau est isomorphe à l'image 
+	 
+	 \thm Théorème du rang : Soit $E$ un \ev \, de dimension $n$, $f\in L(E,F)$ alors $Im(f)=f(E)$ et $\dim Im(f)=rg(f)$. De plus, $rg(f)+\dim Ker(f)=n$ 
+	 
 	 \underline{Conséquences :}
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
  		\item $f$ est injective si et seulement si $rg(f)=n$
  		\item SI $\dim E = \dim F$ alors :
-				 $$rg(f)=n \iff f \text{est injective} \iff \text{f est surjective} \iff \text{f est bijective}$$
+				 $$rg(f)=n \iff f \text{ est injective} \iff f \text{ est surjective} \iff f \text{ est bijective}$$
 	\end{itemize}
 	
-	\subparagraph{Projecteurs et symétries \\}
+	\subparagraph{Projecteurs et symétries 
+	 }
 	
-	$p \in L(E)$ est un projecteur si et seulement si $p\circ p=p$ \\
-	$p$ projette sur $E_1$ parrallèlement à $E_2$ : $p$ se comporte comme l'identité sur $E_1$ et est nul sur $E_2$ \\
+	$p \in L(E)$ est un projecteur si et seulement si $p\circ p=p$ 
+	 
+	$p$ projette sur $E_1$ parrallèlement à $E_2$ : $p$ se comporte comme l'identité sur $E_1$ et est nul sur $E_2$ 
+	 
 	 \thm Si $p$ est un projecteur, alors $E=Ker(p)+Im(p)$
 	
-	 \begin{itemize}
+	 \begin{itemize}[label=\(\bullet\)]
  		\item Si la somme de projecteurs forme l'indentité et que leur composition est nulle, les projecteurs sont dits associés
 	\end{itemize}
 
 	$s \in L(E)$ est une symétrie si et seulement si $s\circ s=Id$.
 	\paragraph*{}
-	$s$ est une symétrie vectorielle par rapport à $E_1$ parrallèlement à $E_2$ : $s$ se comporte comme l'identité sur $E_1$ et - l'identité sur $E_2$ \\
+	$s$ est une symétrie vectorielle par rapport à $E_1$ parrallèlement à $E_2$ : $s$ se comporte comme l'identité sur $E_1$ et - l'identité sur $E_2$ 
+	 
 	
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
  		\item\ppt $s=2p-Id$
 	\end{itemize}
 
 	\section{Matrices}
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
  		\item Produit matriciel :
 			$$A=(a_{i,j}),B=(b_{i,j}), A\in M_{m,n}, B \in M_{n,q} \implies AB=(\gamma_{i,j}) \text{ avec } \gamma_{i,j}=\som{l=1}{n}a_{i,l}b_{l,j}$$
  		\item \ppt $\forall A \in M_{m,n}(\K), B \in M_{n,p}(\K) \, ^t(AB)=\, ^tB\, ^tA$
@@ -329,13 +385,16 @@
 			\end{align*}
 			$\Phi$ est un isomorphisme d'\ev \, et $\dim_{\R}(M_{m,n}(\R))=m*n$ donc : $$\dim_{\R}L(E,F)=\dim_{\R}E \dim_{\R}F$$
 	\end{itemize}
+
 	 \thm $A\in M_n(\R)$ est inversible si et seulement si $f$ est un automorphisme
 
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
  		\item\ppt $[P_{B\rightarrow B'}]^{-1}=P_{B'\rightarrow B}$
 	\end{itemize}
+
 	 \thm Soit $E$ un \ev \, de dimension n, $$\forall f \in L(E), \, \tr(Mat(f,\vv{a_j}))=\tr(Mat(f,\vv{a'_j}))$$
-	\begin{itemize}
+	
+	 \begin{itemize}[label=\(\bullet\)]
  		\item \ppt La trace d'un projecteur est son rang
  		\item $B$ est équivalente à $A$ si et seulement si $\exists (R,S) \in GL_m \times GL_n / B=RAS$
  		\item Deux matrices sont équivalentes si et seulement si elles représentent la même application linéaire (elles ont donc le même rang)
@@ -345,17 +404,18 @@
 
 	\subparagraph{Valeurs propres}
 			\begin{align*}
-				&f(\vv{x}) = \la \vv{x}, \vv{x}\neq \vv{0} \\
-				&\iff AX-\la X=O_n\\
-				&\iff \vv{x}\in Ker(f-\la Id) \\
-				&\iff f-\la Id \text{ est non injective} \\
+				&f(\vv{x}) = \la \vv{x}, \vv{x}\neq \vv{0} \\	 
+				&\iff AX-\la X=O_n \\	 
+				&\iff \vv{x}\in Ker(f-\la Id) \\	 
+				&\iff f-\la Id \text{ est non injective} \\	 
 				&\iff \det(A-\la I_n)=0
 			\end{align*}
+	
 	 \thm Si une matrice est de rang r alors il existe au moins une matrice extraite de taille $r*r$ inversible. Réciproquement, si on a une matrice $r*r$ inversible et pas de matrice $(r+1)*(r+1)$ alors la matrice globale est de rang r.
 
 	\section{Groupes symétriques et déterminants}
 	\subparagraph{Groupes symétriques}
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
  		\item Groupe symétrique $S_n$ : ensemble des bijections de n élements de $E$ vers $E$
  		\item $\forall f \in S_n, f=t_1\circ t_2\circ \cdots \circ t_s$ avec $(t_i)$ des transpositions
  		\item cycle : permutation avec une seule orbite, les autres éléments étant inchangés
@@ -365,15 +425,17 @@
 	\end{itemize}
 
 	\subparagraph{Déterminants}
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
  		\item Une application n-linéaire est symétrique si l'ordre des vecteurs ne change pas le résultat : $\ph(\vv{a},\vv{b})=\ph(\vv{b},\vv{a})$
  		\item Une application n-linéaire est anti-symétrique si l'ordre des vecteurs change le signe du résultat : $\ph(\vv{a},\vv{b})= - \ph(\vv{b},\vv{a})$
  		\item Soit $\ph$ une applciation n-linéaire anti-symétrique, p permmutations des variables donne : $\ph(\vv{x_{p(1)}},\cdots,\vv{x_{p(n)}})= \sigma(p) \ph(\vv{x_1},\cdots,\vv{x_n})$
 		\item Une application est dite n-linéaire alternée si et seulement si elle est n-linéaire et
 		 \[\forall (\vv{x_1},\cdots,\vv{x_n}) \in E^n / \exists i  \neq j, \vv{x_i}=\vv{x_j} \implies \ph(\vv{x_1},\cdots,\vv{x_n})=0\]
 	\end{itemize}
+
 	 \thm Une fonction est alternée si et seulement si elle est antisymétrique
-	\begin{itemize}
+
+	\begin{itemize}[label=\(\bullet\)]
  		\item Soit $\vv{x_k}=\som{i=1}{n}\al_{i,k}\vv{e_i}$, 
 			\begin{align*}
 				g &: E^n \rightarrow \K \\
@@ -388,14 +450,16 @@
 
 	\section{Formes linéaires et hyperplans}
 	 \thm $H$ est un hyperplan $\iff \exists f \neq \omega \in E^* / Ker(f)=H$
-	\begin{itemize}
+
+	\begin{itemize}[label=\(\bullet\)]
  		\item \ppt $(u,v)\in (E^*)^2, H=Ker(u), H'=Ker(v) \implies H=H' \iff u=\la v$
  		\item \ppt $\dim_{\K}(\cap_{i=1}^m H_i)\geqslant n-m$
 	\end{itemize}
+
 	 \thm $H$ est un hyperplan de $E, \dim_{\K}E=n$ si et seulement si $$\exists (a_j)_1^n \neq (0)_1^n / \vv{x} \in H \iff \som{j=1}{N}a_jx_j=0$$
 
 	\section{Séries}
-	\begin{itemize}
+	\begin{itemize}[label=\(\bullet\)]
  		\item $e^x=\som{k=0}{+\infty}\frac{x^k}{k!}$
  		\item $\som{k=0}{+\infty}\frac{(-1)^{k-1}}{k}x^k=\ln(1+x)$ et $\som{k=0}{+\infty}\frac{(-1)^{k-1}}{k}=\ln(2)$
 		\item $\som{}{}u_k \limit{}l \implies \lim u_k=0$
@@ -404,8 +468,11 @@
 		\item \ppt Soit $\som{}{}u_k,\som{}{}v_k$ 2 suites positives, alors si $u_k \eq{+\infty} v_k$, les séries sont de même nature
 		\item Comparaison série-intégrale
 	\end{itemize}
-	 \thm Séries de Riemann : La séries $\som{n\geqslant 1}{} \inv{n^\al}$ converge si et seulement si $\al > 1$ \\
-	 \thm Règle d'Alembert : Soit $(u_k)_{k \in \N}$ une série de $\R_*^+$ telle que $\lim \frac{u_{k+1}}{u_k}=\al$ alors si $0 \leqslant \al <1$ la série $\som{}{}u_k$ converge, si $\al=1$ on ne peut rien dire et si $\al>1$ la série est grossièrement divergente. \\
+
+	 \thm Séries de Riemann : La séries $\som{n\geqslant 1}{} \inv{n^\al}$ converge si et seulement si $\al > 1$ 
+	 
+	 \thm Règle d'Alembert : Soit $(u_k)_{k \in \N}$ une série de $\R_*^+$ telle que $\lim \frac{u_{k+1}}{u_k}=\al$ alors si $0 \leqslant \al <1$ la série $\som{}{}u_k$ converge, si $\al=1$ on ne peut rien dire et si $\al>1$ la série est grossièrement divergente. 
+	 
 	 \thm Critère spécial des séries alternées : Si $(u_n)_{n \in \N}$ est une suite décroissante de limite nulle, alors la série $\som{}{}(-1)^nu_n$ est convergente
 
 
@@ -415,7 +482,7 @@
 	 
 	 Soient \(E\) un \eve \, et $f$ une forme bilinéaire symétrique
 	 
-	 \begin{itemize}
+	 \begin{itemize}[label=\(\bullet\)]
 		\item On appelle forme quadratique de $f: q(\vv{x})=f(\vv{x},\vv{x})$
 		\item $\vv{x}$ et $\vv{y}$ sont dit orthogonaux par rapport à $f$ si $f(\vv{x},\vv{y})=0$
 		\item $f$ est dite positive si et seulement si $\forall \vv{x} \in  E, f(\vv{x},\vv{x})\geqslant 0$
@@ -432,33 +499,49 @@
 		\item $f \in L(E,F)$ est une isométrie si et seulement si $f$ conserve la norme 
 		\item $A \in M_n(\R)$ est orthogonale quand $A\,^tA=I_n$
 	 \end{itemize}
+
 	  \thm Inégalité de Cauchy-Swartz : \(\forall (\vv{x},\vv{y}) \in E^2,\)
 	\[<\vv{x},\vv{y}> \leqslant ||\vv{x}|| \times ||\vv{y}||\]
-	  \thm Pythagore : $\vv{x} \perp \vv{y} \iff {||\vv{x}+\vv{y}||^2=||\vv{x}||^2+||\vv{y}||^2}$ \\
-	  \thm $\dim E=n, (\vv{x_1},\cdots,\vv{x_p}) \in E^p$ tel que aucun vecteur ne soit nul et qu'ils soient tous orthogonaux 2 à 2 alors c'est une famille libre. \\
-	  \thm Procédé de Gram-Schmidt : Dans tous  \eve \, il existe des bases orthonormales \\
-	  \thm Soit $E$ un \eve \, de dimension finie, F sous \ev\, de E alors $E=F\oplus F^{\perp}$ et $(F^{\perp})^{\perp}=F$ \\
+
+	  \thm Pythagore : $\vv{x} \perp \vv{y} \iff {||\vv{x}+\vv{y}||^2=||\vv{x}||^2+||\vv{y}||^2}$ 
+	 
+	  \thm $\dim E=n, (\vv{x_1},\cdots,\vv{x_p}) \in E^p$ tel que aucun vecteur ne soit nul et qu'ils soient tous orthogonaux 2 à 2 alors c'est une famille libre. 
+	 
+	  \thm Procédé de Gram-Schmidt : Dans tous  \eve \, il existe des bases orthonormales 
+	 
+	  \thm Soit $E$ un \eve \, de dimension finie, F sous \ev\, de E alors $E=F\oplus F^{\perp}$ et $(F^{\perp})^{\perp}=F$ 
+	 
 	  \thm Soit $F$ un sous \ev \, de $E$ et $\vv{a} \in E$, $d(\vv{a},F)=\underset{\vv{y} \in F}\inf ||\vv{a}-\vv{y}||$ alors $$d(\vv{a},F)=||\vv{a}-\vv{x}|| \iff \vv{a}-\vv{x} \in F^{\perp} \text{ et }\vv{x}=P_F(\vv{a})$$
-	  \thm L'isométrie entraine l'injectivité \\
-	  \thm $f$ est une isométrie si et seulement si $f$ conserve le produit scalaire \\
+	  
+	  \thm L'isométrie entraine l'injectivité 
+	 
+	  \thm $f$ est une isométrie si et seulement si $f$ conserve le produit scalaire 
+	 
 	  \thm Soit $E,F$ 2 \eve \, de même dimension alors :
 			 \begin{align*}
 				 &f \text{ isométrie de $E$ vers $F$} \\
 				 &\iff \text{il existe une base orthonormale de $E$ et une de $F$ telle que $M(f,(\vv{e_j})_1^n,(\vv{f_i})_1^n)$ soit orthogonale} \\
 				 &\iff \text{il existe une base orthonormale de $E$ dont l'image par $f$ est une base orthonormale de $F$}
 			 \end{align*}
-	 \begin{itemize}
+
+	 \begin{itemize}[label=\(\bullet\)]
 		\item \ppt $\dim_{\R}E=n, (\vv{e_i})_1^n,(\vv{e'_i})_1^n$ 2 bases orthonormales alors $P_{(\vv{e_i}) \rightarrow (\vv{e'_i})} \in O_n(\R) : P^{-1}=\,^tP$
 		\item Pour $A \in O_n(\R)$, si $\det(A)=1, f$ est une isométrie positive et si $\det(A)=-1,f$ est une isométrie négative
-		\item $S_\ph=\left( \begin{array}{c c} \cos(\ph) & \sin(\ph) \\ \sin(\ph) & -\cos(\ph) \end{array} \right)$
-		\item $R_\te=\left( \begin{array}{c c} \cos(\te) & -\sin(\te) \\ \sin(\te) & \cos(\te) \end{array} \right)$
+		\item \( S_\te=\begin{pmatrix}
+					\cos(\te) & \sin(\te) \\
+					sin(\te) & -\cos(\te)
+				\end{pmatrix} \)
+		\item \( R_\te=\begin{pmatrix}
+					\cos(\te) & -\sin(\te) \\
+					\sin(\te) & \cos(\te)
+				\end{pmatrix} \)
 		\item Toute isométrie positive (rotation) peut se décomposer en produit de 2 isométries négatives (symétries) dont l'une est choisie arbitrairement
 		\item Soient 2 vecteurs normés de $E$, alors il existe une unique rotation qui envoi le $1^{\text{er}}$ sur le $2^{\text{è}}$ (idem avec symétries)
 		\item En dimension 3 : là où sa change rien : rotation ou symétrie d'axe orienté suivant l'axe où sa change rien
 	 \end{itemize}
 	 
 	 \subparagraph{Produit mixte, vectoriel, application antisymétrique}
-	 \begin{itemize}
+	 \begin{itemize}[label=\(\bullet\)]
 		\item On appelle produit mixte l'application trilinéaire alternée qui a 3 vecteurs $\vv{x}, \vv{y}, \vv{z}$ associe $\det_B(\vv{x},\vv{y},\vv{z})=[\vv{x},\vv{y},\vv{z}]$
 		\item Soit $(\vv{u},\vv{v}) \in E^2, \exists! \vv{w} \in E / \forall \vv{x} \in E, [\vv{u},\vv{v},\vv{x}]=\vv{w}\cdot\vv{x}.$ Ce vecteur sera appelé produit vectoriel de $\vv{u},\vv{v}$ dans cet ordre noté $\vv{w}=\vv{u}\p\vv{v}$
 		\item \ppt $\forall \vv{x},\vv{y},\vv{z}, [\vv{x},\vv{y},\vv{z}]=(\vv{x}\p\vv{y})\cdot\vv{z}$
@@ -466,43 +549,52 @@
 		\item \ppt $\forall (\vv{u},\vv{v}) \in E^2, \vv{u}\p\vv{v}$ est orthogonal à $\vv{u}$ et $\vv{v}$
 		\item \ppt Si $(\vv{u},\vv{v})$ est libre, $(\vv{u},\vv{v},\vv{u}\p\vv{v})$ est une base directe
 		\item \ppt $\forall (\vv{u},\vv{v}) \in E^2, (\vv{u}\cdot\vv{v})^2+||\vv{u}\p\vv{v}||^2=||\vv{u}||^2||\vv{v}||^2$
-		\item \ppt Le double produit vectoriel n'est PAS associatif : $\forall (\vv{u},\vv{v},\vv{w}) \in E^3,\\ {\vv{u}\p (\vv{v} \p \vv{w})=(\vv{u} \cdot \vv{w})\vv{v}-(\vv{u} \cdot \vv{v})\vv{w}}$
+		\item \ppt Le double produit vectoriel n'est PAS associatif : \(\forall (\vv{u},\vv{v},\vv{w}) \in E^3,\)
+	  \[\vv{u}\p (\vv{v} \p \vv{w})=(\vv{u} \cdot \vv{w})\vv{v}-(\vv{u} \cdot \vv{v})\vv{w}\]
 		\item Soit $f \in L(E)$, elle sera dite antisymétrique si $\forall (\vv{x},\vv{y}) \in E^2, (f(\vv{x})\cdot\vv{y})=-(\vv{x}\cdot f(\vv{y}))$
 		\item \ppt $f$ est un endomorphisme antisymétrique si et seulement si la matrice de $f$ dans une base orthonormale directe est antisymétrique
 	 \end{itemize}
 
 
 	 \section{Convexité}
-	  $f$ est convexe si et seulement si $\forall \la \in [0,1] f(\la a+(1-\la)b) \leqslant \la f(a)+(1-\la)f(b) \iff 0 \leqslant \al_i \leqslant 1, \som{i=1}{n}\al_i=1, f(\som{i=1}{n}\al_i x_i) \leqslant \som{i=1}{n}\al_i f(x_i)$ \\
-	  \thm Si $f \in \D^1,$ la croissance de $f'$ sur $I$ est équivalente à la convexité de $f$ sur $I$ \\
-	  \thm $f$ est convexe sur $I$ si et seulement si $f$ est toujours au dessus de ses tangentes \\
+	  $f$ est convexe si et seulement si $\forall \la \in [0,1] f(\la a+(1-\la)b) \leqslant \la f(a)+(1-\la)f(b) \iff {0 \leqslant \al_i \leqslant 1,} \som{i=1}{n}\al_i=1, f(\som{i=1}{n}\al_i x_i) \leqslant \som{i=1}{n}\al_i f(x_i)$ 
+	 
+	  \thm Si $f \in \D^1,$ la croissance de $f'$ sur $I$ est équivalente à la convexité de $f$ sur $I$ 
+	 
+	  \thm $f$ est convexe sur $I$ si et seulement si $f$ est toujours au dessus de ses tangentes 
+	 
 	  \thm $\produit{i=1}{n}t_i^{\al_i} \leqslant \som{i=1}{n}\al_it_i$ (prendre $f(x)=e^x$ pour la démo)
 	 
 	 
 	  \section{Probabilités}
-	 \begin{itemize}
+
+	 \begin{itemize}[label=\(\bullet\)]
 		\item $P$ est une probabilité sur un ensemble fini $\Om$ si $P : P(\Om)\rightarrow [0,1], P(\Om)=1$ et $\forall A,B \in P(\Om)/A\cap B =\varnothing, P(A\cup B)=P(A)+P(B)$
 		\item $P_B(A)=\dfrac{P(A\cap B)}{P(B)}$
 	 \end{itemize}
+
 	 \thm Probabilitées composées : Soit $(\Om,P)$ un espace probabilisé et \((A_1,\cdots,A_n)\) des évènements tels que \(P(A_1\cap\cdots\cap A_n)>0\):
 	  \[P(A_1\cap\cdots\cap A_n)=P(A_1)*P_{A_1}(A_2)*P_{A_1\cap A_2}(A_3)\cdots\]
-	 \thm Formule des probabilités totales : Soit $(A_i)$ un \sce \, avec aucun évènement impossible alors $\forall B, P(B)=\ssum{i}{}P(A_i)P_{A_i}(B)$ \\
+	 
+	 \thm Formule des probabilités totales : Soit $(A_i)$ un \sce \, avec aucun évènement impossible alors $\forall B, P(B)=\ssum{i}{}P(A_i)P_{A_i}(B)$ 
+	 
 	 \thm Formule de Bayes : Soit $(\Om,P)$ un espace probabilisé. Si ${P(A)P(B)>0,} \, {P_B(A)=\dfrac{P(A)}{P(B)}P_A(B)}$
 	 
-	  \begin{itemize}
+	  \begin{itemize}[label=\(\bullet\)]
 		\item 2 évènements $A$ et $B$ sont indépendants si $P(A\cap B)=P(A)P(B)$
 		\item Pour $X$ une lois de probabilité, $P_X(A)=P(X\in A)$
 		\item \ppt Formule de Van der Monde : $\ssum{k=0}{r} \left[\dbinom{n}{k}*\dbinom{m}{r-k}\right]=\dbinom{n+m}{r}$
-		\item $E(X)=\ssum{i}{}x_iP(X=X_i).$ Si $E(X)=0$, $X$ est dite centrée
+		\item $E(X)=\ssum{i}{}X_i P(X=X_i).$ Si $E(X)=0$, $X$ est dite centrée
 		\item L'espérance est linéaire
 		\item Lois binomiale : $E(X)=np$
 	 \end{itemize}
 	
 	 \thm Inégalité de Markov : Soit $X$ une variable aléatoire réelle,  :
 	 	\[\forall a>0, {P(|X|\geqslant a)\leqslant \frac{E(|X|)}{a}}\]
+	 
 	 \thm Si $X,Y$ sont deux variables aléatoires réelles, alors $E(XY)=E(X)E(Y)$
 	 
-	  \begin{itemize}
+	  \begin{itemize}[label=\(\bullet\)]
 		\item $V(x)=E((X-E(X))^2)=E(X^2)-E^2(X)$
 		\item $\si(X)=\sqrt{V(X)}$
 		\item \ppt $\forall (a,b) \in \R^2, V(aX+B)=a^2V(X)$
@@ -511,7 +603,7 @@
 	 \thm Inégalité de Bienaymé-Tchebychev : Pour $X$ variable aléatoire réelle et ${E(X)=m,}$
 	 	\[\forall \ep>0, P(|X-E(X)|\geqslant\ep)\leqslant \frac{V(X)}{\ep^2}\]
 	 
-	  \begin{itemize}
+	  \begin{itemize}[label=\(\bullet\)]
 		\item $cov(X,Y)=E[(X-E(X))(Y-E(Y))]=E(XY)-E(X)E(Y)$
 		\item \ppt La covariance est bilinéaire symétrique
 		\item \ppt $\forall X,Y, V(X+Y)=V(X)+V(Y)-2cov(X,Y)$
