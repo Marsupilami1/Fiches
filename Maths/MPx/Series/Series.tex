@@ -14,7 +14,7 @@
 \usepackage[many]{tcolorbox}
 \usepackage{euler}
 \usepackage[nointegrals]{wasysym}
-\usepackage[french]{babel}
+\usepackage{babel}
 
 
 %______FONCTIONS______%
@@ -27,16 +27,6 @@
 \newcommand{\Q}{\mathbb{Q}}   % ~ Rationnels
 \newcommand{\R}{\mathbb{R}}   % ~ Réels
 \newcommand{\C}{\mathbb{C}}   % ~ Complexes
-% --TRIGO--%
-\let\cosh\relax
-\DeclareMathOperator{\cosh}{ch}       % ~ cosinus hyperbolique
-\DeclareMathOperator{\sh}{sh}         % ~ sinus hyperbolique
-\let\tanh\relax
-\DeclareMathOperator{\tanh}{th}       % ~ tangente hyperbolique
-\DeclareMathOperator{\argch}{Argch}   % ~ Argument cosinus hyperbolique
-\DeclareMathOperator{\argsh}{Argsh}   % ~ Argument sinus hyperbolique
-\DeclareMathOperator{\argth}{Argth}   % ~ Argument tangente hyperbolique
-\DeclareMathOperator{\cotan}{cotan}   % ~ cotangente
 % --PARENTHESES--%
 \newcommand{\po}{\left(}         % ~ (
 \newcommand{\pf}{\right)}        % ~ )
@@ -125,7 +115,7 @@
 \end{definition}
 
 \begin{theoreme}{Théorème spécial des séries alternées}
-  Avec \(\sum_{n\geqslant 0} \alpha_{n}\) et \(\forall n\, \alpha_{n}\geqslant 0\),
+  Soit \(\sum_{n\geqslant 0} (-1)^n \alpha_{n}\) avec \(\forall n\, \alpha_{n}\geqslant 0\),
   si \(\alpha_{n}\) décroit vers \(0\), alors la série est convergente.
   De plus: \[\left\lvert R_n \right\rvert =\left\lvert\sum_{k=n+1}^{+\infty}(-1)^k \alpha_{k}\right\rvert \leq \alpha_{n+1}\]
 \end{theoreme}
