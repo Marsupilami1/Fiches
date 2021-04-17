@@ -14,20 +14,9 @@
 \usepackage{xcolor}
 \usepackage{systeme}
 \usepackage{tikz}
-\usepackage[straightvoltages]{circuitikz}
 \usepackage{mathrsfs}
 \usepackage{esvect}
 \usepackage[many]{tcolorbox}
-
-%Ensembles
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\K}{\mathbb{K}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\p}{\wedge}
-\newcommand{\D}{\mathcal{D}}
 
 %Letttres grecs
 \newcommand{\al}{\alpha}
@@ -72,7 +61,7 @@
 }
 
 \title{Électrocinétique et traitement du signal}
-\author{Maillet Nathan\\MP*}
+\author{Maillet Nathan}
 \date{}
 
 \begin{document}
@@ -81,7 +70,7 @@
 
 
 \section{Amplificateur opérationnel}
-\begin{cadre}{Caractéristique d'un ampli-op idéal}
+	\begin{cadre}{Caractéristique d'un amplificateur opérationnel idéal}
 		\begin{center}
 		  \begin{tikzpicture}[scale=0.6][h]
 		    \draw[->] (0,-4) -- ++(0,8) node[left]{$V_s$};
@@ -103,7 +92,7 @@
 		\end{align*}
 	\end{cadre}
 	\begin{itemize}
-		\item Suivant la parité de f, les $a_n$ ou $b_n$ peuvent être nuls
+		\item Suivant la parité de \(f\), les $a_n$ ou $b_n$ peuvent être nuls
 		\item Les fonctions rectangulaires (resp. triangulaires) ont un spectre en $\inv{n}$ (resp. $\inv{n^2}$)
 	\end{itemize}
 
