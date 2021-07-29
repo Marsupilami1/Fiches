@@ -80,16 +80,17 @@
 
 \begin{cadre}{Pile ou face}
   Soit \(p \in \interoo{0}{1}\) et \(r \in \N, r\geq 2\). On effectue une suite infinie de tirages à pile ou face.
-  Les tirages sont indépendants et la probabilité de tirer face,à chaque tirage, vaut \(p\). Pour
-  \(n\in \N\), on note \(F_n\) l'évènement "face sort au \(n\)èième tirage" et \(P_n\) l'événement "pile sort au \(n\)-ième
-  tirage". Pour \(n \in \N^*,\) on note \(E_n\) l'événement "au \(n\)-ième tirage, on obtient \(r\) faces consécutives
-  pour la première fois".
+  Les tirages sont indépendants et la probabilité de tirer face à chaque tirage, vaut \(p\). Pour
+  \(n\in \N\), on note \(F_n\) l'évènement \og
+  face sort au \(n\)èième tirage \fg{} et \(P_n\) l'événement \og pile sort au \(n\)-ième
+  tirage\fg{}. Pour \(n \in \N^*,\) on note \(E_n\) l'événement \og au \(n\)-ième tirage, on obtient \(r\) faces consécutives
+  pour la première fois\fg{}.
   \begin{enumerate}
     \item
       \begin{enumerate}
         \item Déterminer \(E_1 \cdots E_{r-1}\) et \(E_r\)
         \item Soit \(n \in \N\). Montrer que :
-                \[E_{n+r+1}=\left(\bigcap_{i=n+2}^{n+r+1}F_i\right)\cap P_{n+1}\cap \left(\bigcap_{i=1}^{n}\overline{E_i}\right)\]
+                \[E_{n+r+1}=\left(\bigcap_{i=n+2}^{n+r+1}F_i\right)\,\bigcap\, P_{n+1}\,\bigcap\, \left(\bigcap_{i=1}^{n}\overline{E_i}\right)\]
         \item En déduire que chaque \(E_n\) est un événement.
       \end{enumerate}
     \item On pose \(p_0=0\) et, pour \(n\in \N, p_n=P(E_n)\).
@@ -97,7 +98,7 @@
     \item 
       \begin{enumerate}
         \item Montrer que \[\forall n \in \N, p_{n+r+1}=p^r(1-p)\left(1-\sum_{i=1}^{n}p_i\right)\]
-        \item Exprimer, pour \(n \in \N, p_{n+r+1}\) en fonction de \(p_,+r,p_n,p\) et \(q=1-p\)
+        \item Exprimer, pour \(n \in \N\), \(p_{n+r+1}\) en fonction de \(p_,+r\), \(p_n\), \(p\) et \(q=1-p\)
       \end{enumerate}
     \item Soit \begin{align*}
                     G :\, & \interff{-1}{1} \rightarrow \R \\
@@ -126,7 +127,7 @@
       \begin{enumerate}
         \item Montrer que pour tout réel \(t\) positif: \(P(S_{n}\geqslant a) \leqslant e^{-ta}E(e^{tS_{n}})\).
         \item En déduire que \(P(S_{n}\geqslant a)\leqslant e^{-a^{2}/2n}\).
-        \item En déduire un majorant de \(P(\lvert S_{n}\rvert \geqslant a)\).
+        \item En déduire un majorant de \(P\po\lvert S_{n}\rvert \geqslant a\pf\).
       \end{enumerate}
   \end{enumerate}
 \end{cadre}
