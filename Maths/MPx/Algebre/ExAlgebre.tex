@@ -94,14 +94,14 @@
     
     
     Soit $G$ un groupe abélien fini. Pour tout $x$ de $G$, nous noterons $o(x)$ l'ordre de $x$ dans $G$, i.e le plus petit
-    entier $n \geq 1$ tel que $x^n=1$. On appelle exposant de $G$ le P.P.C.M. des ordres des éléments de $G$. C'est doc
+    entier $n \geq 1$ tel que $x^n=1$. On appelle exposant de $G$ le P.P.C.M. des ordres des éléments de $G$. C'est donc
     l'entier $r$ défini par \(r=\underset{x \in G}{\vee} o(x)=\text{min}\left\{n \in \N^*, \forall x \in G, x^n=1\right\}\).
     \begin{itemize}[label=$\bullet$]
         \item Montrer que si $a$ et $b$ sont deux éléments de $G$ tels que \(o(a) \wedge o(b)=1, ab\) est d'ordre \(o(a)o(b)\).
-        \item Soit \(r=p_1^{\alpha_1}p_2^{\alpha_2} \ldots p_k^{\alpha_k}\) la décomposition de $r$ en produit de facteurs premiers.
+        \item Soit \(r=p_1^{\alpha_1}p_2^{\alpha_2} \cdots p_k^{\alpha_k}\) la décomposition de $r$ en produit de facteurs premiers.
         Montrer que pour tout $i$ compris entre $1$ et $k$, il existe $a_i \in G$ tel que \(o(a_i)=p_i^{\alpha_i}\).
         En déduire qu'il existe un élément de $G$ dont l'ordre est l'exposant de $G$.    
-        \item Soit $K$ un corps commutatif et $G$ un sous-groupe \((K^*,.)\). Montrer que $G$ est cyclique
+        \item Soit $K$ un corps commutatif et $G$ un sous-groupe \((K^*,\cdot)\). Montrer que $G$ est cyclique
         (et en particulier, $K^*$ est cyclique si $K$ est fini). 
     \end{itemize}   
 \end{cadre}
@@ -122,13 +122,13 @@
 \end{cadre}
 
 \begin{cadre}{Algèbre sur les entiers relatifs}
-  Résoudre dans \(Z\):
-    \[2^{2n}+2^n+1 \equiv 0 \, (\mathrm{mod}{\, 21})\]
+  Résoudre dans \(\mathbb Z\):
+    \[2^{2n}+2^n+1 \equiv 0 \, \cof{21} \]
 \end{cadre}
 
 \begin{cadre}{Égalité avec une congruence}
   Soit \(p\) un nombre premier. Montrer :
-    \[(p-1)! \equiv (-1)^p \, \cof{p}.\]
+    \[(p-1)! \equiv (-1)^p \, \cof{p}\]
 \end{cadre}
 
 \section*{Espaces Vectoriels}
@@ -136,8 +136,8 @@
 \begin{cadre}{Dimensions d'espaces vetoriels}
   Soit $E$ un espace vectoriel de dimension finie $n$.
   \begin{itemize}[label=$\bullet$]
-    \item Soit $A$ un sous-espace de $E$. Montrer que \(\alpha=\left\{ u \in \mathcal{L}, A \subset \text{ Ker}(u)\right\}
-  \text{ et } \beta=\left\{ u \in \mathcal{L}, u(A) \subset A\right\}\) sont des sous-espaces de $\mathcal{L}(E)$
+    \item Soit $A$ un sous-espace de $E$. Montrer que \(\alpha=\left\{ u \in \mathcal{L}(E), A \subset \text{ Ker}(u)\right\}
+  \text{ et } \beta=\left\{ u \in \mathcal{L}(E), u(A) \subset A\right\}\) sont des sous-espaces de $\mathcal{L}(E)$
   et donner leurs dimensions en fonction de celle de $A$.
     \item Soient $F$ et $G$ deux sous-espaces vectoriels de $E$. On note $f,g,h$ les dimensions respectives de \(F,G \text{ et } {F \cap G}\).
   Déterminer la dimension de \(\gamma=\left\{ u \in \mathcal{L}(E), u(F) \subset F \text{ et } u(G) \subset G\right\}\).
